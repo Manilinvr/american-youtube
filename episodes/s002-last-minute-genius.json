@@ -11,7 +11,7 @@
   "scenes": [
     {
       "id": "hook",
-      "say": "Ever get more done the day before vacation than all month? Congratulations. You're Specimen [002.|zero zero two.]",
+      "say": "Ever do more the day before vacation than all month? Congratulations. You're Specimen [002.|zero zero two.]",
       "visual": {
         "type": "situation",
         "setting": "room",
@@ -54,19 +54,39 @@
         },
         "camera": {
           "zoom": [
-            1,
-            1.05
+            1.4,
+            1.4
           ],
           "focus": [
-            0.45,
-            0.55
+            0.36,
+            0.37
+          ],
+          "keys": [
+            {
+              "at": "vacation",
+              "zoom": 1.1,
+              "focus": [
+                0.6,
+                0.5
+              ],
+              "secs": 0.9
+            },
+            {
+              "at": "congratulations",
+              "zoom": 1.0,
+              "focus": [
+                0.5,
+                0.5
+              ],
+              "secs": 0.8
+            }
           ]
         }
       }
     },
     {
       "id": "observe",
-      "say": "Given a month, it takes a month. Given one night... forty minutes.",
+      "say": "Given a month, it takes a month. Given one night? Forty minutes.",
       "visual": {
         "type": "split",
         "panels": [
@@ -119,12 +139,26 @@
               }
             ]
           }
-        ]
-      }
+        ],
+        "camera": {
+          "keys": [
+            {
+              "at": "night",
+              "zoom": 1.05,
+              "focus": [
+                0.5,
+                0.5
+              ],
+              "secs": 1.0
+            }
+          ]
+        }
+      },
+      "transition": "zoom"
     },
     {
       "id": "name",
-      "say": "Field note: this is *Parkinson's law.*",
+      "say": "This is *Parkinson's law.*",
       "visual": {
         "type": "quote",
         "text": "PARKINSON'S LAW",
@@ -133,7 +167,8 @@
           "pose": "think",
           "face": "smug"
         }
-      }
+      },
+      "transition": "black"
     },
     {
       "id": "joke",
@@ -171,12 +206,30 @@
             "at": "began",
             "label": "fig. 2: a 1955 essay"
           }
-        ]
-      }
+        ],
+        "camera": {
+          "zoom": [
+            1.0,
+            1.0
+          ],
+          "keys": [
+            {
+              "at": "joke",
+              "zoom": 1.35,
+              "focus": [
+                0.45,
+                0.37
+              ],
+              "secs": 0.7
+            }
+          ]
+        }
+      },
+      "transition": "fade"
     },
     {
       "id": "science",
-      "say": "But in experiments, people given extra time really did take *longer.*",
+      "say": "In experiments, people given extra time really did take *longer.*",
       "visual": {
         "type": "split",
         "panels": [
@@ -230,24 +283,26 @@
             ]
           }
         ]
-      }
+      },
+      "transition": "fade"
     },
     {
       "id": "lesson",
       "tone": "deep",
-      "say": "Lazy? No. Just a deadline too far away. *Bring it closer.*",
+      "say": "Not lazy. Just a deadline too far away. *Bring it closer.*",
       "visual": {
         "type": "quote",
         "person": {
           "pose": "think",
           "face": "peaceful"
         }
-      }
+      },
+      "transition": "black"
     },
     {
       "id": "verdict",
       "tone": "funny",
-      "say": "This note was also written the night before. Perfectly *human.*",
+      "say": "This note? Written the night before. Perfectly *human.*",
       "visual": {
         "type": "situation",
         "setting": "room",
@@ -297,15 +352,37 @@
         },
         "camera": {
           "zoom": [
-            1,
-            1.06
+            1.0,
+            1.0
           ],
           "focus": [
-            0.45,
-            0.55
+            0.5,
+            0.5
+          ],
+          "keys": [
+            {
+              "at": "night",
+              "zoom": 1.2,
+              "focus": [
+                0.32,
+                0.42
+              ],
+              "secs": 0.8
+            },
+            {
+              "at": "perfectly",
+              "zoom": 1.0,
+              "focus": [
+                0.5,
+                0.5
+              ],
+              "secs": 0.5
+            }
           ]
         }
-      }
+      },
+      "transition": "zoom"
     }
-  ]
+  ],
+  "music": "soft-pad.mp3"
 }

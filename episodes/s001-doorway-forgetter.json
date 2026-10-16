@@ -48,12 +48,42 @@
           "latin": "Homo oblitus",
           "habitat": "doorways, kitchens",
           "at": "specimen"
+        },
+        "camera": {
+          "zoom": [
+            1.25,
+            1.25
+          ],
+          "focus": [
+            0.35,
+            0.5
+          ],
+          "keys": [
+            {
+              "at": "forgot",
+              "zoom": 1.5,
+              "focus": [
+                0.58,
+                0.37
+              ],
+              "secs": 0.8
+            },
+            {
+              "at": "congratulations",
+              "zoom": 1.0,
+              "focus": [
+                0.5,
+                0.5
+              ],
+              "secs": 1.0
+            }
+          ]
         }
       }
     },
     {
       "id": "observe",
-      "say": "Observe. The specimen stares at the fridge as if the fridge owes it money.",
+      "say": "Observe. It stares at the fridge like the fridge owes it money.",
       "visual": {
         "type": "situation",
         "setting": "room",
@@ -94,11 +124,32 @@
         ],
         "camera": {
           "zoom": [
-            1,
-            1.06
+            1.0,
+            1.02
+          ],
+          "keys": [
+            {
+              "at": "owes",
+              "zoom": 1.45,
+              "focus": [
+                0.32,
+                0.37
+              ],
+              "secs": 0.7
+            },
+            {
+              "at": "money",
+              "zoom": 1.1,
+              "focus": [
+                0.55,
+                0.45
+              ],
+              "secs": 0.6
+            }
           ]
         }
-      }
+      },
+      "transition": "fade"
     },
     {
       "id": "door",
@@ -137,15 +188,23 @@
         ],
         "camera": {
           "zoom": [
-            1,
-            1.08
+            1.0,
+            1.0
           ],
-          "focus": [
-            0.4,
-            0.45
+          "keys": [
+            {
+              "at": "door",
+              "zoom": 1.25,
+              "focus": [
+                0.38,
+                0.45
+              ],
+              "secs": 0.6
+            }
           ]
         }
-      }
+      },
+      "transition": "zoom"
     },
     {
       "id": "chapter",
@@ -207,8 +266,22 @@
               }
             ]
           }
-        ]
-      }
+        ],
+        "camera": {
+          "keys": [
+            {
+              "at": "ends",
+              "zoom": 1.04,
+              "focus": [
+                0.5,
+                0.5
+              ],
+              "secs": 1.0
+            }
+          ]
+        }
+      },
+      "transition": "fade"
     },
     {
       "id": "name",
@@ -221,12 +294,13 @@
           "pose": "think",
           "face": "smug"
         }
-      }
+      },
+      "transition": "black"
     },
     {
       "id": "lesson",
       "tone": "deep",
-      "say": "Is the specimen broken? No. Its brain is just making room for what's next...",
+      "say": "Broken? No. Its brain is just making room for what's next...",
       "visual": {
         "type": "situation",
         "setting": "rooftop",
@@ -259,11 +333,16 @@
         ],
         "camera": {
           "zoom": [
-            1.04,
-            1
+            1.3,
+            1.0
+          ],
+          "focus": [
+            0.35,
+            0.5
           ]
         }
-      }
+      },
+      "transition": "black"
     },
     {
       "id": "verdict",
@@ -312,15 +391,37 @@
         },
         "camera": {
           "zoom": [
-            1,
-            1.06
+            1.0,
+            1.0
           ],
           "focus": [
             0.5,
-            0.55
+            0.5
+          ],
+          "keys": [
+            {
+              "at": "again",
+              "zoom": 1.45,
+              "focus": [
+                0.32,
+                0.37
+              ],
+              "secs": 0.6
+            },
+            {
+              "at": "perfectly",
+              "zoom": 1.0,
+              "focus": [
+                0.5,
+                0.5
+              ],
+              "secs": 0.5
+            }
           ]
         }
-      }
+      },
+      "transition": "zoom"
     }
-  ]
+  ],
+  "music": "soft-pad.mp3"
 }
