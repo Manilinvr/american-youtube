@@ -1,6 +1,6 @@
 import React from 'react';
 import {FELL, FELL_SC} from '../../fonts';
-import {blinking, prog, shown, since, useArt, wave} from '../context';
+import {blinking, prog, shown, since, track, useArt, wave} from '../context';
 import {Hand, Head, Sleeve, Torso} from '../figures';
 import {Callout, Ink, Reveal, Shape, Spark, T, Write} from '../ink';
 import {BOOK} from '../palette';
@@ -56,6 +56,22 @@ export const Neuron: React.FC<{title?: string; subtitle?: string}> = ({title = '
 	];
 	const labelP = (d: number) => prog(a, 'rnt', 30, 30 + d);
 	const vesicle = (a.f / a.fps) * (1 + alert * 1.4);
+	const tt = a.f / a.fps;
+	// branches sway a little, like a specimen in fluid (not at the point where the thought thread joins)
+	const swayPt = ([x, y]: Pt): Pt => {
+		const amp = 2.4 * Math.min(1, Math.hypot(x - 170, y - 300) / 110) * Math.min(1, Math.hypot(x - 70, y - 215) / 40);
+		return [x + Math.sin(tt * 1.1 + y * 0.035) * amp, y + Math.cos(tt * 0.9 + x * 0.035) * amp];
+	};
+	// where the impulses are, and what lights up as they pass
+	const live = p > 0.95;
+	const sparks = [0, 1, 2]
+		.map((i) => ({u: (((phase + i / 3) % 1) + 1) % 1, op: i === 0 ? 1 : alert}))
+		.filter((sp) => live && sp.op > 0)
+		.map((sp) => ({...sp, pt: along(path, sp.u)}));
+	const near = (q: Pt, radius: number) => Math.max(0, ...sparks.map((sp) => sp.op * Math.max(0, 1 - Math.hypot(sp.pt[0] - q[0], sp.pt[1] - q[1]) / radius)));
+	const soma = near([170, 300], 36);
+	const nodes = [230, 278, 324, 370, 410].map((x) => ({x, glow: near([x, axonY(x)], 18)}));
+	const arrive = Math.max(0, ...sparks.map((sp) => sp.op * (sp.u > 0.9 ? (sp.u - 0.9) / 0.1 : sp.u < 0.1 ? 1 - sp.u / 0.1 : 0)));
 	return (
 		<g>
 			{/* dark title band */}
@@ -68,9 +84,9 @@ export const Neuron: React.FC<{title?: string; subtitle?: string}> = ({title = '
 			<Reveal p={p}>
 				<g transform="translate(0 -22)">
 					{/* soft glow of activity around the cell body */}
-					<circle cx={170} cy={300} r={60} fill="url(#tb-glow)" opacity={0.15 + 0.35 * alert * wave(a, 0.8)} />
+					<circle cx={170} cy={300} r={60 + 14 * soma} fill="url(#tb-glow)" opacity={0.15 + 0.3 * alert * wave(a, 0.8) + 0.4 * soma} />
 					{DENDRITES.map((pts, i) => (
-						<Ink key={i} d={smooth(pts)} w={i % 2 === 0 || i === 0 ? 3 : 1.7} />
+						<Ink key={i} d={smooth(pts.map(swayPt))} w={i % 2 === 0 || i === 0 ? 3 : 1.7} />
 					))}
 					{/* receiving neuron, entering from the right edge */}
 					{[
@@ -79,13 +95,18 @@ export const Neuron: React.FC<{title?: string; subtitle?: string}> = ({title = '
 						[[530, 352], [496, 346], [464, 344]],
 						[[540, 250], [508, 262], [486, 240]],
 					].map((pts, i) => (
-						<Ink key={`r${i}`} d={smooth(pts as Pt[])} w={i === 0 ? 3 : 1.8} opacity={0.85} />
+						<g key={`r${i}`}>
+							<Ink d={smooth(pts as Pt[])} w={i === 0 ? 3 : 1.8} opacity={0.85} />
+							{arrive > 0.02 && <path d={smooth(pts as Pt[])} fill="none" stroke={BOOK.glow} strokeWidth={i === 0 ? 5 : 3.5} strokeLinecap="round" opacity={0.75 * arrive} />}
+						</g>
 					))}
 					{/* axon with myelin sheath */}
 					<Ink d={smooth([[196, 302], [214, 305], ...[230, 300, 380, 412].map((x): Pt => [x, axonY(x)]), [424, 312]])} w={2.4} />
 					{myelin.map(([x0, x1], i) => (
 						<Shape key={i} d={smooth([[x0, axonY(x0) - 7], [(x0 + x1) / 2, axonY((x0 + x1) / 2) - 8], [x1, axonY(x1) - 7], [x1 + 3, axonY(x1)], [x1, axonY(x1) + 7], [(x0 + x1) / 2, axonY((x0 + x1) / 2) + 8], [x0, axonY(x0) + 7], [x0 - 3, axonY(x0)]], true)} color={BOOK.parchment} hatch="light" w={1.7} />
 					))}
+					{/* nodes between the myelin segments flash as the impulse passes */}
+					{nodes.map((n, i) => (n.glow > 0.02 ? <circle key={`n${i}`} cx={n.x} cy={axonY(n.x)} r={10 + 6 * n.glow} fill="url(#tb-spark)" opacity={n.glow} /> : null))}
 					{/* terminals */}
 					{[
 						[452, 288],
@@ -94,21 +115,20 @@ export const Neuron: React.FC<{title?: string; subtitle?: string}> = ({title = '
 					].map(([x, y], i) => (
 						<g key={i}>
 							<Ink d={smooth([[424, 312], [436, (312 + y) / 2], [x - 4, y]])} w={1.8} />
-							<Shape d={roughEllipse(x, y, 6, 6, 410 + i, 0.4, 10)} color={BOOK.ochre} w={1.5} wear={false} />
+							{arrive > 0.02 && <circle cx={x} cy={y} r={11} fill="url(#tb-spark)" opacity={arrive} />}
+							<Shape d={roughEllipse(x, y, 6 * (1 + 0.25 * arrive), 6 * (1 + 0.25 * arrive), 410 + i, 0.4, 10)} color={BOOK.ochre} w={1.5} wear={false} />
 						</g>
 					))}
 					{/* cell body with nucleus */}
-					<Shape d={roughEllipse(170, 300, 31, 27, 420, 0.8)} color={'#D7B57C'} hatch="stipple" w={2.6} />
-					<Shape d={roughEllipse(166, 298, 11, 10, 421, 0.5)} color={BOOK.brown} w={1.6} />
-					<circle cx={168} cy={296} r={3} fill={BOOK.ink} />
+					<g transform={`translate(170 300) scale(${1 + 0.07 * soma}) translate(-170 -300)`}>
+						<Shape d={roughEllipse(170, 300, 31, 27, 420, 0.8)} color={'#D7B57C'} hatch="stipple" w={2.6} />
+						<Shape d={roughEllipse(166, 298, 11, 10, 421, 0.5)} color={BOOK.brown} w={1.6} />
+						<circle cx={168} cy={296} r={3} fill={BOOK.ink} />
+					</g>
 					{/* impulses */}
-					{p > 0.95 &&
-						[0, 1, 2].map((i) => {
-							const op = i === 0 ? 1 : alert;
-							if (op <= 0) return null;
-							const [x, y] = along(path, phase + i / 3);
-							return <Spark key={i} x={x} y={y} r={6} opacity={op} />;
-						})}
+					{sparks.map((sp, i) => (
+						<Spark key={i} x={sp.pt[0]} y={sp.pt[1]} r={6} opacity={sp.op} />
+					))}
 					{p > 0.95 &&
 						alert > 0 &&
 						[side1, side2].map((pts, i) => {
@@ -129,7 +149,7 @@ export const Neuron: React.FC<{title?: string; subtitle?: string}> = ({title = '
 								[404, 362],
 								[386, 368],
 							].map(([x, y], i) => (
-								<circle key={i} cx={x} cy={y} r={4} fill={BOOK.parchment} stroke={BOOK.ink} strokeWidth={1} />
+								<circle key={i} cx={x} cy={y + arrive * (4 + i)} r={4} fill={BOOK.parchment} stroke={BOOK.ink} strokeWidth={1} />
 							))}
 							<Shape d={smooth([[346, 404], [370, 396], [392, 394], [414, 396], [440, 404], [440, 440], [346, 440]], true)} color={'#C9B497'} hatch="light" w={1.6} />
 							{[372, 386, 400, 414].map((x, i) => (
@@ -137,7 +157,7 @@ export const Neuron: React.FC<{title?: string; subtitle?: string}> = ({title = '
 							))}
 							{Array.from({length: 6}, (_, i) => {
 								const t = (vesicle * 0.9 + i / 6) % 1;
-								return <circle key={i} cx={372 + ((i * 37) % 44)} cy={384 + t * 10} r={1.8} fill={BOOK.terracotta} opacity={Math.sin(t * Math.PI)} />;
+								return <circle key={i} cx={372 + ((i * 37) % 44)} cy={384 + t * 10} r={1.8 + arrive} fill={BOOK.terracotta} opacity={Math.sin(t * Math.PI) * (0.35 + 0.65 * arrive)} />;
 							})}
 						</g>
 						<Ink d={roughEllipse(392, 384, 40, 40, 431, 0.4, 16)} w={2} />
@@ -172,14 +192,14 @@ export const Evidence: React.FC<{k?: number; cite?: string}> = ({k = 55, cite = 
 				if (t <= 0) return null;
 				const r = rng(500 + i);
 				const x = 44 + i * 3 + (1 - t) * 60;
-				const y = 84 + i * 3 - (1 - t) * 40;
-				const rot = -8 + i * 2.2 + (r() - 0.5) * 3;
+				const y = 84 + i * 3 - (1 - t) * 40 - Math.sin(Math.min(1, t) * Math.PI) * 10;
+				const rot = -8 + i * 2.2 + (r() - 0.5) * 3 + (1 - t) * 14;
 				return (
 					<g key={i} transform={`translate(${x} ${y}) rotate(${rot} 60 75)`} opacity={t}>
 						<Shape d={roughRect(0, 0, 120, 150, 510 + i, 0.6)} color={i % 2 ? BOOK.parchment : '#E7DCC4'} w={1.4} />
 						{i === sheets - 1 &&
 							[24, 40, 56, 72, 88, 104, 120].map((yy, j) => <line key={j} x1={14} x2={j % 3 === 2 ? 70 : 104} y1={yy} y2={yy} stroke={BOOK.ink} strokeWidth={1.2} opacity={0.45} />)}
-						{i === sheets - 1 && <path d="M18 132 L40 112 L58 122 L96 96" fill="none" stroke={BOOK.terracotta} strokeWidth={2} />}
+						{i === sheets - 1 && <Ink d="M18 132 L40 112 L58 122 L96 96" w={2} color={BOOK.terracotta} p={prog(a, 'dozens', 24, 34)} second={false} />}
 					</g>
 				);
 			})}
@@ -210,16 +230,18 @@ const cloud = (cx: number, cy: number, r: number): string => {
 	return smooth(pts, true, 1.4);
 };
 
-const Bear: React.FC<{x: number; y: number; s: number}> = ({x, y, s}) => (
-	<g transform={`translate(${x} ${y}) scale(${s})`}>
+/** The white bear, walking on the spot (step = leg phase in radians). */
+const Bear: React.FC<{x: number; y: number; s: number; step?: number}> = ({x, y, s, step = 0}) => (
+	<g transform={`translate(${x} ${y + Math.abs(Math.sin(step)) * -1.6}) scale(${s})`}>
 		{[
 			[-8, 22],
 			[2, 24],
 			[20, 22],
 			[30, 24],
-		].map(([lx, ly], i) => (
-			<Shape key={i} d={roughRect(lx - 4, ly - 8, 9, 14, 600 + i, 0.4)} color={BOOK.parchment} w={1.6 / s} wear={false} />
-		))}
+		].map(([lx, ly], i) => {
+			const swing = Math.sin(step + (i % 2 ? Math.PI : 0)) * 3.5;
+			return <Shape key={i} d={roughRect(lx - 4 + swing, ly - 8 - Math.max(0, swing) * 0.6, 9, 14, 600 + i, 0.4)} color={BOOK.parchment} w={1.6 / s} wear={false} />;
+		})}
 		<Shape d={roughEllipse(10, 12, 28, 17, 610, 0.5)} color={BOOK.parchment} w={2 / s} wear={false} />
 		<Shape d={roughEllipse(-20, -6, 14, 13, 611, 0.5)} color={BOOK.parchment} w={2 / s} wear={false} />
 		<Shape d={roughEllipse(-27, -17, 4.5, 4.5, 612, 0.3, 8)} color={BOOK.parchment} w={1.6 / s} wear={false} />
@@ -241,23 +263,44 @@ export const WhiteBear: React.FC = () => {
 	const reach = push * (1 - 0.55 * Math.min(1, rb));
 	const extra = [prog(a, 'afterward', 12, 8), prog(a, 'afterward', 12, 16)];
 	const label = prog(a, 'afterward', 30, 10, false);
-	const h1: Pt = [134 + 26 * reach, 150 - 8 * reach];
-	const h2: Pt = [138 + 26 * reach, 186 - 4 * reach];
+	const sf = since(a, 'fighting');
+	const recoil = Math.min(1, rb);
+	// shaking the head "no" with eyes shut while pushing; then the start of surprise when it comes back
+	const shake = sf > 0 && sf < 44 ? Math.sin(sf * 0.55) * 10 * (1 - sf / 44) : 0;
+	const shut = track(sf, [[0, 0], [5, 1], [38, 1], [44, 0]]) * (1 - recoil);
+	const lean = 5 * push * (1 - recoil) - 7 * recoil;
+	const lift = -12 * recoil;
+	const h1: Pt = [134 + 26 * reach + lean, 150 - 8 * reach + lift];
+	const h2: Pt = [138 + 26 * reach + lean, 186 - 4 * reach + lift];
+	const step = (a.f / a.fps) * 7;
+	const hx = 76 + lean * 1.4;
 	return (
 		<Reveal p={shown(a)}>
-			<Sleeve pts={[[66, 178], [100, 174], h1]} width={12} />
-			<Torso x={78} y={168} s={0.55} />
-			<Sleeve pts={[[94, 182], [118, 192], h2]} width={13} />
+			<Sleeve pts={[[66 + lean * 0.6, 178], [100 + lean, 174 + lift * 0.5], h1]} width={12} />
+			<Torso x={78} y={168} s={0.55} lean={lean} />
+			<Sleeve pts={[[94 + lean * 0.6, 182], [118 + lean, 192 + lift * 0.5], h2]} width={13} />
 			<Hand x={h1[0]} y={h1[1]} s={0.85} rot={-80} />
 			<Hand x={h2[0]} y={h2[1]} s={0.85} rot={-80} />
-			<Head x={76} y={128} r={30} eyes="side" brows="worried" mouth="worry" blink={blinking(a, 3, 0.4)} seed={9} />
+			<Head
+				x={hx}
+				y={128}
+				r={30}
+				look={recoil > 0.2 ? [1, -0.4] : [1, 0]}
+				lid={shut}
+				blink={shut < 0.1 && blinking(a, 3, 0.4)}
+				worry={1 - recoil * 0.5}
+				raise={recoil}
+				mouth={recoil > 0.3 ? 'o' : 'worry'}
+				tilt={shake - lean * 0.8}
+				seed={9}
+			/>
 			{/* thought bubble with the bear */}
 			<g>
 				<circle cx={128 + (bx - 222) * 0.3} cy={112} r={5} fill={BOOK.parchment} stroke={BOOK.ink} strokeWidth={1.5} />
 				<circle cx={146 + (bx - 222) * 0.5} cy={104} r={8} fill={BOOK.parchment} stroke={BOOK.ink} strokeWidth={1.6} />
 				<g transform={`translate(${bx} 128) scale(${sc})`}>
 					<Shape d={cloud(0, 0, 58)} color={BOOK.parchment} w={2.2 / sc} />
-					<Bear x={4} y={-4} s={0.95} />
+					<Bear x={4} y={-4} s={0.95} step={step} />
 				</g>
 			</g>
 			{[
@@ -265,9 +308,9 @@ export const WhiteBear: React.FC = () => {
 				[234, 250, 19],
 			].map(([x, y, r], i) =>
 				extra[i] > 0 ? (
-					<g key={i} transform={`translate(${x} ${y}) scale(${extra[i]})`}>
+					<g key={i} transform={`translate(${x} ${y + Math.sin(a.f / 9 + i * 2) * 3}) scale(${extra[i]})`}>
 						<Shape d={cloud(0, 0, r)} color={BOOK.parchment} w={1.8} />
-						<Bear x={2} y={-2} s={r / 62} />
+						<Bear x={2} y={-2} s={r / 62} step={step + i * 1.7} />
 					</g>
 				) : null,
 			)}
@@ -285,8 +328,18 @@ export const Note: React.FC<{lines?: string[]; accent?: string}> = ({lines = ['E
 	const step = (i: number) => Math.max(0, Math.min(1, (a.f - a.show - 14 - i * 9) / 18));
 	return (
 		<Reveal p={p}>
-			<circle cx={114} cy={50} r={18} fill={BOOK.ochre} />
-			<circle cx={121} cy={45} r={16} fill={BOOK.ink} />
+			<g transform={`rotate(${Math.sin(a.f / 40) * 6} 114 50)`}>
+				<circle cx={114} cy={50} r={18} fill={BOOK.ochre} />
+				<circle cx={121} cy={45} r={16} fill={BOOK.ink} />
+			</g>
+			{[
+				[70, 36],
+				[160, 30],
+				[150, 70],
+				[62, 74],
+			].map(([x, y], i) => (
+				<path key={i} d={`M${x - 4} ${y} h8 M${x} ${y - 4} v8`} stroke={BOOK.ochre} strokeWidth={1.2} opacity={0.3 + 0.5 * Math.max(0, Math.sin(a.f / 14 + i * 1.9))} />
+			))}
 			<T x={114} y={98} size={21} font={FELL_SC} color={BOOK.ochre} anchor="middle" spacing={2}>
 				A note
 			</T>

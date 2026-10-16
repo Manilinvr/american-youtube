@@ -7,9 +7,9 @@ import {captionTop} from '../scenes/stage';
 import type {TimedScene} from '../types';
 import {ART} from './art';
 import {ArtCtx, ArtInfo, BookCamKey, Cam, PageDef, PanelDef} from './context';
-import {BookDefs, clamp01, Ink, Reveal} from './ink';
+import {BookDefs, clamp01, Ink, Reveal, Spark} from './ink';
 import {BOOK, TONES, W} from './palette';
-import {rng, roughLine, smooth} from './rough';
+import {along, rng, roughLine, smooth} from './rough';
 
 const ease = Easing.inOut(Easing.cubic);
 /** How dark the rest of the page gets while one panel is lit. */
@@ -337,10 +337,15 @@ export const BookPage: React.FC<{page: PageDef; timeline: TimedScene[]}> = ({pag
 					{(page.threads ?? []).map((t, i) => {
 						const at = events.get(t.at) ?? Infinity;
 						const p = Number.isFinite(at) ? clamp01((f - at) / ((t.secs ?? 1.4) * fps)) : 0;
+						// a spark rides the tip of the line as it draws (the camera follows it across the gutter)
+						const tip = p > 0 && p < 1 ? along(t.points, ease(p)) : null;
 						return (
-							<Reveal key={i} p={ease(p)}>
-								<Ink d={smooth(t.points)} w={t.width ?? W.bold} color={t.color ?? BOOK.terracotta} />
-							</Reveal>
+							<g key={i}>
+								<Reveal p={ease(p)}>
+									<Ink d={smooth(t.points)} w={t.width ?? W.bold} color={t.color ?? BOOK.terracotta} />
+								</Reveal>
+								{tip && <Spark x={tip[0]} y={tip[1]} r={7} />}
+							</g>
 						);
 					})}
 					<Shadow cam={cam} />

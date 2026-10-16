@@ -112,3 +112,32 @@ export const blinking = (a: ArtInfo, every = 3.4, offset = 0) => {
 	const k = (a.f + Math.round(offset * a.fps)) % cycle;
 	return k >= cycle - 4; // never on frame 0: the opening frame shows open eyes
 };
+
+/**
+ * Keyframed value over the frames since an event: track(since(a, 'wake'), [[0, 0], [6, 1], [30, 0.4]]).
+ * Before the first key it holds the first value, after the last it holds the last.
+ */
+export const track = (s: number, keys: [number, number][]): number => {
+	if (!Number.isFinite(s)) return s > 0 ? keys[keys.length - 1][1] : keys[0][1];
+	if (s <= keys[0][0]) return keys[0][1];
+	for (let i = 1; i < keys.length; i++) {
+		const [f0, v0] = keys[i - 1];
+		const [f1, v1] = keys[i];
+		if (s <= f1) return v0 + (v1 - v0) * smoothEase((s - f0) / Math.max(1e-6, f1 - f0));
+	}
+	return keys[keys.length - 1][1];
+};
+
+/**
+ * A pose that changes on events: starts at `initial`, and each stage eases toward its value
+ * when its event fires (stages in the order they happen). Values are number arrays (look, tilt, ...).
+ */
+export const stages = (a: ArtInfo, initial: number[], list: {at: string; v: number[]; dur?: number; delay?: number}[]): number[] => {
+	let v = [...initial];
+	for (const st of list) {
+		const t = prog(a, st.at, st.dur ?? 12, st.delay ?? 0);
+		if (t <= 0) continue;
+		v = v.map((x, i) => x + ((st.v[i] ?? x) - x) * t);
+	}
+	return v;
+};
