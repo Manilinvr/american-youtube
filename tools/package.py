@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Builds the upload package: out/Specimen-You-upload.zip with the videos, subtitles and one text
+"""Builds the upload package: out/Specimen-You-upload.zip with the videos and one text
 document (titles, descriptions, hashtags, tags, pinned comments, upload settings).
 
     python3 tools/package.py s001-doorway-forgetter s002-last-minute-genius s003-shower-philosopher
@@ -45,7 +45,7 @@ def main() -> None:
     for i, eid in enumerate(ids, 1):
         md = (PUB / f"{eid}.md").read_text()
         title = md.splitlines()[0].lstrip("# ").strip()
-        lines += ["=" * 60, f"VIDEO {i}: {title}", f"File: {eid}.mp4   Subtitles: {eid}.srt", "=" * 60, ""]
+        lines += ["=" * 60, f"VIDEO {i}: {title}", f"File: {eid}.mp4 (subtitles are already burned into the video)", "=" * 60, ""]
         for heading, block, extra in code_blocks_by_heading(md):
             label = {"Название (до 100 символов)": "TITLE / НАЗВАНИЕ", "Название": "TITLE / НАЗВАНИЕ", "Описание": "DESCRIPTION / ОПИСАНИЕ",
                      "Теги (поле «Теги», через запятую)": "TAGS / ТЕГИ", "Теги": "TAGS / ТЕГИ", "Закреплённый комментарий": "PINNED COMMENT / ЗАКРЕПЛЁННЫЙ КОММЕНТАРИЙ",
@@ -65,7 +65,6 @@ def main() -> None:
         z.write(doc, "Specimen-You-upload-kit.txt")
         for eid in ids:
             z.write(ROOT / "out" / f"{eid}.mp4", f"videos/{eid}.mp4", compress_type=zipfile.ZIP_STORED)
-            z.write(PUB / f"{eid}.srt", f"subtitles/{eid}.srt")
     print(doc.relative_to(ROOT), "|", zpath.relative_to(ROOT), f"{zpath.stat().st_size / 1e6:.1f} MB")
 
 

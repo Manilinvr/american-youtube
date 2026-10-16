@@ -48,6 +48,3 @@ Field note: what's the longest you've ever had for a task you finished the night
 
 #003 (после публикации), а в #001 поставьте ссылку на этот ролик.
 
-## Субтитры
-
-`s002-last-minute-genius.srt`

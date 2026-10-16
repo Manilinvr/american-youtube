@@ -48,6 +48,3 @@ Field note: what's the best idea you've ever had in the shower? 🚿 (Ours: this
 
 Поставьте #001 — так зритель пойдёт по каталогу по кругу.
 
-## Субтитры
-
-`s003-shower-philosopher.srt`

@@ -48,6 +48,3 @@ Field note: be honest. How many times today? 🚪 (Our record is four.)
 
 После публикации #002 — поставьте его как Related video.
 
-## Субтитры
-
-`s001-doorway-forgetter.srt`
