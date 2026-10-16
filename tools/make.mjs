@@ -22,13 +22,13 @@ const run = (cmd, args) => {
 
 const channel = JSON.parse(readFileSync(path.join(root, 'config/channel.json'), 'utf8'));
 const lufs = channel.loudness ?? -16;
-// gentle voice: tame sibilance and harsh top end, light compression, calm loudness
-const soften = `highshelf=f=6000:g=-4,lowpass=f=11000,acompressor=threshold=-22dB:ratio=2:attack=20:release=250,loudnorm=I=${lufs}:TP=-2:LRA=9`;
+// calm, even loudness (the voice itself is already softened by tools/tts/voice.py)
+const loudnorm = `loudnorm=I=${lufs}:TP=-2:LRA=9`;
 mkdirSync(path.join(root, 'out'), {recursive: true});
 const raw = `out/${id}.raw.mp4`;
 const final = `out/${id}.mp4`;
 run(python, ['tools/tts/voice.py', id]);
 run('npx', ['remotion', 'render', id, raw, ...extra]);
-run('npx', ['remotion', 'ffmpeg', '-y', '-loglevel', 'error', '-i', raw, '-c:v', 'copy', '-af', soften, '-ar', '48000', '-c:a', 'aac', '-b:a', '192k', final]);
+run('npx', ['remotion', 'ffmpeg', '-y', '-loglevel', 'error', '-i', raw, '-c:v', 'copy', '-af', loudnorm, '-ar', '48000', '-c:a', 'aac', '-b:a', '192k', final]);
 rmSync(path.join(root, raw));
 console.log(`\nDone: ${final}`);

@@ -189,6 +189,15 @@ def synth_chatterbox(jobs: list[dict]) -> list[np.ndarray]:
         return out
 
 
+def soften(audio: np.ndarray) -> np.ndarray:
+    """Gentle voice EQ: a smooth -4 dB shelf above ~6 kHz (tames sibilance) and a soft roll-off above 10 kHz."""
+    n = len(audio)
+    spec = np.fft.rfft(audio)
+    f = np.fft.rfftfreq(n, 1 / SAMPLE_RATE)
+    gain_db = -4.0 / (1 + np.exp(-(f - 6000) / 700)) - 10.0 * np.clip((f - 10000) / 2000, 0, 1)
+    return np.fft.irfft(spec * 10 ** (gain_db / 20), n).astype(np.float32)
+
+
 def assemble(sentences: list[list[dict]], audios: list[np.ndarray], pause: float) -> tuple[np.ndarray, list[dict]]:
     """Joins sentence audio with controlled pauses and estimates when every word is spoken."""
     chunks, timed, t = [], [], 0.0
@@ -208,7 +217,7 @@ def assemble(sentences: list[list[dict]], audios: list[np.ndarray], pause: float
             gap = pause * (2.5 if sentence[-1]["spoken"].endswith(("...", "…")) else 1.0)
             chunks.append(np.zeros(int(gap * SAMPLE_RATE), dtype=np.float32))
             t += gap
-    audio = np.concatenate(chunks)
+    audio = soften(np.concatenate(chunks))
     peak = float(np.max(np.abs(audio))) or 1.0
     return audio * (0.89 / peak), timed  # peak-normalise every line to -1 dBFS so levels match
 
@@ -258,7 +267,7 @@ def main() -> None:
         else:
             speed = scene.get("speed", ep_voice.get("speed", tone["speed"]))
             pause = ep_voice.get("pause", tone["pause"])
-        key = hashlib.sha1(json.dumps([scene["say"], voice, speed, pause, 3]).encode()).hexdigest()[:12]
+        key = hashlib.sha1(json.dumps([scene["say"], voice, speed, pause, 4]).encode()).hexdigest()[:12]
         wav = out_dir / f"{scene['id']}.wav"
         cached = old.get(scene["id"])
         if cached and cached["hash"] == key and wav.exists():
