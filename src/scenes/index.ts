@@ -11,4 +11,6 @@ export const SCENES: Record<string, SceneComponent> = {
 	situation: SituationScene,
 	quote: QuoteScene,
 	split: SplitScene,
+	// textbook style: the illustrated page is drawn once for the whole episode (src/textbook/BookPage.tsx)
+	page: () => null,
 };

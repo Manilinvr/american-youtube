@@ -44,6 +44,11 @@ export type Episode = {
 	/** Optional background music file in public/music/, played quietly under the voice. */
 	music?: string;
 	sources?: string[];
+	/**
+	 * Illustrated-textbook style: one page of panels for the whole episode; scenes of type "page"
+	 * move the camera across it (see src/textbook and docs/textbook-style.md).
+	 */
+	page?: import('./textbook/context').PageDef;
 	scenes: SceneDef[];
 };
 

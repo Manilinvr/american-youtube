@@ -29,8 +29,12 @@ const chunk = (words: CaptionWord[]): Chunk[] => {
 	return chunks;
 };
 
+/** Caption colours; the textbook style swaps the highlighter and red pen for ochre and terracotta. */
+export type CaptionPalette = {ink: string; emph: string; highlight: string; highlightOpacity: number; chip: string};
+const SKETCH: CaptionPalette = {ink: INK, emph: RED, highlight: HIGHLIGHT, highlightOpacity: 0.85, chip: `${PAPER}D9`};
+
 /** Handwritten captions: the active word gets a highlighter stroke, *emphasised* words are red pen. */
-export const Captions: React.FC<{words: CaptionWord[]}> = ({words}) => {
+export const Captions: React.FC<{words: CaptionWord[]; palette?: CaptionPalette}> = ({words, palette = SKETCH}) => {
 	const frame = useCurrentFrame();
 	const {fps, width, height} = useVideoConfig();
 	const {vertical} = useEpisode();
@@ -60,11 +64,11 @@ export const Captions: React.FC<{words: CaptionWord[]}> = ({words}) => {
 				opacity: Math.min(1, pop * 2),
 			}}
 		>
-			<div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: `0 ${fontSize * 0.3}px`, background: `${PAPER}D9`, borderRadius: fontSize * 0.3, padding: `0 ${fontSize * 0.25}px`}}>
+			<div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: `0 ${fontSize * 0.3}px`, background: palette.chip, borderRadius: fontSize * 0.3, padding: `0 ${fontSize * 0.25}px`}}>
 			{c.words.map((w, i) => {
 				const active = frame >= w.start && frame < (c.words[i + 1]?.start ?? c.end + fps);
 				return (
-					<span key={i} style={{position: 'relative', display: 'inline-block', color: w.emph ? RED : INK}}>
+					<span key={i} style={{position: 'relative', display: 'inline-block', color: w.emph ? palette.emph : palette.ink}}>
 						{active && (
 							<span
 								style={{
@@ -73,8 +77,8 @@ export const Captions: React.FC<{words: CaptionWord[]}> = ({words}) => {
 									right: -fontSize * 0.12,
 									top: '38%',
 									height: '50%',
-									background: HIGHLIGHT,
-									opacity: 0.85,
+									background: palette.highlight,
+									opacity: palette.highlightOpacity,
 									borderRadius: fontSize * 0.1,
 									transform: 'rotate(-1.5deg)',
 									zIndex: -1,

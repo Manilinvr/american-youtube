@@ -1,0 +1,175 @@
+{
+  "id": "ep001-night-thoughts",
+  "format": "short",
+  "title": "Why Your Brain Won't Shut Up at Night",
+  "tone": "documentary",
+  "music": "gymnopedie-no-1.mp3",
+  "sources": [
+    "Scullin, M. K., Krueger, M. L., Ballard, H. K., Pruett, N., & Bliwise, D. L. (2018). The effects of bedtime writing on difficulty falling asleep: A polysomnographic study comparing to-do lists and completed activity lists. Journal of Experimental Psychology: General, 147(1), 139-146. doi:10.1037/xge0000374",
+    "Clancy, F., Prestwich, A., Caperon, L., Tsipa, A., & O'Connor, D. B. (2020). The association between worry and rumination with sleep in non-clinical populations: a systematic review and meta-analysis. Health Psychology Review, 14(4), 427-448. doi:10.1080/17437199.2019.1700819",
+    "Wegner, D. M., Schneider, D. J., Carter, S. R., & White, T. L. (1987). Paradoxical effects of thought suppression. Journal of Personality and Social Psychology, 53(1), 5-13. doi:10.1037/0022-3514.53.1.5",
+    "Abramowitz, J. S., Tolin, D. F., & Street, G. P. (2001). Paradoxical effects of thought suppression: A meta-analysis of controlled studies. Clinical Psychology Review, 21(5), 683-703.",
+    "Harvey, A. G. (2002). A cognitive model of insomnia. Behaviour Research and Therapy, 40(8), 869-893. doi:10.1016/S0005-7967(01)00061-4",
+    "Schmidt, R. E., Harvey, A. G., & Van der Linden, M. (2011). Cognitive and affective control in insomnia. Frontiers in Psychology, 2, 349. doi:10.3389/fpsyg.2011.00349"
+  ],
+  "page": {
+    "width": 1080,
+    "height": 2070,
+    "plate": "Plate I.",
+    "title": "The Night Mind",
+    "subtitle": "on repetitive thinking, and why it keeps us awake",
+    "caption": [
+      "Plate I. The night mind.",
+      "Fig. 1, a sleeper at 1:07 a.m.   Fig. 2, a thought loop (conceptual).   Fig. 3, a neuron, simplified.",
+      "Fig. 4, day and night.   Fig. 5, the evidence.   Fig. 6, the rebound effect.   Fig. 7, a to-do list.",
+      "After Scullin et al. 2018; Clancy et al. 2020; Wegner et al. 1987; Harvey 2002."
+    ],
+    "panels": [
+      {"id": "room", "x": 44, "y": 176, "w": 992, "h": 600, "tone": "night", "art": "bedroom", "fig": "fig. 1 — a sleeper, 1:07 a.m."},
+      {"id": "loop", "x": 44, "y": 798, "w": 452, "h": 440, "tone": "cream", "art": "loop", "fig": "fig. 2 — a thought loop (conceptual)", "figPos": "br"},
+      {"id": "neuron", "x": 518, "y": 798, "w": 518, "h": 440, "tone": "parchment", "art": "neuron", "fig": "fig. 3 — a neuron, simplified, not to scale"},
+      {"id": "day", "x": 44, "y": 1260, "w": 216, "h": 320, "tone": "ochre", "art": "day", "fig": "fig. 4a — the world competes"},
+      {"id": "night", "x": 280, "y": 1260, "w": 216, "h": 320, "tone": "night", "art": "night", "fig": "fig. 4b — nothing competes"},
+      {"id": "evidence", "x": 518, "y": 1260, "w": 518, "h": 320, "tone": "dark", "art": "evidence", "fig": "fig. 5", "figPos": "tr"},
+      {"id": "bear", "x": 44, "y": 1602, "w": 320, "h": 300, "tone": "cream", "art": "white-bear", "fig": "fig. 6 — trying not to think"},
+      {"id": "notebook", "x": 386, "y": 1602, "w": 400, "h": 300, "tone": "parchment", "art": "notebook", "fig": "fig. 7 — a to-do list", "figPos": "tl"},
+      {"id": "note", "x": 808, "y": 1602, "w": 228, "h": 300, "tone": "dark", "art": "note"}
+    ],
+    "threads": [
+      {"points": [[459, 977], [482, 980], [507, 983], [535, 987], [562, 990], [588, 991]], "at": "thread", "secs": 1.4}
+    ]
+  },
+  "scenes": [
+    {
+      "id": "hook",
+      "say": "It's [1 a.m.|one a.m.] Your body is exhausted. And your brain... just called a *meeting*.",
+      "transition": "cut",
+      "visual": {
+        "type": "page",
+        "events": {"meeting": "just"},
+        "camera": [
+          {"panel": "room", "zoom": 3.0, "focus": [0.47, 0.36], "secs": 0.1},
+          {"at": "body", "panel": "room", "secs": 2.2},
+          {"at": "brain", "panel": "room", "zoom": 2.0, "focus": [0.56, 0.42], "secs": 1.8}
+        ],
+        "sfx": [{"at": "meeting", "name": "scribble", "volume": 0.18}]
+      }
+    },
+    {
+      "id": "loop",
+      "say": "That email. Something you said in [2014.|twenty fourteen.] Tomorrow. Then... the email *again*.",
+      "hold": 0.5,
+      "transition": "cut",
+      "visual": {
+        "type": "page",
+        "events": {"loop": 0, "email": "email", "y2014": "2014", "tomorrow": "tomorrow", "again": "again"},
+        "camera": [
+          {"panel": "loop", "secs": 1.6},
+          {"at": "again", "panel": "loop", "zoom": 2.75, "focus": [0.36, 0.24], "secs": 1.3}
+        ],
+        "sfx": [
+          {"name": "scribble", "volume": 0.16},
+          {"at": "email", "name": "tick", "volume": 0.12},
+          {"at": "2014", "name": "tick", "volume": 0.12},
+          {"at": "tomorrow", "name": "tick", "volume": 0.12}
+        ]
+      }
+    },
+    {
+      "id": "name",
+      "say": "Psychologists call this *repetitive negative thinking*. It keeps the mind on alert.",
+      "hold": 0.6,
+      "transition": "cut",
+      "visual": {
+        "type": "page",
+        "events": {"thread": 0, "rnt": "repetitive", "alert": "alert"},
+        "camera": [
+          {"panel": "loop", "zoom": 2.6, "focus": [0.93, 0.4], "secs": 1.0},
+          {"at": 0.7, "panel": "neuron", "secs": 1.9},
+          {"at": "alert", "panel": "neuron", "zoom": 2.55, "focus": [0.5, 0.62], "secs": 1.6}
+        ]
+      }
+    },
+    {
+      "id": "why",
+      "say": "By day, the world keeps you busy. In the dark, unfinished business finally gets the floor.",
+      "hold": 0.5,
+      "transition": "cut",
+      "visual": {
+        "type": "page",
+        "events": {"day": "day", "dark": "dark"},
+        "camera": [
+          {"panel": "day", "secs": 1.8},
+          {"at": "dark", "panel": "night", "secs": 1.5}
+        ]
+      }
+    },
+    {
+      "id": "evidence",
+      "say": "Across dozens of studies, more of it goes with *worse sleep*.",
+      "hold": 0.7,
+      "transition": "cut",
+      "visual": {
+        "type": "page",
+        "events": {"dozens": "dozens", "worse": "more"},
+        "camera": [{"panel": "evidence", "secs": 1.6}],
+        "sfx": [{"at": "dozens", "name": "page", "volume": 0.12}]
+      }
+    },
+    {
+      "id": "twist",
+      "say": "But fighting it can *backfire*. People told not to think of a white bear... thought about it *more* afterward.",
+      "hold": 0.6,
+      "transition": "cut",
+      "visual": {
+        "type": "page",
+        "events": {"fighting": "fighting", "afterward": "thought"},
+        "camera": [
+          {"panel": "bear", "secs": 1.7}
+        ]
+      }
+    },
+    {
+      "id": "fix",
+      "say": "What helps? Five minutes writing tomorrow's *to-do list*. People who did it fell asleep about [9 minutes|nine minutes] faster than people listing finished tasks.",
+      "hold": 0.7,
+      "transition": "cut",
+      "visual": {
+        "type": "page",
+        "events": {"lamp": "helps", "write": "writing", "nine": "9"},
+        "camera": [
+          {"panel": "notebook", "secs": 1.7},
+          {"at": "writing", "panel": "notebook", "zoom": 2.9, "focus": [0.6, 0.5], "secs": 1.6},
+          {"at": "9", "panel": "notebook", "secs": 1.4}
+        ],
+        "sfx": [{"at": "writing", "name": "scribble", "volume": 0.2}]
+      }
+    },
+    {
+      "id": "caveat",
+      "say": "If it keeps you up most nights for weeks, talk to a doctor.",
+      "hold": 0.6,
+      "transition": "cut",
+      "visual": {
+        "type": "page",
+        "camera": [{"panel": "note", "secs": 1.6}]
+      }
+    },
+    {
+      "id": "close",
+      "tone": "deep",
+      "say": "Your brain isn't broken. It just doesn't want to forget. So write it down... and let it *rest*.",
+      "hold": 3.2,
+      "transition": "black",
+      "visual": {
+        "type": "page",
+        "events": {"asleep": -0.7},
+        "camera": [
+          {"at": -0.63, "panel": "room", "zoom": 2.2, "focus": [0.45, 0.55], "secs": 0.1},
+          {"at": "rest", "page": true, "secs": 3.2}
+        ],
+        "sfx": [{"at": "rest", "name": "page", "volume": 0.14}]
+      }
+    }
+  ]
+}

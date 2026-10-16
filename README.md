@@ -11,6 +11,8 @@
 Готовые ролики:
 - [`Specimen #001: The Doorway Forgetter`](episodes/s001-doorway-forgetter.json): *"Ever walked into a room and forgot why? Congratulations. You're Specimen 001."*
 - [`Specimen #002: The Last-Minute Genius`](episodes/s002-last-minute-genius.json): закон Паркинсона и дедлайны.
+- [`Specimen #003: The Shower Philosopher`](episodes/s003-shower-philosopher.json): идеи в душе.
+- [`ep001: Why Your Brain Won't Shut Up at Night`](episodes/ep001-night-thoughts.json): пробный шортс во втором стиле — винтажный иллюстрированный учебник ([гайд](docs/textbook-style.md), [раскадровка и источники](docs/ep001-night-thoughts.md)).
 
 ## Документы
 
@@ -19,6 +21,7 @@
 - [Бесплатная озвучка: что выбрано и почему](docs/voice.md)
 - [Каталог из 40 видов (готовые идеи с источниками)](docs/ideas.md)
 - [Формат сценария: сцены, позы, эмоции, предметы](docs/script-format.md)
+- [Стиль «иллюстрированный учебник»: палитра, персонаж, панели, камера](docs/textbook-style.md)
 
 ## Установка (один раз)
 
@@ -76,6 +79,8 @@ tools/sfx.py           синтез звуковых эффектов (поп, �
 tools/make.mjs         озвучка → рендер → нормализация громкости
 src/components/        скетч-движок: человечки, предметы, фоны, эмоции, субтитры
 src/scenes/            типы сцен: situation (с карточкой вида и печатью), quote, split
+src/textbook/          стиль «учебник»: палитра, тушь и штриховка, персонаж, разворот с панелями и камерой, иллюстрации (art/)
+tools/stills.mjs       контрольные кадры эпизода в PNG
 src/branding/          оформление канала
 branding/              готовые картинки для YouTube
 public/fonts/          рукописные шрифты (лицензии OFL/Apache — можно монетизировать)
@@ -86,7 +91,7 @@ public/fonts/          рукописные шрифты (лицензии OFL/A
 | Что | Лицензия |
 |---|---|
 | Голос Kokoro-82M | Apache 2.0 — коммерческое использование разрешено |
-| Шрифты Kalam, Permanent Marker, Special Elite | SIL OFL 1.1 / Apache 2.0 |
+| Шрифты Kalam, Permanent Marker, Special Elite, IM FELL English | SIL OFL 1.1 / Apache 2.0 |
 | Звуковые эффекты | синтезируются кодом в `tools/sfx.py` |
 | Remotion | бесплатно для физических лиц и компаний до 3 человек ([условия](https://www.remotion.dev/license)) |
 | Графика | рисуется кодом этого репозитория |

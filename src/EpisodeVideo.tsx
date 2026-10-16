@@ -1,10 +1,12 @@
 import React, {useMemo} from 'react';
 import {AbsoluteFill, Audio, Easing, interpolate, Sequence, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
-import {Captions, CaptionWord} from './components/Captions';
+import {CaptionPalette, Captions, CaptionWord} from './components/Captions';
 import {Paper, SketchDefs} from './components/ink';
 import {EpisodeCtx, SceneCtx} from './context';
 import {getEpisode, getTone} from './episodes';
 import {SCENES} from './scenes';
+import {BookPage} from './textbook/BookPage';
+import {BOOK} from './textbook/palette';
 import {buildTimeline} from './timing';
 import type {EpisodeProps, TimedScene, Visual} from './types';
 
@@ -18,6 +20,8 @@ const sameSet = (a?: Visual, b?: Visual) => !!a && !!b && a.type === 'situation'
 const showsCaptions = (v: Visual) => v.captions !== false && !(v.type === 'quote' && !v.text);
 
 const ease = Easing.inOut(Easing.cubic);
+
+const BOOK_CAPTIONS: CaptionPalette = {ink: BOOK.ink, emph: BOOK.terracotta, highlight: BOOK.ochre, highlightOpacity: 0.55, chip: `${BOOK.parchment}E6`};
 const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
 
 /**
@@ -118,7 +122,7 @@ export const EpisodeVideo: React.FC<EpisodeProps> = ({episodeId, timeline}) => {
 		<EpisodeCtx.Provider value={info}>
 			<AbsoluteFill style={{overflow: 'hidden'}}>
 				<SketchDefs />
-				<Paper />
+				{episode.page ? <BookPage page={episode.page} timeline={tl} /> : <Paper />}
 				{tl.map((s, i) => {
 					const Scene = SCENES[s.def.visual.type] ?? Missing;
 					// the very first frame must already show the picture (it is what people see while swiping)
@@ -142,7 +146,7 @@ export const EpisodeVideo: React.FC<EpisodeProps> = ({episodeId, timeline}) => {
 					);
 				})}
 				<Blackout timeline={tl} />
-				<Captions words={words} />
+				<Captions words={words} palette={episode.page ? BOOK_CAPTIONS : undefined} />
 				{episode.music && (
 					<Audio
 						src={staticFile(`music/${episode.music}`)}
