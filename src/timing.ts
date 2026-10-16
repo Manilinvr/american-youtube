@@ -35,7 +35,8 @@ export const buildTimeline = (episodeId: string, manifest: Manifest | null): Tim
 		const isLast = i === n - 1;
 		const transIn = trans[i];
 		const transOut = isLast ? {type: 'black' as Transition, frames: 30} : trans[i + 1];
-		const lead = i === 0 ? 0 : Math.round(transIn.frames * 0.6) + Math.round(LEAD * FPS);
+		// after a dip to black the voice waits until the picture is (almost) fully back
+		const lead = i === 0 ? 0 : Math.round(transIn.frames * (transIn.type === 'black' ? 0.85 : 0.6)) + Math.round(LEAD * FPS);
 		const tone = getTone(def.tone ?? episode.tone);
 		// the outgoing transition must not swallow the last words or the visual punchline:
 		// a dip to black starts only after the line has finished, a dissolve may overlap it a little
