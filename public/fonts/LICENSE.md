@@ -1,7 +1,8 @@
 # Fonts
 
-Both fonts are from Google Fonts and licensed under the SIL Open Font License 1.1,
-which allows free commercial use (including monetized YouTube videos) and redistribution.
+Bundled so renders work offline and look identical on every machine.
 
-- Luckiest Guy — Astigmatic, https://fonts.google.com/specimen/Luckiest+Guy
-- Fredoka — Milena Brandão, https://fonts.google.com/specimen/Fredoka (variable, latin subset)
+- Kalam (Regular, Bold) — Indian Type Foundry, SIL Open Font License 1.1 — https://fonts.google.com/specimen/Kalam
+- Permanent Marker — Font Diner, Apache License 2.0 — https://fonts.google.com/specimen/Permanent+Marker
+
+Both licenses allow free commercial use, including monetized YouTube videos.

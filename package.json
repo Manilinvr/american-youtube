@@ -2,11 +2,10 @@
   "name": "american-youtube",
   "version": "0.1.0",
   "private": true,
-  "description": "Cartoon explainers about professions for a US YouTube audience: script -> free AI voice -> Remotion animation -> MP4",
+  "description": "Sketch-style animated Shorts and videos about everyday life and its psychology: script -> free AI voice -> Remotion -> MP4",
   "scripts": {
     "studio": "remotion studio",
-    "voice": "python3 tools/tts/voice.py",
-    "render": "node tools/render.mjs",
+    "make": "node tools/make.mjs",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

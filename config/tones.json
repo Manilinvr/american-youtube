@@ -1,0 +1,24 @@
+{
+  "_doc": "Narration tones shared by tools/tts/voice.py (voice, speed, pause) and the animation (energy). An episode picks one with \"tone\" and may override voice/speed. Keep ONE narrator voice across the channel: it becomes the channel's identity.",
+  "relatable": {
+    "label": "Default: 'Have you ever noticed...' - warm, conversational, a smile in the voice",
+    "voice": "af_heart",
+    "speed": 1.05,
+    "pause": 0.22,
+    "energy": 1.0
+  },
+  "deep": {
+    "label": "Reflective endings and life lessons - slower, more air between sentences",
+    "voice": "af_heart",
+    "speed": 0.94,
+    "pause": 0.42,
+    "energy": 0.7
+  },
+  "funny": {
+    "label": "Comedy beats - quicker delivery, snappy pauses",
+    "voice": "af_heart",
+    "speed": 1.12,
+    "pause": 0.16,
+    "energy": 1.25
+  }
+}

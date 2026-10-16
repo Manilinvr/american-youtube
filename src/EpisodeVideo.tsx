@@ -1,64 +1,58 @@
 import React, {useMemo} from 'react';
-import {AbsoluteFill, Audio, interpolate, Sequence, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Audio, Sequence, staticFile, useVideoConfig} from 'remotion';
 import {Captions, CaptionWord} from './components/Captions';
-import {Sfx} from './components/Sfx';
+import {Paper, SketchDefs} from './components/ink';
 import {EpisodeCtx, SceneCtx} from './context';
-import {getEpisode, getMood} from './episodes';
+import {getEpisode, getTone} from './episodes';
 import {SCENES} from './scenes';
 import {buildTimeline} from './timing';
 import type {EpisodeProps, Visual} from './types';
 
-/** Quick zoom-punch at every cut, the standard Shorts editing rhythm. */
-const SceneShell: React.FC<{children: React.ReactNode; first: boolean}> = ({children, first}) => {
-	const frame = useCurrentFrame();
-	const scale = first ? 1 : interpolate(frame, [0, 7], [1.08, 1], {extrapolateRight: 'clamp'});
-	return (
-		<AbsoluteFill style={{transform: `scale(${scale})`}}>
-			{children}
-			{!first && <Sfx name="whoosh" at={0} volume={0.12} />}
-		</AbsoluteFill>
-	);
-};
-
 const Missing: React.FC<{visual: Visual}> = ({visual}) => (
-	<AbsoluteFill style={{background: '#222', color: '#fff', fontSize: 60, alignItems: 'center', justifyContent: 'center'}}>
-		Unknown scene type "{visual.type}"
-	</AbsoluteFill>
+	<AbsoluteFill style={{color: '#c00', fontSize: 60, alignItems: 'center', justifyContent: 'center'}}>Unknown scene type "{visual.type}"</AbsoluteFill>
 );
+
+/** Same backdrop as the previous scene -> no redraw, so cuts inside one location feel continuous. */
+const sameSet = (a?: Visual, b?: Visual) => !!a && !!b && a.type === 'situation' && b.type === 'situation' && a.setting === b.setting;
+
+const showsCaptions = (v: Visual) => v.captions !== false && !(v.type === 'quote' && !v.text);
 
 export const EpisodeVideo: React.FC<EpisodeProps> = ({episodeId, timeline}) => {
 	const {fps} = useVideoConfig();
 	const episode = getEpisode(episodeId);
-	const mood = getMood(episode.mood);
+	const tone = getTone(episode.tone);
 	const tl = useMemo(() => timeline ?? buildTimeline(episodeId, null), [timeline, episodeId]);
 	const words: CaptionWord[] = useMemo(
 		() =>
-			tl.flatMap((s) =>
-				s.voice.words.map((w) => ({
-					text: w.t,
-					start: s.from + s.lead + Math.round(w.s * fps),
-					end: s.from + s.lead + Math.round(w.e * fps),
-					emph: w.em,
-				})),
-			),
+			tl
+				.filter((s) => showsCaptions(s.def.visual))
+				.flatMap((s) =>
+					s.voice.words.map((w) => ({
+						text: w.t,
+						start: s.from + s.lead + Math.round(w.s * fps),
+						end: s.from + s.lead + Math.round(w.e * fps),
+						emph: w.em,
+					})),
+				),
 		[tl, fps],
 	);
-	const info = useMemo(
-		() => ({palette: mood.palette, energy: mood.energy, character: episode.character, vertical: episode.format === 'short'}),
-		[mood, episode],
-	);
+	const info = useMemo(() => ({energy: tone.energy, vertical: episode.format === 'short'}), [tone, episode]);
 
 	return (
 		<EpisodeCtx.Provider value={info}>
-			<AbsoluteFill style={{background: mood.palette.bg2, overflow: 'hidden'}}>
+			<AbsoluteFill style={{overflow: 'hidden'}}>
+				<SketchDefs />
+				<Paper />
 				{tl.map((s, i) => {
 					const Scene = SCENES[s.def.visual.type] ?? Missing;
+					// the very first frame must already show the picture (it is what people see while swiping)
+					const drawOn = i > 0 && s.def.visual.draw !== false && !sameSet(tl[i - 1]?.def.visual, s.def.visual);
 					return (
 						<Sequence key={s.def.id} from={s.from} durationInFrames={s.durationInFrames} name={s.def.id}>
 							<SceneCtx.Provider value={{voice: s.voice, lead: s.lead, durationInFrames: s.durationInFrames}}>
-								<SceneShell first={i === 0}>
-									<Scene visual={s.def.visual} />
-								</SceneShell>
+								<AbsoluteFill style={{filter: 'url(#boil)'}}>
+									<Scene visual={s.def.visual} drawOn={drawOn} />
+								</AbsoluteFill>
 								{s.voice.file && (
 									<Sequence from={s.lead} layout="none" name="voice">
 										<Audio src={staticFile(s.voice.file)} />
@@ -69,7 +63,7 @@ export const EpisodeVideo: React.FC<EpisodeProps> = ({episodeId, timeline}) => {
 					);
 				})}
 				<Captions words={words} />
-				{episode.music && <Audio src={staticFile(`music/${episode.music}`)} volume={0.1} loop />}
+				{episode.music && <Audio src={staticFile(`music/${episode.music}`)} volume={0.08} loop />}
 			</AbsoluteFill>
 		</EpisodeCtx.Provider>
 	);

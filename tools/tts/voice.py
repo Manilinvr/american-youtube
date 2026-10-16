@@ -5,7 +5,7 @@
     python3 tools/tts/voice.py firefighter-short --force  # re-voice everything
     python3 tools/tts/voice.py --voices                   # list available voices
 
-Reads  episodes/<id>.json  and  config/moods.json
+Reads  episodes/<id>.json  and  config/tones.json
 Writes public/voice/<id>/<scene>.wav  and  public/voice/<id>/manifest.json
 
 The manifest holds, per scene: the audio duration, a timing estimate for every
@@ -171,7 +171,9 @@ def voice_scene(kokoro, scene: dict, voice: str, speed: float, pause: float) -> 
             gap = pause * (2.5 if sentence[-1]["spoken"].endswith(("...", "…")) else 1.0)
             chunks.append(np.zeros(int(gap * SAMPLE_RATE), dtype=np.float32))
             t += gap
-    return np.concatenate(chunks), timed
+    audio = np.concatenate(chunks)
+    peak = float(np.max(np.abs(audio))) or 1.0
+    return audio * (0.89 / peak), timed  # peak-normalise every line to -1 dBFS so levels match
 
 
 def write_wav(path: Path, audio: np.ndarray) -> None:
@@ -198,7 +200,8 @@ def main() -> None:
         ap.error("episode id is required")
 
     episode = json.loads((ROOT / "episodes" / f"{args.episode}.json").read_text())
-    mood = json.loads((ROOT / "config" / "moods.json").read_text())[episode["mood"]]
+    tones = json.loads((ROOT / "config" / "tones.json").read_text())
+    tone = tones[episode.get("tone", "relatable")]
     ep_voice = episode.get("voice", {})
     out_dir = ROOT / "public" / "voice" / episode["id"]
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -210,10 +213,14 @@ def main() -> None:
     kokoro = None
     scenes = []
     for scene in episode["scenes"]:
-        voice = scene.get("voice", ep_voice.get("name", mood["voice"]))
-        speed = scene.get("speed", ep_voice.get("speed", mood["speed"]))
-        pause = ep_voice.get("pause", mood["pause"])
-        key = hashlib.sha1(json.dumps([scene["say"], voice, speed, pause, 1]).encode()).hexdigest()[:12]
+        voice = scene.get("voice", ep_voice.get("name", tone["voice"]))
+        if "tone" in scene:  # e.g. the closing life lesson read slower in the "deep" tone
+            speed = scene.get("speed", tones[scene["tone"]]["speed"])
+            pause = tones[scene["tone"]]["pause"]
+        else:
+            speed = scene.get("speed", ep_voice.get("speed", tone["speed"]))
+            pause = ep_voice.get("pause", tone["pause"])
+        key = hashlib.sha1(json.dumps([scene["say"], voice, speed, pause, 2]).encode()).hexdigest()[:12]
         wav = out_dir / f"{scene['id']}.wav"
         cached = old.get(scene["id"])
         if cached and cached["hash"] == key and wav.exists():

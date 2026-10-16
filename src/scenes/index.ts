@@ -1,18 +1,14 @@
 import React from 'react';
 import type {Visual} from '../types';
-import {CountdownScene} from './CountdownScene';
-import {HeroScene} from './HeroScene';
-import {ListScene} from './ListScene';
-import {StatScene} from './StatScene';
-import {VehicleScene} from './VehicleScene';
-import {WakeupScene} from './WakeupScene';
+import {QuoteScene} from './QuoteScene';
+import {SituationScene} from './Situation';
+import {SplitScene} from './SplitScene';
+
+export type SceneComponent = React.FC<{visual: Visual; drawOn: boolean}>;
 
 /** Scene library: "visual.type" in an episode script -> component. Register new scene types here. */
-export const SCENES: Record<string, React.FC<{visual: Visual}>> = {
-	hero: HeroScene,
-	stat: StatScene,
-	list: ListScene,
-	wakeup: WakeupScene,
-	countdown: CountdownScene,
-	vehicle: VehicleScene,
+export const SCENES: Record<string, SceneComponent> = {
+	situation: SituationScene,
+	quote: QuoteScene,
+	split: SplitScene,
 };

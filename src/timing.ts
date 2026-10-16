@@ -1,5 +1,5 @@
 import {CalculateMetadataFunction, staticFile} from 'remotion';
-import {getEpisode, getMood} from './episodes';
+import {getEpisode, getTone} from './episodes';
 import type {EpisodeProps, Manifest, TimedScene, VoiceScene, Word} from './types';
 
 export const FPS = 30;
@@ -15,14 +15,13 @@ const placeholderVoice = (id: string, say: string): VoiceScene => {
 
 export const buildTimeline = (episodeId: string, manifest: Manifest | null): TimedScene[] => {
 	const episode = getEpisode(episodeId);
-	const mood = getMood(episode.mood);
 	let from = 0;
 	return episode.scenes.map((def, i) => {
 		const voice = manifest?.scenes.find((s) => s.id === def.id) ?? null;
 		const v = voice ?? placeholderVoice(def.id, def.say);
 		const isLast = i === episode.scenes.length - 1;
 		const lead = i === 0 ? 0 : LEAD;
-		const hold = def.hold ?? (isLast ? TAIL_LAST : mood.pause);
+		const hold = def.hold ?? (isLast ? TAIL_LAST : getTone(def.tone ?? episode.tone).pause);
 		const minSeconds = def.visual.minSeconds ?? 1.2;
 		const durationInFrames = Math.ceil(Math.max(minSeconds, lead + v.duration + hold) * FPS);
 		const scene: TimedScene = {def, voice: v, from, durationInFrames, lead: Math.round(lead * FPS)};

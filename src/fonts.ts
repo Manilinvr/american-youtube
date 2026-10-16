@@ -1,11 +1,11 @@
 import {continueRender, delayRender, staticFile} from 'remotion';
 
-/** Fonts are bundled in public/fonts (SIL OFL) so renders work offline and look identical everywhere. */
-export const DISPLAY = 'Luckiest Guy';
-export const BODY = 'Fredoka';
+/** Handwritten fonts bundled in public/fonts (free for commercial use, see LICENSE.md there). */
+export const HAND = 'Kalam';
+export const MARKER = 'Permanent Marker';
 
 const load = (family: string, file: string, weight: string) => {
-	const handle = delayRender(`Loading font ${family}`);
+	const handle = delayRender(`Loading font ${family} ${weight}`);
 	const face = new FontFace(family, `url(${staticFile(file)}) format('woff2')`, {weight});
 	face
 		.load()
@@ -20,6 +20,7 @@ const load = (family: string, file: string, weight: string) => {
 };
 
 if (typeof document !== 'undefined') {
-	load(DISPLAY, 'fonts/LuckiestGuy.woff2', '400');
-	load(BODY, 'fonts/Fredoka.woff2', '300 700');
+	load(HAND, 'fonts/Kalam-Regular.woff2', '400');
+	load(HAND, 'fonts/Kalam-Bold.woff2', '700');
+	load(MARKER, 'fonts/PermanentMarker.woff2', '400');
 }

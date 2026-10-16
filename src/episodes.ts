@@ -1,9 +1,9 @@
-import type {Episode, Mood} from './types';
-import moods from '../config/moods.json';
-import firefighterShort from '../episodes/firefighter-short.json';
+import type {Episode, Tone} from './types';
+import tones from '../config/tones.json';
+import doorwayEffect from '../episodes/doorway-effect.json';
 
 /** Every episode in episodes/ must be listed here to show up in Remotion Studio. */
-export const EPISODES: Episode[] = [firefighterShort as Episode];
+export const EPISODES: Episode[] = [doorwayEffect as Episode];
 
 export const getEpisode = (id: string): Episode => {
 	const ep = EPISODES.find((e) => e.id === id);
@@ -11,8 +11,8 @@ export const getEpisode = (id: string): Episode => {
 	return ep;
 };
 
-export const getMood = (name: string): Mood => {
-	const mood = (moods as unknown as Record<string, Mood>)[name];
-	if (!mood) throw new Error(`Unknown mood "${name}" (see config/moods.json)`);
-	return mood;
+export const getTone = (name: string): Tone => {
+	const tone = (tones as unknown as Record<string, Tone>)[name];
+	if (!tone) throw new Error(`Unknown tone "${name}" (see config/tones.json)`);
+	return tone;
 };

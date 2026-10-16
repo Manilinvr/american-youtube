@@ -1,6 +1,6 @@
 import React from 'react';
 import {Composition} from 'remotion';
-import {CharacterSheet} from './CharacterSheet';
+import {SketchSheet} from './SketchSheet';
 import {EpisodeVideo} from './EpisodeVideo';
 import {EPISODES} from './episodes';
 import {calculateEpisodeMetadata, FPS} from './timing';
@@ -21,6 +21,6 @@ export const RemotionRoot: React.FC = () => (
 				durationInFrames={FPS * 30}
 			/>
 		))}
-		<Composition id="character-sheet" component={CharacterSheet} fps={FPS} width={1920} height={1080} durationInFrames={FPS * 4} />
+		<Composition id="sketch-sheet" component={SketchSheet} fps={FPS} width={1920} height={1080} durationInFrames={FPS * 4} />
 	</>
 );

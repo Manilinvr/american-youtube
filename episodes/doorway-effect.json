@@ -1,0 +1,304 @@
+{
+  "id": "doorway-effect",
+  "format": "short",
+  "title": "Why You Forget Things When You Walk Into a Room",
+  "tone": "relatable",
+  "sources": [
+    "Radvansky, Krawietz & Tamplin (2011). Walking through doorways causes forgetting. Quarterly Journal of Experimental Psychology, 64(8)",
+    "Radvansky & Copeland (2006). Walking through doorways causes forgetting: situation models and experienced space. Memory & Cognition, 34(5)"
+  ],
+  "scenes": [
+    {
+      "id": "hook",
+      "say": "Have you ever walked into a room... and *completely* forgotten why?",
+      "visual": {
+        "type": "situation",
+        "setting": "room",
+        "props": [
+          {
+            "type": "door",
+            "x": 0.2
+          },
+          {
+            "type": "plant",
+            "x": 0.9
+          }
+        ],
+        "people": [
+          {
+            "x": 0.6,
+            "walk": {
+              "from": 0.2,
+              "seconds": 1.3
+            },
+            "face": "neutral",
+            "then": [
+              {
+                "at": "forgotten",
+                "pose": "scratch",
+                "face": "confused"
+              }
+            ],
+            "emote": "?",
+            "emoteAt": "why"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fridge",
+      "say": "And now you're just staring at the fridge like it owes you money.",
+      "visual": {
+        "type": "situation",
+        "setting": "room",
+        "props": [
+          {
+            "type": "fridge",
+            "x": 0.74
+          }
+        ],
+        "people": [
+          {
+            "x": 0.32,
+            "pose": "cross",
+            "face": "meh",
+            "gaze": 0.9,
+            "then": [
+              {
+                "at": "owes",
+                "pose": "hips",
+                "face": "annoyed"
+              }
+            ],
+            "emote": "...",
+            "emoteAt": "staring"
+          }
+        ],
+        "notes": [
+          {
+            "kind": "arrow",
+            "target": "prop:0",
+            "at": "money",
+            "label": "owes me $20"
+          }
+        ],
+        "camera": {
+          "zoom": [
+            1,
+            1.08
+          ]
+        }
+      }
+    },
+    {
+      "id": "door",
+      "say": "It's not your memory. It's the *door.*",
+      "visual": {
+        "type": "situation",
+        "setting": "room",
+        "props": [
+          {
+            "type": "door",
+            "x": 0.36,
+            "scale": 1
+          }
+        ],
+        "people": [
+          {
+            "x": 0.78,
+            "pose": "stand",
+            "face": "smug",
+            "gaze": -0.8,
+            "then": [
+              {
+                "at": "door",
+                "pose": "point",
+                "face": "grin"
+              }
+            ],
+            "flip": true
+          }
+        ],
+        "notes": [
+          {
+            "kind": "circle",
+            "target": "prop:0",
+            "at": "door"
+          }
+        ],
+        "camera": {
+          "zoom": [
+            1,
+            1.08
+          ],
+          "focus": [
+            0.4,
+            0.45
+          ]
+        }
+      }
+    },
+    {
+      "id": "chapter",
+      "say": "Your brain treats a doorway like the end of a chapter. Old scene: *filed away.*",
+      "visual": {
+        "type": "split",
+        "panels": [
+          {
+            "label": "OLD ROOM",
+            "setting": "room",
+            "props": [
+              {
+                "type": "couch",
+                "x": 0.68
+              },
+              {
+                "type": "lamp",
+                "x": 0.92
+              }
+            ],
+            "people": [
+              {
+                "x": 0.28,
+                "face": "smile",
+                "bubble": {
+                  "text": "grab my keys!",
+                  "kind": "thought",
+                  "at": 0.2,
+                  "side": "right"
+                }
+              }
+            ],
+            "notes": [
+              {
+                "kind": "cross",
+                "target": "all",
+                "at": "filed",
+                "label": "FILED AWAY"
+              }
+            ]
+          },
+          {
+            "label": "NEW ROOM",
+            "at": "end",
+            "setting": "room",
+            "props": [
+              {
+                "type": "fridge",
+                "x": 0.75
+              }
+            ],
+            "people": [
+              {
+                "x": 0.35,
+                "pose": "shrug",
+                "face": "confused",
+                "emote": "?",
+                "emoteAt": "chapter"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "name",
+      "say": "Psychologists call it the *doorway effect.*",
+      "visual": {
+        "type": "quote",
+        "text": "THE DOORWAY EFFECT",
+        "sub": "Radvansky et al., 2011",
+        "person": {
+          "pose": "think",
+          "face": "smug"
+        }
+      }
+    },
+    {
+      "id": "lesson",
+      "tone": "deep",
+      "say": "So you're not losing your mind. Your brain is just making room for what's next...",
+      "visual": {
+        "type": "situation",
+        "setting": "rooftop",
+        "people": [
+          {
+            "x": 0.2,
+            "pose": "hug-knees",
+            "look": "hoodie",
+            "face": "meh",
+            "gaze": 0.6,
+            "then": [
+              {
+                "at": "making",
+                "face": "smile"
+              }
+            ]
+          },
+          {
+            "x": 0.5,
+            "pose": "stand",
+            "face": "smile",
+            "gaze": 0.5,
+            "then": [
+              {
+                "at": "brain",
+                "pose": "point",
+                "face": "smile"
+              }
+            ]
+          }
+        ],
+        "camera": {
+          "zoom": [
+            1.04,
+            1
+          ]
+        }
+      }
+    },
+    {
+      "id": "callback",
+      "tone": "funny",
+      "say": "even if what's next is the fridge. *Again.*",
+      "visual": {
+        "type": "situation",
+        "setting": "room",
+        "props": [
+          {
+            "type": "fridge",
+            "x": 0.72,
+            "open": "fridge"
+          }
+        ],
+        "people": [
+          {
+            "x": 0.3,
+            "pose": "cross",
+            "face": "meh",
+            "gaze": 0.9,
+            "then": [
+              {
+                "at": "again",
+                "pose": "facepalm",
+                "face": "sad"
+              }
+            ],
+            "emote": "sweat",
+            "emoteAt": "again"
+          }
+        ],
+        "camera": {
+          "zoom": [
+            1,
+            1.12
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ]
+        }
+      }
+    }
+  ]
+}

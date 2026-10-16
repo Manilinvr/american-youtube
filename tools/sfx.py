@@ -49,26 +49,9 @@ def ding() -> np.ndarray:
     return tone * env(len(x), 0.002, 5) * 0.6
 
 
-def alarm() -> np.ndarray:
-    # classic fire-station double tone, 4 bursts
-    x = t(0.22)
-    burst = np.sign(np.sin(2 * np.pi * 950 * x)) * 0.35 + np.sin(2 * np.pi * 1900 * x) * 0.2
-    burst *= np.minimum(1, np.minimum(x / 0.01, (x[-1] - x) / 0.01))
-    gap = np.zeros(int(0.08 * SR))
-    return np.concatenate([burst, gap] * 4)
-
-
 def tick() -> np.ndarray:
     x = t(0.05)
     return np.sin(2 * np.pi * 2200 * x) * env(len(x), 0.001, 90) * 0.7
-
-
-def siren() -> np.ndarray:
-    x = t(2.4)
-    freq = 750 + 450 * (0.5 + 0.5 * np.sin(2 * np.pi * 0.9 * x - np.pi / 2))
-    tone = np.sin(2 * np.pi * np.cumsum(freq) / SR) + 0.3 * np.sin(4 * np.pi * np.cumsum(freq) / SR)
-    fade = np.minimum(1, np.minimum(x / 0.3, (x[-1] - x) / 0.6))
-    return tone * fade * 0.35
 
 
 def boing() -> np.ndarray:
@@ -85,7 +68,27 @@ def scratch() -> np.ndarray:
     return tone * np.minimum(1, (x[-1] - x) / 0.05)
 
 
-EFFECTS = {f.__name__: f for f in [pop, whoosh, ding, alarm, tick, siren, boing, scratch]}
+def scribble() -> np.ndarray:
+    # pencil on paper: bursts of band-limited noise with a scratchy rhythm
+    x = t(0.5)
+    noise = rng.standard_normal(len(x))
+    hp = np.diff(noise, prepend=0)  # crude high-pass = papery hiss
+    strokes = 0.55 + 0.45 * np.sign(np.sin(2 * np.pi * 9 * x + 0.6 * np.sin(2 * np.pi * 3 * x)))
+    return hp * strokes * np.minimum(1, np.minimum(x / 0.02, (x[-1] - x) / 0.08)) * 0.5
+
+
+def page() -> np.ndarray:
+    # quick paper flip
+    x = t(0.35)
+    noise = rng.standard_normal(len(x))
+    out, y = np.zeros_like(noise), 0.0
+    for i, n in enumerate(noise):
+        y += 0.35 * (n - y)
+        out[i] = y
+    return out * np.sin(np.pi * (x / x[-1]) ** 0.6) ** 2
+
+
+EFFECTS = {f.__name__: f for f in [pop, whoosh, ding, tick, boing, scratch, scribble, page]}
 
 
 def write(name: str, audio: np.ndarray) -> None:

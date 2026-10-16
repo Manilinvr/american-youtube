@@ -19,36 +19,32 @@ export type SceneDef = {
 	visual: Visual;
 	voice?: string;
 	speed?: number;
-	/** Extra seconds of silence after this scene's line (overrides the mood's default). */
+	/** Read this line in another tone (e.g. "deep" for the closing thought). */
+	tone?: string;
+	/** Extra seconds of silence after this scene's line (overrides the tone's default pause). */
 	hold?: number;
 };
-
-export type CharacterSpec = {outfit: string; skin?: string; hair?: string};
 
 export type Episode = {
 	id: string;
 	format: 'short' | 'long';
 	title: string;
-	profession: string;
-	mood: string;
+	/** Narration tone from config/tones.json; scenes may override it. */
+	tone: string;
 	voice?: {name?: string; speed?: number; pause?: number};
-	character: CharacterSpec;
 	/** Optional background music file in public/music/, played quietly under the voice. */
 	music?: string;
 	sources?: string[];
 	scenes: SceneDef[];
 };
 
-export type Palette = {bg1: string; bg2: string; accent: string; ink: string; text: string; soft: string};
-
-export type Mood = {
+export type Tone = {
 	label: string;
 	voice: string;
 	speed: number;
 	pause: number;
-	/** Animation intensity multiplier: bobbing, shake, pop strength. */
+	/** Animation intensity multiplier: idle motion, pop strength. */
 	energy: number;
-	palette: Palette;
 };
 
 export type TimedScene = {
