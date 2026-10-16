@@ -12,6 +12,10 @@ The manifest holds, per scene: the audio duration, a timing estimate for every
 word (for captions and visual cues) and a per-frame loudness envelope (for the
 characters' mouth movement). Remotion reads it at render time.
 
+Voices: any Kokoro voice ("af_heart", blends "af_heart:60,af_sky:40"), or "chatterbox" /
+"chatterbox:config/voices/narrator.wav" (more human-sounding, slower, clones the reference voice;
+needs the separate Chatterbox env described in docs/voice.md).
+
 Script markup inside "say":
     *word*                  emphasised in captions (different colour)
     [4%|four percent]       caption shows "4%", the voice says "four percent"
@@ -21,8 +25,11 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import re
+import subprocess
 import sys
+import tempfile
 import urllib.request
 import wave
 from pathlib import Path
@@ -147,17 +154,46 @@ def envelope(audio: np.ndarray) -> str:
     return "".join(str(int(round(v * 9))) for v in level)
 
 
-def voice_scene(kokoro, scene: dict, voice: str, speed: float, pause: float) -> tuple[np.ndarray, list[dict]]:
-    words = parse_say(scene["say"])
+def synth_kokoro(kokoro, texts: list[str], voice: str, speed: float) -> list[np.ndarray]:
     style = resolve_voice(kokoro, voice)
     lang = "en-gb" if voice.strip().startswith("b") else "en-us"  # bf_/bm_ voices are British
-    chunks, timed, t = [], [], 0.0
-    sentences = split_sentences(words)
-    for i, sentence in enumerate(sentences):
-        text = " ".join(w["spoken"] for w in sentence)
+    out = []
+    for text in texts:
         audio, sr = kokoro.create(text, voice=style, speed=speed, lang=lang)
         assert sr == SAMPLE_RATE, sr
-        audio = trim_silence(np.asarray(audio, dtype=np.float32))
+        out.append(np.asarray(audio, dtype=np.float32))
+    return out
+
+
+def synth_chatterbox(jobs: list[dict]) -> list[np.ndarray]:
+    """Runs every sentence through Chatterbox in ONE subprocess (the model loads once).
+
+    Chatterbox lives in its own Python env (it needs torch): .venv-chatterbox/ or $CHATTERBOX_PYTHON.
+    Each job: {"text", "speed", "ref"} where ref is a reference voice wav to clone, or None.
+    """
+    python = os.environ.get("CHATTERBOX_PYTHON") or str(ROOT / ".venv-chatterbox" / "bin" / "python")
+    if not Path(python).exists():
+        sys.exit("Chatterbox is not installed. See docs/voice.md (section 'Chatterbox').")
+    with tempfile.TemporaryDirectory() as tmp:
+        for i, job in enumerate(jobs):
+            job["out"] = str(Path(tmp) / f"{i:04d}.wav")
+        spec = Path(tmp) / "jobs.json"
+        spec.write_text(json.dumps(jobs))
+        subprocess.run([python, str(ROOT / "tools" / "tts" / "chatterbox_batch.py"), str(spec)], check=True)
+        out = []
+        for job in jobs:
+            with wave.open(job["out"]) as f:
+                assert f.getframerate() == SAMPLE_RATE, f.getframerate()
+                pcm = np.frombuffer(f.readframes(f.getnframes()), dtype="<i2")
+            out.append(pcm.astype(np.float32) / 32767)
+        return out
+
+
+def assemble(sentences: list[list[dict]], audios: list[np.ndarray], pause: float) -> tuple[np.ndarray, list[dict]]:
+    """Joins sentence audio with controlled pauses and estimates when every word is spoken."""
+    chunks, timed, t = [], [], 0.0
+    for i, (sentence, audio) in enumerate(zip(sentences, audios)):
+        audio = trim_silence(audio)
         dur = len(audio) / SAMPLE_RATE
         weights = [word_weight(w) for w in sentence]
         total = sum(weights)
@@ -212,7 +248,8 @@ def main() -> None:
         old = {s["id"]: s for s in json.loads(manifest_path.read_text())["scenes"]}
 
     kokoro = None
-    scenes = []
+    results: dict[str, dict] = {}
+    pending = []  # scenes that need synthesis
     for scene in episode["scenes"]:
         voice = scene.get("voice", ep_voice.get("name", tone["voice"]))
         if "tone" in scene:  # e.g. the closing life lesson read slower in the "deep" tone
@@ -225,22 +262,39 @@ def main() -> None:
         wav = out_dir / f"{scene['id']}.wav"
         cached = old.get(scene["id"])
         if cached and cached["hash"] == key and wav.exists():
-            scenes.append(cached)
+            results[scene["id"]] = cached
             print(f"  = {scene['id']:<14} (cached)")
             continue
-        kokoro = kokoro or load_kokoro()
-        audio, words = voice_scene(kokoro, scene, voice, speed, pause)
-        write_wav(wav, audio)
+        sentences = split_sentences(parse_say(scene["say"]))
+        texts = [" ".join(w["spoken"] for w in s) for s in sentences]
+        pending.append({"scene": scene, "voice": voice, "speed": speed, "pause": pause, "key": key, "wav": wav, "sentences": sentences, "texts": texts})
+
+    # Chatterbox: every sentence of every scene in one batch, so the model loads only once
+    cb_jobs = [
+        {"text": text, "speed": p["speed"], "ref": (str(ROOT / p["voice"].split(":", 1)[1]) if ":" in p["voice"] else None), "scene": i}
+        for i, p in enumerate(pending) if p["voice"].startswith("chatterbox") for text in p["texts"]
+    ]
+    cb_audio = synth_chatterbox(cb_jobs) if cb_jobs else []
+    for i, p in enumerate(pending):
+        if p["voice"].startswith("chatterbox"):
+            audios = [a for job, a in zip(cb_jobs, cb_audio) if job["scene"] == i]
+        else:
+            kokoro = kokoro or load_kokoro()
+            audios = synth_kokoro(kokoro, p["texts"], p["voice"], p["speed"])
+        audio, words = assemble(p["sentences"], audios, p["pause"])
+        write_wav(p["wav"], audio)
         dur = len(audio) / SAMPLE_RATE
-        scenes.append({
-            "id": scene["id"],
-            "file": f"voice/{episode['id']}/{wav.name}",
+        sid = p["scene"]["id"]
+        results[sid] = {
+            "id": sid,
+            "file": f"voice/{episode['id']}/{p['wav'].name}",
             "duration": round(dur, 3),
-            "hash": key,
+            "hash": p["key"],
             "words": words,
             "env": envelope(audio),
-        })
-        print(f"  + {scene['id']:<14} {dur:5.2f}s  {voice} x{speed}")
+        }
+        print(f"  + {sid:<14} {dur:5.2f}s  {p['voice']} x{p['speed']}")
+    scenes = [results[s["id"]] for s in episode["scenes"]]
 
     manifest = {"episode": episode["id"], "fps": FPS, "sampleRate": SAMPLE_RATE, "scenes": scenes}
     manifest_path.write_text(json.dumps(manifest, indent=1))

@@ -1,8 +1,9 @@
 {
-  "_doc": "Channel identity used by the branding stills (npm run branding). Change it here and re-render: every asset updates.",
+  "_doc": "Channel identity used by the branding stills (npm run branding) and the final mix (loudness in LUFS; -16 = calm, slightly quieter than typical Shorts). Change it here and re-render.",
   "name": "Specimen: You",
   "handle": "@SpecimenYou",
   "tagline": "a field guide to the strangest animal on Earth",
   "schedule": "new specimens every week",
-  "signoff": "PERFECTLY HUMAN"
+  "signoff": "PERFECTLY HUMAN",
+  "loudness": -16
 }

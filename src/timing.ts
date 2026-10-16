@@ -1,6 +1,6 @@
 import {CalculateMetadataFunction, staticFile} from 'remotion';
 import {getEpisode, getTone} from './episodes';
-import type {EpisodeProps, Manifest, TimedScene, VoiceScene, Word} from './types';
+import type {EpisodeProps, Manifest, TimedScene, Transition, VoiceScene, Word} from './types';
 
 export const FPS = 30;
 const LEAD = 0.12; // seconds of picture before each line starts
@@ -13,20 +13,36 @@ const placeholderVoice = (id: string, say: string): VoiceScene => {
 	return {id, file: '', duration: words.length * 0.36, words: words2, env: ''};
 };
 
+const TRANSITION_FRAMES: Record<Transition, number> = {fade: 14, zoom: 14, black: 24, cut: 0};
+
+/**
+ * Scene timing. Scenes overlap by their transition, so a scene's picture starts before the previous
+ * line has fully ended; each line starts once the new picture has mostly faded in.
+ */
 export const buildTimeline = (episodeId: string, manifest: Manifest | null): TimedScene[] => {
 	const episode = getEpisode(episodeId);
+	const n = episode.scenes.length;
+	const trans = episode.scenes.map((def, i): {type: Transition; frames: number} => {
+		const type: Transition = i === 0 ? 'cut' : def.transition ?? 'fade';
+		return {type, frames: TRANSITION_FRAMES[type]};
+	});
 	let from = 0;
+	let prevEnd = 0;
 	return episode.scenes.map((def, i) => {
 		const voice = manifest?.scenes.find((s) => s.id === def.id) ?? null;
 		const v = voice ?? placeholderVoice(def.id, def.say);
-		const isLast = i === episode.scenes.length - 1;
-		const lead = i === 0 ? 0 : LEAD;
-		const hold = def.hold ?? (isLast ? TAIL_LAST : getTone(def.tone ?? episode.tone).pause);
+		const isLast = i === n - 1;
+		const transIn = trans[i];
+		const transOut = isLast ? {type: 'black' as Transition, frames: 18} : trans[i + 1];
+		const lead = i === 0 ? 0 : Math.round(transIn.frames * 0.7) + Math.round(LEAD * FPS);
+		const tone = getTone(def.tone ?? episode.tone);
+		// leave room for the outgoing transition after the last word
+		const hold = Math.max(def.hold ?? (isLast ? TAIL_LAST : tone.pause), (transOut.frames * 0.6) / FPS);
 		const minSeconds = def.visual.minSeconds ?? 1.2;
-		const durationInFrames = Math.ceil(Math.max(minSeconds, lead + v.duration + hold) * FPS);
-		const scene: TimedScene = {def, voice: v, from, durationInFrames, lead: Math.round(lead * FPS)};
-		from += durationInFrames;
-		return scene;
+		const durationInFrames = Math.ceil(Math.max(minSeconds, lead / FPS + v.duration + hold) * FPS);
+		from = i === 0 ? 0 : prevEnd - transIn.frames;
+		prevEnd = from + durationInFrames;
+		return {def, voice: v, from, durationInFrames, lead, transIn, transOut};
 	});
 };
 
@@ -40,7 +56,8 @@ export const calculateEpisodeMetadata: CalculateMetadataFunction<EpisodeProps> =
 		manifest = null;
 	}
 	const timeline = buildTimeline(episode.id, manifest);
-	const total = timeline.reduce((sum, s) => sum + s.durationInFrames, 0);
+	const last = timeline[timeline.length - 1];
+	const total = last.from + last.durationInFrames;
 	const vertical = episode.format === 'short';
 	return {
 		durationInFrames: total,

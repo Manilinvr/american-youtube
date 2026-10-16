@@ -1,12 +1,12 @@
 import React, {useMemo} from 'react';
-import {AbsoluteFill, Audio, Sequence, staticFile, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Audio, Easing, interpolate, Sequence, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {Captions, CaptionWord} from './components/Captions';
 import {Paper, SketchDefs} from './components/ink';
 import {EpisodeCtx, SceneCtx} from './context';
 import {getEpisode, getTone} from './episodes';
 import {SCENES} from './scenes';
 import {buildTimeline} from './timing';
-import type {EpisodeProps, Visual} from './types';
+import type {EpisodeProps, TimedScene, Visual} from './types';
 
 const Missing: React.FC<{visual: Visual}> = ({visual}) => (
 	<AbsoluteFill style={{color: '#c00', fontSize: 60, alignItems: 'center', justifyContent: 'center'}}>Unknown scene type "{visual.type}"</AbsoluteFill>
@@ -16,6 +16,59 @@ const Missing: React.FC<{visual: Visual}> = ({visual}) => (
 const sameSet = (a?: Visual, b?: Visual) => !!a && !!b && a.type === 'situation' && b.type === 'situation' && a.setting === b.setting;
 
 const showsCaptions = (v: Visual) => v.captions !== false && !(v.type === 'quote' && !v.text);
+
+const ease = Easing.inOut(Easing.cubic);
+const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
+
+/**
+ * Fades/zooms a scene in and out according to its transitions.
+ * fade: cross-dissolve. black: out to black, then in from black. zoom: outgoing pushes in, incoming settles from a slight pull-back.
+ */
+const TransitionShell: React.FC<{scene: TimedScene; children: React.ReactNode}> = ({scene, children}) => {
+	const frame = useCurrentFrame();
+	const {transIn, transOut, durationInFrames: d} = scene;
+	let opacity = 1;
+	let scale = 1;
+	if (transIn.frames > 0) {
+		const half = transIn.type === 'black' ? transIn.frames / 2 : 0;
+		const p = interpolate(frame, [half, transIn.frames], [0, 1], {...clamp, easing: ease});
+		opacity *= p;
+		if (transIn.type === 'zoom') scale *= interpolate(p, [0, 1], [0.9, 1]);
+	}
+	if (transOut.frames > 0) {
+		const start = d - transOut.frames;
+		const end = transOut.type === 'black' ? start + transOut.frames / 2 : d;
+		const p = interpolate(frame, [start, end], [1, 0], {...clamp, easing: ease});
+		opacity *= p;
+		if (transOut.type === 'zoom') scale *= interpolate(p, [0, 1], [1.18, 1]);
+	}
+	return <AbsoluteFill style={{opacity, transform: `scale(${scale})`}}>{children}</AbsoluteFill>;
+};
+
+/** Black overlay for "dip to black" transitions and the final fade-out. */
+const Blackout: React.FC<{timeline: TimedScene[]}> = ({timeline}) => {
+	const frame = useCurrentFrame();
+	let o = 0;
+	timeline.forEach((s, i) => {
+		if (s.transIn.type === 'black' && i > 0) {
+			const mid = s.from + s.transIn.frames / 2;
+			o = Math.max(o, interpolate(Math.abs(frame - mid), [0, s.transIn.frames / 2], [1, 0], clamp));
+		}
+	});
+	const last = timeline[timeline.length - 1];
+	const end = last.from + last.durationInFrames;
+	o = Math.max(o, interpolate(frame, [end - last.transOut.frames, end - 2], [0, 1], {...clamp, easing: ease}));
+	return o > 0 ? <AbsoluteFill style={{background: '#14110E', opacity: o}} /> : null;
+};
+
+/** Looping ambience (e.g. running shower) that fades in and out with its scene. */
+const Ambience: React.FC<{name: string; frames: number}> = ({name, frames}) => (
+	<Audio
+		src={staticFile(`sfx/${name}.wav`)}
+		loop
+		volume={(f) => 0.14 * interpolate(f, [0, 12, frames - 14, frames], [0, 1, 1, 0], clamp)}
+	/>
+);
 
 export const EpisodeVideo: React.FC<EpisodeProps> = ({episodeId, timeline}) => {
 	const {fps} = useVideoConfig();
@@ -37,6 +90,8 @@ export const EpisodeVideo: React.FC<EpisodeProps> = ({episodeId, timeline}) => {
 		[tl, fps],
 	);
 	const info = useMemo(() => ({energy: tone.energy, vertical: episode.format === 'short'}), [tone, episode]);
+	const last = tl[tl.length - 1];
+	const total = last.from + last.durationInFrames;
 
 	return (
 		<EpisodeCtx.Provider value={info}>
@@ -50,20 +105,30 @@ export const EpisodeVideo: React.FC<EpisodeProps> = ({episodeId, timeline}) => {
 					return (
 						<Sequence key={s.def.id} from={s.from} durationInFrames={s.durationInFrames} name={s.def.id}>
 							<SceneCtx.Provider value={{voice: s.voice, lead: s.lead, durationInFrames: s.durationInFrames}}>
-								<AbsoluteFill style={{filter: 'url(#boil)'}}>
-									<Scene visual={s.def.visual} drawOn={drawOn} />
-								</AbsoluteFill>
+								<TransitionShell scene={s}>
+									<AbsoluteFill style={{filter: 'url(#boil)'}}>
+										<Scene visual={s.def.visual} drawOn={drawOn} />
+									</AbsoluteFill>
+								</TransitionShell>
 								{s.voice.file && (
 									<Sequence from={s.lead} layout="none" name="voice">
 										<Audio src={staticFile(s.voice.file)} />
 									</Sequence>
 								)}
+								{s.def.ambience && <Ambience name={s.def.ambience} frames={s.durationInFrames} />}
 							</SceneCtx.Provider>
 						</Sequence>
 					);
 				})}
+				<Blackout timeline={tl} />
 				<Captions words={words} />
-				{episode.music && <Audio src={staticFile(`music/${episode.music}`)} volume={0.08} loop />}
+				{episode.music && (
+					<Audio
+						src={staticFile(`music/${episode.music}`)}
+						loop
+						volume={(f) => 0.09 * interpolate(f, [0, 20, total - 30, total], [0.4, 1, 1, 0], clamp)}
+					/>
+				)}
 			</AbsoluteFill>
 		</EpisodeCtx.Provider>
 	);

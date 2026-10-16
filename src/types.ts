@@ -13,6 +13,8 @@ export type Manifest = {episode: string; fps: number; scenes: VoiceScene[]};
 
 export type Visual = {type: string; [key: string]: any};
 
+export type Transition = 'fade' | 'black' | 'zoom' | 'cut';
+
 export type SceneDef = {
 	id: string;
 	say: string;
@@ -21,6 +23,13 @@ export type SceneDef = {
 	speed?: number;
 	/** Read this line in another tone (e.g. "deep" for the closing thought). */
 	tone?: string;
+	/**
+	 * How this scene arrives: "fade" (cross-dissolve, default), "black" (dip through black),
+	 * "zoom" (outgoing scene pushes in while the new one settles), or "cut".
+	 */
+	transition?: Transition;
+	/** Looping background sound for this scene, e.g. "shower" (public/sfx/<name>.wav). */
+	ambience?: string;
 	/** Extra seconds of silence after this scene's line (overrides the tone's default pause). */
 	hold?: number;
 };
@@ -56,6 +65,9 @@ export type TimedScene = {
 	durationInFrames: number;
 	/** Frame (relative to the scene) where the voice line starts. */
 	lead: number;
+	/** Transition into this scene (overlapping the previous one) and out of it (into the next). */
+	transIn: {type: Transition; frames: number};
+	transOut: {type: Transition; frames: number};
 };
 
 export type EpisodeProps = {episodeId: string; timeline?: TimedScene[]};

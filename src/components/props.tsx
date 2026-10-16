@@ -243,6 +243,52 @@ export const PROPS: Record<string, PropDef> = {
 			</g>
 		),
 	},
+	shower: {
+		w: 360,
+		h: 600,
+		// tiled wall, shower head with falling water and drifting steam; pair with a "bathtub" in front
+		draw: ({frame}) => (
+			<g>
+				<P d="M-180 0 L-180 -560 L180 -560 L180 0" fill={PAPER} strokeWidth={LINE * 0.8} />
+				{Array.from({length: 8}, (_, i) => (
+					<P key={`h${i}`} d={`M-180 ${-70 - i * 64} L180 ${-70 - i * 64}`} stroke={PENCIL} strokeWidth={LINE * 0.45} sketch={false} />
+				))}
+				{Array.from({length: 5}, (_, i) => (
+					<P key={`v${i}`} d={`M${-120 + i * 60} -560 L${-120 + i * 60} 0`} stroke={PENCIL} strokeWidth={LINE * 0.45} sketch={false} />
+				))}
+				<P d="M120 -560 L120 -520 Q120 -500 100 -500 L40 -500" strokeWidth={LINE * 1.3} />
+				<P d="M50 -510 L10 -492 L-30 -470 L-10 -456 L40 -480 L60 -500Z" fill={PAPER} />
+				{/* water: streaks falling from the head */}
+				{Array.from({length: 9}, (_, i) => {
+					const x0 = -22 + i * 6;
+					const spread = (i - 4) * 16;
+					const t = ((frame * 0.09 + i * 0.37) % 1 + 1) % 1;
+					const y1 = -455 + t * 420;
+					return <path key={`w${i}`} d={`M${x0 + spread * t} ${y1} l${spread * 0.12} 46`} stroke="#7FA7C9" strokeWidth={LINE * 0.9} strokeLinecap="round" opacity={0.75} />;
+				})}
+				{/* steam */}
+				{[0, 1, 2, 3].map((i) => {
+					const t = ((frame / 90 + i * 0.25) % 1 + 1) % 1;
+					return <circle key={`s${i}`} cx={-120 + i * 80 + Math.sin(frame / 25 + i) * 14} cy={-200 - t * 360} r={40 + t * 40} fill="#FFFFFF" opacity={0.35 * Math.sin(t * Math.PI)} />;
+				})}
+				{/* curtain pushed to the side */}
+				<P d="M-200 -575 L200 -575" strokeWidth={LINE * 1.2} />
+				<P d="M150 -575 Q170 -300 150 -40 L200 -40 Q210 -300 200 -575Z" fill="url(#hatch-light)" />
+			</g>
+		),
+	},
+	bathtub: {
+		w: 440,
+		h: 200,
+		draw: () => (
+			<g>
+				<P d="M-220 -175 L220 -175 L210 -150 Q200 -40 120 -30 L-120 -30 Q-200 -40 -210 -150Z" fill={PAPER} />
+				<P d="M-226 -182 L226 -182" strokeWidth={LINE * 1.6} />
+				<P d="M-150 -30 L-160 0 M150 -30 L160 0" strokeWidth={LINE * 1.3} />
+				<P d="M-190 -140 Q-170 -70 -110 -55" stroke={PENCIL} strokeWidth={LINE * 0.6} />
+			</g>
+		),
+	},
 	'phone-big': {
 		w: 280,
 		h: 500,

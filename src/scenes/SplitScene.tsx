@@ -8,6 +8,7 @@ import {INK, LINE, RED} from '../theme';
 import type {Visual} from '../types';
 import {Cue, SituationArt, SituationSpec} from './Situation';
 import {makeBox} from './stage';
+import {CameraSpec, useCamera} from './camera';
 
 type Panel = SituationSpec & {label?: string; at?: Cue};
 
@@ -22,6 +23,7 @@ export const SplitScene: React.FC<{visual: Visual; drawOn: boolean}> = ({visual,
 	const {voice, lead} = useScene();
 	const vertical = height > width;
 	const panels: Panel[] = visual.panels ?? [];
+	const camera = useCamera(visual.camera as CameraSpec | undefined, [0.5, 0.35], [1.0, 1.03]);
 	const gap = 30;
 	const boxes = panels.map((_, i) => {
 		if (vertical) {
@@ -33,7 +35,7 @@ export const SplitScene: React.FC<{visual: Visual; drawOn: boolean}> = ({visual,
 		return {x: width * 0.04 + i * (w + gap), y: height * 0.06, w, h: height * 0.74};
 	});
 	return (
-		<AbsoluteFill>
+		<AbsoluteFill style={camera}>
 			{panels.map((panel, i) => {
 				const b = boxes[i];
 				const at = i === 0 ? 0 : cueFrame(voice, lead, fps, panel.at, lead + 20);

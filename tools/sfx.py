@@ -96,7 +96,24 @@ def stamp() -> np.ndarray:
     return thump + slap
 
 
-EFFECTS = {f.__name__: f for f in [pop, whoosh, ding, tick, boing, scratch, scribble, page, stamp]}
+def shower() -> np.ndarray:
+    # running water, seamless 4 s loop: band-limited noise with a slow gentle swell
+    n = int(4 * SR)
+    noise = rng.standard_normal(n)
+    out, lp, hp_prev, y = np.zeros(n), 0.0, 0.0, 0.0
+    for i, v in enumerate(noise):
+        lp += 0.35 * (v - lp)      # soften the top end
+        y = 0.97 * (y + lp - hp_prev)  # remove rumble
+        hp_prev = lp
+        out[i] = y
+    swell = 0.85 + 0.15 * np.sin(2 * np.pi * np.arange(n) / n)
+    out *= swell
+    fade = int(0.05 * SR)  # tiny crossfade so the loop point is inaudible
+    out[:fade] = out[:fade] * np.linspace(0, 1, fade) + out[-fade:] * np.linspace(1, 0, fade)
+    return out[:-fade] * 0.5
+
+
+EFFECTS = {f.__name__: f for f in [pop, whoosh, ding, tick, boing, scratch, scribble, page, stamp, shower]}
 
 
 def write(name: str, audio: np.ndarray) -> None:

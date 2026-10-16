@@ -1,0 +1,397 @@
+{
+  "id": "s003-shower-philosopher",
+  "format": "short",
+  "title": "Specimen #003: The Shower Philosopher",
+  "tone": "documentary",
+  "music": "soft-pad.mp3",
+  "sources": [
+    "Irving, Z. C., McGrath, C., Flynn, L., Glasser, A., & Mills, C. (2022). The shower effect: Mind wandering facilitates creative incubation during moderately engaging activities. Psychology of Aesthetics, Creativity, and the Arts. doi:10.1037/aca0000516",
+    "Baird, B., Smallwood, J., Mrazek, M. D., Kam, J. W. Y., Franklin, M. S., & Schooler, J. W. (2012). Inspired by distraction: Mind wandering facilitates creative incubation. Psychological Science, 23(10)"
+  ],
+  "scenes": [
+    {
+      "id": "hook",
+      "ambience": "shower",
+      "say": "Ever solve a problem in the shower that beat you all week? Congratulations. You're Specimen [003.|zero zero three.]",
+      "visual": {
+        "type": "situation",
+        "setting": "room",
+        "props": [
+          {
+            "type": "shower",
+            "x": 0.5
+          },
+          {
+            "type": "bathtub",
+            "x": 0.5,
+            "front": true
+          }
+        ],
+        "people": [
+          {
+            "x": 0.5,
+            "y": 40,
+            "face": "meh",
+            "gaze": 0.2,
+            "then": [
+              {
+                "at": "shower",
+                "pose": "cheer",
+                "face": "surprised"
+              }
+            ],
+            "emote": "idea",
+            "emoteAt": "shower"
+          }
+        ],
+        "card": {
+          "no": 3,
+          "common": "The Shower Philosopher",
+          "latin": "Homo balneosophus",
+          "habitat": "bathrooms, 7 AM",
+          "at": "specimen"
+        },
+        "camera": {
+          "zoom": [
+            1.55,
+            1.5
+          ],
+          "focus": [
+            0.5,
+            0.33
+          ],
+          "keys": [
+            {
+              "at": "congratulations",
+              "zoom": 1.0,
+              "focus": [
+                0.5,
+                0.5
+              ],
+              "secs": 1.2
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "observe",
+      "transition": "zoom",
+      "say": "Observe. At the desk: nothing. Under warm water: *everything.*",
+      "visual": {
+        "type": "split",
+        "panels": [
+          {
+            "label": "AT THE DESK",
+            "setting": "room",
+            "props": [
+              {
+                "type": "desk",
+                "x": 0.45,
+                "front": true
+              },
+              {
+                "type": "clock",
+                "x": 0.85
+              }
+            ],
+            "people": [
+              {
+                "x": 0.45,
+                "pose": "type",
+                "face": "meh",
+                "emote": "...",
+                "emoteAt": "desk"
+              }
+            ]
+          },
+          {
+            "label": "UNDER WARM WATER",
+            "at": "warm",
+            "setting": "room",
+            "props": [
+              {
+                "type": "shower",
+                "x": 0.5
+              },
+              {
+                "type": "bathtub",
+                "x": 0.5,
+                "front": true
+              }
+            ],
+            "people": [
+              {
+                "x": 0.5,
+                "y": 40,
+                "pose": "cheer",
+                "face": "grin",
+                "emote": "idea",
+                "emoteAt": "everything"
+              }
+            ]
+          }
+        ],
+        "camera": {
+          "keys": [
+            {
+              "at": "warm",
+              "zoom": 1.12,
+              "focus": [
+                0.5,
+                0.55
+              ],
+              "secs": 1.0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "wander",
+      "ambience": "shower",
+      "say": "Here, the mind is finally free to *wander.*",
+      "visual": {
+        "type": "situation",
+        "setting": "room",
+        "props": [
+          {
+            "type": "shower",
+            "x": 0.5
+          },
+          {
+            "type": "bathtub",
+            "x": 0.5,
+            "front": true
+          }
+        ],
+        "people": [
+          {
+            "x": 0.5,
+            "y": 40,
+            "face": "peaceful",
+            "gaze": 0,
+            "bubble": {
+              "text": "dinosaurs... rent... WAIT.",
+              "kind": "thought",
+              "at": "mind",
+              "side": "right"
+            }
+          }
+        ],
+        "camera": {
+          "zoom": [
+            1.0,
+            1.0
+          ],
+          "focus": [
+            0.5,
+            0.45
+          ],
+          "keys": [
+            {
+              "at": "mind",
+              "zoom": 1.3,
+              "focus": [
+                0.55,
+                0.32
+              ],
+              "secs": 1.8
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "name",
+      "transition": "black",
+      "say": "Scientists call it *the shower effect.*",
+      "visual": {
+        "type": "quote",
+        "text": "THE SHOWER EFFECT",
+        "sub": "field note: Irving et al., 2022",
+        "person": {
+          "pose": "think",
+          "face": "smile"
+        }
+      }
+    },
+    {
+      "id": "explain",
+      "say": "Easy tasks, like a shower or a walk, let ideas connect *in the background.*",
+      "visual": {
+        "type": "situation",
+        "setting": "park",
+        "props": [
+          {
+            "type": "tree",
+            "x": 0.82
+          },
+          {
+            "type": "bench",
+            "x": 0.2
+          }
+        ],
+        "people": [
+          {
+            "x": 0.55,
+            "walk": {
+              "from": 0.08,
+              "seconds": 2.4
+            },
+            "face": "peaceful",
+            "then": [
+              {
+                "at": "connect",
+                "face": "smile"
+              }
+            ],
+            "emote": "idea",
+            "emoteAt": "connect"
+          }
+        ],
+        "notes": [
+          {
+            "kind": "label",
+            "target": "head:0",
+            "at": "walk",
+            "label": "fig. 2: a walk counts too",
+            "size": 0.85
+          }
+        ],
+        "camera": {
+          "zoom": [
+            1.25,
+            1.25
+          ],
+          "focus": [
+            0.3,
+            0.45
+          ],
+          "keys": [
+            {
+              "at": "walk",
+              "zoom": 1.0,
+              "focus": [
+                0.5,
+                0.5
+              ],
+              "secs": 1.5
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "lesson",
+      "tone": "deep",
+      "transition": "black",
+      "say": "Maybe the answer doesn't need more effort. Just *a little space.*",
+      "visual": {
+        "type": "situation",
+        "setting": "rooftop",
+        "people": [
+          {
+            "x": 0.28,
+            "pose": "hug-knees",
+            "look": "hoodie",
+            "face": "peaceful",
+            "gaze": 0.6
+          }
+        ],
+        "camera": {
+          "zoom": [
+            1.35,
+            1.0
+          ],
+          "focus": [
+            0.3,
+            0.5
+          ]
+        }
+      }
+    },
+    {
+      "id": "verdict",
+      "tone": "funny",
+      "transition": "zoom",
+      "ambience": "shower",
+      "say": "Sadly, the specimen still has no pen. Perfectly *human.*",
+      "visual": {
+        "type": "situation",
+        "setting": "room",
+        "props": [
+          {
+            "type": "shower",
+            "x": 0.5
+          },
+          {
+            "type": "bathtub",
+            "x": 0.5,
+            "front": true
+          }
+        ],
+        "people": [
+          {
+            "x": 0.5,
+            "y": 40,
+            "face": "smile",
+            "then": [
+              {
+                "at": "pen",
+                "pose": "shrug",
+                "face": "worried"
+              },
+              {
+                "at": "perfectly",
+                "face": "smile"
+              }
+            ],
+            "emote": "sweat",
+            "emoteAt": "pen"
+          }
+        ],
+        "card": {
+          "no": 3,
+          "common": "The Shower Philosopher",
+          "latin": "Homo balneosophus",
+          "habitat": "bathrooms, 7 AM",
+          "at": "perfectly"
+        },
+        "stamp": {
+          "at": "human"
+        },
+        "camera": {
+          "zoom": [
+            1.0,
+            1.0
+          ],
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "keys": [
+            {
+              "at": "pen",
+              "zoom": 1.5,
+              "focus": [
+                0.5,
+                0.33
+              ],
+              "secs": 0.7
+            },
+            {
+              "at": "perfectly",
+              "zoom": 1.0,
+              "focus": [
+                0.5,
+                0.5
+              ],
+              "secs": 0.5
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

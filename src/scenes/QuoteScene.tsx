@@ -7,6 +7,7 @@ import {HAND, MARKER} from '../fonts';
 import {INK, LINE, RED} from '../theme';
 import type {Visual} from '../types';
 import {useStage} from './stage';
+import {CameraSpec, useCamera} from './camera';
 
 /**
  * Big handwritten words for the key idea or the closing life lesson.
@@ -20,6 +21,7 @@ export const QuoteScene: React.FC<{visual: Visual}> = ({visual}) => {
 	const {voice, lead} = useScene();
 	const {width, height, vertical} = useStage();
 	const person = visual.person as {pose?: PoseName; face?: Face} | undefined;
+	const camera = useCamera(visual.camera as CameraSpec | undefined, [0.5, 0.4], [1.0, 1.06]);
 	const top = vertical ? height * 0.14 : height * 0.12;
 	const areaH = vertical ? height * (person ? 0.36 : 0.5) : height * (person ? 0.5 : 0.62);
 
@@ -63,7 +65,7 @@ export const QuoteScene: React.FC<{visual: Visual}> = ({visual}) => {
 	}
 
 	return (
-		<AbsoluteFill>
+		<AbsoluteFill style={camera}>
 			<div style={{position: 'absolute', left: width * 0.08, right: width * 0.08, top, height: areaH, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
 				{body}
 				{visual.sub && (

@@ -10,6 +10,7 @@ import {Sfx} from '../components/Sfx';
 import {CardSpec, SpecimenCard, useSlam} from '../components/specimen';
 import type {Visual} from '../types';
 import {Box, useFullBox} from './stage';
+import {CameraSpec, useCamera} from './camera';
 
 /** A moment in time (a "cue"): a word the narrator says ("fridge", "door#2") or seconds into the line. */
 export type Cue = string | number;
@@ -48,8 +49,8 @@ export type SituationSpec = {
 	props?: PropSpec[];
 	people?: PersonSpec[];
 	notes?: NoteSpec[];
-	/** Slow push-in: zoom from..to over the scene, centred on `focus` ([x, y] as 0-1 fractions). */
-	camera?: {zoom?: [number, number]; focus?: [number, number]};
+	/** Camera drift and keyframed moves (push in on a face, pull back out). See scenes/camera.ts. */
+	camera?: CameraSpec;
 	/** The episode's specimen card, taped at the top of the page; `at` slams it in on a cue. */
 	card?: Omit<CardSpec, 'at'> & {at?: Cue};
 	/** Rubber stamp on the card, e.g. {"at": "perfectly"} -> "PERFECTLY HUMAN". */
@@ -208,12 +209,10 @@ export const SituationScene: React.FC<{visual: Visual; drawOn: boolean}> = ({vis
 	const {durationInFrames, voice, lead} = useScene();
 	const box = useFullBox();
 	const spec = visual as SituationSpec;
-	const [z0, z1] = spec.camera?.zoom ?? [1, 1.05];
-	const [fx, fy] = spec.camera?.focus ?? [0.5, (box.ground - box.h * 0.2) / box.h];
-	const z = interpolate(frame, [0, durationInFrames], [z0, z1]);
+	const camera = useCamera(spec.camera, [0.5, (box.ground - box.h * 0.2) / box.h]);
 	return (
 		<AbsoluteFill>
-			<AbsoluteFill style={{transform: `scale(${z})`, transformOrigin: `${fx * 100}% ${fy * 100}%`}}>
+			<AbsoluteFill style={camera}>
 				<SituationArt spec={spec} box={box} drawOn={drawOn} />
 			</AbsoluteFill>
 			{spec.card && <CardOverlay card={spec.card} stamp={spec.stamp} voice={voice} lead={lead} fps={fps} width={width} height={height} />}
