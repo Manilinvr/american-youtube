@@ -1,0 +1,59 @@
+{
+  "_doc": "Mood presets shared by tools/tts/voice.py (voice, speed, pause) and the Remotion scenes (palette, energy). An episode picks one with \"mood\" and may override voice/speed.",
+  "heroic": {
+    "label": "Adrenaline & courage: firefighter, paramedic, rescue diver, smokejumper",
+    "voice": "am_michael",
+    "speed": 1.08,
+    "pause": 0.14,
+    "energy": 1.25,
+    "palette": { "bg1": "#FF7A2F", "bg2": "#B5121B", "accent": "#FFD23F", "ink": "#1D1A1F", "text": "#FFFFFF", "soft": "#FFE3C2" }
+  },
+  "calm": {
+    "label": "Care & precision: nurse, doctor, pharmacist, therapist",
+    "voice": "af_heart",
+    "speed": 0.98,
+    "pause": 0.22,
+    "energy": 0.8,
+    "palette": { "bg1": "#7FD1C7", "bg2": "#2C7DA0", "accent": "#FFFFFF", "ink": "#16324F", "text": "#FFFFFF", "soft": "#E0F4F1" }
+  },
+  "cozy": {
+    "label": "Warm & crafty: chef, baker, barista, farmer, carpenter",
+    "voice": "af_bella",
+    "speed": 1.0,
+    "pause": 0.2,
+    "energy": 0.9,
+    "palette": { "bg1": "#F6C177", "bg2": "#C8553D", "accent": "#FFF3B0", "ink": "#3B2418", "text": "#FFFFFF", "soft": "#FFF1DC" }
+  },
+  "mysterious": {
+    "label": "Suspense: detective, forensic scientist, locksmith, spy",
+    "voice": "am_fenrir",
+    "speed": 0.95,
+    "pause": 0.3,
+    "energy": 0.75,
+    "palette": { "bg1": "#3A3F7A", "bg2": "#12122B", "accent": "#9CF6F6", "ink": "#0B0B1A", "text": "#FFFFFF", "soft": "#C9CCF2" }
+  },
+  "epic": {
+    "label": "Awe & scale: astronaut, pilot, deep-sea welder, storm chaser",
+    "voice": "am_michael",
+    "speed": 1.0,
+    "pause": 0.26,
+    "energy": 1.0,
+    "palette": { "bg1": "#4361EE", "bg2": "#10002B", "accent": "#F72585", "ink": "#0A0A23", "text": "#FFFFFF", "soft": "#CAD2FF" }
+  },
+  "playful": {
+    "label": "Fun & quirky: zookeeper, teacher, mascot, theme park worker",
+    "voice": "am_puck",
+    "speed": 1.06,
+    "pause": 0.16,
+    "energy": 1.35,
+    "palette": { "bg1": "#FFD6A5", "bg2": "#FF70A6", "accent": "#70D6FF", "ink": "#2B193D", "text": "#FFFFFF", "soft": "#FFF5E1" }
+  },
+  "gritty": {
+    "label": "Tough & dangerous: crab fisherman, lineman, miner, logger",
+    "voice": "am_fenrir",
+    "speed": 1.02,
+    "pause": 0.18,
+    "energy": 1.1,
+    "palette": { "bg1": "#6C757D", "bg2": "#212529", "accent": "#FFB703", "ink": "#111111", "text": "#FFFFFF", "soft": "#DEE2E6" }
+  }
+}

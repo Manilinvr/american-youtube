@@ -1,0 +1,23 @@
+{
+  "name": "american-youtube",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Cartoon explainers about professions for a US YouTube audience: script -> free AI voice -> Remotion animation -> MP4",
+  "scripts": {
+    "studio": "remotion studio",
+    "voice": "python3 tools/tts/voice.py",
+    "render": "node tools/render.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.528",
+    "@remotion/media-utils": "4.0.528",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "remotion": "4.0.528"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.31",
+    "typescript": "5.9.3"
+  }
+}
