@@ -92,6 +92,27 @@ export const EpisodeVideo: React.FC<EpisodeProps> = ({episodeId, timeline}) => {
 	const info = useMemo(() => ({energy: tone.energy, vertical: episode.format === 'short'}), [tone, episode]);
 	const last = tl[tl.length - 1];
 	const total = last.from + last.durationInFrames;
+	// music ducking: how much the narrator is talking around each frame (0-1), smoothed over ~0.3 s
+	const talking = useMemo(() => {
+		const raw = new Float32Array(total + 1);
+		tl.forEach((s) => {
+			for (let i = 0; i < s.voice.env.length; i++) {
+				const f = s.from + s.lead + i;
+				if (f <= total) raw[f] = Math.max(raw[f], Number(s.voice.env[i]) > 1 ? 1 : 0);
+			}
+		});
+		const out = new Float32Array(total + 1);
+		for (let f = 0; f <= total; f++) {
+			let sum = 0;
+			let n = 0;
+			for (let k = Math.max(0, f - 12); k <= Math.min(total, f + 12); k++) {
+				sum += raw[k];
+				n++;
+			}
+			out[f] = sum / n; // moving average -> the music swells and dips smoothly
+		}
+		return out;
+	}, [tl, total]);
 
 	return (
 		<EpisodeCtx.Provider value={info}>
@@ -126,7 +147,8 @@ export const EpisodeVideo: React.FC<EpisodeProps> = ({episodeId, timeline}) => {
 					<Audio
 						src={staticFile(`music/${episode.music}`)}
 						loop
-						volume={(f) => 0.09 * interpolate(f, [0, 20, total - 30, total], [0.4, 1, 1, 0], clamp)}
+						// tracks are normalised to -14 LUFS: 0.2 sits ~14 dB under the voice, ducking a little more while she talks
+						volume={(f) => (0.2 - 0.07 * (talking[f] ?? 0)) * interpolate(f, [0, 30, total - 40, total], [0.5, 1, 1, 0], clamp)}
 					/>
 				)}
 			</AbsoluteFill>

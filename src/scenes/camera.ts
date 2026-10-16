@@ -7,7 +7,7 @@ import {cueFrame, useScene} from '../context';
  * moves on cue words, e.g. push in on a face at the punchline and pull back out:
  *   "camera": {"zoom": [1, 1.04], "keys": [{"at": "pen", "zoom": 1.6, "focus": [0.3, 0.35]},
  *                                          {"at": "perfectly", "zoom": 1}]}
- * `focus` = point to centre on, as [x, y] fractions of the frame. Moves ease in and out over `secs`.
+ * `focus` = point to centre on, as [x, y] fractions of the frame. Moves ease in and out over `secs` (default 1.3).
  */
 export type CameraKey = {at: string | number; zoom?: number; focus?: [number, number]; secs?: number};
 export type CameraSpec = {zoom?: [number, number]; focus?: [number, number]; keys?: CameraKey[]};
@@ -24,7 +24,7 @@ export const useCamera = (spec: CameraSpec | undefined, defaultFocus: [number, n
 	for (const key of spec?.keys ?? []) {
 		const at = cueFrame(voice, lead, fps, key.at, Infinity);
 		if (!Number.isFinite(at)) continue;
-		const t = interpolate(frame, [at, at + (key.secs ?? 0.8) * fps], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: ease});
+		const t = interpolate(frame, [at, at + (key.secs ?? 1.3) * fps], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: ease});
 		if (key.zoom !== undefined) z += (key.zoom - z) * t;
 		if (key.focus) {
 			fx += (key.focus[0] - fx) * t;

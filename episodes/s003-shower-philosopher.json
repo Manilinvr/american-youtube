@@ -3,7 +3,7 @@
   "format": "short",
   "title": "Specimen #003: The Shower Philosopher",
   "tone": "documentary",
-  "music": "soft-pad.mp3",
+  "music": "dreamer.mp3",
   "sources": [
     "Irving, Z. C., McGrath, C., Flynn, L., Glasser, A., & Mills, C. (2022). The shower effect: Mind wandering facilitates creative incubation during moderately engaging activities. Psychology of Aesthetics, Creativity, and the Arts. doi:10.1037/aca0000516",
     "Baird, B., Smallwood, J., Mrazek, M. D., Kam, J. W. Y., Franklin, M. S., & Schooler, J. W. (2012). Inspired by distraction: Mind wandering facilitates creative incubation. Psychological Science, 23(10)"
@@ -67,8 +67,59 @@
               "focus": [
                 0.5,
                 0.5
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "promise",
+      "ambience": "shower",
+      "say": "Scientists finally figured out why. And no... it's not the shampoo.",
+      "visual": {
+        "type": "situation",
+        "setting": "room",
+        "props": [
+          {
+            "type": "shower",
+            "x": 0.5
+          },
+          {
+            "type": "bathtub",
+            "x": 0.5,
+            "front": true
+          }
+        ],
+        "people": [
+          {
+            "x": 0.5,
+            "y": 40,
+            "face": "smile",
+            "then": [
+              {
+                "at": "shampoo",
+                "face": "smug"
+              }
+            ],
+            "emote": "!?",
+            "emoteAt": "shampoo"
+          }
+        ],
+        "camera": {
+          "zoom": [
+            1.0,
+            1.0
+          ],
+          "keys": [
+            {
+              "at": "shampoo",
+              "zoom": 1.4,
+              "focus": [
+                0.5,
+                0.33
               ],
-              "secs": 1.2
+              "secs": 0.8
             }
           ]
         }
@@ -131,17 +182,64 @@
               }
             ]
           }
+        ]
+      }
+    },
+    {
+      "id": "effort",
+      "say": "It tried thinking harder. It tried more coffee. *Nothing.*",
+      "visual": {
+        "type": "situation",
+        "setting": "room",
+        "props": [
+          {
+            "type": "desk",
+            "x": 0.62
+          },
+          {
+            "type": "clock",
+            "x": 0.15
+          }
+        ],
+        "people": [
+          {
+            "x": 0.4,
+            "pose": "stand",
+            "holding": "cup",
+            "face": "annoyed",
+            "then": [
+              {
+                "at": "coffee",
+                "face": "worried"
+              },
+              {
+                "at": "nothing",
+                "pose": "sad",
+                "face": "sad"
+              }
+            ],
+            "emote": "...",
+            "emoteAt": "nothing"
+          }
+        ],
+        "notes": [
+          {
+            "kind": "label",
+            "target": "head:0",
+            "at": "coffee",
+            "label": "fig. 1: cup number four",
+            "size": 0.8
+          }
         ],
         "camera": {
           "keys": [
             {
-              "at": "warm",
-              "zoom": 1.06,
+              "at": "nothing",
+              "zoom": 1.35,
               "focus": [
-                0.5,
-                0.5
-              ],
-              "secs": 1.0
+                0.4,
+                0.38
+              ]
             }
           ]
         }
@@ -150,7 +248,8 @@
     {
       "id": "wander",
       "ambience": "shower",
-      "say": "Here, the mind is finally free to *wander.*",
+      "transition": "zoom",
+      "say": "Then the water turns on... and the mind is finally free to *wander.*",
       "visual": {
         "type": "situation",
         "setting": "room",
@@ -170,7 +269,6 @@
             "x": 0.5,
             "y": 40,
             "face": "peaceful",
-            "gaze": 0,
             "bubble": {
               "text": "dinosaurs... rent... OH!",
               "kind": "thought",
@@ -217,8 +315,158 @@
       }
     },
     {
-      "id": "explain",
-      "say": "Easy tasks, like a shower or a walk, let ideas connect *in the background.*",
+      "id": "study",
+      "say": "In 2022, researchers gave over [300|three hundred] people a creativity test. Then they made them watch a video.",
+      "visual": {
+        "type": "situation",
+        "setting": "room",
+        "props": [
+          {
+            "type": "tv",
+            "x": 0.7,
+            "text": "CREATIVITY TEST"
+          }
+        ],
+        "people": [
+          {
+            "x": 0.3,
+            "pose": "think",
+            "face": "worried",
+            "gaze": 0.8,
+            "then": [
+              {
+                "at": "video",
+                "pose": "stand",
+                "face": "neutral"
+              }
+            ]
+          }
+        ],
+        "notes": [
+          {
+            "kind": "label",
+            "target": "head:0",
+            "at": "creativity",
+            "label": "fig. 2: test subject",
+            "size": 0.8
+          }
+        ],
+        "camera": {
+          "zoom": [
+            1.0,
+            1.06
+          ],
+          "focus": [
+            0.5,
+            0.45
+          ]
+        }
+      }
+    },
+    {
+      "id": "videos",
+      "say": "Some watched two men hanging laundry. Others watched a scene from a movie.",
+      "visual": {
+        "type": "split",
+        "panels": [
+          {
+            "label": "BORING",
+            "setting": "room",
+            "props": [
+              {
+                "type": "tv",
+                "x": 0.68,
+                "text": "two men hanging laundry"
+              }
+            ],
+            "people": [
+              {
+                "x": 0.28,
+                "face": "sleepy",
+                "emote": "zzz",
+                "emoteAt": "laundry"
+              }
+            ]
+          },
+          {
+            "label": "MILDLY INTERESTING",
+            "at": "others",
+            "setting": "room",
+            "props": [
+              {
+                "type": "tv",
+                "x": 0.68,
+                "text": "a scene from a movie"
+              }
+            ],
+            "people": [
+              {
+                "x": 0.28,
+                "face": "smile",
+                "gaze": 0.8
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "result",
+      "transition": "zoom",
+      "say": "Only the movie group's wandering minds got more *creative.*",
+      "visual": {
+        "type": "situation",
+        "setting": "room",
+        "props": [
+          {
+            "type": "tv",
+            "x": 0.72,
+            "text": "a scene from a movie"
+          }
+        ],
+        "people": [
+          {
+            "x": 0.32,
+            "face": "smile",
+            "then": [
+              {
+                "at": "creative",
+                "pose": "cheer",
+                "face": "grin"
+              }
+            ],
+            "emote": "idea",
+            "emoteAt": "creative"
+          }
+        ],
+        "camera": {
+          "keys": [
+            {
+              "at": "creative",
+              "zoom": 1.3,
+              "focus": [
+                0.32,
+                0.362
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "twist",
+      "say": "So the secret isn't boredom. It's a task that's *just* interesting enough.",
+      "visual": {
+        "type": "quote",
+        "person": {
+          "pose": "think",
+          "face": "smug"
+        }
+      }
+    },
+    {
+      "id": "tip",
+      "say": "A walk. Washing dishes. A shower. Not your phone. That one's *too* interesting.",
       "visual": {
         "type": "situation",
         "setting": "park",
@@ -242,21 +490,21 @@
             "face": "peaceful",
             "then": [
               {
-                "at": "connect",
-                "face": "smile"
+                "at": "phone",
+                "face": "smug"
               }
             ],
-            "emote": "idea",
-            "emoteAt": "connect"
+            "emote": "!",
+            "emoteAt": "phone"
           }
         ],
         "notes": [
           {
             "kind": "label",
             "target": "head:0",
-            "at": "ideas",
-            "label": "fig. 2: a walk counts too",
-            "size": 0.85
+            "at": "dishes",
+            "label": "fig. 3: a walk counts too",
+            "size": 0.8
           }
         ],
         "camera": {
@@ -270,13 +518,12 @@
           ],
           "keys": [
             {
-              "at": "walk",
+              "at": "dishes",
               "zoom": 1.0,
               "focus": [
                 0.5,
                 0.5
-              ],
-              "secs": 1.5
+              ]
             }
           ]
         }
@@ -378,7 +625,7 @@
                 0.5,
                 0.33
               ],
-              "secs": 0.7
+              "secs": 0.8
             },
             {
               "at": "perfectly",
@@ -387,7 +634,7 @@
                 0.5,
                 0.5
               ],
-              "secs": 0.5
+              "secs": 0.6
             }
           ]
         }

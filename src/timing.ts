@@ -13,7 +13,8 @@ const placeholderVoice = (id: string, say: string): VoiceScene => {
 	return {id, file: '', duration: words.length * 0.36, words: words2, env: ''};
 };
 
-const TRANSITION_FRAMES: Record<Transition, number> = {fade: 14, zoom: 14, black: 24, cut: 0};
+// unhurried on purpose: the channel's pace is calm (0.8 s dissolves, 1.3 s dips to black)
+const TRANSITION_FRAMES: Record<Transition, number> = {fade: 24, zoom: 24, black: 40, cut: 0};
 
 /**
  * Scene timing. Scenes overlap by their transition, so a scene's picture starts before the previous
@@ -33,8 +34,8 @@ export const buildTimeline = (episodeId: string, manifest: Manifest | null): Tim
 		const v = voice ?? placeholderVoice(def.id, def.say);
 		const isLast = i === n - 1;
 		const transIn = trans[i];
-		const transOut = isLast ? {type: 'black' as Transition, frames: 18} : trans[i + 1];
-		const lead = i === 0 ? 0 : Math.round(transIn.frames * 0.7) + Math.round(LEAD * FPS);
+		const transOut = isLast ? {type: 'black' as Transition, frames: 30} : trans[i + 1];
+		const lead = i === 0 ? 0 : Math.round(transIn.frames * 0.6) + Math.round(LEAD * FPS);
 		const tone = getTone(def.tone ?? episode.tone);
 		// leave room for the outgoing transition after the last word
 		const hold = Math.max(def.hold ?? (isLast ? TAIL_LAST : tone.pause), (transOut.frames * 0.6) / FPS);

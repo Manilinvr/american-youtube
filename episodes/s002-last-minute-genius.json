@@ -3,10 +3,10 @@
   "format": "short",
   "title": "Specimen #002: The Last-Minute Genius",
   "tone": "documentary",
+  "music": "thinking-music.mp3",
   "sources": [
     "Parkinson, C. N. (1955, November 19). Parkinson's Law. The Economist (satirical essay)",
-    "Bryan, J. F., & Locke, E. A. (1967). Parkinson's law as a goal-setting phenomenon. Organizational Behavior and Human Performance, 2, 258-275",
-    "Ariely, D., & Wertenbroch, K. (2002). Procrastination, deadlines, and performance: Self-control by precommitment. Psychological Science, 13(3)"
+    "Bryan, J. F., & Locke, E. A. (1967). Parkinson's law as a goal-setting phenomenon. Organizational Behavior and Human Performance, 2, 258-275"
   ],
   "scenes": [
     {
@@ -59,7 +59,7 @@
           ],
           "focus": [
             0.36,
-            0.37
+            0.371
           ],
           "keys": [
             {
@@ -68,8 +68,7 @@
               "focus": [
                 0.6,
                 0.5
-              ],
-              "secs": 0.9
+              ]
             },
             {
               "at": "congratulations",
@@ -77,16 +76,61 @@
               "focus": [
                 0.5,
                 0.5
-              ],
-              "secs": 0.8
+              ]
             }
           ]
         }
       }
     },
     {
+      "id": "promise",
+      "say": "There's actually a law for this. And by the end, you'll know how to use it against yourself.",
+      "visual": {
+        "type": "situation",
+        "setting": "room",
+        "props": [
+          {
+            "type": "desk",
+            "x": 0.5,
+            "front": true
+          },
+          {
+            "type": "clock",
+            "x": 0.15
+          }
+        ],
+        "people": [
+          {
+            "x": 0.5,
+            "pose": "stand",
+            "face": "smug",
+            "gaze": 0,
+            "then": [
+              {
+                "at": "use",
+                "face": "grin"
+              }
+            ],
+            "emote": "idea",
+            "emoteAt": "use"
+          }
+        ],
+        "camera": {
+          "zoom": [
+            1.0,
+            1.15
+          ],
+          "focus": [
+            0.5,
+            0.42
+          ]
+        }
+      }
+    },
+    {
       "id": "observe",
-      "say": "Given a month, it takes a month. Given one night? Forty minutes.",
+      "transition": "zoom",
+      "say": "Observe. Given a month, the specimen takes a month. Given one night? Forty minutes.",
       "visual": {
         "type": "split",
         "panels": [
@@ -139,26 +183,85 @@
               }
             ]
           }
+        ]
+      }
+    },
+    {
+      "id": "weeks",
+      "say": "For three weeks, it reorganizes its desk. Twice. Then, on the final night, it becomes a *genius.*",
+      "visual": {
+        "type": "situation",
+        "setting": "room",
+        "props": [
+          {
+            "type": "desk",
+            "x": 0.45,
+            "front": true
+          },
+          {
+            "type": "plant",
+            "x": 0.88
+          }
+        ],
+        "people": [
+          {
+            "x": 0.45,
+            "pose": "stand",
+            "face": "smile",
+            "then": [
+              {
+                "at": "twice",
+                "face": "smug"
+              },
+              {
+                "at": "final",
+                "pose": "type",
+                "face": "worried"
+              },
+              {
+                "at": "genius",
+                "face": "grin"
+              }
+            ],
+            "emote": "sweat",
+            "emoteAt": "final"
+          }
+        ],
+        "notes": [
+          {
+            "kind": "label",
+            "target": "head:0",
+            "at": "genius",
+            "label": "fig. 1: peak productivity",
+            "size": 0.8
+          }
         ],
         "camera": {
           "keys": [
             {
-              "at": "night",
-              "zoom": 1.05,
+              "at": "twice",
+              "zoom": 1.2,
               "focus": [
-                0.5,
-                0.5
-              ],
-              "secs": 1.0
+                0.45,
+                0.45
+              ]
+            },
+            {
+              "at": "final",
+              "zoom": 1.4,
+              "focus": [
+                0.45,
+                0.371
+              ]
             }
           ]
         }
-      },
-      "transition": "zoom"
+      }
     },
     {
       "id": "name",
-      "say": "This is *Parkinson's law.*",
+      "transition": "black",
+      "say": "This is *Parkinson's law.* Work expands to fill the time you give it.",
       "visual": {
         "type": "quote",
         "text": "PARKINSON'S LAW",
@@ -167,12 +270,11 @@
           "pose": "think",
           "face": "smug"
         }
-      },
-      "transition": "black"
+      }
     },
     {
-      "id": "joke",
-      "say": "Not a real law. It began as a *joke* in [1955.|nineteen fifty-five.]",
+      "id": "origin",
+      "say": "A historian, Cyril Northcote Parkinson, wrote it in [1955|nineteen fifty-five], as a *joke,* in The Economist.",
       "visual": {
         "type": "situation",
         "setting": "room",
@@ -203,33 +305,71 @@
           {
             "kind": "label",
             "target": "person:0",
-            "at": "began",
-            "label": "fig. 2: a 1955 essay"
+            "at": "wrote",
+            "label": "fig. 2: a 1955 essay",
+            "size": 0.8
+          }
+        ],
+        "camera": {
+          "keys": [
+            {
+              "at": "joke",
+              "zoom": 1.3,
+              "focus": [
+                0.45,
+                0.37
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "chart",
+      "transition": "zoom",
+      "say": "His punchline? As the British Empire *shrank,* the office running it kept *growing.*",
+      "visual": {
+        "type": "situation",
+        "setting": "room",
+        "props": [
+          {
+            "type": "chart",
+            "x": 0.42,
+            "open": "shrank",
+            "text": "empire|office staff"
+          }
+        ],
+        "people": [
+          {
+            "x": 0.86,
+            "pose": "pointSide",
+            "flip": true,
+            "face": "smug",
+            "gaze": -0.6,
+            "then": [
+              {
+                "at": "growing",
+                "face": "grin"
+              }
+            ],
+            "scale": 0.85
           }
         ],
         "camera": {
           "zoom": [
             1.0,
-            1.0
+            1.06
           ],
-          "keys": [
-            {
-              "at": "joke",
-              "zoom": 1.35,
-              "focus": [
-                0.45,
-                0.37
-              ],
-              "secs": 0.7
-            }
+          "focus": [
+            0.45,
+            0.45
           ]
         }
-      },
-      "transition": "fade"
+      }
     },
     {
       "id": "science",
-      "say": "In experiments, people given extra time really did take *longer.*",
+      "say": "Then scientists tested it. In [1967,|nineteen sixty-seven,] people given extra time on a task really did take *longer.*",
       "visual": {
         "type": "split",
         "panels": [
@@ -253,7 +393,7 @@
                 "pose": "type",
                 "face": "annoyed",
                 "emote": "sweat",
-                "emoteAt": "experiments"
+                "emoteAt": "tested"
               }
             ]
           },
@@ -283,25 +423,125 @@
             ]
           }
         ]
-      },
-      "transition": "fade"
+      }
+    },
+    {
+      "id": "why",
+      "say": "With more time, we quietly aim lower. Eh. Plenty of time.",
+      "visual": {
+        "type": "situation",
+        "setting": "room",
+        "props": [
+          {
+            "type": "couch",
+            "x": 0.5
+          }
+        ],
+        "people": [
+          {
+            "x": 0.5,
+            "pose": "phone",
+            "holding": "phone",
+            "face": "meh",
+            "bubble": {
+              "text": "eh... plenty of time",
+              "kind": "thought",
+              "at": "eh",
+              "side": "right"
+            }
+          }
+        ],
+        "camera": {
+          "zoom": [
+            1.0,
+            1.0
+          ],
+          "keys": [
+            {
+              "at": "aim",
+              "zoom": 1.25,
+              "focus": [
+                0.5,
+                0.4
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "tip",
+      "transition": "zoom",
+      "say": "So use it against yourself. Give the task *less* time. Set a timer. Bring the deadline closer.",
+      "visual": {
+        "type": "situation",
+        "setting": "room",
+        "props": [
+          {
+            "type": "desk",
+            "x": 0.55,
+            "front": true
+          },
+          {
+            "type": "clock",
+            "x": 0.18
+          }
+        ],
+        "people": [
+          {
+            "x": 0.55,
+            "pose": "type",
+            "face": "smile",
+            "emote": "idea",
+            "emoteAt": "timer"
+          }
+        ],
+        "notes": [
+          {
+            "kind": "circle",
+            "target": "prop:1",
+            "at": "timer"
+          }
+        ],
+        "camera": {
+          "keys": [
+            {
+              "at": "timer",
+              "zoom": 1.3,
+              "focus": [
+                0.3,
+                0.36
+              ]
+            },
+            {
+              "at": "bring",
+              "zoom": 1.0,
+              "focus": [
+                0.5,
+                0.5
+              ]
+            }
+          ]
+        }
+      }
     },
     {
       "id": "lesson",
       "tone": "deep",
-      "say": "Not lazy. Just a deadline too far away. *Bring it closer.*",
+      "transition": "black",
+      "say": "You're not lazy. Your deadline was just too far away.",
       "visual": {
         "type": "quote",
         "person": {
           "pose": "think",
           "face": "peaceful"
         }
-      },
-      "transition": "black"
+      }
     },
     {
       "id": "verdict",
       "tone": "funny",
+      "transition": "zoom",
       "say": "This note? Written the night before. Perfectly *human.*",
       "visual": {
         "type": "situation",
@@ -366,8 +606,7 @@
               "focus": [
                 0.32,
                 0.42
-              ],
-              "secs": 0.8
+              ]
             },
             {
               "at": "perfectly",
@@ -376,13 +615,11 @@
                 0.5,
                 0.5
               ],
-              "secs": 0.5
+              "secs": 0.6
             }
           ]
         }
-      },
-      "transition": "zoom"
+      }
     }
-  ],
-  "music": "soft-pad.mp3"
+  ]
 }

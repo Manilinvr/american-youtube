@@ -3,8 +3,9 @@
   "format": "short",
   "title": "Specimen #001: The Doorway Forgetter",
   "tone": "documentary",
+  "music": "easy-lemon.mp3",
   "sources": [
-    "Radvansky, Krawietz & Tamplin (2011). Walking through doorways causes forgetting. Quarterly Journal of Experimental Psychology, 64(8)",
+    "Radvansky, Krawietz & Tamplin (2011). Walking through doorways causes forgetting: Further explorations. Quarterly Journal of Experimental Psychology, 64(8), 1632-1645",
     "Radvansky & Copeland (2006). Walking through doorways causes forgetting: situation models and experienced space. Memory & Cognition, 34(5)"
   ],
   "scenes": [
@@ -65,8 +66,7 @@
               "focus": [
                 0.58,
                 0.37
-              ],
-              "secs": 0.8
+              ]
             },
             {
               "at": "congratulations",
@@ -74,8 +74,65 @@
               "focus": [
                 0.5,
                 0.5
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "suspect",
+      "say": "The culprit has been hiding in plain sight. In every home. Maybe... right behind you.",
+      "visual": {
+        "type": "situation",
+        "setting": "room",
+        "props": [
+          {
+            "type": "door",
+            "x": 0.18
+          },
+          {
+            "type": "lamp",
+            "x": 0.9
+          }
+        ],
+        "people": [
+          {
+            "x": 0.58,
+            "face": "worried",
+            "then": [
+              {
+                "at": "hiding",
+                "gaze": -0.8
+              },
+              {
+                "at": "every",
+                "gaze": 0.8
+              },
+              {
+                "at": "behind",
+                "face": "surprised",
+                "gaze": -1
+              }
+            ],
+            "emote": "!",
+            "emoteAt": "behind"
+          }
+        ],
+        "camera": {
+          "zoom": [
+            1.0,
+            1.05
+          ],
+          "keys": [
+            {
+              "at": "behind",
+              "zoom": 1.45,
+              "focus": [
+                0.58,
+                0.362
               ],
-              "secs": 1.0
+              "secs": 0.7
             }
           ]
         }
@@ -83,7 +140,7 @@
     },
     {
       "id": "observe",
-      "say": "Observe. It stares at the fridge like the fridge owes it money.",
+      "say": "Observe. It stares at the fridge like the fridge owes it money. It checks its pockets. It consults the ceiling.",
       "visual": {
         "type": "situation",
         "setting": "room",
@@ -104,8 +161,21 @@
                 "at": "owes",
                 "pose": "hips",
                 "face": "annoyed"
+              },
+              {
+                "at": "pockets",
+                "pose": "stand",
+                "face": "confused",
+                "gaze": 0
+              },
+              {
+                "at": "ceiling",
+                "pose": "think",
+                "face": "confused"
               }
-            ]
+            ],
+            "emote": "?",
+            "emoteAt": "ceiling"
           }
         ],
         "notes": [
@@ -113,54 +183,58 @@
             "kind": "label",
             "target": "head:0",
             "at": "stares",
-            "label": "fig. 1: the stare"
+            "label": "fig. 1: the stare",
+            "size": 0.8
           },
           {
             "kind": "arrow",
             "target": "prop:0",
             "at": "money",
-            "label": "owes $20"
+            "label": "owes $20",
+            "size": 0.8
           }
         ],
         "camera": {
-          "zoom": [
-            1.0,
-            1.02
-          ],
           "keys": [
             {
               "at": "owes",
-              "zoom": 1.45,
+              "zoom": 1.35,
               "focus": [
                 0.32,
                 0.37
-              ],
-              "secs": 0.7
+              ]
             },
             {
-              "at": "money",
-              "zoom": 1.1,
+              "at": "pockets",
+              "zoom": 1.0,
               "focus": [
-                0.55,
-                0.45
-              ],
-              "secs": 0.6
+                0.5,
+                0.5
+              ]
+            },
+            {
+              "at": "ceiling",
+              "zoom": 1.3,
+              "focus": [
+                0.32,
+                0.33
+              ]
             }
           ]
         }
-      },
-      "transition": "fade"
+      }
     },
     {
-      "id": "door",
-      "say": "The culprit isn't its memory. It's the *door.*",
+      "id": "reveal",
+      "transition": "zoom",
+      "say": "The culprit? The *door.*",
       "visual": {
         "type": "situation",
         "setting": "room",
         "props": [
           {
             "type": "door",
-            "x": 0.36
+            "x": 0.38
           }
         ],
         "people": [
@@ -196,19 +270,126 @@
               "at": "door",
               "zoom": 1.25,
               "focus": [
-                0.38,
+                0.4,
                 0.45
-              ],
-              "secs": 0.6
+              ]
             }
           ]
         }
-      },
-      "transition": "zoom"
+      }
+    },
+    {
+      "id": "study",
+      "say": "In 2011, psychologists at Notre Dame had people carry objects from one table to another. Some walked through a doorway. Some walked the same distance in one room.",
+      "visual": {
+        "type": "split",
+        "panels": [
+          {
+            "label": "ONE ROOM",
+            "setting": "room",
+            "props": [
+              {
+                "type": "desk",
+                "x": 0.86
+              }
+            ],
+            "people": [
+              {
+                "x": 0.6,
+                "walk": {
+                  "from": 0.1,
+                  "at": "carry",
+                  "seconds": 2.5
+                },
+                "face": "neutral"
+              }
+            ]
+          },
+          {
+            "label": "THROUGH A DOOR",
+            "at": "doorway",
+            "setting": "room",
+            "props": [
+              {
+                "type": "door",
+                "x": 0.45
+              },
+              {
+                "type": "desk",
+                "x": 0.88
+              }
+            ],
+            "people": [
+              {
+                "x": 0.68,
+                "walk": {
+                  "from": 0.1,
+                  "at": "doorway",
+                  "seconds": 2.5
+                },
+                "face": "neutral"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "result",
+      "transition": "zoom",
+      "say": "The doorway group forgot *more.*",
+      "visual": {
+        "type": "situation",
+        "setting": "room",
+        "props": [
+          {
+            "type": "door",
+            "x": 0.2
+          },
+          {
+            "type": "desk",
+            "x": 0.8
+          }
+        ],
+        "people": [
+          {
+            "x": 0.5,
+            "pose": "scratch",
+            "face": "confused",
+            "emote": "?",
+            "emoteAt": "forgot"
+          }
+        ],
+        "notes": [
+          {
+            "kind": "label",
+            "target": "head:0",
+            "at": "group",
+            "label": "fig. 2: the doorway group",
+            "size": 0.8
+          }
+        ],
+        "camera": {
+          "zoom": [
+            1.0,
+            1.0
+          ],
+          "keys": [
+            {
+              "at": "forgot",
+              "zoom": 1.35,
+              "focus": [
+                0.5,
+                0.362
+              ]
+            }
+          ]
+        }
+      }
     },
     {
       "id": "chapter",
-      "say": "To the brain, a doorway ends a chapter. Old scene: *filed away.*",
+      "say": "To the brain, a doorway marks the end of a chapter. Old scene: *filed away.*",
       "visual": {
         "type": "split",
         "panels": [
@@ -248,7 +429,7 @@
           },
           {
             "label": "NEW ROOM",
-            "at": "ends",
+            "at": "end",
             "setting": "room",
             "props": [
               {
@@ -266,25 +447,12 @@
               }
             ]
           }
-        ],
-        "camera": {
-          "keys": [
-            {
-              "at": "ends",
-              "zoom": 1.04,
-              "focus": [
-                0.5,
-                0.5
-              ],
-              "secs": 1.0
-            }
-          ]
-        }
-      },
-      "transition": "fade"
+        ]
+      }
     },
     {
       "id": "name",
+      "transition": "black",
       "say": "Scientists call it *the doorway effect.*",
       "visual": {
         "type": "quote",
@@ -294,13 +462,168 @@
           "pose": "think",
           "face": "smug"
         }
-      },
-      "transition": "black"
+      }
+    },
+    {
+      "id": "twist",
+      "say": "And the strange part? Walking back into the first room didn't help.",
+      "visual": {
+        "type": "situation",
+        "setting": "room",
+        "props": [
+          {
+            "type": "door",
+            "x": 0.5
+          },
+          {
+            "type": "plant",
+            "x": 0.1
+          }
+        ],
+        "people": [
+          {
+            "x": 0.25,
+            "walk": {
+              "from": 0.75,
+              "at": "walking",
+              "seconds": 1.8
+            },
+            "face": "worried",
+            "then": [
+              {
+                "at": "help",
+                "face": "sad"
+              }
+            ],
+            "emote": "...",
+            "emoteAt": "help"
+          }
+        ],
+        "camera": {
+          "zoom": [
+            1.0,
+            1.0
+          ],
+          "keys": [
+            {
+              "at": "help",
+              "zoom": 1.3,
+              "focus": [
+                0.27,
+                0.362
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "virtual",
+      "transition": "zoom",
+      "say": "It even happened with doors on a *computer screen.*",
+      "visual": {
+        "type": "situation",
+        "setting": "room",
+        "props": [
+          {
+            "type": "desk",
+            "x": 0.45,
+            "front": true
+          },
+          {
+            "type": "picture",
+            "x": 0.82
+          }
+        ],
+        "people": [
+          {
+            "x": 0.45,
+            "pose": "type",
+            "face": "surprised",
+            "emote": "!",
+            "emoteAt": "computer"
+          }
+        ],
+        "notes": [
+          {
+            "kind": "label",
+            "target": "head:0",
+            "at": "screen",
+            "label": "fig. 3: virtual doors work too",
+            "size": 0.8
+          }
+        ],
+        "camera": {
+          "zoom": [
+            1.0,
+            1.0
+          ],
+          "keys": [
+            {
+              "at": "computer",
+              "zoom": 1.3,
+              "focus": [
+                0.45,
+                0.37
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "tip",
+      "say": "So try this: say it out loud before you go. Keys. Keys. *Keys.*",
+      "visual": {
+        "type": "situation",
+        "setting": "room",
+        "props": [
+          {
+            "type": "door",
+            "x": 0.82
+          }
+        ],
+        "people": [
+          {
+            "x": 0.4,
+            "face": "annoyed",
+            "talking": true,
+            "then": [
+              {
+                "at": "keys",
+                "pose": "pointSide"
+              }
+            ],
+            "bubble": {
+              "text": "keys. keys. KEYS.",
+              "kind": "speech",
+              "at": "keys#1",
+              "side": "right"
+            }
+          }
+        ],
+        "notes": [
+          {
+            "kind": "label",
+            "target": "head:0",
+            "at": "try",
+            "label": "fig. 4: field-tested trick",
+            "size": 0.8
+          }
+        ],
+        "camera": {
+          "zoom": [
+            1.0,
+            1.08
+          ]
+        }
+      }
     },
     {
       "id": "lesson",
       "tone": "deep",
-      "say": "Broken? No. Its brain is just making room for what's next...",
+      "transition": "black",
+      "say": "Broken? No. Your brain is just closing one chapter to make room for the next...",
       "visual": {
         "type": "situation",
         "setting": "rooftop",
@@ -313,7 +636,7 @@
             "gaze": 0.6,
             "then": [
               {
-                "at": "making",
+                "at": "closing",
                 "face": "smile"
               }
             ]
@@ -341,13 +664,13 @@
             0.5
           ]
         }
-      },
-      "transition": "black"
+      }
     },
     {
       "id": "verdict",
       "tone": "funny",
-      "say": "even if what's next is the fridge. Again. Perfectly *human.*",
+      "transition": "zoom",
+      "say": "even if the next chapter is the fridge. Again. Perfectly *human.*",
       "visual": {
         "type": "situation",
         "setting": "room",
@@ -405,8 +728,7 @@
               "focus": [
                 0.32,
                 0.37
-              ],
-              "secs": 0.6
+              ]
             },
             {
               "at": "perfectly",
@@ -415,13 +737,11 @@
                 0.5,
                 0.5
               ],
-              "secs": 0.5
+              "secs": 0.6
             }
           ]
         }
-      },
-      "transition": "zoom"
+      }
     }
-  ],
-  "music": "soft-pad.mp3"
+  ]
 }

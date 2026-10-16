@@ -1,7 +1,7 @@
 import React from 'react';
-import {HAND} from '../fonts';
-import {HIGHLIGHT, INK, LINE, PAPER_LIGHT as PAPER, PENCIL} from '../theme';
-import {Circ, Ell, P, Rect} from './ink';
+import {HAND, MARKER, TYPE} from '../fonts';
+import {HIGHLIGHT, INK, LINE, PAPER_LIGHT as PAPER, PENCIL, RED} from '../theme';
+import {Circ, Draw, Ell, P, Rect} from './ink';
 
 /**
  * Line-art furniture and objects. Coordinates: bottom-centre of the object at (0, 0), y grows
@@ -165,11 +165,16 @@ export const PROPS: Record<string, PropDef> = {
 	tv: {
 		w: 270,
 		h: 250,
-		draw: () => (
+		draw: ({text}) => (
 			<g>
 				<P d="M-110 0 L110 0 L110 -60 L-110 -60Z" fill={PAPER} />
 				<Rect x={-135} y={-250} width={270} height={170} rx={10} fill={PAPER} />
 				<P d="M-20 -80 L-30 -60 M20 -80 L30 -60" />
+				{text && (
+					<foreignObject x={-120} y={-238} width={240} height={146}>
+						<div style={{width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center', fontFamily: TYPE, fontSize: 30, lineHeight: 1.15, color: INK}}>{text}</div>
+					</foreignObject>
+				)}
 			</g>
 		),
 	},
@@ -288,6 +293,27 @@ export const PROPS: Record<string, PropDef> = {
 				<P d="M-190 -140 Q-170 -70 -110 -55" stroke={PENCIL} strokeWidth={LINE * 0.6} />
 			</g>
 		),
+	},
+	chart: {
+		w: 460,
+		h: 360,
+		elevation: 120,
+		// hand-drawn line chart; `open` (0-1, e.g. "open": "growing") draws the lines; `text` = "falling label|rising label"
+		draw: ({open = 1, text}) => {
+			const [down, up] = (text ?? 'down|up').split('|');
+			return (
+				<g>
+					<P d="M-200 -340 L-200 0 L220 0" strokeWidth={LINE * 1.1} />
+					<P d="M-208 -330 L-200 -345 L-192 -330 M210 -8 L225 0 L210 8" strokeWidth={LINE * 0.9} />
+					<Draw p={open}>
+						<P d="M-180 -290 Q-60 -250 0 -170 Q80 -90 190 -60" stroke={PENCIL} strokeWidth={LINE * 1.4} />
+						<P d="M-180 -70 Q-40 -90 40 -170 Q120 -250 190 -300" stroke={RED} strokeWidth={LINE * 1.6} />
+					</Draw>
+					<text x={100} y={-40} fontFamily={TYPE} fontSize={30} fill={INK} opacity={open}>{down}</text>
+					<text x={40} y={-300} fontFamily={MARKER} fontSize={36} fill={RED} opacity={open}>{up}</text>
+				</g>
+			);
+		},
 	},
 	'phone-big': {
 		w: 280,

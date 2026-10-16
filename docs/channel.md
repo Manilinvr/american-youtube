@@ -86,8 +86,14 @@ psychology, everyday psychology, human behavior, relatable, nature documentary p
   - ...
 
   Which specimen are you? Tell us in the comments.
+
+  Music: "Dreamer" by Kevin MacLeod (incompetech.com)
+  Licensed under Creative Commons: By Attribution 4.0
+  http://creativecommons.org/licenses/by/4.0/
+
   #psychology #relatable #specimenyou #shorts
   ```
+  Строка «Music: …» обязательна — название трека из поля `music` сценария (см. `public/music/LICENSE.md`).
 - **Закреплённый комментарий:** *"Field note: how many of you are also Specimen #003? 🙋"*
 - **«Для детей»: НЕТ.** Обязательно, иначе отключатся комментарии и персонализированная реклама.
 
