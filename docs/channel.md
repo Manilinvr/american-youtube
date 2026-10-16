@@ -23,6 +23,8 @@
 
 ## Описание канала (вставить в YouTube как есть)
 
+Studio → Настройка канала → Основные сведения → Описание. Текст ниже — 955 знаков из 1000 допустимых. На канале две серии, и описание обещает обе: каталог видов (`sNNN`) и иллюстрированный учебник (`epNNN`). Названия серий совпадают с названиями плейлистов.
+
 ```
 This is a nature documentary. You are the animal.
 
@@ -31,45 +33,58 @@ Latin name: Homo relatabilis
 Habitat: a phone screen, probably past midnight
 Observed behaviors:
 • walks into a room and forgets why
-• replies "you too" when the waiter says "enjoy your meal"
-• wins arguments in the shower, three days too late
-• opens the fridge again, in case new food has appeared
-Threat level: low (mostly to its own sleep schedule)
+• solves its problems in the shower, never near a pen
+• replays something it said in 2014, at 1 a.m.
+• has a great chat, then walks home sure it was boring
+Threat level: low (mostly to its own sleep)
 Status: PERFECTLY HUMAN
 
-Hello. I'm a field researcher, and you are the strangest animal I have ever studied.
+I'm a field researcher, and you are the strangest animal I've ever studied. I keep two kinds of notes:
 
-Each week I observe one of your species' little rituals in the wild, give it a proper Latin name, and explain the real science behind it. Actual studies, not internet myths. Then I stamp it.
+🔬 The Specimen Catalogue. One little human habit, caught in the wild. It gets a number, a Latin name, the real science, and a stamp.
+
+📖 Psychology, Illustrated. One question about your mind, drawn as a page from an old psychology textbook.
+
+Real studies, not internet myths. Sources in every description.
 
 Weird? Constantly. Broken? Never. Perfectly human.
 
 Find yourself in the catalogue. Most people find three.
-Sources are in every video's description.
 ```
 
 **Почему это цепляет:**
 
-1. **Первая строка — это то, что видно под названием канала.** *"This is a nature documentary. You are the animal."* — за 10 слов человек понимает весь концепт и чувствует, что речь про него.
-2. **Описание само является карточкой вида.** Это не рассказ о канале, а «полевая запись» о читателе: его среда обитания (экран телефона после полуночи), повадки, «уровень угрозы». Читатель узнаёт себя в каждой строке — и это уже первый «ролик» канала.
-3. **Четыре повадки — четыре мини-хука.** Каждая — будущий выпуск, и каждая вызывает «это же я».
-4. **Ритуал и обещание.** *"Weird? Constantly. Broken? Never. Perfectly human."* — та же мысль, что и в печати в конце роликов.
-5. **Финальный вызов.** *"Most people find three."* — провокация, после которой хочется пересмотреть каталог и найти «своих трёх».
+1. **Первая строка — это то, что видно под названием канала** (без раскрытия показываются примерно первые 150 знаков). *"This is a nature documentary. You are the animal."* — за 10 слов человек понимает концепт и чувствует, что речь про него.
+2. **Описание само является карточкой вида.** Это не рассказ о канале, а «полевая запись» о читателе: среда обитания, повадки, «уровень угрозы». Читатель узнаёт себя в каждой строке.
+3. **Каждая повадка — это готовый ролик**, причём из обеих серий: дверь — #001, душ и «вечно без ручки» — #003 (колбэк к его финалу), 2014-й в час ночи — ep001, «хороший разговор, а дома кажется, что было скучно» — ep002. Кто узнал себя, найдёт это видео на канале.
+4. **Две серии — одна рамка.** Исследовательница ведёт «два вида записей». Так серия-учебник не выглядит чужой, а зритель понимает, чего ждать от каждого плейлиста.
+5. **Доверие.** *"Real studies, not internet myths. Sources in every description."* — главное отличие от каналов с «фактами о психологии», и мы его действительно соблюдаем.
+6. **Ритуал и вызов.** *"Weird? Constantly. Broken? Never. Perfectly human."* повторяет печать из роликов, а *"Most people find three."* — провокация, после которой хочется пролистать каталог.
 
 **Перевод для вас:**
 «Это документальный фильм о дикой природе. Животное — ты.
-ПОЛЕВАЯ ЗАПИСЬ: ОБРАЗЕЦ «ТЫ». Латинское название: Homo relatabilis. Среда обитания: экран телефона, вероятно, после полуночи. Замеченные повадки: заходит в комнату и забывает зачем; отвечает «вам тоже», когда официант говорит «приятного аппетита»; выигрывает споры в душе — с опозданием на три дня; снова открывает холодильник — вдруг там появилась новая еда. Уровень угрозы: низкий (в основном для собственного режима сна). Статус: ПРОСТО ЧЕЛОВЕК.
-Здравствуй. Я полевой исследователь, и ты — самое странное животное, которое я когда-либо изучала. Каждую неделю я наблюдаю один из маленьких ритуалов твоего вида в дикой природе, даю ему латинское название и объясняю настоящую науку за ним. Настоящие исследования, а не интернет-мифы. А потом ставлю печать.
+ПОЛЕВАЯ ЗАПИСЬ: ОБРАЗЕЦ «ТЫ». Латинское название: Homo relatabilis. Среда обитания: экран телефона, вероятно, после полуночи. Замеченные повадки: заходит в комнату и забывает зачем; решает свои проблемы в душе — и никогда рядом нет ручки; в час ночи прокручивает то, что сказал в 2014-м; отлично поговорил, а по дороге домой уверен, что было скучно. Уровень угрозы: низкий (в основном для собственного сна). Статус: ПРОСТО ЧЕЛОВЕК.
+Я полевой исследователь, а ты — самое странное животное, которое я когда-либо изучала. Я веду два вида записей:
+🔬 Каталог образцов. Одна маленькая человеческая привычка, пойманная в дикой природе. Ей дают номер, латинское название, объясняют настоящую науку — и ставят печать.
+📖 Психология в картинках. Один вопрос о твоём разуме, нарисованный как страница из старого учебника психологии.
+Настоящие исследования, а не интернет-мифы. Источники — в описании каждого видео.
 Странно? Постоянно. Сломан? Никогда. Просто человек.
-Найди себя в каталоге. Большинство находит троих. Источники — в описании каждого видео.»
+Найди себя в каталоге. Большинство находит троих.»
 
 **Запасные первые строки** (если захотите A/B-тест):
+- *"A field guide to the strangest animal on Earth. It's currently reading this."*
 - *"You've been observed. Don't worry, it's for science."*
-- *"We study the strangest animal on Earth. It's currently reading this."*
+
+**Когда менять описание:**
+- если будете стабильно выходить по графику из `docs/ideas-textbook.md` (вт / чт / сб), добавьте перед строкой *"Weird? Constantly..."* строку `New entries every Tue, Thu and Sat.` (36 знаков, в лимит влезает). Пока график не устоялся, лучше не обещать;
+- повадки в «полевой записи» можно менять на темы самых популярных роликов — так описание всегда ведёт на то, что уже смотрят.
 
 ## Ключевые слова канала
 
+Studio → Настройка канала → Основные сведения → Ключевые слова. Добавлены слова под серию-учебник (`illustrated psychology`, `psychology explained`, `memory`, `sleep`).
+
 ```
-psychology, everyday psychology, human behavior, relatable, nature documentary parody, field guide, why do we, cognitive biases, animated psychology, stick figure animation, sketch animation, procrastination, overthinking, funny psychology, shorts
+psychology, everyday psychology, human behavior, relatable, nature documentary parody, field guide, illustrated psychology, psychology explained, why do we, cognitive biases, overthinking, procrastination, memory, sleep, animated psychology, sketch animation, funny psychology, shorts
 ```
 
 ## Шаблон для каждого ролика
