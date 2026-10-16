@@ -2,6 +2,7 @@ import React from 'react';
 import {Composition, Still} from 'remotion';
 import {Avatar, Banner, EndScreen, Thumbnail, Watermark} from './branding/Branding';
 import {SketchSheet} from './SketchSheet';
+import {RigSheet} from './textbook/RigSheet';
 import {EpisodeVideo} from './EpisodeVideo';
 import {EPISODES} from './episodes';
 import {calculateEpisodeMetadata, FPS} from './timing';
@@ -23,6 +24,7 @@ export const RemotionRoot: React.FC = () => (
 			/>
 		))}
 		<Composition id="sketch-sheet" component={SketchSheet} fps={FPS} width={1920} height={1080} durationInFrames={FPS * 4} />
+		<Still id="rig-sheet" component={RigSheet} width={1800} height={1000} />
 		{/* channel branding (npm run branding) */}
 		<Still id="banner" component={Banner} width={2560} height={1440} defaultProps={{showSafe: false}} />
 		<Still id="avatar" component={Avatar} width={800} height={800} />

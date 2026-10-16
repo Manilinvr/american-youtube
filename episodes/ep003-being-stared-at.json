@@ -1,0 +1,329 @@
+{
+  "id": "ep003-being-stared-at",
+  "format": "short",
+  "title": "Can You Actually Feel Someone Staring at You?",
+  "tone": "documentary",
+  "music": "thinking-music.mp3",
+  "sources": [
+    "Titchener, E. B. (1898). The 'feeling of being stared at'. Science, 8.",
+    "Coover, J. E. (1913). 'The feeling of being stared at': Experimental. American Journal of Psychology, 24.",
+    "Colwell, J., Schröder, S., & Sladen, D. (2000). The ability to detect unseen staring: A literature review and empirical tests. British Journal of Psychology, 91.",
+    "Mareschal, I., Calder, A. J., & Clifford, C. W. G. (2013). Humans have an expectation that gaze is directed toward them. Current Biology, 23(8), 717-721. doi:10.1016/j.cub.2013.03.030"
+  ],
+  "page": {
+    "width": 1080,
+    "height": 2350,
+    "plate": "Plate III.",
+    "title": "The Feeling of Being Watched",
+    "subtitle": "on gaze, a careful brain, and what memory keeps",
+    "caption": [
+      "Plate III. The feeling of being watched.",
+      "Fig. 1-2, a train carriage. Fig. 3-4, the staring test. Fig. 5, judging gaze. Fig. 7, two kinds of mistake.",
+      "Fig. 8, the turn that catches an eye. Fig. 9, what memory keeps. Fig. 10, back on the train.",
+      "After Titchener 1898; Coover 1913; Colwell et al. 2000; Mareschal et al. 2013."
+    ],
+    "panels": [
+      {
+        "id": "train",
+        "x": 44,
+        "y": 176,
+        "w": 992,
+        "h": 500,
+        "tone": "cream",
+        "art": "train",
+        "fig": "fig. 1 — the 8:15 train"
+      },
+      {
+        "id": "turn",
+        "x": 44,
+        "y": 698,
+        "w": 480,
+        "h": 400,
+        "tone": "cream",
+        "art": "turn-around",
+        "fig": "fig. 2 — and they are!",
+        "figPos": "br"
+      },
+      {
+        "id": "study",
+        "x": 546,
+        "y": 698,
+        "w": 490,
+        "h": 400,
+        "tone": "parchment",
+        "art": "study-card",
+        "props": {
+          "head": "Tested since the 1890s",
+          "lines": [
+            "One person sits with their",
+            "back to a starer, who",
+            "stares or looks away.",
+            "Can they feel which?",
+            "Careful tests: no better",
+            "than guessing."
+          ],
+          "cite": "Coover, 1913; Colwell et al., 2000"
+        }
+      },
+      {
+        "id": "lab",
+        "x": 44,
+        "y": 1120,
+        "w": 310,
+        "h": 330,
+        "tone": "cream",
+        "art": "lab-stare",
+        "fig": "fig. 4 — the test",
+        "figPos": "br"
+      },
+      {
+        "id": "gaze",
+        "x": 376,
+        "y": 1120,
+        "w": 330,
+        "h": 330,
+        "tone": "cream",
+        "art": "gaze-test",
+        "fig": "fig. 5"
+      },
+      {
+        "id": "title",
+        "x": 728,
+        "y": 1120,
+        "w": 308,
+        "h": 330,
+        "tone": "dark",
+        "art": "title-card",
+        "props": {
+          "kicker": "Field note",
+          "title": "When in\nDoubt: Me",
+          "sub": "unclear gaze reads as 'at me'",
+          "cite": "Mareschal et al., 2013",
+          "size": 34
+        }
+      },
+      {
+        "id": "safer",
+        "x": 44,
+        "y": 1472,
+        "w": 590,
+        "h": 380,
+        "tone": "cream",
+        "art": "safer-mistake",
+        "fig": "fig. 7 — two mistakes"
+      },
+      {
+        "id": "catch",
+        "x": 656,
+        "y": 1472,
+        "w": 380,
+        "h": 380,
+        "tone": "cream",
+        "art": "catch-eye",
+        "fig": "fig. 8 — the turn",
+        "figPos": "bl"
+      },
+      {
+        "id": "tally",
+        "x": 44,
+        "y": 1874,
+        "w": 480,
+        "h": 320,
+        "tone": "parchment",
+        "art": "tally",
+        "fig": "fig. 9 — what memory keeps",
+        "figPos": "br"
+      },
+      {
+        "id": "relax",
+        "x": 546,
+        "y": 1874,
+        "w": 490,
+        "h": 320,
+        "tone": "cream",
+        "art": "relax",
+        "fig": "fig. 10",
+        "figPos": "bl"
+      }
+    ]
+  },
+  "scenes": [
+    {
+      "id": "hook",
+      "say": "You're on the train. And suddenly, you just know: someone is *staring* at you.",
+      "transition": "cut",
+      "visual": {
+        "type": "page",
+        "camera": [
+          {
+            "panel": "train",
+            "zoom": 2.0,
+            "focus": [
+              0.42,
+              0.55
+            ],
+            "secs": 0.1
+          },
+          {
+            "at": "suddenly",
+            "panel": "train",
+            "zoom": 2.9,
+            "focus": [
+              0.38,
+              0.46
+            ],
+            "secs": 1.6
+          }
+        ],
+        "events": {
+          "tingle": "suddenly"
+        }
+      }
+    },
+    {
+      "id": "turn",
+      "say": "You turn around... and they *are*! So, is it a sixth sense?",
+      "transition": "cut",
+      "hold": 0.5,
+      "visual": {
+        "type": "page",
+        "camera": [
+          {
+            "panel": "turn",
+            "secs": 1.4
+          }
+        ],
+        "events": {
+          "turn": "turn",
+          "caught": "are"
+        }
+      }
+    },
+    {
+      "id": "study",
+      "say": "Scientists have tested this for over a century. In careful tests, people with their backs to a starer did no better than *guessing*.",
+      "transition": "cut",
+      "hold": 0.5,
+      "visual": {
+        "type": "page",
+        "camera": [
+          {
+            "panel": "study",
+            "secs": 1.4
+          },
+          {
+            "at": "careful",
+            "panel": "lab",
+            "secs": 1.4
+          }
+        ],
+        "events": {
+          "stare": "careful",
+          "score": "guessing"
+        }
+      }
+    },
+    {
+      "id": "bias",
+      "say": "So why does it feel so real? First, your brain has a bias. When it can't tell where someone's eyes are pointing, it tends to decide: *at me*.",
+      "transition": "cut",
+      "hold": 0.6,
+      "visual": {
+        "type": "page",
+        "camera": [
+          {
+            "panel": "gaze",
+            "secs": 1.4
+          },
+          {
+            "at": "decide",
+            "panel": "title",
+            "secs": 1.3
+          }
+        ],
+        "events": {
+          "test": "why",
+          "unsure": "tell"
+        }
+      }
+    },
+    {
+      "id": "safer",
+      "say": "Researchers suggest that's the safer mistake. Missing a real stare could cost more than imagining one.",
+      "transition": "cut",
+      "hold": 0.5,
+      "visual": {
+        "type": "page",
+        "camera": [
+          {
+            "panel": "safer",
+            "secs": 1.4
+          }
+        ],
+        "events": {
+          "left": "missing",
+          "right": "imagining"
+        }
+      }
+    },
+    {
+      "id": "catch",
+      "say": "Second: when you turn around, your movement catches their eye. So now they really *are* looking at you.",
+      "transition": "cut",
+      "hold": 0.5,
+      "visual": {
+        "type": "page",
+        "camera": [
+          {
+            "panel": "catch",
+            "secs": 1.4
+          }
+        ],
+        "events": {
+          "move": "turn",
+          "catch": "catches"
+        }
+      }
+    },
+    {
+      "id": "memory",
+      "say": "And you remember the times you were right, not the hundred times nobody was looking.",
+      "transition": "cut",
+      "hold": 0.5,
+      "visual": {
+        "type": "page",
+        "camera": [
+          {
+            "panel": "tally",
+            "secs": 1.4
+          }
+        ],
+        "events": {
+          "hit": "right",
+          "forget": "hundred"
+        }
+      }
+    },
+    {
+      "id": "close",
+      "say": "No sixth sense. Just a careful brain, keeping an *eye* out for you.",
+      "transition": "cut",
+      "tone": "deep",
+      "hold": 3.0,
+      "visual": {
+        "type": "page",
+        "camera": [
+          {
+            "panel": "relax",
+            "secs": 1.5
+          },
+          {
+            "at": "eye",
+            "page": true,
+            "secs": 3.0
+          }
+        ]
+      }
+    }
+  ]
+}

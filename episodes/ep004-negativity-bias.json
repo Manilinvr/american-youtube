@@ -1,0 +1,343 @@
+{
+  "id": "ep004-negativity-bias",
+  "format": "short",
+  "title": "Why One Bad Comment Beats Ten Compliments",
+  "tone": "documentary",
+  "music": "dreamer.mp3",
+  "sources": [
+    "Baumeister, R. F., Bratslavsky, E., Finkenauer, C., & Vohs, K. D. (2001). Bad is stronger than good. Review of General Psychology, 5(4), 323-370.",
+    "Ito, T. A., Larsen, J. T., Smith, N. K., & Cacioppo, J. T. (1998). Negative information weighs more heavily on the brain: The negativity bias in evaluative categorizations. Journal of Personality and Social Psychology, 75(4), 887-900."
+  ],
+  "page": {
+    "width": 1080,
+    "height": 2350,
+    "plate": "Plate IV.",
+    "title": "The Weight of Bad Things",
+    "subtitle": "on the negativity bias, and choosing what to keep",
+    "caption": [
+      "Plate IV. The weight of bad things.",
+      "Fig. 1, eleven comments. Fig. 2, tar and honey. Fig. 4, the scale (a metaphor). Fig. 5-6, the brain-wave study.",
+      "Fig. 7, an old trade-off. Fig. 8, a review of the research. Fig. 9, equal airtime. Fig. 10, what you keep.",
+      "After Baumeister et al. 2001; Ito et al. 1998."
+    ],
+    "panels": [
+      {
+        "id": "comments",
+        "x": 44,
+        "y": 176,
+        "w": 992,
+        "h": 500,
+        "tone": "cream",
+        "art": "comments",
+        "fig": "fig. 1 — 11:41 p.m."
+      },
+      {
+        "id": "barrel",
+        "x": 44,
+        "y": 698,
+        "w": 480,
+        "h": 400,
+        "tone": "cream",
+        "art": "barrel",
+        "fig": "fig. 2 — tar and honey",
+        "figPos": "br"
+      },
+      {
+        "id": "title",
+        "x": 546,
+        "y": 698,
+        "w": 490,
+        "h": 400,
+        "tone": "dark",
+        "art": "title-card",
+        "props": {
+          "kicker": "Field term",
+          "title": "The Negativity\nBias",
+          "sub": "bad weighs more than good",
+          "cite": "Baumeister et al., 2001",
+          "size": 36
+        }
+      },
+      {
+        "id": "scale",
+        "x": 44,
+        "y": 1120,
+        "w": 310,
+        "h": 330,
+        "tone": "cream",
+        "art": "scale",
+        "fig": "fig. 4",
+        "figPos": "tl"
+      },
+      {
+        "id": "study",
+        "x": 376,
+        "y": 1120,
+        "w": 330,
+        "h": 330,
+        "tone": "parchment",
+        "art": "study-card",
+        "props": {
+          "head": "Brain waves",
+          "lines": [
+            "Pictures: pleasant,",
+            "unpleasant, neutral.",
+            "Matched for intensity.",
+            "Unpleasant ones drew",
+            "a bigger response."
+          ],
+          "cite": "Ito et al., 1998",
+          "size": 17
+        }
+      },
+      {
+        "id": "eeg",
+        "x": 728,
+        "y": 1120,
+        "w": 308,
+        "h": 330,
+        "tone": "cream",
+        "art": "eeg",
+        "fig": "fig. 6"
+      },
+      {
+        "id": "ancestor",
+        "x": 44,
+        "y": 1472,
+        "w": 590,
+        "h": 380,
+        "tone": "cream",
+        "art": "ancestor",
+        "fig": "fig. 7 — an old trade-off",
+        "figPos": "bl"
+      },
+      {
+        "id": "review",
+        "x": 656,
+        "y": 1472,
+        "w": 380,
+        "h": 380,
+        "tone": "parchment",
+        "art": "review",
+        "fig": "fig. 8",
+        "figPos": "br"
+      },
+      {
+        "id": "reread",
+        "x": 44,
+        "y": 1874,
+        "w": 480,
+        "h": 320,
+        "tone": "cream",
+        "art": "reread",
+        "fig": "fig. 9 — equal airtime",
+        "figPos": "br"
+      },
+      {
+        "id": "keep",
+        "x": 546,
+        "y": 1874,
+        "w": 490,
+        "h": 320,
+        "tone": "cream",
+        "art": "keep",
+        "fig": "fig. 10 — what you keep",
+        "figPos": "bl"
+      }
+    ]
+  },
+  "scenes": [
+    {
+      "id": "hook",
+      "say": "Ten people loved your work. One person didn't. Guess which one you're still thinking about at *midnight*.",
+      "transition": "cut",
+      "visual": {
+        "type": "page",
+        "camera": [
+          {
+            "panel": "comments",
+            "zoom": 1.9,
+            "focus": [
+              0.55,
+              0.5
+            ],
+            "secs": 0.1
+          },
+          {
+            "at": "didn't",
+            "panel": "comments",
+            "zoom": 2.5,
+            "focus": [
+              0.82,
+              0.56
+            ],
+            "secs": 1.3
+          },
+          {
+            "at": "guess",
+            "panel": "comments",
+            "zoom": 2.6,
+            "focus": [
+              0.33,
+              0.5
+            ],
+            "secs": 1.5
+          }
+        ],
+        "events": {
+          "good": "loved",
+          "bad": "didn't",
+          "midnight": "midnight"
+        }
+      }
+    },
+    {
+      "id": "proverb",
+      "say": "As an old proverb says: a spoonful of tar can spoil a barrel of *honey*.",
+      "transition": "cut",
+      "hold": 0.5,
+      "visual": {
+        "type": "page",
+        "camera": [
+          {
+            "panel": "barrel",
+            "secs": 1.4
+          }
+        ],
+        "events": {
+          "tar": "spoonful",
+          "spoil": "spoil"
+        }
+      }
+    },
+    {
+      "id": "name",
+      "say": "Psychologists call it the *negativity bias*. Bad things simply weigh more than good ones.",
+      "transition": "cut",
+      "hold": 0.5,
+      "visual": {
+        "type": "page",
+        "camera": [
+          {
+            "panel": "title",
+            "secs": 1.3
+          },
+          {
+            "at": "bad",
+            "panel": "scale",
+            "secs": 1.3
+          }
+        ],
+        "events": {
+          "weigh": "weigh"
+        }
+      }
+    },
+    {
+      "id": "brain",
+      "say": "You can even see it in brain waves. Unpleasant pictures triggered a *bigger* response than pleasant ones, even when both were equally intense.",
+      "transition": "cut",
+      "hold": 0.5,
+      "visual": {
+        "type": "page",
+        "camera": [
+          {
+            "panel": "study",
+            "secs": 1.3
+          },
+          {
+            "at": "unpleasant",
+            "panel": "eeg",
+            "secs": 1.3
+          }
+        ],
+        "events": {
+          "wave": "unpleasant",
+          "bigger": "bigger"
+        }
+      }
+    },
+    {
+      "id": "why",
+      "say": "One explanation: for our ancestors, missing a *threat* cost more than missing a snack.",
+      "transition": "cut",
+      "hold": 0.5,
+      "visual": {
+        "type": "page",
+        "camera": [
+          {
+            "panel": "ancestor",
+            "secs": 1.4
+          }
+        ],
+        "events": {
+          "threat": "threat",
+          "snack": "snack"
+        }
+      }
+    },
+    {
+      "id": "review",
+      "say": "A big review of the research found the same pattern almost everywhere: relationships, feedback, first impressions, memory.",
+      "transition": "cut",
+      "hold": 0.5,
+      "visual": {
+        "type": "page",
+        "camera": [
+          {
+            "panel": "review",
+            "secs": 1.4
+          }
+        ],
+        "events": {
+          "d1": "relationships",
+          "d2": "feedback",
+          "d3": "first",
+          "d4": "memory"
+        }
+      }
+    },
+    {
+      "id": "tip",
+      "say": "So when one comment stings, give the good ones equal airtime. Read them again. *Slowly*.",
+      "transition": "cut",
+      "hold": 0.5,
+      "visual": {
+        "type": "page",
+        "camera": [
+          {
+            "panel": "reread",
+            "secs": 1.4
+          }
+        ],
+        "events": {
+          "read": "read"
+        }
+      }
+    },
+    {
+      "id": "close",
+      "say": "Your brain isn't being dramatic. It's being careful. But you still get to choose what you *keep*.",
+      "transition": "cut",
+      "tone": "deep",
+      "hold": 3.0,
+      "visual": {
+        "type": "page",
+        "camera": [
+          {
+            "panel": "keep",
+            "secs": 1.5
+          },
+          {
+            "at": "keep",
+            "page": true,
+            "secs": 3.0
+          }
+        ],
+        "events": {
+          "keep": "careful"
+        }
+      }
+    }
+  ]
+}

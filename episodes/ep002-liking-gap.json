@@ -1,0 +1,363 @@
+{
+  "id": "ep002-liking-gap",
+  "format": "short",
+  "title": "They Liked You More Than You Think",
+  "tone": "documentary",
+  "music": "easy-lemon.mp3",
+  "sources": [
+    "Boothby, E. J., Cooney, G., Sandstrom, G. M., & Clark, M. S. (2018). The liking gap in conversations: Do people like us more than we think? Psychological Science, 29(11), 1742-1756. doi:10.1177/0956797618783714"
+  ],
+  "page": {
+    "width": 1080,
+    "height": 2350,
+    "plate": "Plate II.",
+    "title": "The Liking Gap",
+    "subtitle": "on conversations, and the people who liked us more than we knew",
+    "caption": [
+      "Plate II. The liking gap.",
+      "Fig. 1, a good conversation. Fig. 2, the walk home. Fig. 3-4, the five-minute study. Fig. 5, the gap (schematic).",
+      "Fig. 7, the signals we miss. Fig. 8, roommates. Fig. 9, the other side. Fig. 10, later that evening.",
+      "After Boothby, Cooney, Sandstrom & Clark, 2018."
+    ],
+    "panels": [
+      {
+        "id": "cafe",
+        "x": 44,
+        "y": 176,
+        "w": 992,
+        "h": 500,
+        "tone": "cream",
+        "art": "cafe",
+        "fig": "fig. 1 — a good conversation"
+      },
+      {
+        "id": "walk",
+        "x": 44,
+        "y": 698,
+        "w": 480,
+        "h": 400,
+        "tone": "cream",
+        "art": "walk-home",
+        "fig": "fig. 2 — the review begins",
+        "figPos": "br"
+      },
+      {
+        "id": "study",
+        "x": 546,
+        "y": 698,
+        "w": 490,
+        "h": 400,
+        "tone": "parchment",
+        "art": "study-card",
+        "props": {
+          "head": "The study",
+          "lines": [
+            "Strangers paired up for a",
+            "5-minute chat (icebreakers).",
+            "Then each one rated:",
+            "- how much I liked them",
+            "- how much they liked me"
+          ],
+          "cite": "Boothby et al., 2018"
+        }
+      },
+      {
+        "id": "lab",
+        "x": 44,
+        "y": 1120,
+        "w": 310,
+        "h": 330,
+        "tone": "cream",
+        "art": "lab-chat",
+        "fig": "fig. 4 — five minutes",
+        "figPos": "br"
+      },
+      {
+        "id": "meters",
+        "x": 376,
+        "y": 1120,
+        "w": 330,
+        "h": 330,
+        "tone": "cream",
+        "art": "meters",
+        "fig": "fig. 5"
+      },
+      {
+        "id": "title",
+        "x": 728,
+        "y": 1120,
+        "w": 308,
+        "h": 330,
+        "tone": "dark",
+        "art": "title-card",
+        "props": {
+          "kicker": "Field term",
+          "title": "The Liking\nGap",
+          "sub": "liked more than we think",
+          "cite": "Boothby et al., 2018",
+          "size": 38
+        }
+      },
+      {
+        "id": "signals",
+        "x": 44,
+        "y": 1472,
+        "w": 590,
+        "h": 380,
+        "tone": "cream",
+        "art": "signals",
+        "fig": "fig. 7 — the signals we miss",
+        "figPos": "br"
+      },
+      {
+        "id": "roommates",
+        "x": 656,
+        "y": 1472,
+        "w": 380,
+        "h": 380,
+        "tone": "cream",
+        "art": "roommates",
+        "fig": "fig. 8 — roommates",
+        "figPos": "bl"
+      },
+      {
+        "id": "other",
+        "x": 44,
+        "y": 1874,
+        "w": 480,
+        "h": 320,
+        "tone": "cream",
+        "art": "other-walk",
+        "fig": "fig. 9 — the other side",
+        "figPos": "br"
+      },
+      {
+        "id": "message",
+        "x": 546,
+        "y": 1874,
+        "w": 490,
+        "h": 320,
+        "tone": "cream",
+        "art": "message",
+        "fig": "fig. 10 — later",
+        "figPos": "bl"
+      }
+    ]
+  },
+  "scenes": [
+    {
+      "id": "hook",
+      "say": "You just had a great conversation. Then, on the walk home, your brain starts the *review*.",
+      "transition": "cut",
+      "visual": {
+        "type": "page",
+        "camera": [
+          {
+            "panel": "cafe",
+            "zoom": 2.5,
+            "focus": [
+              0.5,
+              0.5
+            ],
+            "secs": 0.1
+          },
+          {
+            "at": 1.2,
+            "panel": "cafe",
+            "zoom": 2.8,
+            "focus": [
+              0.5,
+              0.44
+            ],
+            "secs": 2.0
+          },
+          {
+            "at": "walk",
+            "panel": "walk",
+            "secs": 1.5
+          }
+        ],
+        "events": {
+          "sip": "great",
+          "bye": "then"
+        }
+      }
+    },
+    {
+      "id": "replay",
+      "say": "Did I talk too much? Was that joke weird? They probably think I'm *boring*.",
+      "transition": "cut",
+      "hold": 0.5,
+      "visual": {
+        "type": "page",
+        "camera": [
+          {
+            "panel": "walk",
+            "secs": 0.8
+          },
+          {
+            "at": "joke",
+            "panel": "walk",
+            "zoom": 2.5,
+            "focus": [
+              0.55,
+              0.45
+            ],
+            "secs": 2.0
+          }
+        ],
+        "events": {
+          "q1": "talk",
+          "q2": "joke",
+          "q3": "boring"
+        }
+      }
+    },
+    {
+      "id": "study",
+      "say": "Psychologists tested this. Strangers chatted for five minutes, then rated each other.",
+      "transition": "cut",
+      "hold": 0.6,
+      "visual": {
+        "type": "page",
+        "camera": [
+          {
+            "panel": "study",
+            "secs": 1.4
+          }
+        ]
+      }
+    },
+    {
+      "id": "finding",
+      "say": "On average, people made the same mistake. Their partner liked them *more* than they thought.",
+      "transition": "cut",
+      "hold": 0.7,
+      "visual": {
+        "type": "page",
+        "camera": [
+          {
+            "panel": "lab",
+            "secs": 1.3
+          },
+          {
+            "at": "their",
+            "panel": "meters",
+            "secs": 1.2
+          }
+        ],
+        "events": {
+          "timer": 0,
+          "rate": "mistake",
+          "fill": "liked",
+          "gap": "more"
+        }
+      }
+    },
+    {
+      "id": "name",
+      "say": "Researchers call it *the liking gap*.",
+      "transition": "cut",
+      "hold": 0.7,
+      "visual": {
+        "type": "page",
+        "camera": [
+          {
+            "panel": "title",
+            "secs": 1.2
+          }
+        ]
+      }
+    },
+    {
+      "id": "why",
+      "say": "One reason: while you're busy judging yourself, you miss their signals. The smile. The leaning in.",
+      "transition": "cut",
+      "hold": 0.5,
+      "visual": {
+        "type": "page",
+        "camera": [
+          {
+            "panel": "signals",
+            "secs": 1.5
+          },
+          {
+            "at": "smile",
+            "panel": "signals",
+            "zoom": 2.4,
+            "focus": [
+              0.35,
+              0.45
+            ],
+            "secs": 1.6
+          }
+        ],
+        "events": {
+          "miss": "judging",
+          "smile": "smile",
+          "lean": "leaning"
+        }
+      }
+    },
+    {
+      "id": "roommates",
+      "say": "And it's not just strangers. College roommates underestimated each other for *months*.",
+      "transition": "cut",
+      "hold": 0.5,
+      "visual": {
+        "type": "page",
+        "camera": [
+          {
+            "panel": "roommates",
+            "secs": 1.5
+          }
+        ],
+        "events": {
+          "months": "college"
+        }
+      }
+    },
+    {
+      "id": "tip",
+      "say": "So when the review starts, remember: the other person probably walked away thinking, 'I liked them.'",
+      "transition": "cut",
+      "hold": 0.5,
+      "visual": {
+        "type": "page",
+        "camera": [
+          {
+            "panel": "other",
+            "secs": 1.5
+          }
+        ],
+        "events": {
+          "liked": "thinking"
+        }
+      }
+    },
+    {
+      "id": "close",
+      "say": "Odds are, you were the harshest critic in that conversation. Go a little *easier* on yourself.",
+      "transition": "cut",
+      "tone": "deep",
+      "hold": 3.0,
+      "visual": {
+        "type": "page",
+        "camera": [
+          {
+            "panel": "message",
+            "secs": 1.5
+          },
+          {
+            "at": "easier",
+            "page": true,
+            "secs": 3.0
+          }
+        ],
+        "events": {
+          "buzz": 0.3
+        }
+      }
+    }
+  ]
+}

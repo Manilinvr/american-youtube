@@ -15,7 +15,16 @@ export type Eyes = 'open' | 'up' | 'closed' | 'side';
 export type Brows = 'calm' | 'worried' | 'raised';
 export type Mouth = 'flat' | 'worry' | 'soft' | 'o';
 
+export type HairStyle = 'side' | 'long' | 'bun' | 'curly' | 'short';
+
 export type FaceProps = {
+	/** 0..1 open mouth (talking, surprise) */
+	talk?: number;
+	/** 0..1 smile */
+	smile?: number;
+	hair?: HairStyle;
+	hairColor?: string;
+	skin?: string;
 	eyes?: Eyes;
 	brows?: Brows;
 	mouth?: Mouth;
@@ -25,6 +34,10 @@ export type FaceProps = {
 	worry?: number;
 	raise?: number;
 	tilt?: number;
+	/** -1..1 head turned to its left/right (features slide over, the far ear and eye hide) */
+	turn?: number;
+	/** seen from behind: hair and ears only */
+	back?: boolean;
 };
 
 const presetLook = (eyes: Eyes): Pt => (eyes === 'up' ? [0.2, -1] : eyes === 'side' ? [1, 0] : [0, 0]);
@@ -52,8 +65,19 @@ export const Head: React.FC<{x: number; y: number; r: number; seed?: number} & F
 	raise,
 	tilt = 0,
 	seed = 1,
+	talk = 0,
+	smile = 0,
+	hair: style = 'side',
+	hairColor = BOOK.hair,
+	skin = BOOK.skin,
+	turn = 0,
+	back: fromBehind = false,
 }) => {
 	const w = Math.max(1.2, Math.min(3, r * 0.06));
+	const tn = Math.max(-1, Math.min(1, turn));
+	const fx = tn * r * 0.38; // the face slides toward where the head turns
+	const kk = 1 - 0.45 * Math.abs(tn); // and narrows
+	const hideEye = (sx: number) => Math.abs(tn) > 0.7 && Math.sign(sx) === -Math.sign(tn);
 	const lk = look ?? presetLook(eyes);
 	const lidV = Math.max(blink ? 1 : 0, lid ?? (eyes === 'closed' ? 1 : 0));
 	const wor = worry ?? (brows === 'worried' ? 1 : 0);
@@ -61,45 +85,109 @@ export const Head: React.FC<{x: number; y: number; r: number; seed?: number} & F
 	const ex = r * 0.34;
 	const ey = r * 0.04;
 	const eye = (sx: number) => {
-		const cx = sx * ex + lk[0] * r * 0.07;
+		if (hideEye(sx)) return null;
+		const bx = sx * ex * kk + fx;
+		const cx = bx + lk[0] * r * 0.07;
 		const cy = ey + lk[1] * r * 0.07;
-		if (lidV > 0.82) return <Ink key={sx} d={`M${sx * ex - r * 0.11} ${ey} Q${sx * ex} ${ey + r * 0.08} ${sx * ex + r * 0.11} ${ey}`} w={w * 0.9} second={false} />;
+		if (lidV > 0.82) return <Ink key={sx} d={`M${bx - r * 0.11} ${ey} Q${bx} ${ey + r * 0.08} ${bx + r * 0.11} ${ey}`} w={w * 0.9} second={false} />;
 		const ry = r * 0.078 * (1 - lidV * 0.9);
 		return (
 			<g key={sx}>
 				<ellipse cx={cx} cy={cy + (r * 0.078 - ry) * 0.6} rx={r * 0.075} ry={ry} fill={BOOK.ink} />
-				{lidV > 0.25 && <Ink d={`M${sx * ex - r * 0.12} ${ey - r * 0.08 + lidV * r * 0.07} L${sx * ex + r * 0.12} ${ey - r * 0.08 + lidV * r * 0.07}`} w={w * 0.8} second={false} />}
+				{lidV > 0.25 && <Ink d={`M${bx - r * 0.12} ${ey - r * 0.08 + lidV * r * 0.07} L${bx + r * 0.12} ${ey - r * 0.08 + lidV * r * 0.07}`} w={w * 0.8} second={false} />}
 			</g>
 		);
 	};
 	const brow = (sx: number) => {
+		if (hideEye(sx)) return null;
 		const inner = -0.2 - 0.07 * wor - 0.12 * rai;
 		const outer = -0.2 + 0.03 * wor - 0.09 * rai;
-		return <Ink key={`b${sx}`} d={`M${sx * r * 0.5} ${r * outer} L${sx * r * 0.18} ${r * inner}`} w={w * 0.85} second={false} />;
+		return <Ink key={`b${sx}`} d={`M${sx * r * 0.5 * kk + fx} ${r * outer} L${sx * r * 0.18 * kk + fx} ${r * inner}`} w={w * 0.85} second={false} />;
 	};
+	const earL = -r * 0.97 + Math.max(0, tn) * r * 0.75;
+	const earR = r * 0.97 - Math.max(0, -tn) * r * 0.75;
 	const my = r * 0.5;
+	const sm = Math.max(smile, mouth === 'soft' ? 0.5 : 0);
 	const mouthD =
-		mouth === 'worry'
+		sm > 0.05 && mouth !== 'worry'
+			? `M${-r * 0.14} ${my - sm * r * 0.03} Q0 ${my + r * 0.04 + sm * r * 0.1} ${r * 0.14} ${my - sm * r * 0.03}`
+			: mouth === 'worry'
 			? `M${-r * 0.14} ${my + r * 0.03} Q0 ${my - r * 0.05} ${r * 0.14} ${my + r * 0.03}`
 			: mouth === 'soft'
 				? `M${-r * 0.13} ${my} Q0 ${my + r * 0.07} ${r * 0.13} ${my}`
 				: `M${-r * 0.12} ${my} L${r * 0.12} ${my + r * 0.01}`;
-	const hair = `M${-r * 1.02} ${r * 0.12} C${-r * 1.12} ${-r * 0.9} ${-r * 0.3} ${-r * 1.28} ${r * 0.35} ${-r * 1.1} C${r * 0.92} ${-r * 0.96} ${r * 1.1} ${-r * 0.4} ${r * 1.0} ${r * 0.02} C${r * 0.82} ${-r * 0.42} ${r * 0.42} ${-r * 0.56} ${r * 0.08} ${-r * 0.44} C${-r * 0.32} ${-r * 0.64} ${-r * 0.82} ${-r * 0.46} ${-r * 1.02} ${r * 0.12} Z`;
+	const sideHair = `M${-r * 1.02} ${r * 0.12} C${-r * 1.12} ${-r * 0.9} ${-r * 0.3} ${-r * 1.28} ${r * 0.35} ${-r * 1.1} C${r * 0.92} ${-r * 0.96} ${r * 1.1} ${-r * 0.4} ${r * 1.0} ${r * 0.02} C${r * 0.82} ${-r * 0.42} ${r * 0.42} ${-r * 0.56} ${r * 0.08} ${-r * 0.44} C${-r * 0.32} ${-r * 0.64} ${-r * 0.82} ${-r * 0.46} ${-r * 1.02} ${r * 0.12} Z`;
+	// hair styles share the same cap shape so every character reads as one family of drawings
+	const cap = `M${-r * 1.04} ${r * 0.1} C${-r * 1.1} ${-r * 0.95} ${-r * 0.3} ${-r * 1.3} ${r * 0.3} ${-r * 1.12} C${r * 0.95} ${-r * 0.98} ${r * 1.1} ${-r * 0.42} ${r * 1.04} ${r * 0.1} C${r * 0.86} ${-r * 0.5} ${r * 0.3} ${-r * 0.62} ${0} ${-r * 0.56} C${-r * 0.32} ${-r * 0.6} ${-r * 0.86} ${-r * 0.5} ${-r * 1.04} ${r * 0.1} Z`;
+	const curls = Array.from({length: 9}, (_, i) => {
+		const a = Math.PI * (1.05 + (i / 8) * 0.9);
+		return [Math.cos(a) * r * 0.98, Math.sin(a) * r * 1.0 - r * 0.08] as Pt;
+	});
+	const back =
+		style === 'long' ? (
+			<Shape d={smooth([[-r * 1.05, -r * 0.4], [-r * 1.22, r * 0.6], [-r * 1.1, r * 1.45], [-r * 0.5, r * 1.3], [r * 0.5, r * 1.3], [r * 1.1, r * 1.45], [r * 1.22, r * 0.6], [r * 1.05, -r * 0.4]], true)} color={hairColor} w={w} hatch="light" hatchOpacity={0.5} />
+		) : style === 'bun' ? (
+			<Shape d={roughEllipse(r * 0.1, -r * 1.22, r * 0.36, r * 0.3, seed + 7, 0.5)} color={hairColor} w={w} hatch="light" hatchOpacity={0.5} />
+		) : null;
+	const front =
+		style === 'curly' ? (
+			<g>
+				<Shape d={cap} color={hairColor} w={w} hatch="light" hatchOpacity={0.5} />
+				{curls.map(([cx, cy], i) => (
+					<Shape key={i} d={roughEllipse(cx, cy, r * 0.28, r * 0.26, seed + 20 + i, 0.4, 9)} color={hairColor} w={w * 0.8} wear={false} />
+				))}
+			</g>
+		) : style === 'short' ? (
+			<Shape d={`M${-r * 1.0} ${-r * 0.05} C${-r * 0.98} ${-r * 1.4} ${r * 0.98} ${-r * 1.4} ${r * 1.0} ${-r * 0.05} C${r * 0.7} ${-r * 0.5} ${-r * 0.7} ${-r * 0.5} ${-r * 1.0} ${-r * 0.05} Z`} color={hairColor} w={w} hatch="light" hatchOpacity={0.5} />
+		) : style === 'side' ? (
+			<Shape d={sideHair} color={hairColor} w={w} hatch="light" hatchOpacity={0.6} />
+		) : (
+			<Shape d={cap} color={hairColor} w={w} hatch="light" hatchOpacity={0.5} />
+		);
+	if (fromBehind) {
+		// the back of the head: ears, a little skin at the nape, the rest is hair
+		return (
+			<g transform={`translate(${x} ${y}) rotate(${tilt})`}>
+				<Shape d={roughEllipse(-r * 0.97, r * 0.08, r * 0.15, r * 0.21, seed + 1, 0.6, 10)} color={skin} w={w * 0.9} wear={false} />
+				<Shape d={roughEllipse(r * 0.97, r * 0.08, r * 0.15, r * 0.21, seed + 2, 0.6, 10)} color={skin} w={w * 0.9} wear={false} />
+				<Shape d={roughEllipse(0, 0, r, r * 1.04, seed, 0.8)} color={skin} w={w} />
+				{style === 'long' ? (
+					<Shape d={smooth([[-r * 1.05, -r * 0.6], [-r * 0.6, -r * 1.12], [r * 0.6, -r * 1.12], [r * 1.05, -r * 0.6], [r * 1.18, r * 0.6], [r * 1.05, r * 1.45], [-r * 1.05, r * 1.45], [-r * 1.18, r * 0.6]], true)} color={hairColor} w={w} hatch="light" hatchOpacity={0.5} />
+				) : (
+					<Shape d={smooth([[-r * 1.02, r * 0.1], [-r * 0.9, -r * 0.7], [0, -r * 1.1], [r * 0.9, -r * 0.7], [r * 1.02, r * 0.1], [r * 0.7, r * 0.55], [-r * 0.7, r * 0.55]], true)} color={hairColor} w={w} hatch="light" hatchOpacity={0.6} />
+				)}
+				{style === 'curly' && curls.map(([cx, cy], i) => <Shape key={i} d={roughEllipse(cx, cy, r * 0.28, r * 0.26, seed + 20 + i, 0.4, 9)} color={hairColor} w={w * 0.8} wear={false} />)}
+				{style === 'bun' && <Shape d={roughEllipse(0, -r * 0.7, r * 0.36, r * 0.3, seed + 7, 0.5)} color={hairColor} w={w} hatch="light" hatchOpacity={0.5} />}
+			</g>
+		);
+	}
 	return (
 		<g transform={`translate(${x} ${y}) rotate(${tilt})`}>
-			<Shape d={roughEllipse(-r * 0.97, r * 0.08, r * 0.15, r * 0.21, seed + 1, 0.6, 10)} color={BOOK.skin} w={w * 0.9} wear={false} />
-			<Shape d={roughEllipse(r * 0.97, r * 0.08, r * 0.15, r * 0.21, seed + 2, 0.6, 10)} color={BOOK.skin} w={w * 0.9} wear={false} />
-			<Shape d={roughEllipse(0, 0, r, r * 1.04, seed, 0.8)} color={BOOK.skin} w={w} />
-			<circle cx={-r * 0.56} cy={r * 0.3} r={r * 0.14} fill={BOOK.terracotta} opacity={0.18} />
-			<circle cx={r * 0.56} cy={r * 0.3} r={r * 0.14} fill={BOOK.terracotta} opacity={0.18} />
-			<Shape d={hair} color={BOOK.hair} w={w} hatch="light" hatchOpacity={0.6} />
-			<Ink d={smooth([[-r * 0.55, -r * 0.62], [-r * 0.2, -r * 0.86], [r * 0.25, -r * 0.92]])} w={w * 0.5} color={BOOK.parchment} opacity={0.35} second={false} />
+			{back}
+			{tn < 0.45 && <Shape d={roughEllipse(earR, r * 0.08, r * 0.15, r * 0.21, seed + 2, 0.6, 10)} color={skin} w={w * 0.9} wear={false} />}
+			{tn > -0.45 && <Shape d={roughEllipse(earL, r * 0.08, r * 0.15, r * 0.21, seed + 1, 0.6, 10)} color={skin} w={w * 0.9} wear={false} />}
+			<Shape d={roughEllipse(0, 0, r, r * 1.04, seed, 0.8)} color={skin} w={w} />
+			{Math.abs(tn) > 0.45 && <Shape d={roughEllipse(Math.sign(tn) > 0 ? earL : earR, r * 0.08, r * 0.15, r * 0.21, seed + 3, 0.6, 10)} color={skin} w={w * 0.9} wear={false} />}
+			{!hideEye(-1) && <circle cx={-r * 0.56 * kk + fx} cy={r * 0.3} r={r * 0.14} fill={BOOK.terracotta} opacity={0.18} />}
+			{!hideEye(1) && <circle cx={r * 0.56 * kk + fx} cy={r * 0.3} r={r * 0.14} fill={BOOK.terracotta} opacity={0.18} />}
+			<g transform={`translate(${-tn * r * 0.14} 0)`}>
+				{front}
+				<Ink d={smooth([[-r * 0.55, -r * 0.62], [-r * 0.2, -r * 0.86], [r * 0.25, -r * 0.92]])} w={w * 0.5} color={BOOK.parchment} opacity={0.35} second={false} />
+			</g>
 			{brow(-1)}
 			{brow(1)}
 			{eye(-1)}
 			{eye(1)}
-			<Ink d={`M${r * 0.03} ${r * 0.14} q${r * 0.07} ${r * 0.1} ${-r * 0.03} ${r * 0.15}`} w={w * 0.7} second={false} />
-			{mouth === 'o' ? <ellipse cx={0} cy={my} rx={r * 0.07} ry={r * 0.09} fill={BOOK.ink} /> : <Ink d={mouthD} w={w * 0.85} second={false} />}
+			<g transform={`translate(${fx + tn * r * 0.08} 0)`}>
+				<Ink d={`M${r * 0.03} ${r * 0.14} q${r * 0.07 + Math.max(0, tn) * r * 0.06} ${r * 0.1} ${-r * 0.03} ${r * 0.15}`} w={w * 0.7} second={false} />
+			</g>
+			<g transform={`translate(${fx * 0.9} 0) scale(${kk + (1 - kk) * 0.4} 1)`}>
+				{mouth === 'o' || talk > 0.15 ? (
+					<ellipse cx={0} cy={my + r * 0.02} rx={r * (mouth === 'o' ? 0.07 : 0.09)} ry={r * (mouth === 'o' ? 0.09 : 0.02 + 0.07 * talk)} fill={BOOK.ink} />
+				) : (
+					<Ink d={mouthD} w={w * 0.85} second={false} />
+				)}
+			</g>
 		</g>
 	);
 };

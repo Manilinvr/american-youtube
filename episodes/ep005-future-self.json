@@ -1,0 +1,328 @@
+{
+  "id": "ep005-future-self",
+  "format": "short",
+  "title": "Your Brain Treats Future You Like a Stranger",
+  "tone": "documentary",
+  "music": "easy-lemon.mp3",
+  "sources": [
+    "Pronin, E., Olivola, C. Y., & Kennedy, K. A. (2008). Doing unto future selves as you would do unto others: Psychological distance and decision making. Personality and Social Psychology Bulletin, 34(2), 224-236. doi:10.1177/0146167207310023",
+    "Ersner-Hershfield, H., Wimmer, G. E., & Knutson, B. (2009). Saving for the future self: Neural measures of future self-continuity predict temporal discounting. Social Cognitive and Affective Neuroscience, 4(1), 85-92. doi:10.1093/scan/nsn042",
+    "Hershfield, H. E., Goldstein, D. G., Sharpe, W. F., Fox, J., Yeykelis, L., Carstensen, L. L., & Bailenson, J. N. (2011). Increasing saving behavior through age-progressed renderings of the future self. Journal of Marketing Research, 48(SPL), S23-S37."
+  ],
+  "page": {
+    "width": 1080,
+    "height": 2350,
+    "plate": "Plate V.",
+    "title": "The Stranger Called Future You",
+    "subtitle": "on procrastination, and the person who inherits our plans",
+    "caption": [
+      "Plate V. The stranger called future you.",
+      "Fig. 1, the handoff. Fig. 2-4, a drink for science (schematic). Fig. 5, a brain scan (simplified).",
+      "Fig. 7, meeting older you. Fig. 8, tomorrow morning. Fig. 9, a favor. Fig. 10, today and tomorrow.",
+      "After Pronin et al. 2008; Ersner-Hershfield et al. 2009; Hershfield et al. 2011."
+    ],
+    "panels": [
+      {
+        "id": "handoff",
+        "x": 44,
+        "y": 176,
+        "w": 992,
+        "h": 500,
+        "tone": "cream",
+        "art": "handoff",
+        "fig": "fig. 1 — the handoff"
+      },
+      {
+        "id": "study",
+        "x": 44,
+        "y": 698,
+        "w": 480,
+        "h": 400,
+        "tone": "parchment",
+        "art": "study-card",
+        "props": {
+          "head": "An experiment",
+          "lines": [
+            "People chose how much of",
+            "a disgusting drink would",
+            "be swallowed, for science:",
+            "by them now, by them later,",
+            "or by another person."
+          ],
+          "cite": "Pronin, Olivola & Kennedy, 2008"
+        }
+      },
+      {
+        "id": "drink",
+        "x": 546,
+        "y": 698,
+        "w": 490,
+        "h": 400,
+        "tone": "cream",
+        "art": "drink",
+        "fig": "fig. 3 — for science",
+        "figPos": "br"
+      },
+      {
+        "id": "glasses",
+        "x": 44,
+        "y": 1120,
+        "w": 310,
+        "h": 330,
+        "tone": "cream",
+        "art": "glasses",
+        "fig": "fig. 4",
+        "figPos": "tl"
+      },
+      {
+        "id": "scanner",
+        "x": 376,
+        "y": 1120,
+        "w": 330,
+        "h": 330,
+        "tone": "cream",
+        "art": "scanner",
+        "fig": "fig. 5",
+        "figPos": "tl"
+      },
+      {
+        "id": "title",
+        "x": 728,
+        "y": 1120,
+        "w": 308,
+        "h": 330,
+        "tone": "dark",
+        "art": "title-card",
+        "props": {
+          "kicker": "Field term",
+          "title": "Future Self-\nContinuity",
+          "sub": "feeling connected to later you",
+          "cite": "Ersner-Hershfield et al., 2009",
+          "size": 30
+        }
+      },
+      {
+        "id": "mirror",
+        "x": 44,
+        "y": 1472,
+        "w": 590,
+        "h": 380,
+        "tone": "cream",
+        "art": "mirror",
+        "fig": "fig. 7 — meeting older you",
+        "figPos": "bl"
+      },
+      {
+        "id": "morning",
+        "x": 656,
+        "y": 1472,
+        "w": 380,
+        "h": 380,
+        "tone": "cream",
+        "art": "morning",
+        "fig": "fig. 8 — tomorrow morning",
+        "figPos": "br"
+      },
+      {
+        "id": "favor",
+        "x": 44,
+        "y": 1874,
+        "w": 480,
+        "h": 320,
+        "tone": "cream",
+        "art": "favor",
+        "fig": "fig. 9",
+        "figPos": "br"
+      },
+      {
+        "id": "five",
+        "x": 546,
+        "y": 1874,
+        "w": 490,
+        "h": 320,
+        "tone": "cream",
+        "art": "high-five",
+        "fig": "fig. 10",
+        "figPos": "bl"
+      }
+    ]
+  },
+  "scenes": [
+    {
+      "id": "hook",
+      "say": "Present you says: 'I'll do it tomorrow.' Tomorrow you says: 'Who agreed to *this*?'",
+      "transition": "cut",
+      "visual": {
+        "type": "page",
+        "camera": [
+          {
+            "panel": "handoff",
+            "zoom": 1.9,
+            "focus": [
+              0.32,
+              0.55
+            ],
+            "secs": 0.1
+          },
+          {
+            "at": "tomorrow#2",
+            "panel": "handoff",
+            "zoom": 1.9,
+            "focus": [
+              0.72,
+              0.5
+            ],
+            "secs": 1.6
+          }
+        ],
+        "events": {
+          "push": "do",
+          "shock": "who"
+        }
+      }
+    },
+    {
+      "id": "study",
+      "say": "In one experiment, people chose how much of a *disgusting* drink they'd swallow, for science.",
+      "transition": "cut",
+      "hold": 0.5,
+      "visual": {
+        "type": "page",
+        "camera": [
+          {
+            "panel": "study",
+            "secs": 1.4
+          },
+          {
+            "at": "disgusting",
+            "panel": "drink",
+            "secs": 1.4
+          }
+        ],
+        "events": {
+          "gross": "disgusting"
+        }
+      }
+    },
+    {
+      "id": "result",
+      "say": "For right now? A little. For their future selves? Much more. About as much as for a *stranger*.",
+      "transition": "cut",
+      "hold": 0.6,
+      "visual": {
+        "type": "page",
+        "camera": [
+          {
+            "panel": "glasses",
+            "secs": 1.3
+          }
+        ],
+        "events": {
+          "now": "right",
+          "future": "future",
+          "other": "stranger"
+        }
+      }
+    },
+    {
+      "id": "brain",
+      "say": "One small brain-scan study hints at why: thinking about future you triggered less of the brain's 'this is me' response.",
+      "transition": "cut",
+      "hold": 0.5,
+      "visual": {
+        "type": "page",
+        "camera": [
+          {
+            "panel": "scanner",
+            "secs": 1.3
+          }
+        ],
+        "events": {
+          "scan": "brain"
+        }
+      }
+    },
+    {
+      "id": "name",
+      "say": "Psychologists call it *future self-continuity*: how connected you feel to the person you'll become.",
+      "transition": "cut",
+      "hold": 0.6,
+      "visual": {
+        "type": "page",
+        "camera": [
+          {
+            "panel": "title",
+            "secs": 1.3
+          }
+        ]
+      }
+    },
+    {
+      "id": "mirror",
+      "say": "In another study, people who saw an aged image of themselves set aside more money for *retirement*.",
+      "transition": "cut",
+      "hold": 0.5,
+      "visual": {
+        "type": "page",
+        "camera": [
+          {
+            "panel": "mirror",
+            "secs": 1.4
+          }
+        ],
+        "events": {
+          "aged": "aged",
+          "save": "money"
+        }
+      }
+    },
+    {
+      "id": "tip",
+      "say": "So make future you real. Picture them tomorrow morning, tired, opening this task. Then do them a *favor*.",
+      "transition": "cut",
+      "hold": 0.6,
+      "visual": {
+        "type": "page",
+        "camera": [
+          {
+            "panel": "morning",
+            "secs": 1.4
+          },
+          {
+            "at": "favor",
+            "panel": "favor",
+            "secs": 1.3
+          }
+        ],
+        "events": {
+          "open": "opening",
+          "favor": "favor"
+        }
+      }
+    },
+    {
+      "id": "close",
+      "say": "Future you isn't a stranger. They're you, just a little *later*.",
+      "transition": "cut",
+      "tone": "deep",
+      "hold": 3.0,
+      "visual": {
+        "type": "page",
+        "camera": [
+          {
+            "panel": "five",
+            "secs": 1.5
+          },
+          {
+            "at": "later",
+            "page": true,
+            "secs": 3.0
+          }
+        ],
+        "events": {
+          "five": "they're"
+        }
+      }
+    }
+  ]
+}
