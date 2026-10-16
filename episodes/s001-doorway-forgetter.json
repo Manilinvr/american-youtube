@@ -595,15 +595,6 @@
             }
           }
         ],
-        "notes": [
-          {
-            "kind": "label",
-            "target": "head:0",
-            "at": "try",
-            "label": "fig. 3: field-tested trick",
-            "size": 0.8
-          }
-        ],
         "camera": {
           "zoom": [
             1.0,
