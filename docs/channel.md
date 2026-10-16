@@ -24,18 +24,47 @@
 ## Описание канала (вставить в YouTube как есть)
 
 ```
-Ever walked into a room and forgot why? Congratulations. You're a specimen.
+This is a nature documentary. You are the animal.
 
-Specimen: You is a nature documentary about the strangest animal on Earth: humans. In each hand-drawn short, our field researcher observes one everyday human behavior in its natural habitat (the fridge, the doorway, the night before a deadline), gives it a proper Latin name, and explains the real psychology behind it, backed by actual studies, not myths.
+FIELD RECORD: SPECIMEN YOU
+Latin name: Homo relatabilis
+Habitat: a phone screen, probably past midnight
+Observed behaviors:
+• walks into a room and forgets why
+• replies "you too" when the waiter says "enjoy your meal"
+• wins arguments in the shower, three days too late
+• opens the fridge again, in case new food has appeared
+Threat level: low (mostly to its own sleep schedule)
+Status: PERFECTLY HUMAN
 
-Every specimen ends the same way: weird? Yes. Broken? No. PERFECTLY HUMAN.
+Hello. I'm a field researcher, and you are the strangest animal I have ever studied.
 
-New specimens every week. Find yourself in the catalogue.
+Each week I observe one of your species' little rituals in the wild, give it a proper Latin name, and explain the real science behind it. Actual studies, not internet myths. Then I stamp it.
 
-Sources for every episode are in its description. For entertainment and education only, not medical or mental-health advice.
+Weird? Constantly. Broken? Never. Perfectly human.
+
+Find yourself in the catalogue. Most people find three.
+Sources are in every video's description.
 ```
 
-**Перевод для вас:** «Заходил в комнату и забывал зачем? Поздравляем, ты — образец. Specimen: You — документальный фильм о самом странном животном на Земле, о людях. В каждом рисованном шортсе наш полевой исследователь наблюдает одно бытовое человеческое поведение в естественной среде обитания (у холодильника, в дверях, в ночь перед дедлайном), даёт ему латинское название и объясняет реальную психологию за ним, с настоящими исследованиями, а не мифами. Каждый вид заканчивается одинаково: странно? Да. Сломан? Нет. ПРОСТО ЧЕЛОВЕК. Новые виды каждую неделю. Найди себя в каталоге.»
+**Почему это цепляет:**
+
+1. **Первая строка — это то, что видно под названием канала.** *"This is a nature documentary. You are the animal."* — за 10 слов человек понимает весь концепт и чувствует, что речь про него.
+2. **Описание само является карточкой вида.** Это не рассказ о канале, а «полевая запись» о читателе: его среда обитания (экран телефона после полуночи), повадки, «уровень угрозы». Читатель узнаёт себя в каждой строке — и это уже первый «ролик» канала.
+3. **Четыре повадки — четыре мини-хука.** Каждая — будущий выпуск, и каждая вызывает «это же я».
+4. **Ритуал и обещание.** *"Weird? Constantly. Broken? Never. Perfectly human."* — та же мысль, что и в печати в конце роликов.
+5. **Финальный вызов.** *"Most people find three."* — провокация, после которой хочется пересмотреть каталог и найти «своих трёх».
+
+**Перевод для вас:**
+«Это документальный фильм о дикой природе. Животное — ты.
+ПОЛЕВАЯ ЗАПИСЬ: ОБРАЗЕЦ «ТЫ». Латинское название: Homo relatabilis. Среда обитания: экран телефона, вероятно, после полуночи. Замеченные повадки: заходит в комнату и забывает зачем; отвечает «вам тоже», когда официант говорит «приятного аппетита»; выигрывает споры в душе — с опозданием на три дня; снова открывает холодильник — вдруг там появилась новая еда. Уровень угрозы: низкий (в основном для собственного режима сна). Статус: ПРОСТО ЧЕЛОВЕК.
+Здравствуй. Я полевой исследователь, и ты — самое странное животное, которое я когда-либо изучала. Каждую неделю я наблюдаю один из маленьких ритуалов твоего вида в дикой природе, даю ему латинское название и объясняю настоящую науку за ним. Настоящие исследования, а не интернет-мифы. А потом ставлю печать.
+Странно? Постоянно. Сломан? Никогда. Просто человек.
+Найди себя в каталоге. Большинство находит троих. Источники — в описании каждого видео.»
+
+**Запасные первые строки** (если захотите A/B-тест):
+- *"You've been observed. Don't worry, it's for science."*
+- *"We study the strangest animal on Earth. It's currently reading this."*
 
 ## Ключевые слова канала
 

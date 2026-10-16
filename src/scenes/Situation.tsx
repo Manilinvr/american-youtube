@@ -41,7 +41,7 @@ export type PersonSpec = {
 export type PropSpec = {type: string; x: number; scale?: number; flip?: boolean; open?: boolean | Cue; text?: string; front?: boolean};
 
 /** target: "prop:0", "person:1", "head:0" or "all" (the whole stage). `label` = typewriter figure label ("fig. 1: the stare"). */
-export type NoteSpec = {kind: 'circle' | 'arrow' | 'underline' | 'cross' | 'label'; target: string; at?: Cue; label?: string};
+export type NoteSpec = {kind: 'circle' | 'arrow' | 'underline' | 'cross' | 'label'; target: string; at?: Cue; label?: string; size?: number};
 
 export type SituationSpec = {
 	setting?: SettingName;
@@ -142,7 +142,7 @@ export const SituationArt: React.FC<{spec: SituationSpec; box: Box; drawOn: bool
 		if (kind === 'person' && person) rect = {x: person.px - 70 * person.s, y: person.headTop, w: 140 * person.s, h: person.baseY - person.headTop};
 		const at = cue(n.at, lead + 10);
 		sounds.push(<Sfx key={`ns${i}`} name={n.kind === 'label' ? 'tick' : 'scribble'} at={at} volume={0.3} />);
-		return <Note key={`n${i}`} kind={n.kind} rect={rect} at={at} label={n.label} labelSize={70 * u} bounds={{x0: box.x + 20, x1: box.x + box.w - 20}} />;
+		return <Note key={`n${i}`} kind={n.kind} rect={rect} at={at} label={n.label} labelSize={70 * u * (n.size ?? 1)} bounds={{x0: box.x + 20, x1: box.x + box.w - 20}} />;
 	});
 
 	const bubbles = peopleState.map(({ps, i, headTop, headCx, s}) => {

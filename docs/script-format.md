@@ -75,7 +75,7 @@
 - **Эмоции над головой:** `? ! !? ... sweat zzz heart idea anger music`
 - **Предметы:** `door, fridge, window, couch, bed, desk, plant, lamp, picture, clock, tv, tree, bench, car, suitcase, calendar, phone-big` (у `calendar` и `phone-big` есть `text`)
 - `"front": true` у предмета рисует его перед персонажем — например, стол, за которым человек сидит/стоит и печатает
-- **Пометки (`notes`):** `circle | arrow | underline | cross | label`, цель: `prop:N`, `person:N`, `head:N`, `all`. `label` — машинописная сноска полевого журнала с пунктирной линией: «fig. 1: the stare»
+- **Пометки (`notes`):** `circle | arrow | underline | cross | label`, цель: `prop:N`, `person:N`, `head:N`, `all`. `label` — машинописная сноска полевого журнала с пунктирной линией: «fig. 1: the stare». `size` (по умолчанию 1) уменьшает надпись, если она наезжает на персонажа
 - Сидящий персонаж: `"pose": "sit"` и `"y"` — высота сиденья (диван ≈ 70, парапет на `rooftop` = 0).
 - Если у соседних сцен одинаковый `setting`, обстановка не перерисовывается заново — склейка выглядит непрерывной. Иначе сцена «рисуется карандашом» за полсекунды.
 
