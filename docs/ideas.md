@@ -6,7 +6,7 @@
 | # | Вид | Хук (EN) | Что происходит в голове | Где проверить |
 |---|---|---|---|---|
 | 1 | **The Doorway Forgetter** · *Homo oblitus* | ✅ *Have you ever walked into a room and completely forgotten why?* | Doorway effect — дверь как «граница события» | Radvansky et al., 2011 |
-| 2 | **The Shower Philosopher** · *Homo balneosophus* | *Why do your best ideas always show up in the shower?* | Инкубация идей, блуждание ума (default mode network) | Baird et al., 2012 |
+| 2 | **The Shower Philosopher** · *Homo balneosophus* | ✅ *Why do your best ideas always show up in the shower?* | Инкубация идей, блуждание ума (default mode network) | Baird et al., 2012 |
 | 3 | **The Earworm Host** · *Homo cantilenus* | *Why does one random song get stuck in your head for three days?* | Earworms (непроизвольные музыкальные образы); жвачка помогает | Beaman et al., 2015 |
 | 4 | **The Phantom Buzz** · *Homo vibratus* | *Have you ever felt your phone buzz... and it didn't?* | Phantom vibration syndrome | Rothberg et al., 2010 |
 | 5 | **The "You Too" Replier** · *Homo tuquoque* | *The waiter says "enjoy your meal" and you say "you too."* | Автоматические социальные скрипты | исследования речевых «скриптов» |

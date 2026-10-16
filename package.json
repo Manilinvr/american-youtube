@@ -7,7 +7,8 @@
     "studio": "remotion studio",
     "make": "node tools/make.mjs",
     "typecheck": "tsc --noEmit",
-    "branding": "node tools/branding.mjs"
+    "branding": "node tools/branding.mjs",
+    "srt": "node tools/srt.mjs"
   },
   "dependencies": {
     "@remotion/cli": "4.0.528",
