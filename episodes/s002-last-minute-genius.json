@@ -18,17 +18,17 @@
         "props": [
           {
             "type": "desk",
-            "x": 0.42,
+            "x": 0.36,
             "front": true
           },
           {
             "type": "suitcase",
-            "x": 0.86
+            "x": 0.85
           }
         ],
         "people": [
           {
-            "x": 0.42,
+            "x": 0.36,
             "pose": "type",
             "face": "annoyed",
             "gaze": 0.2,
@@ -38,7 +38,7 @@
         ],
         "notes": [
           {
-            "kind": "arrow",
+            "kind": "circle",
             "target": "prop:1",
             "at": "vacation",
             "label": "tomorrow!"
@@ -288,10 +288,11 @@
           "no": 2,
           "common": "The Last-Minute Genius",
           "latin": "Homo procrastinans",
-          "habitat": "desks, the night before"
+          "habitat": "desks, the night before",
+          "at": "perfectly"
         },
         "stamp": {
-          "at": "perfectly"
+          "at": "human"
         },
         "camera": {
           "zoom": [

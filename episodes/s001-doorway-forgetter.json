@@ -304,10 +304,11 @@
           "no": 1,
           "common": "The Doorway Forgetter",
           "latin": "Homo oblitus",
-          "habitat": "doorways, kitchens"
+          "habitat": "doorways, kitchens",
+          "at": "perfectly"
         },
         "stamp": {
-          "at": "perfectly"
+          "at": "human"
         },
         "camera": {
           "zoom": [
