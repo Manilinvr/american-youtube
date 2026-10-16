@@ -8,7 +8,8 @@
     "make": "node tools/make.mjs",
     "typecheck": "tsc --noEmit",
     "branding": "node tools/branding.mjs",
-    "srt": "node tools/srt.mjs"
+    "srt": "node tools/srt.mjs",
+    "package": "python3 tools/package.py"
   },
   "dependencies": {
     "@remotion/cli": "4.0.528",
