@@ -180,13 +180,6 @@
         ],
         "notes": [
           {
-            "kind": "label",
-            "target": "head:0",
-            "at": "stares",
-            "label": "fig. 1: the stare",
-            "size": 0.8
-          },
-          {
             "kind": "arrow",
             "target": "prop:0",
             "at": "money",
@@ -365,7 +358,7 @@
             "kind": "label",
             "target": "head:0",
             "at": "group",
-            "label": "fig. 2: the doorway group",
+            "label": "fig. 1: the doorway group",
             "size": 0.8
           }
         ],
@@ -549,7 +542,7 @@
             "kind": "label",
             "target": "head:0",
             "at": "screen",
-            "label": "fig. 3: virtual doors work too",
+            "label": "fig. 2: virtual doors work too",
             "size": 0.8
           }
         ],
@@ -607,7 +600,7 @@
             "kind": "label",
             "target": "head:0",
             "at": "try",
-            "label": "fig. 4: field-tested trick",
+            "label": "fig. 3: field-tested trick",
             "size": 0.8
           }
         ],

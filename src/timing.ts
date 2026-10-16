@@ -37,8 +37,10 @@ export const buildTimeline = (episodeId: string, manifest: Manifest | null): Tim
 		const transOut = isLast ? {type: 'black' as Transition, frames: 30} : trans[i + 1];
 		const lead = i === 0 ? 0 : Math.round(transIn.frames * 0.6) + Math.round(LEAD * FPS);
 		const tone = getTone(def.tone ?? episode.tone);
-		// leave room for the outgoing transition after the last word
-		const hold = Math.max(def.hold ?? (isLast ? TAIL_LAST : tone.pause), (transOut.frames * 0.6) / FPS);
+		// the outgoing transition must not swallow the last words or the visual punchline:
+		// a dip to black starts only after the line has finished, a dissolve may overlap it a little
+		const outRoom = (transOut.frames * (transOut.type === 'black' ? 1 : 0.75)) / FPS + 0.15;
+		const hold = Math.max(def.hold ?? (isLast ? TAIL_LAST : tone.pause), outRoom);
 		const minSeconds = def.visual.minSeconds ?? 1.2;
 		const durationInFrames = Math.ceil(Math.max(minSeconds, lead / FPS + v.duration + hold) * FPS);
 		from = i === 0 ? 0 : prevEnd - transIn.frames;
