@@ -1,0 +1,286 @@
+{
+  "id": "parkinsons-law",
+  "format": "short",
+  "title": "Why You Get Everything Done the Day Before Vacation",
+  "tone": "relatable",
+  "sources": [
+    "Parkinson, C. N. (1955, November 19). Parkinson's Law. The Economist (satirical essay)",
+    "Bryan, J. F., & Locke, E. A. (1967). Parkinson's law as a goal-setting phenomenon. Organizational Behavior and Human Performance, 2, 258-275",
+    "Ariely, D., & Wertenbroch, K. (2002). Procrastination, deadlines, and performance: Self-control by precommitment. Psychological Science, 13(3)"
+  ],
+  "scenes": [
+    {
+      "id": "hook",
+      "say": "Ever notice you get more done the day before vacation than the *whole month* before it?",
+      "visual": {
+        "type": "situation",
+        "setting": "room",
+        "props": [
+          {
+            "type": "desk",
+            "x": 0.42,
+            "front": true
+          },
+          {
+            "type": "suitcase",
+            "x": 0.86
+          }
+        ],
+        "people": [
+          {
+            "x": 0.42,
+            "pose": "type",
+            "face": "annoyed",
+            "gaze": 0.2,
+            "emote": "sweat",
+            "emoteAt": "vacation"
+          }
+        ],
+        "notes": [
+          {
+            "kind": "arrow",
+            "target": "prop:1",
+            "at": "vacation",
+            "label": "tomorrow!"
+          }
+        ],
+        "camera": {
+          "zoom": [
+            1,
+            1.07
+          ],
+          "focus": [
+            0.45,
+            0.5
+          ]
+        }
+      }
+    },
+    {
+      "id": "contrast",
+      "say": "Due in a month? It takes a month. Due tomorrow? Forty minutes.",
+      "visual": {
+        "type": "split",
+        "panels": [
+          {
+            "label": "DUE IN A MONTH",
+            "setting": "room",
+            "props": [
+              {
+                "type": "couch",
+                "x": 0.6
+              },
+              {
+                "type": "calendar",
+                "x": 0.88,
+                "text": "30"
+              }
+            ],
+            "people": [
+              {
+                "x": 0.28,
+                "pose": "phone",
+                "holding": "phone",
+                "face": "smile"
+              }
+            ]
+          },
+          {
+            "label": "DUE TOMORROW",
+            "at": "tomorrow",
+            "setting": "room",
+            "props": [
+              {
+                "type": "desk",
+                "x": 0.42,
+                "front": true
+              },
+              {
+                "type": "calendar",
+                "x": 0.85,
+                "text": "1"
+              }
+            ],
+            "people": [
+              {
+                "x": 0.42,
+                "pose": "type",
+                "face": "worried",
+                "emote": "sweat",
+                "emoteAt": "forty"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "name",
+      "say": "There's a name for this: *Parkinson's law.*",
+      "visual": {
+        "type": "quote",
+        "text": "PARKINSON'S LAW",
+        "sub": "“Work expands so as to fill the time available.” — C. N. Parkinson, 1955",
+        "person": {
+          "pose": "think",
+          "face": "smug"
+        }
+      }
+    },
+    {
+      "id": "joke",
+      "say": "It's not even a real law. It began as a *joke* in [1955.|nineteen fifty-five.]",
+      "visual": {
+        "type": "situation",
+        "setting": "room",
+        "props": [
+          {
+            "type": "lamp",
+            "x": 0.85
+          }
+        ],
+        "people": [
+          {
+            "x": 0.45,
+            "pose": "phone",
+            "holding": "book",
+            "face": "smug",
+            "gaze": 0.3,
+            "then": [
+              {
+                "at": "joke",
+                "face": "grin"
+              }
+            ],
+            "emote": "!?",
+            "emoteAt": "joke"
+          }
+        ],
+        "notes": [
+          {
+            "kind": "circle",
+            "target": "head:0",
+            "at": "real"
+          }
+        ]
+      }
+    },
+    {
+      "id": "science",
+      "say": "But in experiments, people given extra time really did take *longer.*",
+      "visual": {
+        "type": "split",
+        "panels": [
+          {
+            "label": "TIGHT DEADLINE",
+            "setting": "room",
+            "props": [
+              {
+                "type": "desk",
+                "x": 0.45,
+                "front": true
+              },
+              {
+                "type": "clock",
+                "x": 0.85
+              }
+            ],
+            "people": [
+              {
+                "x": 0.45,
+                "pose": "type",
+                "face": "annoyed",
+                "emote": "sweat",
+                "emoteAt": "experiments"
+              }
+            ]
+          },
+          {
+            "label": "EXTRA TIME",
+            "at": "extra",
+            "setting": "room",
+            "props": [
+              {
+                "type": "desk",
+                "x": 0.45,
+                "front": true
+              },
+              {
+                "type": "clock",
+                "x": 0.85
+              }
+            ],
+            "people": [
+              {
+                "x": 0.45,
+                "pose": "type",
+                "face": "sleepy",
+                "emote": "zzz",
+                "emoteAt": "longer"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "lesson",
+      "tone": "deep",
+      "say": "So maybe you're not lazy. Maybe your deadline is just too far away. *Bring it closer.*",
+      "visual": {
+        "type": "quote",
+        "person": {
+          "pose": "think",
+          "face": "peaceful"
+        }
+      }
+    },
+    {
+      "id": "callback",
+      "tone": "funny",
+      "say": "Anyway... I wrote this script the night before it was due.",
+      "visual": {
+        "type": "situation",
+        "setting": "room",
+        "props": [
+          {
+            "type": "desk",
+            "x": 0.45,
+            "front": true
+          },
+          {
+            "type": "clock",
+            "x": 0.15
+          }
+        ],
+        "people": [
+          {
+            "x": 0.45,
+            "pose": "type",
+            "face": "worried",
+            "emote": "sweat",
+            "emoteAt": "night"
+          }
+        ],
+        "notes": [
+          {
+            "kind": "arrow",
+            "target": "prop:1",
+            "at": "night",
+            "label": "11:58 PM"
+          }
+        ],
+        "camera": {
+          "zoom": [
+            1,
+            1.1
+          ],
+          "focus": [
+            0.45,
+            0.5
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -27,6 +27,7 @@ export type PoseName =
 	| 'cheer'
 	| 'sit'
 	| 'hug-knees'
+	| 'type'
 	| 'walk';
 
 export type Face = 'neutral' | 'smile' | 'grin' | 'meh' | 'sad' | 'surprised' | 'worried' | 'smug' | 'annoyed' | 'confused' | 'peaceful' | 'sleepy';
@@ -35,7 +36,7 @@ export type Look = 'stick' | 'hoodie';
 type Limb = [number, number];
 type Pose = {armL: Limb; armR: Limb; legL: Limb; legR: Limb; headDx?: number; headDy?: number; lean?: number};
 
-const POSES: Record<Exclude<PoseName, 'walk' | 'wave'>, Pose> = {
+const POSES: Record<Exclude<PoseName, 'walk' | 'wave' | 'type'>, Pose> = {
 	stand: {armL: [-14, -6], armR: [14, 6], legL: [-10, -6], legR: [10, 6]},
 	hips: {armL: [-48, 48], armR: [48, -48], legL: [-12, -8], legR: [12, 8]},
 	point: {armL: [-14, -2], armR: [122, 122], legL: [-10, -6], legR: [10, 6]},
@@ -90,6 +91,11 @@ const resolvePose = (name: PoseName, t: number, energy: number): Pose => {
 		};
 	}
 	if (name === 'wave') return {...POSES.stand, armR: [140, 165 + Math.sin(t * 10) * 20 * energy]};
+	if (name === 'type') {
+		// hands hovering at desk height (~190 units), fingers going fast
+		const k = Math.sin(t * 22 * energy) * 8;
+		return {armL: [-38, 100 + k], armR: [38, -100 + k], legL: [-10, -6], legR: [10, 6], headDy: 10};
+	}
 	return POSES[name];
 };
 

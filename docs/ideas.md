@@ -40,7 +40,7 @@
 | 33 | *Why can't you tickle yourself?* | Мозг предсказывает собственные движения | Blakemore et al., 1998 |
 | 34 | *Someone yawns. Now you're yawning. Reading this? Yawning.* | Заразительная зевота | Provine, 2005 |
 | 35 | *You wave back... but they were waving at someone behind you.* | Социальная автоматика и неловкость | спотлайт-эффект + автоматизм |
-| 36 | *You get more done the day before vacation than in a whole month.* | Дедлайны и «закон Паркинсона» (наблюдение, не закон природы) | Parkinson, 1955 (эссе) |
+| 36 | ✅ *You get more done the day before vacation than in a whole month.* | Дедлайны и «закон Паркинсона» (наблюдение, не закон природы) | Parkinson, 1955 (эссе) |
 | 37 | *"Habits take 21 days." Nope.* | Миф; в среднем ~66 дней, огромный разброс | Lally et al., 2010 |
 | 38 | *You remember every lyric from 2009 but not what you ate yesterday.* | Reminiscence bump + эмоции и повторения | Rubin et al., 1998 |
 | 39 | *Why do you go quiet when someone says "we need to talk"?* | Ожидание угрозы, неопределённость | Grupe & Nitschke, 2013 |

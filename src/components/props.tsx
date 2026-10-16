@@ -107,10 +107,13 @@ export const PROPS: Record<string, PropDef> = {
 		h: 270,
 		draw: () => (
 			<g>
-				<P d="M-160 -190 L160 -190 M-145 -190 L-145 0 M145 -190 L145 0" />
-				<P d="M-60 -196 L60 -196 L72 -205 L-48 -205Z" fill={PAPER} />
-				<P d="M-44 -205 L-58 -280 L52 -280 L66 -205" fill={PAPER} />
-				<Circ cx={4} cy={-245} r={8} strokeWidth={LINE * 0.6} />
+				<P d="M-160 -190 L160 -190 L150 -60 L-150 -60Z" fill={PAPER} />
+				<P d="M-145 -60 L-145 0 M145 -60 L145 0" />
+				<P d="M-120 -160 L-40 -160" strokeWidth={LINE * 0.6} />
+				{/* laptop seen from behind, kept low so it never hides the face of someone at the desk */}
+				<P d="M-62 -196 L62 -196 L70 -204 L-54 -204Z" fill={PAPER} />
+				<P d="M-50 -204 L-60 -238 L58 -238 L66 -204" fill={PAPER} />
+				<Circ cx={4} cy={-221} r={6} strokeWidth={LINE * 0.6} />
 			</g>
 		),
 	},
@@ -204,6 +207,39 @@ export const PROPS: Record<string, PropDef> = {
 						<P d="M0 -14 L0 -36" strokeWidth={LINE * 0.6} />
 					</g>
 				))}
+			</g>
+		),
+	},
+	suitcase: {
+		w: 170,
+		h: 260,
+		draw: () => (
+			<g>
+				<P d="M-35 -215 L-35 -250 L35 -250 L35 -215" strokeWidth={LINE * 1.2} />
+				<Rect x={-80} y={-215} width={160} height={195} rx={18} fill={PAPER} />
+				<P d="M-40 -215 L-40 -20 M40 -215 L40 -20" strokeWidth={LINE * 0.7} />
+				<Circ cx={-55} cy={-8} r={11} fill={PAPER} />
+				<Circ cx={55} cy={-8} r={11} fill={PAPER} />
+				<Rect x={-20} y={-160} width={60} height={34} rx={4} fill="url(#hatch)" strokeWidth={LINE * 0.6} />
+			</g>
+		),
+	},
+	calendar: {
+		w: 160,
+		h: 170,
+		elevation: 250,
+		draw: ({text}) => (
+			<g>
+				<Rect x={-80} y={-170} width={160} height={170} rx={6} fill={PAPER} />
+				<P d="M-80 -130 L80 -130" />
+				<P d="M-45 -182 L-45 -158 M45 -182 L45 -158" strokeWidth={LINE * 1.3} />
+				{text ? (
+					<text x={0} y={-45} textAnchor="middle" fontFamily={HAND} fontWeight={700} fontSize={64} fill={INK}>
+						{text}
+					</text>
+				) : (
+					Array.from({length: 12}, (_, i) => <P key={i} d={`M${-60 + (i % 4) * 40} ${-105 + Math.floor(i / 4) * 35} l18 0`} strokeWidth={LINE * 0.6} />)
+				)}
 			</g>
 		),
 	},

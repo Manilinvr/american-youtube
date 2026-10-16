@@ -65,10 +65,11 @@
 }
 ```
 
-- **Позы:** `stand, hips, point, pointSide, think, shrug, facepalm, scratch, wave, sad, cross, phone, cheer, sit, hug-knees, walk`
+- **Позы:** `stand, hips, point, pointSide, think, shrug, facepalm, scratch, wave, sad, cross, phone, cheer, sit, hug-knees, type, walk` (`type` — печатает за столом)
 - **Лица:** `neutral, smile, grin, meh, sad, surprised, worried, smug, annoyed, confused, peaceful, sleepy`
 - **Эмоции над головой:** `? ! !? ... sweat zzz heart idea anger music`
-- **Предметы:** `door, fridge, window, couch, bed, desk, plant, lamp, picture, clock, tv, tree, bench, car, phone-big` (у `phone-big` есть `text` — уведомление на экране)
+- **Предметы:** `door, fridge, window, couch, bed, desk, plant, lamp, picture, clock, tv, tree, bench, car, suitcase, calendar, phone-big` (у `calendar` и `phone-big` есть `text`)
+- `"front": true` у предмета рисует его перед персонажем — например, стол, за которым человек сидит/стоит и печатает
 - **Пометки (`notes`):** `circle | arrow | underline | cross`, цель: `prop:N`, `person:N`, `head:N`, `all`
 - Сидящий персонаж: `"pose": "sit"` и `"y"` — высота сиденья (диван ≈ 70, парапет на `rooftop` = 0).
 - Если у соседних сцен одинаковый `setting`, обстановка не перерисовывается заново — склейка выглядит непрерывной. Иначе сцена «рисуется карандашом» за полсекунды.

@@ -36,7 +36,8 @@ export type PersonSpec = {
 	bubble?: {text: string; kind?: 'speech' | 'thought'; at?: Cue; side?: 'left' | 'right'};
 };
 
-export type PropSpec = {type: string; x: number; scale?: number; flip?: boolean; open?: boolean | Cue; text?: string};
+/** `front: true` draws the prop in front of people (a desk someone stands behind). */
+export type PropSpec = {type: string; x: number; scale?: number; flip?: boolean; open?: boolean | Cue; text?: string; front?: boolean};
 
 /** target: "prop:0", "person:1", "head:0" or "all" (the whole stage). */
 export type NoteSpec = {kind: 'circle' | 'arrow' | 'underline' | 'cross'; target: string; at?: Cue; label?: string};
@@ -159,23 +160,25 @@ export const SituationArt: React.FC<{spec: SituationSpec; box: Box; drawOn: bool
 		);
 	});
 
+	const renderProp = (pr: PropSpec, i: number) => {
+		const s = u * (pr.scale ?? 1);
+		const open = pr.open === true ? 1 : pr.open === undefined || pr.open === false ? 0 : spring({frame: frame - cue(pr.open, lead + 10), fps, config: {damping: 14, stiffness: 120}});
+		return (
+			<Draw key={`p${i}`} p={drawP(4 + i * 4)}>
+				<g transform={`translate(${X(pr.x)} ${ground}) scale(${pr.flip ? -s : s} ${s})`}>
+					<PropArt name={pr.type} open={open} text={pr.text} frame={frame} />
+				</g>
+			</Draw>
+		);
+	};
+
 	return (
 		<>
 			<svg width="100%" height="100%" style={{position: 'absolute', left: 0, top: 0, overflow: 'visible'}}>
 				<Draw p={drawP(0, 14)}>
 					<Setting name={spec.setting ?? 'blank'} box={box} />
 				</Draw>
-				{props.map((pr, i) => {
-					const s = u * (pr.scale ?? 1);
-					const open = pr.open === true ? 1 : pr.open === undefined || pr.open === false ? 0 : spring({frame: frame - cue(pr.open, lead + 10), fps, config: {damping: 14, stiffness: 120}});
-					return (
-						<Draw key={i} p={drawP(4 + i * 4)}>
-							<g transform={`translate(${X(pr.x)} ${ground}) scale(${pr.flip ? -s : s} ${s})`}>
-								<PropArt name={pr.type} open={open} text={pr.text} frame={frame} />
-							</g>
-						</Draw>
-					);
-				})}
+				{props.map((pr, i) => (pr.front ? null : renderProp(pr, i)))}
 				{peopleState.map(({ps, i, pose, prevPose, blend, face, gaze, s, px, baseY}) => (
 					<Draw key={i} p={drawP(8 + i * 4, 14)}>
 						<g transform={`translate(${px} ${baseY}) scale(${s})`}>
@@ -183,6 +186,7 @@ export const SituationArt: React.FC<{spec: SituationSpec; box: Box; drawOn: bool
 						</g>
 					</Draw>
 				))}
+				{props.map((pr, i) => (pr.front ? renderProp(pr, i) : null))}
 				{overlays}
 				{notes}
 			</svg>
