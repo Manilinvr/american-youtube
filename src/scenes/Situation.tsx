@@ -7,6 +7,7 @@ import {Face, HEAD, Look, Person, PoseName} from '../components/Person';
 import {PropArt, PROPS} from '../components/props';
 import {Setting, SettingName} from '../components/Setting';
 import {Sfx} from '../components/Sfx';
+import {CardSpec, SpecimenCard, useSlam} from '../components/specimen';
 import type {Visual} from '../types';
 import {Box, useFullBox} from './stage';
 
@@ -39,8 +40,8 @@ export type PersonSpec = {
 /** `front: true` draws the prop in front of people (a desk someone stands behind). */
 export type PropSpec = {type: string; x: number; scale?: number; flip?: boolean; open?: boolean | Cue; text?: string; front?: boolean};
 
-/** target: "prop:0", "person:1", "head:0" or "all" (the whole stage). */
-export type NoteSpec = {kind: 'circle' | 'arrow' | 'underline' | 'cross'; target: string; at?: Cue; label?: string};
+/** target: "prop:0", "person:1", "head:0" or "all" (the whole stage). `label` = typewriter figure label ("fig. 1: the stare"). */
+export type NoteSpec = {kind: 'circle' | 'arrow' | 'underline' | 'cross' | 'label'; target: string; at?: Cue; label?: string};
 
 export type SituationSpec = {
 	setting?: SettingName;
@@ -49,6 +50,10 @@ export type SituationSpec = {
 	notes?: NoteSpec[];
 	/** Slow push-in: zoom from..to over the scene, centred on `focus` ([x, y] as 0-1 fractions). */
 	camera?: {zoom?: [number, number]; focus?: [number, number]};
+	/** The episode's specimen card, taped at the top of the page; `at` slams it in on a cue. */
+	card?: Omit<CardSpec, 'at'> & {at?: Cue};
+	/** Rubber stamp on the card, e.g. {"at": "perfectly"} -> "PERFECTLY HUMAN". */
+	stamp?: {at: Cue; text?: string};
 };
 
 const SEATED = new Set<PoseName>(['sit', 'hug-knees']);
@@ -136,7 +141,7 @@ export const SituationArt: React.FC<{spec: SituationSpec; box: Box; drawOn: bool
 		if (kind === 'head' && person) rect = {x: person.headCx - HEAD.r * person.s, y: person.headTop, w: HEAD.r * 2 * person.s, h: HEAD.r * 2 * person.s};
 		if (kind === 'person' && person) rect = {x: person.px - 70 * person.s, y: person.headTop, w: 140 * person.s, h: person.baseY - person.headTop};
 		const at = cue(n.at, lead + 10);
-		sounds.push(<Sfx key={`ns${i}`} name="scribble" at={at} volume={0.3} />);
+		sounds.push(<Sfx key={`ns${i}`} name={n.kind === 'label' ? 'tick' : 'scribble'} at={at} volume={0.3} />);
 		return <Note key={`n${i}`} kind={n.kind} rect={rect} at={at} label={n.label} labelSize={70 * u} bounds={{x0: box.x + 20, x1: box.x + box.w - 20}} />;
 	});
 
@@ -199,15 +204,43 @@ export const SituationArt: React.FC<{spec: SituationSpec; box: Box; drawOn: bool
 /** Full-frame situation with a slow camera push-in. visual: { type: "situation", ...SituationSpec } */
 export const SituationScene: React.FC<{visual: Visual; drawOn: boolean}> = ({visual, drawOn}) => {
 	const frame = useCurrentFrame();
-	const {durationInFrames} = useScene();
+	const {fps, width, height} = useVideoConfig();
+	const {durationInFrames, voice, lead} = useScene();
 	const box = useFullBox();
 	const spec = visual as SituationSpec;
 	const [z0, z1] = spec.camera?.zoom ?? [1, 1.05];
 	const [fx, fy] = spec.camera?.focus ?? [0.5, (box.ground - box.h * 0.2) / box.h];
 	const z = interpolate(frame, [0, durationInFrames], [z0, z1]);
 	return (
-		<AbsoluteFill style={{transform: `scale(${z})`, transformOrigin: `${fx * 100}% ${fy * 100}%`}}>
-			<SituationArt spec={spec} box={box} drawOn={drawOn} />
+		<AbsoluteFill>
+			<AbsoluteFill style={{transform: `scale(${z})`, transformOrigin: `${fx * 100}% ${fy * 100}%`}}>
+				<SituationArt spec={spec} box={box} drawOn={drawOn} />
+			</AbsoluteFill>
+			{spec.card && <CardOverlay card={spec.card} stamp={spec.stamp} voice={voice} lead={lead} fps={fps} width={width} height={height} />}
 		</AbsoluteFill>
+	);
+};
+
+const CardOverlay: React.FC<{
+	card: NonNullable<SituationSpec['card']>;
+	stamp?: SituationSpec['stamp'];
+	voice: ReturnType<typeof useScene>['voice'];
+	lead: number;
+	fps: number;
+	width: number;
+	height: number;
+}> = ({card, stamp, voice, lead, fps, width, height}) => {
+	const vertical = height > width;
+	const slamAt = card.at === undefined ? 0 : cueFrame(voice, lead, fps, card.at, 0);
+	const stampAt = stamp ? cueFrame(voice, lead, fps, stamp.at, lead + 10) : Infinity;
+	const slam = useSlam(slamAt);
+	const stampP = useSlam(Number.isFinite(stampAt) ? stampAt : 1e6);
+	const w = vertical ? width * 0.84 : width * 0.4;
+	return (
+		<>
+			<SpecimenCard spec={{...card, at: undefined}} x={vertical ? (width - w) / 2 : width * 0.05} y={vertical ? height * 0.035 : height * 0.06} width={w} slam={slam} stamp={Number.isFinite(stampAt) ? stampP : 0} stampText={stamp?.text} />
+			{slamAt > 0 && <Sfx name="page" at={slamAt} volume={0.35} />}
+			{stamp && <Sfx name="stamp" at={stampAt} volume={0.6} />}
+		</>
 	);
 };

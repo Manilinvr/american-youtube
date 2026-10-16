@@ -116,7 +116,7 @@ export const SketchDefs: React.FC<{boil?: number; every?: number}> = ({boil = 2.
 };
 
 /** Warm sketchbook paper: grain, soft blotches and loose diagonal pencil strokes in the air. */
-export const Paper: React.FC<{strokes?: boolean}> = ({strokes = true}) => {
+export const Paper: React.FC<{strokes?: boolean; margin?: boolean}> = ({strokes = true, margin = true}) => {
 	const {width, height} = useVideoConfig();
 	const marks = React.useMemo(() => {
 		if (!strokes) return [];
@@ -139,6 +139,8 @@ export const Paper: React.FC<{strokes?: boolean}> = ({strokes = true}) => {
 				{marks.map((m, i) => (
 					<line key={i} x1={m.x} y1={m.y} x2={m.x - m.l * 0.55} y2={m.y + m.l} stroke={PENCIL} strokeWidth={1.6} opacity={m.o} strokeLinecap="round" />
 				))}
+				{/* field-journal margin */}
+				{margin && <line x1={width * 0.055} y1={0} x2={width * 0.055} y2={height} stroke="#C8372D" strokeWidth={2.5} opacity={0.35} />}
 			</svg>
 		</AbsoluteFill>
 	);

@@ -88,7 +88,15 @@ def page() -> np.ndarray:
     return out * np.sin(np.pi * (x / x[-1]) ** 0.6) ** 2
 
 
-EFFECTS = {f.__name__: f for f in [pop, whoosh, ding, tick, boing, scratch, scribble, page]}
+def stamp() -> np.ndarray:
+    # rubber stamp hitting paper: a low thump plus a short papery slap
+    x = t(0.3)
+    thump = np.sin(2 * np.pi * (90 * np.exp(-12 * x) + 55) * x) * np.exp(-18 * x)
+    slap = rng.standard_normal(len(x)) * np.exp(-60 * x) * 0.6
+    return thump + slap
+
+
+EFFECTS = {f.__name__: f for f in [pop, whoosh, ding, tick, boing, scratch, scribble, page, stamp]}
 
 
 def write(name: str, audio: np.ndarray) -> None:

@@ -1,24 +1,24 @@
 {
-  "_doc": "Narration tones shared by tools/tts/voice.py (voice, speed, pause) and the animation (energy). An episode picks one with \"tone\" and may override voice/speed. Keep ONE narrator voice across the channel: it becomes the channel's identity.",
-  "relatable": {
-    "label": "Default: 'Have you ever noticed...' - warm, conversational, a smile in the voice",
-    "voice": "af_heart",
-    "speed": 1.05,
-    "pause": 0.22,
-    "energy": 1.0
+  "_doc": "Narration tones shared by tools/tts/voice.py (voice, speed, pause) and the animation (energy). An episode picks one with \"tone\"; scenes may override it. The channel has ONE narrator: a calm British naturalist (bf_emma) - she is the channel's identity.",
+  "documentary": {
+    "label": "Default: deadpan nature-documentary narration about the human specimen",
+    "voice": "bf_emma",
+    "speed": 1.1,
+    "pause": 0.2,
+    "energy": 0.95
   },
   "deep": {
-    "label": "Reflective endings and life lessons - slower, more air between sentences",
-    "voice": "af_heart",
-    "speed": 0.94,
-    "pause": 0.42,
+    "label": "The field note / life lesson - slower, more air",
+    "voice": "bf_emma",
+    "speed": 1.0,
+    "pause": 0.36,
     "energy": 0.7
   },
   "funny": {
-    "label": "Comedy beats - quicker delivery, snappy pauses",
-    "voice": "af_heart",
-    "speed": 1.12,
+    "label": "Comedy beats and the 'Perfectly human' sign-off - quicker, snappier",
+    "voice": "bf_emma",
+    "speed": 1.15,
     "pause": 0.16,
-    "energy": 1.25
+    "energy": 1.2
   }
 }

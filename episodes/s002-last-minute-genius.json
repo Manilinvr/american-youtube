@@ -1,8 +1,8 @@
 {
-  "id": "parkinsons-law",
+  "id": "s002-last-minute-genius",
   "format": "short",
-  "title": "Why You Get Everything Done the Day Before Vacation",
-  "tone": "relatable",
+  "title": "Specimen #002: The Last-Minute Genius",
+  "tone": "documentary",
   "sources": [
     "Parkinson, C. N. (1955, November 19). Parkinson's Law. The Economist (satirical essay)",
     "Bryan, J. F., & Locke, E. A. (1967). Parkinson's law as a goal-setting phenomenon. Organizational Behavior and Human Performance, 2, 258-275",
@@ -11,7 +11,7 @@
   "scenes": [
     {
       "id": "hook",
-      "say": "Ever notice you get more done the day before vacation than the *whole month* before it?",
+      "say": "Ever get more done the day before vacation than all month? Congratulations. You're Specimen [002.|zero zero two.]",
       "visual": {
         "type": "situation",
         "setting": "room",
@@ -44,21 +44,28 @@
             "label": "tomorrow!"
           }
         ],
+        "card": {
+          "no": 2,
+          "common": "The Last-Minute Genius",
+          "latin": "Homo procrastinans",
+          "habitat": "desks, the night before",
+          "at": "specimen"
+        },
         "camera": {
           "zoom": [
             1,
-            1.07
+            1.05
           ],
           "focus": [
             0.45,
-            0.5
+            0.55
           ]
         }
       }
     },
     {
-      "id": "contrast",
-      "say": "Due in a month? It takes a month. Due tomorrow? Forty minutes.",
+      "id": "observe",
+      "say": "Given a month, it takes a month. Given one night... forty minutes.",
       "visual": {
         "type": "split",
         "panels": [
@@ -87,7 +94,7 @@
           },
           {
             "label": "DUE TOMORROW",
-            "at": "tomorrow",
+            "at": "night",
             "setting": "room",
             "props": [
               {
@@ -116,7 +123,7 @@
     },
     {
       "id": "name",
-      "say": "There's a name for this: *Parkinson's law.*",
+      "say": "Field note: this is *Parkinson's law.*",
       "visual": {
         "type": "quote",
         "text": "PARKINSON'S LAW",
@@ -129,7 +136,7 @@
     },
     {
       "id": "joke",
-      "say": "It's not even a real law. It began as a *joke* in [1955.|nineteen fifty-five.]",
+      "say": "Not a real law. It began as a *joke* in [1955.|nineteen fifty-five.]",
       "visual": {
         "type": "situation",
         "setting": "room",
@@ -158,9 +165,10 @@
         ],
         "notes": [
           {
-            "kind": "circle",
-            "target": "head:0",
-            "at": "real"
+            "kind": "label",
+            "target": "person:0",
+            "at": "began",
+            "label": "fig. 2: a 1955 essay"
           }
         ]
       }
@@ -226,7 +234,7 @@
     {
       "id": "lesson",
       "tone": "deep",
-      "say": "So maybe you're not lazy. Maybe your deadline is just too far away. *Bring it closer.*",
+      "say": "Lazy? No. Just a deadline too far away. *Bring it closer.*",
       "visual": {
         "type": "quote",
         "person": {
@@ -236,9 +244,9 @@
       }
     },
     {
-      "id": "callback",
+      "id": "verdict",
       "tone": "funny",
-      "say": "Anyway... I wrote this script the night before it was due.",
+      "say": "This note was also written the night before. Perfectly *human.*",
       "visual": {
         "type": "situation",
         "setting": "room",
@@ -258,6 +266,12 @@
             "x": 0.45,
             "pose": "type",
             "face": "worried",
+            "then": [
+              {
+                "at": "perfectly",
+                "face": "smile"
+              }
+            ],
             "emote": "sweat",
             "emoteAt": "night"
           }
@@ -270,14 +284,23 @@
             "label": "11:58 PM"
           }
         ],
+        "card": {
+          "no": 2,
+          "common": "The Last-Minute Genius",
+          "latin": "Homo procrastinans",
+          "habitat": "desks, the night before"
+        },
+        "stamp": {
+          "at": "perfectly"
+        },
         "camera": {
           "zoom": [
             1,
-            1.1
+            1.06
           ],
           "focus": [
             0.45,
-            0.5
+            0.55
           ]
         }
       }

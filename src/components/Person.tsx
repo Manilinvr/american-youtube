@@ -110,7 +110,7 @@ const blendPose = (a: Pose, b: Pose, t: number): Pose => ({
 });
 
 /** Simple pencil face. (cx, cy) = head centre; `gaze` shifts the whole face sideways (-1..1). */
-const FaceArt: React.FC<{face: Face; cx: number; cy: number; gaze: number; blink: boolean; mouthOpen: number}> = ({face, cx, cy, gaze, blink, mouthOpen}) => {
+export const FaceArt: React.FC<{face: Face; cx: number; cy: number; gaze: number; blink: boolean; mouthOpen: number}> = ({face, cx, cy, gaze, blink, mouthOpen}) => {
 	const fx = cx + gaze * R * 0.28;
 	const ey = cy - R * 0.08;
 	const ex = R * 0.3;
@@ -222,8 +222,8 @@ export const Person: React.FC<Props> = ({pose, prevPose, blend = 1, face = 'neut
 	const breathe = Math.sin(t * Math.PI * 2 * 0.4) * 2.5 * energy;
 	const sway = pose === 'walk' ? 0 : Math.sin(t * Math.PI * 2 * 0.23) * 1.6 * energy;
 	const baseY = seated ? -HIP_Y : 0; // seated: the hips rest on the surface at y = 0
-	const blinkPeriod = Math.round(fps * (3.3 + (phase % 1)));
-	const blink = (frame + Math.round(phase * fps)) % blinkPeriod < 4;
+	const blinkEvery = 3.3 + (phase % 1);
+	const blink = (t % blinkEvery) > blinkEvery - 0.13; // in seconds, so stills (fps 1) and frame 0 never blink
 
 	const clipId = `head${React.useId().replace(/:/g, '')}`;
 	const hoodie = look === 'hoodie';

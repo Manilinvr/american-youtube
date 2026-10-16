@@ -1,6 +1,6 @@
-# Everyday Psychology — скетч-мультики для американского YouTube
+# Specimen: You — природная документалка о самом странном животном на Земле
 
-Короткие (Shorts, 15–30 с) и длинные (7–15 мин) мультики в стиле **карандашного скетча** о ситуациях, в которые попадал каждый, — с психологией повседневности, мудрым выводом и юмором. Язык роликов — английский, аудитория — США.
+Канал скетч-мультиков для американского YouTube. Британская натуралистка с серьёзным лицом «изучает» бытовое поведение людей, в котором узнаёт себя каждый: даёт ему номер и латинское название, объясняет настоящую психологию и ставит печать **PERFECTLY HUMAN**. Шортсы — 25–30 секунд, длинные «полевые экспедиции» — 7–15 минут.
 
 Весь конвейер бесплатный и работает локально:
 
@@ -8,13 +8,16 @@
 сценарий (JSON)  →  ИИ-озвучка Kokoro  →  анимация Remotion  →  MP4 (1080×1920 или 1920×1080, −14 LUFS)
 ```
 
-Первый готовый ролик — [`episodes/doorway-effect.json`](episodes/doorway-effect.json): *"Have you ever walked into a room... and completely forgotten why?"*
+Готовые ролики:
+- [`Specimen #001: The Doorway Forgetter`](episodes/s001-doorway-forgetter.json): *"Ever walked into a room and forgot why? Congratulations. You're Specimen 001."*
+- [`Specimen #002: The Last-Minute Genius`](episodes/s002-last-minute-genius.json): закон Паркинсона и дедлайны.
 
 ## Документы
 
-- [Концепция канала, структура роликов, хуки, риски монетизации](docs/concept.md)
+- [Канал: название, описание, ключевые слова, куда загружать оформление](docs/channel.md)
+- [Концепция, структура роликов, длинные видео, риски монетизации](docs/concept.md)
 - [Бесплатная озвучка: что выбрано и почему](docs/voice.md)
-- [40 готовых идей с источниками](docs/ideas.md)
+- [Каталог из 40 видов (готовые идеи с источниками)](docs/ideas.md)
 - [Формат сценария: сцены, позы, эмоции, предметы](docs/script-format.md)
 
 ## Установка (один раз)
@@ -32,34 +35,45 @@ python3 -m venv .venv
 ## Сделать ролик
 
 ```bash
-npm run make -- doorway-effect
+npm run make -- s001-doorway-forgetter
 ```
 
-Готовый файл: `out/doorway-effect.mp4`. Команда сама озвучит сценарий (с кэшем), отрендерит видео и выровняет громкость под YouTube.
+Готовый файл: `out/s001-doorway-forgetter.mp4`. Команда сама озвучит сценарий (с кэшем), отрендерит видео и выровняет громкость под YouTube.
 
 Посмотреть и подправить анимацию в браузере, с перемоткой по кадрам:
 
 ```bash
-.venv/bin/python tools/tts/voice.py doorway-effect   # озвучка (если ещё не делали)
+.venv/bin/python tools/tts/voice.py s001-doorway-forgetter   # озвучка (если ещё не делали)
 npm run studio
 ```
 
 ## Новый ролик с помощью Claude
 
-Напишите Claude, например: *«Сделай шортс про то, почему мы слышим вибрацию телефона, которой не было»* — он напишет сценарий по правилам из [`CLAUDE.md`](CLAUDE.md), зарегистрирует его, соберёт видео и пришлёт MP4. Идеи берите из [docs/ideas.md](docs/ideas.md) или из своей жизни — это и делает канал живым.
+Напишите Claude, например: *«Сделай Specimen #003 про фантомную вибрацию телефона»* — он напишет сценарий по правилам из [`CLAUDE.md`](CLAUDE.md), соберёт видео и пришлёт MP4 вместе с названием и описанием. Идеи — в [каталоге видов](docs/ideas.md) или из вашей жизни.
 
-Вручную: скопируйте `episodes/doorway-effect.json` под новым именем, поменяйте `id`, текст и сцены, добавьте файл в `src/episodes.ts` и запустите `npm run make -- <id>`.
+Вручную: скопируйте `episodes/s001-doorway-forgetter.json` под новым именем, поменяйте `id`, номер, текст и сцены, добавьте файл в `src/episodes.ts` и запустите `npm run make -- <id>`.
+
+## Оформление канала
+
+```bash
+npm run branding      # баннер, аватар, водяной знак, шаблон превью, конечная заставка -> branding/
+```
+
+Название и слоган берутся из `config/channel.json`.
 
 ## Структура
 
 ```
 episodes/              сценарии роликов (JSON)
-config/tones.json      тоны озвучки: relatable / deep / funny
+config/tones.json      тоны озвучки: documentary / deep / funny
+config/channel.json    название, слоган, подпись канала
 tools/tts/voice.py     озвучка Kokoro → public/voice/<id>/ (wav + тайминги слов)
 tools/sfx.py           синтез звуковых эффектов (поп, карандаш, шелест страницы...)
 tools/make.mjs         озвучка → рендер → нормализация громкости
 src/components/        скетч-движок: человечки, предметы, фоны, эмоции, субтитры
-src/scenes/            типы сцен: situation, quote, split
+src/scenes/            типы сцен: situation (с карточкой вида и печатью), quote, split
+src/branding/          оформление канала
+branding/              готовые картинки для YouTube
 public/fonts/          рукописные шрифты (лицензии OFL/Apache — можно монетизировать)
 ```
 
@@ -68,7 +82,7 @@ public/fonts/          рукописные шрифты (лицензии OFL/A
 | Что | Лицензия |
 |---|---|
 | Голос Kokoro-82M | Apache 2.0 — коммерческое использование разрешено |
-| Шрифты Kalam, Permanent Marker | SIL OFL 1.1 / Apache 2.0 |
+| Шрифты Kalam, Permanent Marker, Special Elite | SIL OFL 1.1 / Apache 2.0 |
 | Звуковые эффекты | синтезируются кодом в `tools/sfx.py` |
 | Remotion | бесплатно для физических лиц и компаний до 3 человек ([условия](https://www.remotion.dev/license)) |
 | Графика | рисуется кодом этого репозитория |

@@ -1,0 +1,8 @@
+{
+  "_doc": "Channel identity used by the branding stills (npm run branding). Change it here and re-render: every asset updates.",
+  "name": "Specimen: You",
+  "handle": "@SpecimenYou",
+  "tagline": "a field guide to the strangest animal on Earth",
+  "schedule": "new specimens every week",
+  "signoff": "PERFECTLY HUMAN"
+}

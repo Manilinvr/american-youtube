@@ -150,11 +150,12 @@ def envelope(audio: np.ndarray) -> str:
 def voice_scene(kokoro, scene: dict, voice: str, speed: float, pause: float) -> tuple[np.ndarray, list[dict]]:
     words = parse_say(scene["say"])
     style = resolve_voice(kokoro, voice)
+    lang = "en-gb" if voice.strip().startswith("b") else "en-us"  # bf_/bm_ voices are British
     chunks, timed, t = [], [], 0.0
     sentences = split_sentences(words)
     for i, sentence in enumerate(sentences):
         text = " ".join(w["spoken"] for w in sentence)
-        audio, sr = kokoro.create(text, voice=style, speed=speed, lang="en-us")
+        audio, sr = kokoro.create(text, voice=style, speed=speed, lang=lang)
         assert sr == SAMPLE_RATE, sr
         audio = trim_silence(np.asarray(audio, dtype=np.float32))
         dur = len(audio) / SAMPLE_RATE
@@ -220,7 +221,7 @@ def main() -> None:
         else:
             speed = scene.get("speed", ep_voice.get("speed", tone["speed"]))
             pause = ep_voice.get("pause", tone["pause"])
-        key = hashlib.sha1(json.dumps([scene["say"], voice, speed, pause, 2]).encode()).hexdigest()[:12]
+        key = hashlib.sha1(json.dumps([scene["say"], voice, speed, pause, 3]).encode()).hexdigest()[:12]
         wav = out_dir / f"{scene['id']}.wav"
         cached = old.get(scene["id"])
         if cached and cached["hash"] == key and wav.exists():

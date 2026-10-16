@@ -1,10 +1,10 @@
 import type {Episode, Tone} from './types';
 import tones from '../config/tones.json';
-import doorwayEffect from '../episodes/doorway-effect.json';
-import parkinsonsLaw from '../episodes/parkinsons-law.json';
+import s001 from '../episodes/s001-doorway-forgetter.json';
+import s002 from '../episodes/s002-last-minute-genius.json';
 
 /** Every episode in episodes/ must be listed here to show up in Remotion Studio. */
-export const EPISODES: Episode[] = [doorwayEffect as Episode, parkinsonsLaw as Episode];
+export const EPISODES: Episode[] = [s001 as Episode, s002 as Episode];
 
 export const getEpisode = (id: string): Episode => {
 	const ep = EPISODES.find((e) => e.id === id);

@@ -1,6 +1,6 @@
 import React from 'react';
 import {interpolate, useCurrentFrame} from 'remotion';
-import {HAND, MARKER} from '../fonts';
+import {HAND, MARKER, TYPE} from '../fonts';
 import {HIGHLIGHT, INK, LINE, PAPER_LIGHT as PAPER, RED} from '../theme';
 import {Draw, P} from './ink';
 
@@ -144,7 +144,7 @@ export const Bubble: React.FC<{text: string; kind?: 'speech' | 'thought'; x: num
 
 /** Red-pen annotation drawn on at frame `at`: a loose circle, an arrow, an underline or a big cross, with optional label. */
 export const Note: React.FC<{
-	kind: 'circle' | 'arrow' | 'underline' | 'cross';
+	kind: 'circle' | 'arrow' | 'underline' | 'cross' | 'label';
 	rect: {x: number; y: number; w: number; h: number};
 	at: number;
 	label?: string;
@@ -175,6 +175,26 @@ export const Note: React.FC<{
 		const back = fromLeft ? -1 : 1;
 		path = `M${sx} ${sy} Q${(sx + ex) / 2} ${sy - 30} ${ex} ${ey} M${ex} ${ey} L${ex + back * 8} ${ey - 42} M${ex} ${ey} L${ex + back * 42} ${ey - 10}`;
 		labelPos = {x: sx, y: sy - labelSize * 0.45};
+	} else if (kind === 'label') {
+		// field-guide figure label: dashed leader line from the target to typewriter text
+		const toLeft = cx > (bounds.x0 + bounds.x1) / 2;
+		const sx = toLeft ? rect.x : rect.x + rect.w;
+		const sy = rect.y + rect.h * 0.3;
+		const ex = toLeft ? sx - labelSize * 2.2 : sx + labelSize * 2.2;
+		const ey = sy - labelSize * 1.6;
+		const lp = interpolate(frame, [at, at + 10], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+		const tx = Math.max(bounds.x0 + labelSize * 3, Math.min(bounds.x1 - labelSize * 3, ex));
+		return (
+			<g>
+				<Draw p={lp}>
+					<P d={`M${sx} ${sy} Q${(sx + ex) / 2} ${sy - labelSize * 0.2} ${ex} ${ey}`} strokeWidth={LINE * 0.7} strokeDasharray="10 9" sketch={false} />
+				</Draw>
+				<circle cx={sx} cy={sy} r={LINE * 1.3} fill={INK} opacity={lp} />
+				<text x={tx} y={ey - labelSize * 0.35} textAnchor="middle" fontFamily={TYPE} fontSize={labelSize * 0.62} fill={INK} stroke={PAPER} strokeWidth={labelSize * 0.1} paintOrder="stroke" opacity={interpolate(lp, [0.5, 1], [0, 1], {extrapolateLeft: 'clamp'})}>
+					{label}
+				</text>
+			</g>
+		);
 	} else if (kind === 'cross') {
 		path = `M${rect.x + rect.w * 0.12} ${rect.y + rect.h * 0.15} Q${cx} ${cy - 10} ${rect.x + rect.w * 0.88} ${rect.y + rect.h * 0.85} M${rect.x + rect.w * 0.86} ${rect.y + rect.h * 0.12} Q${cx + 10} ${cy} ${rect.x + rect.w * 0.14} ${rect.y + rect.h * 0.88}`;
 		labelPos = {x: cx, y: cy + labelSize * 0.35};
