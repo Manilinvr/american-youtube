@@ -183,7 +183,8 @@ export const Note: React.FC<{
 		const ex = toLeft ? sx - labelSize * 2.2 : sx + labelSize * 2.2;
 		const ey = sy - labelSize * 1.6;
 		const lp = interpolate(frame, [at, at + 10], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-		const tx = Math.max(bounds.x0 + labelSize * 3, Math.min(bounds.x1 - labelSize * 3, ex));
+		const half = ((label ?? '').length * labelSize * 0.62 * 0.56) / 2 + labelSize * 0.3; // typewriter glyphs ~0.56em wide
+		const tx = Math.max(bounds.x0 + half, Math.min(bounds.x1 - half, ex));
 		return (
 			<g>
 				<Draw p={lp}>
