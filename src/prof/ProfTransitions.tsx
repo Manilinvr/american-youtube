@@ -15,7 +15,8 @@ export const ProfTransitions: React.FC<{timeline: TimedScene[]; theme?: string}>
 	const nodes: React.ReactNode[] = [];
 	timeline.forEach((s, i) => {
 		if (i === 0) return;
-		const kind: string = s.def.visual.enter ?? (theme === 'case' ? CASE_ORDER : ORDER)[(i - 1) % ORDER.length];
+		const order = theme === 'case' ? CASE_ORDER : ORDER;
+	const kind: string = s.def.visual.enter ?? order[(i - 1) % order.length];
 		const b = s.from;
 		const a = b - 6;
 		const z = b + 8;
