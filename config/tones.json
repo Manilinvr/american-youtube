@@ -20,5 +20,19 @@
     "speed": 1.0,
     "pause": 0.24,
     "energy": 1.0
+  },
+  "prof": {
+    "label": "Professor: warm, quick, clear. The default for the Professor series",
+    "voice": "af_heart",
+    "speed": 1.04,
+    "pause": 0.1,
+    "energy": 1.0
+  },
+  "prof-soft": {
+    "label": "Professor: the closing thought, slower and softer",
+    "voice": "af_heart",
+    "speed": 0.94,
+    "pause": 0.25,
+    "energy": 0.8
   }
 }

@@ -25,6 +25,10 @@ const load = (family: string, file: string, weight: string, style = 'normal') =>
 };
 
 if (typeof document !== 'undefined') {
+	load('Anton', 'fonts/Anton-Regular.woff2', '400');
+	load('Space Grotesk', 'fonts/SpaceGrotesk-500.woff2', '500');
+	load('Space Grotesk', 'fonts/SpaceGrotesk-700.woff2', '700');
+	load('Caveat Brush', 'fonts/CaveatBrush-Regular.woff2', '400');
 	load(HAND, 'fonts/Kalam-Regular.woff2', '400');
 	load(HAND, 'fonts/Kalam-Bold.woff2', '700');
 	load(MARKER, 'fonts/PermanentMarker.woff2', '400');

@@ -6,6 +6,7 @@
 Every effect is generated from sine waves and noise, so there are no licensing questions.
 Add a new effect by writing a function that returns a float array and registering it in EFFECTS.
 """
+import sys
 import wave
 from pathlib import Path
 
@@ -113,7 +114,39 @@ def shower() -> np.ndarray:
     return out[:-fade] * 0.5
 
 
-EFFECTS = {f.__name__: f for f in [pop, whoosh, ding, tick, boing, scratch, scribble, page, stamp, shower]}
+def buzz() -> np.ndarray:
+    # phone vibration motor: low hum chopped by a fast amplitude wobble, two short bursts
+    x = t(0.62)
+    carrier = np.sin(2 * np.pi * 168 * x) + 0.5 * np.sin(2 * np.pi * 336 * x) + 0.25 * np.sign(np.sin(2 * np.pi * 168 * x))
+    gate = (np.sin(2 * np.pi * 26 * x) > -0.25).astype(float)
+    bursts = ((x < 0.26) | ((x > 0.32) & (x < 0.58))).astype(float)
+    return carrier * gate * bursts * np.minimum(1, x / 0.01) * 0.7
+
+
+def hit() -> np.ndarray:
+    # soft cinematic impact for a number or title landing
+    x = t(0.5)
+    boom = np.sin(2 * np.pi * (70 * np.exp(-9 * x) + 42) * x) * np.exp(-7 * x)
+    air = rng.standard_normal(len(x)) * np.exp(-30 * x) * 0.35
+    return boom + air
+
+
+def rise() -> np.ndarray:
+    # short riser before a reveal
+    x = t(0.7)
+    freq = 300 + 1700 * (x / x[-1]) ** 2
+    tone = np.sin(2 * np.pi * np.cumsum(freq) / SR) * 0.4
+    air = np.diff(rng.standard_normal(len(x)), prepend=0) * 0.25
+    return (tone + air) * (x / x[-1]) ** 1.5 * np.minimum(1, (x[-1] - x) / 0.04)
+
+
+def blip() -> np.ndarray:
+    # tiny interface blip for chips and labels
+    x = t(0.09)
+    return np.sin(2 * np.pi * (1500 + 600 * x / x[-1]) * x) * env(len(x), 0.002, 45) * 0.6
+
+
+EFFECTS = {f.__name__: f for f in [pop, whoosh, ding, tick, boing, scratch, scribble, page, stamp, shower, buzz, hit, rise, blip]}
 
 
 def write(name: str, audio: np.ndarray) -> None:
@@ -128,6 +161,10 @@ def write(name: str, audio: np.ndarray) -> None:
 
 if __name__ == "__main__":
     OUT.mkdir(parents=True, exist_ok=True)
+    only = sys.argv[1:]  # e.g. `python3 tools/sfx.py buzz hit` writes just those (others stay byte-identical)
     for name, fn in EFFECTS.items():
-        write(name, fn())
+        audio = fn()  # always run, so the random generator stays in step
+        if only and name not in only:
+            continue
+        write(name, audio)
         print(f"public/sfx/{name}.wav")

@@ -49,6 +49,8 @@ export type Episode = {
 	 * move the camera across it (see src/textbook and docs/textbook-style.md).
 	 */
 	page?: import('./textbook/context').PageDef;
+	/** "prof": the Professor series (cut-out character, motion-graphics shots, see src/prof and docs/professor-style.md). */
+	style?: 'sketch' | 'textbook' | 'prof';
 	scenes: SceneDef[];
 };
 

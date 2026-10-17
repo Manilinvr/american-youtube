@@ -1,0 +1,2222 @@
+{
+	"id": "p001-phantom-vibration",
+	"format": "short",
+	"style": "prof",
+	"title": "Why Your Phone Buzzes When It Didn't",
+	"tone": "prof",
+	"music": "thinking-music.mp3",
+	"sources": [
+		"Rothberg, M. B., Arora, A., Hermann, J., Kleppel, R., St Marie, P., & Visintainer, P. (2010). Phantom vibration syndrome among medical staff: a cross sectional survey. BMJ, 341, c6914. https://doi.org/10.1136/bmj.c6914",
+		"Drouin, M., Kaiser, D. H., & Miller, D. A. (2012). Phantom vibrations among undergraduates: Prevalence and associated psychological characteristics. Computers in Human Behavior, 28(4), 1490-1496.",
+		"Kruger, D. J., & Djerf, J. M. (2016). High ringxiety: Attachment anxiety predicts experiences of phantom cell phone ringing. Cyberpsychology, Behavior, and Social Networking, 19(1), 56-59.",
+		"Deb, A. (2015). Phantom vibration and phantom ringing among mobile phone users: A systematic review of literature. Asia-Pacific Psychiatry, 7(3), 231-239. https://doi.org/10.1111/appy.12164"
+	],
+	"scenes": [
+		{
+			"id": "hook",
+			"say": "Your pocket buzzes. You grab your phone. And... there's *nothing*.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "slab",
+								"color": "accent",
+								"round": true,
+								"w": 0.98,
+								"x": 0.5,
+								"y": 0.37,
+								"border": 10,
+								"enter": "pop",
+								"depth": 0.6,
+								"delay": -0.3
+							},
+							{
+								"type": "bigword",
+								"text": "BZZT",
+								"size": 760,
+								"x": 0.5,
+								"y": 0.2,
+								"opacity": 0.1,
+								"depth": 0.4,
+								"drift": -0.6,
+								"enter": "none"
+							},
+							{
+								"type": "img",
+								"src": "body-pockets",
+								"x": 0.5,
+								"y": 0.375,
+								"w": 0.42,
+								"enter": "pop",
+								"loop": "breathe",
+								"buzz": [
+									"buzzes"
+								],
+								"delay": -0.35
+							},
+							{
+								"type": "waves",
+								"x": 0.5,
+								"y": 0.44,
+								"w": 0.92,
+								"at": "buzzes",
+								"dur": 44,
+								"strokeW": 16,
+								"enter": "none"
+							},
+							{
+								"type": "burst",
+								"text": "BZZT!",
+								"x": 0.79,
+								"y": 0.17,
+								"w": 0.36,
+								"at": "buzzes",
+								"enter": "slam",
+								"sfx": "buzz",
+								"sfxVolume": 0.4,
+								"seed": 3
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.1
+							],
+							"y": [
+								0.5,
+								0.45
+							],
+							"punch": [
+								"buzzes"
+							],
+							"shake": [
+								"buzzes"
+							]
+						}
+					},
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "slab",
+								"color": "accent",
+								"w": 1.4,
+								"h": 0.34,
+								"x": 0.5,
+								"y": 0.33,
+								"rot": -6,
+								"depth": 0.5,
+								"enter": "none",
+								"at": "grab"
+							},
+							{
+								"type": "phone",
+								"x": 0.5,
+								"y": 0.35,
+								"w": 0.44,
+								"at": "grab",
+								"enter": "up",
+								"loop": "float",
+								"screens": [
+									{
+										"at": "phone",
+										"s": "lock"
+									},
+									{
+										"at": "And",
+										"s": "empty"
+									}
+								],
+								"rot": -3
+							},
+							{
+								"type": "chip",
+								"text": "PHONE CHECK",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 40,
+								"bg": "ink",
+								"color": "paper",
+								"at": "grab",
+								"enter": "down"
+							}
+						],
+						"at": "grab",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.1
+							],
+							"keys": [
+								{
+									"at": "And",
+									"z": 1.55,
+									"x": 0.5,
+									"y": 0.28,
+									"secs": 0.9
+								}
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "text",
+								"text": "NOTHING.",
+								"x": 0.5,
+								"y": 0.26,
+								"size": 270,
+								"color": "accent",
+								"stroke": "ink",
+								"strokeW": 14,
+								"shadow": "paper",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "img",
+								"src": "face-skeptic",
+								"x": 0.5,
+								"y": 0.47,
+								"w": 0.5,
+								"at": "nothing+0.2",
+								"enter": "pop",
+								"rot": -3
+							},
+							{
+								"type": "scribble",
+								"shape": "underline",
+								"x": 0.5,
+								"y": 0.355,
+								"w": 0.72,
+								"h": 0.05,
+								"color": "paper",
+								"strokeW": 12,
+								"at": "nothing+0.3",
+								"outline": false
+							}
+						],
+						"at": "nothing",
+						"enter": "punch",
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							],
+							"shake": [
+								"nothing"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "name",
+			"say": "That has a name. It's called a *phantom vibration*.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "img",
+								"src": "body-point",
+								"x": 0.4,
+								"y": 0.37,
+								"w": 0.4,
+								"flip": true,
+								"enter": "left",
+								"loop": "breathe",
+								"sfx": "whoosh"
+							},
+							{
+								"type": "text",
+								"text": "?",
+								"x": 0.78,
+								"y": 0.22,
+								"size": 480,
+								"color": "ink",
+								"rot": 10,
+								"at": "name",
+								"enter": "pop"
+							},
+							{
+								"type": "burst",
+								"text": "NEW\nWORD",
+								"x": 0.82,
+								"y": 0.5,
+								"w": 0.3,
+								"at": "called",
+								"enter": "pop",
+								"rot": 8,
+								"fill": "paper",
+								"seed": 7
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "TERM",
+								"x": 0.5,
+								"y": 0.1,
+								"size": 42,
+								"bg": "accent",
+								"color": "ink",
+								"at": "phantom",
+								"enter": "down"
+							},
+							{
+								"type": "text",
+								"text": "PHANTOM",
+								"x": 0.5,
+								"y": 0.24,
+								"size": 250,
+								"color": "paper",
+								"at": "phantom",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "text",
+								"text": "VIBRATION",
+								"x": 0.5,
+								"y": 0.375,
+								"size": 214,
+								"color": "accent",
+								"at": "vibration",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "text",
+								"text": "a buzz that never happened",
+								"x": 0.5,
+								"y": 0.5,
+								"size": 74,
+								"font": "hand",
+								"color": "soft",
+								"upper": false,
+								"at": "vibration+0.25",
+								"enter": "fade"
+							},
+							{
+								"type": "scribble",
+								"shape": "underline",
+								"x": 0.5,
+								"y": 0.45,
+								"w": 0.8,
+								"h": 0.05,
+								"color": "accent",
+								"strokeW": 14,
+								"at": "vibration+0.1",
+								"outline": false
+							}
+						],
+						"at": "phantom",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.05,
+								1.0
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "stat1",
+			"say": "In a survey of [169|one hundred sixty nine] hospital staff, [68%|sixty eight percent] had felt one.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "SURVEY: 169 HOSPITAL STAFF",
+								"x": 0.5,
+								"y": 0.062,
+								"size": 38,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down",
+								"out": "had"
+							},
+							{
+								"type": "dots",
+								"x": 0.5,
+								"y": 0.29,
+								"w": 0.7,
+								"total": 169,
+								"cols": 13,
+								"hit": 115,
+								"hitAt": "68%",
+								"at": "survey",
+								"step": 0.2,
+								"hitStep": 0.17,
+								"enter": "none",
+								"id": "d1"
+							},
+							{
+								"type": "counter",
+								"to": 68,
+								"suffix": "%",
+								"x": 0.5,
+								"y": 0.575,
+								"size": 250,
+								"color": "ink",
+								"at": "68%",
+								"dur": 22,
+								"enter": "slam",
+								"shadow": "accent",
+								"sfx": "hit",
+								"stroke": "paper"
+							},
+							{
+								"type": "chip",
+								"text": "Rothberg et al. · BMJ · 2010",
+								"x": 0.07,
+								"y": 0.8,
+								"kind": "cite",
+								"size": 34,
+								"align": "left",
+								"at": "staff",
+								"enter": "left",
+								"sfx": "blip",
+								"sfxVolume": 0.2
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							],
+							"punch": [
+								"68%"
+							]
+						}
+					},
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "SURVEY: 169 HOSPITAL STAFF",
+								"x": 0.5,
+								"y": 0.062,
+								"size": 38,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down",
+								"out": "had"
+							},
+							{
+								"type": "dots",
+								"x": 0.5,
+								"y": 0.29,
+								"w": 0.7,
+								"total": 169,
+								"cols": 13,
+								"hit": 115,
+								"hitAt": "68%",
+								"at": "survey",
+								"step": 0.2,
+								"hitStep": 0.17,
+								"enter": "none",
+								"id": "d1"
+							},
+							{
+								"type": "counter",
+								"to": 68,
+								"suffix": "%",
+								"x": 0.5,
+								"y": 0.575,
+								"size": 250,
+								"color": "ink",
+								"at": "68%",
+								"dur": 22,
+								"enter": "slam",
+								"shadow": "accent",
+								"sfx": "hit",
+								"stroke": "paper"
+							},
+							{
+								"type": "img",
+								"src": "face-surprised",
+								"x": 0.78,
+								"y": 0.5,
+								"w": 0.28,
+								"at": "had",
+								"enter": "pop",
+								"rot": 8
+							},
+							{
+								"type": "chip",
+								"text": "Rothberg et al. · BMJ · 2010",
+								"x": 0.07,
+								"y": 0.8,
+								"kind": "cite",
+								"size": 34,
+								"align": "left",
+								"at": "staff",
+								"enter": "none",
+								"sfx": "blip",
+								"sfxVolume": 0.2
+							}
+						],
+						"at": "had",
+						"enter": "punch",
+						"cam": {
+							"z": [
+								1.12,
+								1.2
+							],
+							"x": [
+								0.5,
+								0.55
+							],
+							"y": [
+								0.5,
+								0.5
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "stat2",
+			"say": "Among [290|two hundred ninety] college students? [89%|eighty nine percent]. About once every two weeks.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "counter",
+								"to": 290,
+								"size": 400,
+								"color": "paper",
+								"x": 0.5,
+								"y": 0.17,
+								"at": "start+0.25",
+								"dur": 34,
+								"enter": "none",
+								"stroke": "ink",
+								"shadow": "accent"
+							},
+							{
+								"type": "chip",
+								"text": "COLLEGE STUDENTS",
+								"x": 0.5,
+								"y": 0.3,
+								"size": 44,
+								"bg": "accent",
+								"color": "ink",
+								"at": "college",
+								"enter": "pop",
+								"sfx": "blip"
+							},
+							{
+								"type": "panel",
+								"src": "panel-lecture",
+								"x": 0.5,
+								"y": 0.47,
+								"w": 0.8,
+								"at": "college+0.1",
+								"enter": "up",
+								"border": 8,
+								"shadow": 16,
+								"zoom": [
+									1.02,
+									1.16
+								],
+								"focus": [
+									0.6,
+									0.5
+								]
+							},
+							{
+								"type": "chip",
+								"text": "Drouin et al. · 2012",
+								"x": 0.07,
+								"y": 0.8,
+								"kind": "cite",
+								"size": 34,
+								"align": "left",
+								"at": "students",
+								"enter": "left",
+								"sfx": "blip",
+								"sfxVolume": 0.2
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "ring",
+								"x": 0.5,
+								"y": 0.3,
+								"w": 0.66,
+								"value": 89,
+								"at": "89%",
+								"dur": 26,
+								"enter": "pop",
+								"track": "paper"
+							},
+							{
+								"type": "counter",
+								"to": 89,
+								"suffix": "%",
+								"x": 0.5,
+								"y": 0.3,
+								"size": 250,
+								"color": "ink",
+								"at": "89%",
+								"dur": 26,
+								"enter": "none",
+								"suffixScale": 0.5
+							},
+							{
+								"type": "chip",
+								"text": "HAD FELT ONE",
+								"x": 0.5,
+								"y": 0.53,
+								"size": 44,
+								"bg": "ink",
+								"color": "paper",
+								"at": "89%+0.5",
+								"enter": "up",
+								"sfx": "blip"
+							},
+							{
+								"type": "img",
+								"src": "face-joy",
+								"x": 0.86,
+								"y": 0.12,
+								"w": 0.26,
+								"at": "89%+0.35",
+								"enter": "pop",
+								"rot": 10
+							}
+						],
+						"at": "89%",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"punch": [
+								"89%"
+							]
+						}
+					},
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "TWO WEEKS",
+								"x": 0.5,
+								"y": 0.08,
+								"size": 44,
+								"bg": "ink",
+								"color": "paper",
+								"at": "About",
+								"enter": "down"
+							},
+							{
+								"type": "calendar",
+								"x": 0.5,
+								"y": 0.27,
+								"w": 0.86,
+								"days": 14,
+								"hitDay": 4,
+								"hitAt": "once",
+								"at": "About",
+								"enter": "none"
+							},
+							{
+								"type": "text",
+								"text": "≈ 1 BUZZ",
+								"x": 0.5,
+								"y": 0.5,
+								"size": 170,
+								"color": "ink",
+								"mark": "accent",
+								"at": "every",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "text",
+								"text": "PER 2 WEEKS",
+								"x": 0.5,
+								"y": 0.585,
+								"size": 100,
+								"color": "graphite",
+								"at": "weeks",
+								"enter": "up"
+							},
+							{
+								"type": "waves",
+								"x": 0.623,
+								"y": 0.2355,
+								"w": 0.28,
+								"at": "once",
+								"dur": 40,
+								"strokeW": 9,
+								"enter": "none"
+							}
+						],
+						"at": "About",
+						"enter": "slide-u",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"shake": [
+								"once"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "twist",
+			"say": "So is your phone broken? Is your leg? Neither. It's your *brain*... making a guess.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "slab",
+								"color": "soft",
+								"round": true,
+								"w": 0.8,
+								"x": 0.45,
+								"y": 0.34,
+								"enter": "pop",
+								"depth": 0.6
+							},
+							{
+								"type": "phone",
+								"x": 0.45,
+								"y": 0.34,
+								"w": 0.38,
+								"enter": "up",
+								"rot": -5,
+								"loop": "float",
+								"screens": [
+									{
+										"at": "shot",
+										"s": "lock"
+									}
+								],
+								"buzz": [
+									"broken"
+								]
+							},
+							{
+								"type": "text",
+								"text": "?",
+								"x": 0.8,
+								"y": 0.2,
+								"size": 560,
+								"color": "accent",
+								"stroke": "ink",
+								"strokeW": 18,
+								"rot": 12,
+								"at": "broken",
+								"enter": "pop",
+								"sfx": "blip"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							],
+							"shake": [
+								"broken"
+							]
+						}
+					},
+					{
+						"bg": "soft",
+						"layers": [
+							{
+								"type": "img",
+								"src": "body-front",
+								"x": 0.5,
+								"y": 0.37,
+								"w": 0.27,
+								"enter": "up"
+							},
+							{
+								"type": "scribble",
+								"shape": "circle",
+								"x": 0.5,
+								"y": 0.5,
+								"w": 0.36,
+								"h": 0.22,
+								"color": "accent",
+								"strokeW": 18,
+								"at": "leg",
+								"dur": 12
+							},
+							{
+								"type": "chip",
+								"text": "YOUR LEG?",
+								"x": 0.5,
+								"y": 0.1,
+								"size": 46,
+								"bg": "ink",
+								"color": "paper",
+								"at": "leg",
+								"enter": "pop",
+								"sfx": "blip"
+							}
+						],
+						"at": "Is#2",
+						"enter": "slide-l",
+						"cam": {
+							"z": [
+								1.0,
+								1.0
+							],
+							"keys": [
+								{
+									"at": "leg",
+									"z": 1.35,
+									"x": 0.5,
+									"y": 0.52,
+									"secs": 0.7
+								}
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "text",
+								"text": "NEITHER.",
+								"x": 0.5,
+								"y": 0.27,
+								"size": 250,
+								"color": "paper",
+								"stroke": "ink",
+								"shadow": "accent",
+								"at": "Neither",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "scribble",
+								"shape": "cross",
+								"x": 0.5,
+								"y": 0.27,
+								"w": 0.78,
+								"h": 0.2,
+								"color": "accent",
+								"strokeW": 20,
+								"at": "Neither+0.2",
+								"dur": 10,
+								"outline": false
+							},
+							{
+								"type": "img",
+								"src": "face-calm",
+								"x": 0.5,
+								"y": 0.5,
+								"w": 0.42,
+								"at": "Neither+0.2",
+								"enter": "pop"
+							}
+						],
+						"at": "Neither",
+						"enter": "flash",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"punch": [
+								"Neither"
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "pulse",
+								"x": 0.5,
+								"y": 0.33,
+								"w": 1.1,
+								"enter": "none",
+								"color": "ink"
+							},
+							{
+								"type": "img",
+								"src": "brain",
+								"x": 0.5,
+								"y": 0.33,
+								"w": 0.6,
+								"enter": "pop",
+								"loop": "breathe",
+								"sfx": "hit"
+							},
+							{
+								"type": "text",
+								"text": "a guess",
+								"x": 0.5,
+								"y": 0.575,
+								"size": 190,
+								"font": "hand",
+								"color": "ink",
+								"upper": false,
+								"at": "making",
+								"enter": "pop",
+								"rot": -4
+							},
+							{
+								"type": "scribble",
+								"shape": "underline",
+								"x": 0.5,
+								"y": 0.62,
+								"w": 0.55,
+								"h": 0.04,
+								"color": "paper",
+								"strokeW": 14,
+								"at": "guess",
+								"outline": true
+							}
+						],
+						"irisAt": [
+							0.5,
+							0.33
+						],
+						"at": "brain",
+						"enter": "iris",
+						"cam": {
+							"z": [
+								1.0,
+								1.1
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "signals",
+			"say": "Your body is always sending tiny signals. A seam. A twitching muscle. A shift of fabric. Most of the time, your brain just *ignores* them.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "pulse",
+								"x": 0.5,
+								"y": 0.38,
+								"w": 1.15,
+								"enter": "none",
+								"color": "ink"
+							},
+							{
+								"type": "img",
+								"src": "body-front",
+								"x": 0.5,
+								"y": 0.38,
+								"w": 0.28,
+								"enter": "up",
+								"loop": "breathe"
+							},
+							{
+								"type": "chip",
+								"text": "TINY SIGNALS",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 44,
+								"bg": "accent",
+								"color": "ink",
+								"at": "tiny",
+								"enter": "pop",
+								"sfx": "blip"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"y": [
+								0.5,
+								0.5
+							],
+							"keys": [
+								{
+									"at": "tiny",
+									"z": 1.32,
+									"x": 0.5,
+									"y": 0.28,
+									"secs": 0.8
+								}
+							]
+						}
+					},
+					{
+						"bg": "ink-grid",
+						"layers": [
+							{
+								"type": "graph",
+								"id": "g1",
+								"x": 0.5,
+								"y": 0.36,
+								"w": 0.9,
+								"h": 0.3,
+								"amp": 0.16,
+								"speed": 6,
+								"at": 2.38,
+								"enter": "up",
+								"bar": [
+									{
+										"at": 2.38,
+										"v": 0.84
+									}
+								],
+								"barLabel": "WHAT YOU NOTICE",
+								"bumps": [
+									{
+										"at": "seam",
+										"h": 0.4
+									},
+									{
+										"at": "twitching",
+										"h": 0.46
+									},
+									{
+										"at": "shift",
+										"h": 0.38
+									}
+								],
+								"cross": false
+							},
+							{
+								"type": "chip",
+								"text": "A SEAM",
+								"x": 0.2,
+								"y": 0.135,
+								"size": 38,
+								"bg": "accent",
+								"color": "ink",
+								"at": "seam",
+								"enter": "down",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "A TWITCH",
+								"x": 0.5,
+								"y": 0.135,
+								"size": 38,
+								"bg": "accent",
+								"color": "ink",
+								"at": "twitching",
+								"enter": "down",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "FABRIC",
+								"x": 0.8,
+								"y": 0.135,
+								"size": 38,
+								"bg": "accent",
+								"color": "ink",
+								"at": "fabric",
+								"enter": "down",
+								"sfx": "blip"
+							},
+							{
+								"type": "img",
+								"src": "face-calm",
+								"x": 0.85,
+								"y": 0.575,
+								"w": 0.2,
+								"at": "seam",
+								"enter": "pop",
+								"rot": 6
+							}
+						],
+						"at": 2.38,
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.04
+							]
+						}
+					},
+					{
+						"bg": "ink-grid",
+						"layers": [
+							{
+								"type": "graph",
+								"id": "g1",
+								"x": 0.5,
+								"y": 0.36,
+								"w": 0.9,
+								"h": 0.3,
+								"amp": 0.16,
+								"speed": 6,
+								"at": 2.38,
+								"enter": "up",
+								"bar": [
+									{
+										"at": 2.38,
+										"v": 0.84
+									}
+								],
+								"barLabel": "WHAT YOU NOTICE",
+								"bumps": [
+									{
+										"at": "seam",
+										"h": 0.4
+									},
+									{
+										"at": "twitching",
+										"h": 0.46
+									},
+									{
+										"at": "shift",
+										"h": 0.38
+									}
+								],
+								"cross": false
+							},
+							{
+								"type": "text",
+								"text": "IGNORED",
+								"x": 0.5,
+								"y": 0.56,
+								"size": 210,
+								"depth": 0.2,
+								"color": "accent",
+								"stroke": "ink",
+								"strokeW": 16,
+								"shadow": "paper",
+								"at": "ignores",
+								"enter": "slam",
+								"rot": -6,
+								"sfx": "hit"
+							},
+							{
+								"type": "chip",
+								"text": "MOST OF THE TIME",
+								"x": 0.5,
+								"y": 0.15,
+								"size": 40,
+								"bg": "paper",
+								"color": "ink",
+								"at": "Most",
+								"enter": "down",
+								"sfx": "blip"
+							}
+						],
+						"at": "Most",
+						"enter": "punch",
+						"cam": {
+							"z": [
+								1.1,
+								1.18
+							],
+							"x": [
+								0.7,
+								0.78
+							],
+							"y": [
+								0.45,
+								0.45
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "bar",
+			"say": "But when you're *expecting* a message, your brain lowers the bar. Researchers describe it as a signal detection problem. Lower the bar, and a twitch can pass for a buzz.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "img",
+								"src": "face-thinking",
+								"x": 0.32,
+								"y": 0.4,
+								"w": 0.5,
+								"enter": "left"
+							},
+							{
+								"type": "phone",
+								"x": 0.76,
+								"y": 0.37,
+								"w": 0.3,
+								"enter": "right",
+								"rot": 6,
+								"loop": "float",
+								"screens": [
+									{
+										"at": "shot",
+										"s": "lock"
+									},
+									{
+										"at": "message",
+										"s": "typing"
+									}
+								]
+							},
+							{
+								"type": "chip",
+								"text": "WAITING FOR A MESSAGE",
+								"x": 0.5,
+								"y": 0.085,
+								"size": 40,
+								"bg": "ink",
+								"color": "paper",
+								"at": "expecting",
+								"enter": "down",
+								"sfx": "blip"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							]
+						}
+					},
+					{
+						"bg": "ink-grid",
+						"layers": [
+							{
+								"type": "graph",
+								"id": "g2",
+								"x": 0.5,
+								"y": 0.34,
+								"w": 0.9,
+								"h": 0.34,
+								"amp": 0.4,
+								"speed": 6,
+								"seed": 8,
+								"at": "your#2",
+								"enter": "up",
+								"bar": [
+									{
+										"at": "your#2",
+										"v": 0.82
+									},
+									{
+										"at": "lowers",
+										"v": 0.2
+									}
+								],
+								"barLabel": "THE BAR",
+								"bumps": []
+							},
+							{
+								"type": "scribble",
+								"shape": "arrow",
+								"x": 0.82,
+								"y": 0.19,
+								"w": 0.12,
+								"h": 0.1,
+								"color": "accent",
+								"strokeW": 14,
+								"at": "lowers",
+								"dur": 10,
+								"rot": 90,
+								"curve": 0.0
+							},
+							{
+								"type": "chip",
+								"text": "BAR DOWN",
+								"x": 0.5,
+								"y": 0.12,
+								"size": 40,
+								"bg": "accent",
+								"color": "ink",
+								"at": "lowers",
+								"enter": "down",
+								"sfx": "rise"
+							}
+						],
+						"at": "your#2",
+						"enter": "wipe-l",
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "text",
+								"text": "SIGNAL\nDETECTION",
+								"x": 0.5,
+								"y": 0.3,
+								"size": 250,
+								"color": "ink",
+								"stroke": "paper",
+								"strokeW": 10,
+								"at": "signal",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "chip",
+								"text": "HOW RESEARCHERS DESCRIBE IT",
+								"x": 0.5,
+								"y": 0.52,
+								"size": 36,
+								"bg": "ink",
+								"color": "paper",
+								"at": "problem",
+								"enter": "up"
+							},
+							{
+								"type": "chip",
+								"text": "Kruger & Djerf · 2016",
+								"x": 0.07,
+								"y": 0.8,
+								"kind": "cite",
+								"size": 34,
+								"align": "left",
+								"at": "problem",
+								"enter": "left",
+								"sfx": "blip",
+								"sfxVolume": 0.2
+							}
+						],
+						"at": "signal",
+						"enter": "flash",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"punch": [
+								"signal"
+							]
+						}
+					},
+					{
+						"bg": "ink-grid",
+						"layers": [
+							{
+								"type": "graph",
+								"id": "g2",
+								"x": 0.5,
+								"y": 0.34,
+								"w": 0.9,
+								"h": 0.34,
+								"amp": 0.4,
+								"speed": 6,
+								"seed": 8,
+								"at": "your#2",
+								"enter": "up",
+								"bar": [
+									{
+										"at": "your#2",
+										"v": 0.82
+									},
+									{
+										"at": "lowers",
+										"v": 0.2
+									}
+								],
+								"barLabel": "THE BAR",
+								"bumps": [],
+								"cross": true
+							},
+							{
+								"type": "chip",
+								"text": "JUST A TWITCH",
+								"x": 0.3,
+								"y": 0.13,
+								"size": 40,
+								"bg": "paper",
+								"color": "ink",
+								"at": "twitch",
+								"enter": "down",
+								"sfx": "blip"
+							},
+							{
+								"type": "phone",
+								"x": 0.84,
+								"y": 0.13,
+								"w": 0.14,
+								"at": "buzz",
+								"enter": "pop",
+								"screens": [
+									{
+										"at": "buzz",
+										"s": "buzzing"
+									}
+								],
+								"buzz": [
+									"buzz"
+								],
+								"rot": 10
+							},
+							{
+								"type": "burst",
+								"text": "BUZZ?",
+								"x": 0.5,
+								"y": 0.6,
+								"w": 0.34,
+								"at": "buzz",
+								"enter": "slam",
+								"sfx": "buzz",
+								"sfxVolume": 0.35,
+								"seed": 9
+							}
+						],
+						"at": "Lower#2",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.15,
+								1.3
+							],
+							"x": [
+								0.65,
+								0.7
+							],
+							"y": [
+								0.5,
+								0.48
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "who",
+			"say": "In a study of [411|four hundred eleven] students, people who were more anxious in close relationships reported more phantom rings and buzzes. Especially when they were waiting for a call.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "counter",
+								"to": 411,
+								"size": 400,
+								"color": "paper",
+								"x": 0.5,
+								"y": 0.17,
+								"at": "start+0.3",
+								"dur": 38,
+								"enter": "none",
+								"stroke": "ink",
+								"shadow": "accent"
+							},
+							{
+								"type": "chip",
+								"text": "STUDENTS",
+								"x": 0.5,
+								"y": 0.3,
+								"size": 44,
+								"bg": "accent",
+								"color": "ink",
+								"at": "students",
+								"enter": "pop",
+								"sfx": "blip"
+							},
+							{
+								"type": "panel",
+								"src": "panel-laptop",
+								"x": 0.5,
+								"y": 0.47,
+								"w": 0.62,
+								"at": "students+0.1",
+								"enter": "up",
+								"rot": 2,
+								"border": 8,
+								"shadow": 16,
+								"zoom": [
+									1.02,
+									1.12
+								],
+								"focus": [
+									0.5,
+									0.55
+								]
+							},
+							{
+								"type": "chip",
+								"text": "Kruger & Djerf · 2016",
+								"x": 0.07,
+								"y": 0.8,
+								"kind": "cite",
+								"size": 34,
+								"align": "left",
+								"at": "411",
+								"enter": "left",
+								"sfx": "blip",
+								"sfxVolume": 0.2
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "img",
+								"src": "face-thinking",
+								"x": 0.3,
+								"y": 0.3,
+								"w": 0.44,
+								"enter": "left"
+							},
+							{
+								"type": "bubble",
+								"x": 0.68,
+								"y": 0.16,
+								"size": 62,
+								"at": "anxious",
+								"enter": "pop",
+								"loop": "float"
+							},
+							{
+								"type": "heart",
+								"x": 0.74,
+								"y": 0.38,
+								"w": 0.24,
+								"at": "close",
+								"enter": "pop",
+								"pulse": [
+									"relationships"
+								]
+							},
+							{
+								"type": "chip",
+								"text": "MORE ANXIOUS",
+								"x": 0.5,
+								"y": 0.5,
+								"size": 50,
+								"bg": "accent",
+								"color": "ink",
+								"at": "anxious",
+								"enter": "up",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "IN CLOSE RELATIONSHIPS",
+								"x": 0.5,
+								"y": 0.58,
+								"size": 40,
+								"bg": "ink",
+								"color": "paper",
+								"at": "relationships",
+								"enter": "up",
+								"sfx": "blip"
+							}
+						],
+						"at": "people",
+						"enter": "slide-l",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "waves",
+								"x": 0.5,
+								"y": 0.33,
+								"w": 1.05,
+								"at": "phantom",
+								"dur": 140,
+								"strokeW": 18,
+								"enter": "none"
+							},
+							{
+								"type": "phone",
+								"x": 0.5,
+								"y": 0.33,
+								"w": 0.36,
+								"enter": "up",
+								"screens": [
+									{
+										"at": "shot",
+										"s": "lock"
+									},
+									{
+										"at": "phantom",
+										"s": "buzzing"
+									}
+								],
+								"buzz": [
+									"phantom",
+									"rings",
+									"buzzes"
+								]
+							},
+							{
+								"type": "burst",
+								"text": "RING!",
+								"x": 0.18,
+								"y": 0.17,
+								"w": 0.3,
+								"at": "rings",
+								"enter": "slam",
+								"rot": -10,
+								"fill": "paper",
+								"seed": 2,
+								"sfx": "ding",
+								"sfxVolume": 0.25
+							},
+							{
+								"type": "burst",
+								"text": "BZZT!",
+								"x": 0.83,
+								"y": 0.5,
+								"w": 0.3,
+								"at": "buzzes",
+								"enter": "slam",
+								"rot": 8,
+								"seed": 5,
+								"sfx": "buzz",
+								"sfxVolume": 0.35
+							},
+							{
+								"type": "chip",
+								"text": "PHANTOM RINGS + BUZZES",
+								"x": 0.5,
+								"y": 0.08,
+								"size": 38,
+								"bg": "ink",
+								"color": "paper",
+								"at": "phantom",
+								"enter": "down"
+							}
+						],
+						"at": "reported",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							],
+							"shake": [
+								"rings",
+								"buzzes"
+							]
+						}
+					},
+					{
+						"bg": "ink-grid",
+						"layers": [
+							{
+								"type": "phone",
+								"x": 0.26,
+								"y": 0.37,
+								"w": 0.3,
+								"enter": "left",
+								"rot": -6,
+								"loop": "float",
+								"screens": [
+									{
+										"at": "shot",
+										"s": "lock"
+									}
+								]
+							},
+							{
+								"type": "img",
+								"src": "face-thinking",
+								"x": 0.74,
+								"y": 0.4,
+								"w": 0.46,
+								"enter": "right"
+							},
+							{
+								"type": "chip",
+								"text": "EXPECTING A CALL",
+								"x": 0.5,
+								"y": 0.1,
+								"size": 42,
+								"bg": "accent",
+								"color": "ink",
+								"at": "waiting",
+								"enter": "down",
+								"sfx": "blip"
+							},
+							{
+								"type": "burst",
+								"text": "MORE\nBUZZES",
+								"x": 0.5,
+								"y": 0.59,
+								"w": 0.4,
+								"at": "call",
+								"enter": "slam",
+								"sfx": "hit",
+								"seed": 4
+							}
+						],
+						"at": "Especially",
+						"enter": "punch",
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							],
+							"punch": [
+								"call"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "relief",
+			"say": "The good news? Most people say it barely bothers them. Some try carrying the phone somewhere else, or changing the vibration.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "GOOD NEWS",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 46,
+								"bg": "ink",
+								"color": "paper",
+								"at": "good",
+								"enter": "pop",
+								"sfx": "blip"
+							},
+							{
+								"type": "panel",
+								"src": "panel-armchair",
+								"x": 0.5,
+								"y": 0.34,
+								"w": 0.86,
+								"enter": "up",
+								"rot": -1.5,
+								"zoom": [
+									1.02,
+									1.14
+								],
+								"focus": [
+									0.4,
+									0.5
+								]
+							},
+							{
+								"type": "chip",
+								"text": "BARELY BOTHERED",
+								"x": 0.5,
+								"y": 0.6,
+								"size": 46,
+								"bg": "ink",
+								"color": "paper",
+								"at": "barely",
+								"enter": "up",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "Deb · 2015 · review",
+								"x": 0.07,
+								"y": 0.8,
+								"kind": "cite",
+								"size": 34,
+								"align": "left",
+								"at": "Most",
+								"enter": "left",
+								"sfx": "blip",
+								"sfxVolume": 0.2
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					},
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "img",
+								"src": "body-front",
+								"x": 0.3,
+								"y": 0.38,
+								"w": 0.25,
+								"enter": "up"
+							},
+							{
+								"type": "scribble",
+								"shape": "arrow",
+								"x": 0.52,
+								"y": 0.3,
+								"w": 0.2,
+								"h": 0.12,
+								"color": "accent",
+								"strokeW": 16,
+								"at": "somewhere",
+								"dur": 12
+							},
+							{
+								"type": "img",
+								"src": "prop-backpack",
+								"x": 0.74,
+								"y": 0.38,
+								"w": 0.3,
+								"at": "somewhere",
+								"enter": "right",
+								"loop": "bob",
+								"sfx": "pop"
+							},
+							{
+								"type": "chip",
+								"text": "MOVE THE PHONE",
+								"x": 0.5,
+								"y": 0.1,
+								"size": 44,
+								"bg": "ink",
+								"color": "paper",
+								"at": "carrying",
+								"enter": "down",
+								"sfx": "blip"
+							}
+						],
+						"at": "Some",
+						"enter": "slide-l",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "BEFORE",
+								"x": 0.22,
+								"y": 0.09,
+								"size": 36,
+								"bg": "paper",
+								"color": "ink",
+								"at": "shot",
+								"enter": "down"
+							},
+							{
+								"type": "wave",
+								"x": 0.5,
+								"y": 0.2,
+								"w": 0.82,
+								"pulses": false,
+								"enter": "none",
+								"at": "shot"
+							},
+							{
+								"type": "chip",
+								"text": "AFTER",
+								"x": 0.2,
+								"y": 0.37,
+								"size": 36,
+								"bg": "accent",
+								"color": "ink",
+								"at": "changing",
+								"enter": "down",
+								"sfx": "blip"
+							},
+							{
+								"type": "wave",
+								"x": 0.5,
+								"y": 0.48,
+								"w": 0.82,
+								"pulses": true,
+								"at": "changing+0.1",
+								"enter": "none",
+								"color": "paper"
+							},
+							{
+								"type": "text",
+								"text": "different pattern",
+								"x": 0.5,
+								"y": 0.585,
+								"size": 90,
+								"font": "hand",
+								"color": "accent",
+								"upper": false,
+								"at": "vibration",
+								"enter": "pop",
+								"rot": -2
+							}
+						],
+						"at": "changing",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "close",
+			"say": "So when your pocket buzzes, and nothing's there... that's not a glitch. That's a brain that's *listening* for the people who matter.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": {
+							"photo": "bg-city",
+							"blur": 8,
+							"bright": 0.7,
+							"dim": 0.2
+						},
+						"layers": [
+							{
+								"type": "img",
+								"src": "body-walk",
+								"x": 0.5,
+								"y": 0.4,
+								"w": 0.34,
+								"enter": "left",
+								"loop": "bob",
+								"buzz": [
+									"buzzes"
+								]
+							},
+							{
+								"type": "waves",
+								"x": 0.5,
+								"y": 0.45,
+								"w": 0.95,
+								"at": "buzzes",
+								"dur": 44,
+								"strokeW": 14,
+								"color": "paper",
+								"enter": "none"
+							},
+							{
+								"type": "burst",
+								"text": "BZZT",
+								"x": 0.74,
+								"y": 0.15,
+								"w": 0.3,
+								"at": "buzzes",
+								"enter": "slam",
+								"seed": 3,
+								"sfx": "buzz",
+								"sfxVolume": 0.3
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.1
+							]
+						}
+					},
+					{
+						"bg": {
+							"photo": "bg-city",
+							"blur": 8,
+							"bright": 0.7,
+							"dim": 0.2
+						},
+						"layers": [
+							{
+								"type": "img",
+								"src": "face-shock",
+								"x": 0.46,
+								"y": 0.38,
+								"w": 0.58,
+								"enter": "pop"
+							},
+							{
+								"type": "text",
+								"text": "?",
+								"x": 0.82,
+								"y": 0.2,
+								"size": 380,
+								"color": "accent",
+								"stroke": "ink",
+								"strokeW": 16,
+								"rot": 10,
+								"at": "there",
+								"enter": "pop",
+								"sfx": "blip"
+							}
+						],
+						"at": "nothing's",
+						"enter": "punch",
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "text",
+								"text": "NOT A\nGLITCH.",
+								"x": 0.5,
+								"y": 0.3,
+								"size": 270,
+								"color": "paper",
+								"at": "not#2",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "scribble",
+								"shape": "strike",
+								"x": 0.5,
+								"y": 0.39,
+								"w": 0.78,
+								"h": 0.06,
+								"color": "accent",
+								"strokeW": 24,
+								"at": "glitch",
+								"dur": 9,
+								"outline": false
+							}
+						],
+						"at": "that's",
+						"enter": "flash",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"punch": [
+								"not#2"
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "pulse",
+								"x": 0.28,
+								"y": 0.34,
+								"w": 0.8,
+								"enter": "none",
+								"color": "ink"
+							},
+							{
+								"type": "img",
+								"src": "brain",
+								"x": 0.28,
+								"y": 0.34,
+								"w": 0.44,
+								"enter": "pop",
+								"loop": "breathe"
+							},
+							{
+								"type": "scribble",
+								"shape": "arrow",
+								"x": 0.5,
+								"y": 0.33,
+								"w": 0.14,
+								"h": 0.1,
+								"color": "paper",
+								"strokeW": 14,
+								"at": "listening",
+								"dur": 12
+							},
+							{
+								"type": "heart",
+								"x": 0.72,
+								"y": 0.34,
+								"w": 0.26,
+								"at": "people",
+								"enter": "pop",
+								"pulse": [
+									"matter"
+								],
+								"sfx": "pop"
+							},
+							{
+								"type": "text",
+								"text": "listening",
+								"x": 0.5,
+								"y": 0.56,
+								"size": 170,
+								"font": "hand",
+								"color": "ink",
+								"upper": false,
+								"at": "listening",
+								"enter": "pop",
+								"rot": -3
+							}
+						],
+						"irisAt": [
+							0.3,
+							0.34
+						],
+						"at": "that's#2",
+						"enter": "iris",
+						"cam": {
+							"z": [
+								1.0,
+								1.1
+							]
+						}
+					}
+				]
+			},
+			"tone": "prof-soft"
+		},
+		{
+			"id": "outro",
+			"say": "I'm the Professor. See you in the next lesson.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "panel",
+								"src": "panel-board",
+								"x": 0.5,
+								"y": 0.265,
+								"w": 0.86,
+								"enter": "up",
+								"zoom": [
+									1.02,
+									1.12
+								],
+								"focus": [
+									0.62,
+									0.5
+								]
+							},
+							{
+								"type": "text",
+								"text": "THE PROFESSOR",
+								"x": 0.5,
+								"y": 0.55,
+								"size": 170,
+								"color": "ink",
+								"mark": "accent",
+								"at": "Professor",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "chip",
+								"text": "EVERYDAY PSYCHOLOGY",
+								"x": 0.5,
+								"y": 0.61,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "See",
+								"enter": "up"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.04
+							]
+						}
+					}
+				]
+			}
+		}
+	]
+}

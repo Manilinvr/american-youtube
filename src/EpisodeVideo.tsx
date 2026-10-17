@@ -8,6 +8,10 @@ import {SCENES} from './scenes';
 import {BookPage} from './textbook/BookPage';
 import {BOOK} from './textbook/palette';
 import {buildTimeline} from './timing';
+import {ProfCaptions} from './prof/ProfCaptions';
+import {ProfOverlay} from './prof/ProfOverlay';
+import {ProfTransitions} from './prof/ProfTransitions';
+import {PROF} from './prof/theme';
 import type {EpisodeProps, TimedScene, Visual} from './types';
 
 const Missing: React.FC<{visual: Visual}> = ({visual}) => (
@@ -77,6 +81,7 @@ const Ambience: React.FC<{name: string; frames: number}> = ({name, frames}) => (
 export const EpisodeVideo: React.FC<EpisodeProps> = ({episodeId, timeline}) => {
 	const {fps} = useVideoConfig();
 	const episode = getEpisode(episodeId);
+	const prof = episode.style === 'prof';
 	const tone = getTone(episode.tone);
 	const tl = useMemo(() => timeline ?? buildTimeline(episodeId, null), [timeline, episodeId]);
 	const words: CaptionWord[] = useMemo(
@@ -122,7 +127,7 @@ export const EpisodeVideo: React.FC<EpisodeProps> = ({episodeId, timeline}) => {
 		<EpisodeCtx.Provider value={info}>
 			<AbsoluteFill style={{overflow: 'hidden'}}>
 				<SketchDefs />
-				{episode.page ? <BookPage page={episode.page} timeline={tl} /> : <Paper />}
+				{prof ? <AbsoluteFill style={{background: PROF.paper}} /> : episode.page ? <BookPage page={episode.page} timeline={tl} /> : <Paper />}
 				{tl.map((s, i) => {
 					const Scene = SCENES[s.def.visual.type] ?? Missing;
 					// the very first frame must already show the picture (it is what people see while swiping)
@@ -131,7 +136,7 @@ export const EpisodeVideo: React.FC<EpisodeProps> = ({episodeId, timeline}) => {
 						<Sequence key={s.def.id} from={s.from} durationInFrames={s.durationInFrames} name={s.def.id}>
 							<SceneCtx.Provider value={{voice: s.voice, lead: s.lead, durationInFrames: s.durationInFrames}}>
 								<TransitionShell scene={s}>
-									<AbsoluteFill style={{filter: 'url(#boil)'}}>
+									<AbsoluteFill style={prof ? undefined : {filter: 'url(#boil)'}}>
 										<Scene visual={s.def.visual} drawOn={drawOn} />
 									</AbsoluteFill>
 								</TransitionShell>
@@ -145,8 +150,10 @@ export const EpisodeVideo: React.FC<EpisodeProps> = ({episodeId, timeline}) => {
 						</Sequence>
 					);
 				})}
+				{prof && <ProfTransitions timeline={tl} />}
 				<Blackout timeline={tl} />
-				<Captions words={words} palette={episode.page ? BOOK_CAPTIONS : undefined} />
+				{prof ? <ProfCaptions words={words} /> : <Captions words={words} palette={episode.page ? BOOK_CAPTIONS : undefined} />}
+				{prof && <ProfOverlay total={total} />}
 				{episode.music && (
 					<Audio
 						src={staticFile(`music/${episode.music}`)}
