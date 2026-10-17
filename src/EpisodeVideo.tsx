@@ -11,7 +11,7 @@ import {buildTimeline} from './timing';
 import {ProfCaptions} from './prof/ProfCaptions';
 import {ProfOverlay} from './prof/ProfOverlay';
 import {ProfTransitions} from './prof/ProfTransitions';
-import {PROF} from './prof/theme';
+import {applyTheme, PROF} from './prof/theme';
 import type {EpisodeProps, TimedScene, Visual} from './types';
 
 const Missing: React.FC<{visual: Visual}> = ({visual}) => (
@@ -82,6 +82,7 @@ export const EpisodeVideo: React.FC<EpisodeProps> = ({episodeId, timeline}) => {
 	const {fps} = useVideoConfig();
 	const episode = getEpisode(episodeId);
 	const prof = episode.style === 'prof';
+	if (prof) applyTheme(episode.theme);
 	const tone = getTone(episode.tone);
 	const tl = useMemo(() => timeline ?? buildTimeline(episodeId, null), [timeline, episodeId]);
 	const words: CaptionWord[] = useMemo(

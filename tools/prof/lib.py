@@ -110,3 +110,36 @@ def slam_shot(bg, t, size=250, at=None, enter="punch", sub=None, face=None, colo
     if face:
         layers.append(img(face, 0.5, 0.58, 0.3, at=at or "start", enter="pop", rot=-4))
     return shot(bg, layers, at=at, enter=enter, cam={"z": [1.0, 1.07], **({"punch": [at]} if at else {})})
+
+
+# ---- hook templates (vary the first seconds from video to video) ------------------------------------------------
+def hook_number(num, unit, caption, at="start"):
+    """Opens on a big counted number: hook_number(71, 'STUDIES', 'WHAT THEY FOUND')."""
+    return shot("ink", [
+        L("counter", to=num, size=520, color="paper", x=0.5, y=0.2, at=at, dur=24, enter="none", stroke="ink", shadow="accent", delay=-0.3),
+        chip(unit, 0.5, 0.4, size=50, bg="accent", color="ink", at=at, enter="up", sfx="blip"),
+        tag(caption),
+    ], cam={"z": [1.0, 1.08]})
+
+
+def hook_quote(text, by=None, at="start"):
+    """Opens on a pull quote card over a ticker band."""
+    return shot("accent", [
+        L("ticker", text=text.split("\n")[0], x=0.5, y=0.1, size=60, bg="ink", color="accent", tilt=-5, speed=10, enter="none", at=at, delay=-0.3),
+        L("quote", text=text, by=by, x=0.5, y=0.33, w=0.88, size=84, at=at, enter="pop", delay=-0.3),
+    ], cam={"z": [1.0, 1.08]})
+
+
+def hook_versus(left, right, winner=None, at="start"):
+    """Opens on two sides: hook_versus({'title':'YOU','text':'THINK'}, {'title':'SCIENCE','text':'SAYS'})."""
+    return shot("paper-grid", [
+        L("versus", left=left, right=right, winner=winner, winAt="start+1.5", x=0.5, y=0.3, w=0.92, size=52, enter="none", at=at, delay=-0.3),
+    ], cam={"z": [1.0, 1.08]})
+
+
+def hook_countdown(n=3, caption="", at="start"):
+    """Opens on a 3-2-1 countdown."""
+    return shot("accent", [
+        L("countdown", **{"from": n}, x=0.5, y=0.28, size=560, at=at, enter="none", delay=-0.2, step=0.6),
+        tag(caption, bg="ink"),
+    ], cam={"z": [1.0, 1.1]})

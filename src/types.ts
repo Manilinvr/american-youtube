@@ -51,6 +51,8 @@ export type Episode = {
 	page?: import('./textbook/context').PageDef;
 	/** "prof": the Professor series (cut-out character, motion-graphics shots, see src/prof and docs/professor-style.md). */
 	style?: 'sketch' | 'textbook' | 'prof';
+	/** Professor series: accent colour theme (yellow | coral | blue | mint | violet). */
+	theme?: string;
 	scenes: SceneDef[];
 };
 

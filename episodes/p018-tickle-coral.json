@@ -1,0 +1,552 @@
+{
+	"id": "p018-tickle-coral",
+	"format": "short",
+	"style": "prof",
+	"title": "Why You Can't Tickle Yourself (coral theme demo)",
+	"tone": "prof",
+	"music": "dreamer.mp3",
+	"sources": [
+		"Blakemore, S.-J., Wolpert, D. M., & Frith, C. D. (1998). Central cancellation of self-produced tickle sensation. Nature Neuroscience, 1(7), 635-640."
+	],
+	"scenes": [
+		{
+			"id": "hook",
+			"say": "You can tickle anyone. Except *yourself*. Why?",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "ticker",
+								"text": "YOU CAN'T",
+								"x": 0.5,
+								"y": 0.1,
+								"size": 60,
+								"bg": "ink",
+								"color": "accent",
+								"tilt": -5,
+								"speed": 10,
+								"enter": "none",
+								"at": "start",
+								"delay": -0.3
+							},
+							{
+								"type": "quote",
+								"text": "YOU CAN'T\nTICKLE\nYOURSELF.",
+								"by": "EVERY HUMAN",
+								"x": 0.5,
+								"y": 0.33,
+								"w": 0.88,
+								"size": 84,
+								"at": "start",
+								"enter": "pop",
+								"delay": -0.3
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "ticker",
+								"text": "EXCEPT YOURSELF",
+								"x": 0.5,
+								"y": 0.3,
+								"size": 120,
+								"bg": "accent",
+								"color": "ink",
+								"tilt": -6,
+								"speed": 14,
+								"enter": "none"
+							},
+							{
+								"type": "img",
+								"src": "face-skeptic",
+								"x": 0.5,
+								"y": 0.52,
+								"w": 0.34,
+								"enter": "pop",
+								"at": "Except",
+								"rot": -4
+							}
+						],
+						"at": "Except",
+						"enter": "blinds",
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							],
+							"shake": [
+								"Except"
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "countdown",
+								"from": 3,
+								"x": 0.5,
+								"y": 0.3,
+								"size": 560,
+								"at": "Why",
+								"enter": "none",
+								"step": 0.3,
+								"end": 1
+							}
+						],
+						"at": "Why",
+						"enter": "spin",
+						"cam": {
+							"z": [
+								1.0,
+								1.1
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "predict",
+			"say": "Your brain *predicts* your own touch... and turns the volume down.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "versus",
+								"left": {
+									"title": "YOU",
+									"text": "MOVE"
+								},
+								"right": {
+									"title": "YOUR BRAIN",
+									"text": "PREDICTS"
+								},
+								"winner": "right",
+								"winAt": "predicts",
+								"x": 0.5,
+								"y": 0.27,
+								"w": 0.94,
+								"size": 50,
+								"enter": "none",
+								"delay": -0.3
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "battery",
+								"x": 0.5,
+								"y": 0.22,
+								"w": 0.8,
+								"label": "TOUCH VOLUME",
+								"level": [
+									{
+										"at": "start",
+										"v": 1.0
+									},
+									{
+										"at": "down",
+										"v": 0.15
+									}
+								],
+								"glide": 22,
+								"enter": "pop"
+							},
+							{
+								"type": "chip",
+								"text": "TURNED DOWN",
+								"x": 0.5,
+								"y": 0.4,
+								"size": 44,
+								"bg": "accent",
+								"color": "ink",
+								"at": "volume",
+								"enter": "up",
+								"sfx": "blip"
+							}
+						],
+						"at": "turns",
+						"enter": "split",
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "robot",
+			"say": "Scientists tested it with a robot arm. Same touch. But when *you* made it, it felt less ticklish.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "THE TEST: A ROBOT ARM",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "chip",
+								"text": "Blakemore et al. · 1998",
+								"x": 0.07,
+								"y": 0.835,
+								"kind": "cite",
+								"size": 32,
+								"align": "left",
+								"at": "start",
+								"enter": "left",
+								"sfx": "blip",
+								"sfxVolume": 0.2
+							},
+							{
+								"type": "ticker",
+								"text": "ROBOT ARM TEST",
+								"x": 0.5,
+								"y": 0.3,
+								"size": 90,
+								"bg": "ink",
+								"color": "accent",
+								"tilt": -3,
+								"speed": 12,
+								"enter": "none"
+							},
+							{
+								"type": "img",
+								"src": "kfull-point",
+								"x": 0.5,
+								"y": 0.52,
+								"w": 0.24,
+								"enter": "up",
+								"delay": -0.2
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							]
+						}
+					},
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "text",
+								"text": "SAME\nTOUCH",
+								"x": 0.5,
+								"y": 0.27,
+								"size": 270,
+								"color": "ink",
+								"enter": "slam",
+								"sfx": "hit",
+								"mark": "accent",
+								"at": "Same"
+							},
+							{
+								"type": "img",
+								"src": "face-calm",
+								"x": 0.5,
+								"y": 0.6,
+								"w": 0.28,
+								"at": "Same+0.2",
+								"enter": "pop",
+								"rot": 4
+							}
+						],
+						"at": "Same",
+						"enter": "zoom-out",
+						"cam": {
+							"z": [
+								1.0,
+								1.09
+							],
+							"punch": [
+								"Same"
+							]
+						}
+					},
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "ILLUSTRATION, NOT REAL DATA",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 26,
+								"bg": "soft",
+								"color": "ink",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "versus",
+								"left": {
+									"title": "BY A ROBOT",
+									"text": "MORE\nTICKLISH"
+								},
+								"right": {
+									"title": "BY YOU",
+									"text": "LESS\nTICKLISH"
+								},
+								"winner": "right",
+								"winAt": "less",
+								"x": 0.5,
+								"y": 0.27,
+								"w": 0.94,
+								"size": 48,
+								"enter": "none",
+								"at": "start"
+							}
+						],
+						"at": "But",
+						"enter": "blinds",
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "delay",
+			"say": "Add a delay of just a fifth of a second... and the tickle *comes back*.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "ink-grid",
+						"layers": [
+							{
+								"type": "timeline",
+								"x": 0.5,
+								"y": 0.24,
+								"w": 0.92,
+								"labelColor": "paper",
+								"events": [
+									{
+										"at": "delay",
+										"x": 0.14,
+										"label": "0 MS",
+										"sub": "NOT TICKLISH"
+									},
+									{
+										"at": "fifth",
+										"x": 0.86,
+										"label": "200 MS",
+										"sub": "TICKLISH AGAIN"
+									}
+								],
+								"enter": "none",
+								"delay": -0.2
+							},
+							{
+								"type": "chip",
+								"text": "ILLUSTRATION OF THE TREND",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 26,
+								"bg": "soft",
+								"color": "ink",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "counter",
+								"to": 200,
+								"suffix": " ms",
+								"size": 170,
+								"color": "paper",
+								"x": 0.5,
+								"y": 0.5,
+								"at": "delay",
+								"dur": 22,
+								"enter": "none",
+								"stroke": "ink",
+								"shadow": "accent",
+								"sfx": "hit"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							],
+							"punch": [
+								"fifth"
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "ticker",
+								"text": "THE TICKLE COMES BACK",
+								"x": 0.5,
+								"y": 0.28,
+								"size": 110,
+								"bg": "ink",
+								"color": "accent",
+								"tilt": -5,
+								"speed": 15,
+								"enter": "none",
+								"sfx": "hit"
+							},
+							{
+								"type": "burst",
+								"text": "HEE\nHEE!",
+								"x": 0.78,
+								"y": 0.5,
+								"w": 0.3,
+								"at": "back",
+								"enter": "slam",
+								"rot": 8,
+								"seed": 3,
+								"fill": "paper",
+								"sfx": "pop"
+							}
+						],
+						"at": "tickle",
+						"enter": "spin",
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							],
+							"shake": [
+								"back"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "close",
+			"say": "Your brain isn't ignoring you. It's just *not surprised*.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "text",
+								"text": "NOT\nIGNORING\nYOU",
+								"x": 0.5,
+								"y": 0.26,
+								"size": 170,
+								"color": "paper",
+								"enter": "slam",
+								"sfx": "hit",
+								"at": "start"
+							},
+							{
+								"type": "img",
+								"src": "face-smile",
+								"x": 0.5,
+								"y": 0.58,
+								"w": 0.28,
+								"enter": "pop",
+								"at": "start+0.2",
+								"rot": 4
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							]
+						}
+					},
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "stamp",
+								"text": "NOT SURPRISED",
+								"sub": "PERFECTLY PREDICTED",
+								"x": 0.5,
+								"y": 0.26,
+								"size": 110,
+								"at": "surprised",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "img",
+								"src": "kbust-calm",
+								"x": 0.5,
+								"y": 0.54,
+								"w": 0.36,
+								"enter": "pop",
+								"delay": -0.2
+							}
+						],
+						"irisAt": [
+							0.5,
+							0.3
+						],
+						"at": "just",
+						"enter": "iris",
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							],
+							"punch": [
+								"surprised"
+							]
+						}
+					}
+				]
+			},
+			"tone": "prof-soft"
+		}
+	],
+	"theme": "coral"
+}

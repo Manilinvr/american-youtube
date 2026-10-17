@@ -8,14 +8,15 @@ import {LAYERS, LayerCtx} from './layers';
 import {LAYERS2} from './layers2';
 import {LAYERS3} from './layers3';
 import {LAYERS4} from './layers4';
+import {LAYERS5} from './layers5';
 
-const ALL_LAYERS = {...LAYERS, ...LAYERS2, ...LAYERS3, ...LAYERS4};
+const ALL_LAYERS = {...LAYERS, ...LAYERS2, ...LAYERS3, ...LAYERS4, ...LAYERS5};
 import {Cam, resolveCue, ShotCtx, useResolve, useSceneFrame} from './ShotCtx';
 import {PROF} from './theme';
 
 /* ------------------------------------------------------------------ backgrounds */
 
-const PATTERNS: Record<string, {base: string; image?: string; size?: number}> = {
+const patterns = (): Record<string, {base: string; image?: string; size?: number}> => ({
 	paper: {base: PROF.paper, image: 'radial-gradient(circle, rgba(18,18,18,0.13) 3px, transparent 3.5px)', size: 44},
 	'paper-grid': {base: PROF.paper, image: 'linear-gradient(rgba(18,18,18,0.09) 3px, transparent 3px), linear-gradient(90deg, rgba(18,18,18,0.09) 3px, transparent 3px)', size: 90},
 	white: {base: PROF.white},
@@ -23,7 +24,7 @@ const PATTERNS: Record<string, {base: string; image?: string; size?: number}> = 
 	'ink-grid': {base: '#151514', image: 'linear-gradient(rgba(255,255,255,0.07) 3px, transparent 3px), linear-gradient(90deg, rgba(255,255,255,0.07) 3px, transparent 3px)', size: 90},
 	accent: {base: PROF.accent, image: 'radial-gradient(circle, rgba(18,18,18,0.20) 4px, transparent 4.5px)', size: 40},
 	soft: {base: PROF.paper2, image: 'radial-gradient(circle, rgba(18,18,18,0.10) 3px, transparent 3.5px)', size: 44},
-};
+});
 
 const Bg: React.FC<{spec: any}> = ({spec}) => {
 	const {width, height} = useVideoConfig();
@@ -36,6 +37,7 @@ const Bg: React.FC<{spec: any}> = ({spec}) => {
 			</AbsoluteFill>
 		);
 	}
+	const PATTERNS = patterns();
 	const p = PATTERNS[typeof spec === 'string' ? spec : 'paper'] ?? PATTERNS.paper;
 	const drift = frame * 0.35;
 	return (
@@ -114,7 +116,7 @@ const LayerBox: React.FC<{layer: any; from: number; index: number}> = ({layer, f
 
 /* ------------------------------------------------------------------ one shot */
 
-const ENTER_FRAMES: Record<string, number> = {cut: 0, 'slide-l': 9, 'slide-r': 9, 'slide-u': 9, 'wipe-l': 10, 'wipe-r': 10, 'wipe-u': 10, punch: 7, iris: 12, flash: 6, drop: 18};
+const ENTER_FRAMES: Record<string, number> = {cut: 0, 'slide-l': 9, 'slide-r': 9, 'slide-u': 9, 'wipe-l': 10, 'wipe-r': 10, 'wipe-u': 10, punch: 7, iris: 12, flash: 6, drop: 18, blinds: 12, spin: 14, split: 12, 'zoom-out': 12};
 
 const ShotView: React.FC<{shot: any; index: number; from: number; dur: number}> = ({shot, index, from, dur}) => {
 	const {width: W, height: H} = useVideoConfig();
@@ -200,6 +202,23 @@ const ShotView: React.FC<{shot: any; index: number; from: number; dur: number}> 
 				break;
 			case 'iris':
 				wrap.clipPath = `circle(${p * Math.hypot(W, H) * 0.72}px at ${(shot.irisAt?.[0] ?? 0.5) * W}px ${(shot.irisAt?.[1] ?? 0.45) * H}px)`;
+				break;
+			case 'blinds': {
+				const n = 8;
+				wrap.WebkitMaskImage = `linear-gradient(90deg, ${Array.from({length: n}, (_, i) => { const f2 = clamp(p * 1.6 - i * 0.12); return `#000 ${(i / n) * 100}%, #000 ${((i + f2) / n) * 100}%, transparent ${((i + f2) / n) * 100}%, transparent ${((i + 1) / n) * 100}%`; }).join(', ')})`;
+				wrap.maskImage = wrap.WebkitMaskImage;
+				break;
+			}
+			case 'spin':
+				wrap.transform = `rotate(${(1 - p) * -25}deg) scale(${0.4 + 0.6 * p})`;
+				wrap.opacity = clamp(local / 3);
+				break;
+			case 'split':
+				wrap.clipPath = `inset(${(1 - p) * 50}% 0 ${(1 - p) * 50}% 0)`;
+				break;
+			case 'zoom-out':
+				wrap.transform = `scale(${1 - (1 - p) * 0.35})`;
+				wrap.opacity = clamp(local / 4);
 				break;
 			case 'drop':
 				wrap.transform = `translateY(${-(1 - spr(local, fps, 9, 120, 0.9)) * H}px)`;
