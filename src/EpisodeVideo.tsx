@@ -9,6 +9,7 @@ import {BookPage} from './textbook/BookPage';
 import {BOOK} from './textbook/palette';
 import {buildTimeline} from './timing';
 import {ProfCaptions} from './prof/ProfCaptions';
+import {CaseCaptions} from './prof/CaseCaptions';
 import {ProfOverlay} from './prof/ProfOverlay';
 import {ProfTransitions} from './prof/ProfTransitions';
 import {applyTheme, PROF} from './prof/theme';
@@ -151,9 +152,9 @@ export const EpisodeVideo: React.FC<EpisodeProps> = ({episodeId, timeline}) => {
 						</Sequence>
 					);
 				})}
-				{prof && <ProfTransitions timeline={tl} />}
+				{prof && <ProfTransitions timeline={tl} theme={episode.theme} />}
 				<Blackout timeline={tl} />
-				{prof ? <ProfCaptions words={words} /> : <Captions words={words} palette={episode.page ? BOOK_CAPTIONS : undefined} />}
+				{prof ? (episode.theme === 'case' ? <CaseCaptions words={words} /> : <ProfCaptions words={words} />) : <Captions words={words} palette={episode.page ? BOOK_CAPTIONS : undefined} />}
 				{prof && <ProfOverlay total={total} />}
 				{episode.music && (
 					<Audio

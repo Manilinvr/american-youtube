@@ -57,7 +57,7 @@ export const TextLayer: React.FC<L> = ({layer}) => {
 	const color = col(layer.color ?? 'ink');
 	const stroke = layer.stroke ? `${layer.strokeW ?? size * 0.06}px ${col(layer.stroke)}` : undefined;
 	return (
-		<div style={{textAlign: layer.align ?? 'center', fontFamily: font, fontSize: size, lineHeight: layer.lineHeight ?? 1.02, color, textTransform: layer.upper === false ? undefined : font === FONT.hand ? undefined : 'uppercase', letterSpacing: layer.tracking ?? (font === FONT.display ? size * 0.005 : 0), fontWeight: layer.weight ?? (font === FONT.sans ? 700 : 400), whiteSpace: 'nowrap'}}>
+		<div style={{textAlign: layer.align ?? 'center', fontFamily: font, fontSize: size, lineHeight: layer.lineHeight ?? 1.02, color, textTransform: layer.upper === false ? undefined : font === FONT.hand || font === FONT.type ? undefined : 'uppercase', letterSpacing: layer.tracking ?? (font === FONT.display ? size * 0.005 : 0), fontWeight: layer.weight ?? (font === FONT.sans ? 700 : 400), whiteSpace: 'nowrap'}}>
 			{lines.map((line, i) => {
 				const lt = t - i * 3;
 				const s = spr(lt, fps, 12, 240, 0.6);

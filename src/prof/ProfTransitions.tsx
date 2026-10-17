@@ -5,16 +5,17 @@ import {easeInOut} from './anim';
 import {PROF} from './theme';
 
 const ORDER = ['slab-r', 'flash', 'iris', 'slab-l', 'slab-u', 'iris'];
+const CASE_ORDER = ['flash', 'iris', 'flash', 'iris'];
 const clampE = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
 
 /** Slab = a yellow band with ink edges sweeping over the cut; iris = ink circle closing and opening; flash = white pop. */
-export const ProfTransitions: React.FC<{timeline: TimedScene[]}> = ({timeline}) => {
+export const ProfTransitions: React.FC<{timeline: TimedScene[]; theme?: string}> = ({timeline, theme}) => {
 	const frame = useCurrentFrame();
 	const {width: W, height: H} = useVideoConfig();
 	const nodes: React.ReactNode[] = [];
 	timeline.forEach((s, i) => {
 		if (i === 0) return;
-		const kind: string = s.def.visual.enter ?? ORDER[(i - 1) % ORDER.length];
+		const kind: string = s.def.visual.enter ?? (theme === 'case' ? CASE_ORDER : ORDER)[(i - 1) % ORDER.length];
 		const b = s.from;
 		const a = b - 6;
 		const z = b + 8;

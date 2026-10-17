@@ -1,0 +1,1553 @@
+{
+	"id": "p019-case-38-witnesses",
+	"format": "short",
+	"style": "prof",
+	"title": "The Case of the 38 Witnesses (Bystander Effect)",
+	"tone": "prof",
+	"music": "gymnopedie-no-1.mp3",
+	"sources": [
+		"Manning, R., Levine, M., & Collins, A. (2007). The Kitty Genovese murder and the social psychology of helping: The parable of the 38 witnesses. American Psychologist, 62(6), 555-562.",
+		"Darley, J. M., & Latané, B. (1968). Bystander intervention in emergencies: Diffusion of responsibility. Journal of Personality and Social Psychology, 8(4, Pt.1), 377-383.",
+		"Fischer, P., et al. (2011). The bystander-effect: A meta-analytic review on bystander intervention in dangerous and non-dangerous emergencies. Psychological Bulletin, 137(4), 517-537.",
+		"Philpot, R., Liebst, L. S., Levine, M., Bernasco, W., & Lindegaard, M. R. (2020). Would I be helped? Cross-national CCTV footage shows that intervention is the norm in public conflicts. American Psychologist, 75(1), 66-75. https://doi.org/10.1037/amp0000469"
+	],
+	"scenes": [
+		{
+			"id": "hook",
+			"say": "March, nineteen sixty-four. A young woman is killed in New York. The newspaper says thirty-eight people watched, and *nobody* helped. For sixty years, we've told this story to explain why people don't help. But when I opened the case file... the story didn't add up.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "desk",
+						"layers": [
+							{
+								"type": "doc",
+								"header": "CASE FILE · 1964",
+								"lines": [
+									{
+										"text": "VICTIM: A YOUNG WOMAN",
+										"at": 0.2
+									},
+									{
+										"text": "CITY: NEW YORK",
+										"at": 1.0
+									},
+									{
+										"text": "WITNESSES: ",
+										"at": 1.8,
+										"red": true
+									}
+								],
+								"x": 0.5,
+								"y": 0.3,
+								"w": 0.82,
+								"size": 44,
+								"tilt": -2,
+								"enter": "drop",
+								"delay": -0.3,
+								"sfx": "pop"
+							},
+							{
+								"type": "rubber",
+								"text": "COLD CASE",
+								"sub": null,
+								"x": 0.62,
+								"y": 0.54,
+								"size": 100,
+								"tilt": -12,
+								"enter": "slam",
+								"sfx": "hit",
+								"at": "killed"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							]
+						}
+					},
+					{
+						"bg": "kraft",
+						"layers": [
+							{
+								"type": "polaroid",
+								"src": "kbust-calm",
+								"x": 0.5,
+								"y": 0.3,
+								"w": 0.46,
+								"caption": "the newspaper",
+								"rot": -3,
+								"enter": "drop",
+								"delay": -0.3
+							},
+							{
+								"type": "doc",
+								"header": "NEW YORK, 1964",
+								"lines": [
+									{
+										"text": "38 PEOPLE WATCHED.",
+										"at": "thirty-eight"
+									},
+									{
+										"text": "NOBODY HELPED.",
+										"at": "nobody",
+										"red": true
+									}
+								],
+								"x": 0.5,
+								"y": 0.58,
+								"w": 0.82,
+								"size": 44,
+								"tilt": 2,
+								"enter": "up"
+							}
+						],
+						"at": "newspaper",
+						"enter": "flash",
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							],
+							"punch": [
+								"nobody"
+							]
+						}
+					},
+					{
+						"bg": "cork",
+						"layers": [
+							{
+								"type": "polaroid",
+								"src": "kbust-pen",
+								"x": 0.3,
+								"y": 0.2,
+								"w": 0.34,
+								"caption": "the story",
+								"rot": -5,
+								"enter": "left"
+							},
+							{
+								"type": "polaroid",
+								"src": "face-skeptic",
+								"x": 0.7,
+								"y": 0.2,
+								"w": 0.34,
+								"caption": "the doubt",
+								"rot": 4,
+								"enter": "right",
+								"at": "opened"
+							},
+							{
+								"type": "string",
+								"from": [
+									0.3,
+									0.2
+								],
+								"to": [
+									0.7,
+									0.2
+								],
+								"x": 0.5,
+								"y": 0.5,
+								"w": 1.0,
+								"at": "opened",
+								"enter": "none",
+								"sag": 0.03
+							},
+							{
+								"type": "rubber",
+								"text": "DOESN'T ADD UP",
+								"sub": null,
+								"x": 0.5,
+								"y": 0.45,
+								"size": 84,
+								"tilt": -6,
+								"enter": "slam",
+								"sfx": "hit",
+								"at": "add"
+							}
+						],
+						"at": "sixty#2",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"shake": [
+								"add"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "idea",
+			"say": "That story inspired a famous idea: the *bystander effect*. The more people who see an emergency, the less likely any one of them is to act.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "cork",
+						"layers": [
+							{
+								"type": "note",
+								"text": "THE BYSTANDER EFFECT",
+								"x": 0.5,
+								"y": 0.14,
+								"w": 0.66,
+								"rot": -2,
+								"size": 70,
+								"enter": "drop",
+								"at": "bystander",
+								"sfx": "pop",
+								"delay": -0.3
+							},
+							{
+								"type": "polaroid",
+								"src": "kbust-calm",
+								"x": 0.28,
+								"y": 0.38,
+								"w": 0.3,
+								"caption": "1 witness",
+								"rot": -4,
+								"enter": "left",
+								"delay": -0.2
+							},
+							{
+								"type": "polaroid",
+								"src": "face-calm",
+								"x": 0.72,
+								"y": 0.38,
+								"w": 0.24,
+								"caption": "",
+								"rot": 4,
+								"enter": "right",
+								"at": "more",
+								"bg": "soft"
+							},
+							{
+								"type": "polaroid",
+								"src": "face-calm",
+								"x": 0.58,
+								"y": 0.44,
+								"w": 0.22,
+								"caption": "many witnesses",
+								"rot": -3,
+								"enter": "right",
+								"at": "more+0.15",
+								"bg": "soft"
+							},
+							{
+								"type": "string",
+								"from": [
+									0.28,
+									0.32
+								],
+								"to": [
+									0.72,
+									0.32
+								],
+								"x": 0.5,
+								"y": 0.5,
+								"w": 1.0,
+								"at": "less",
+								"enter": "none",
+								"sag": 0.04
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							]
+						}
+					},
+					{
+						"bg": "desk",
+						"layers": [
+							{
+								"type": "doc",
+								"header": "THE THEORY",
+								"lines": [
+									{
+										"text": "MORE PEOPLE WATCH",
+										"at": "more"
+									},
+									{
+										"text": "= LESS CHANCE",
+										"at": "less"
+									},
+									{
+										"text": "ANY ONE OF THEM ACTS.",
+										"at": "act",
+										"red": true
+									}
+								],
+								"x": 0.5,
+								"y": 0.28,
+								"w": 0.84,
+								"size": 46,
+								"tilt": -1.5,
+								"enter": "up"
+							}
+						],
+						"irisAt": [
+							0.5,
+							0.3
+						],
+						"at": "The#2",
+						"enter": "iris",
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "examA",
+			"say": "Exhibit A, the lab. In 1968, psychologists Darley and Latané had students talk over an intercom. One of them suddenly seemed to have a seizure. Some students thought they were the only one listening. Others thought several more were listening too. And the more listeners they imagined, the *less* likely each one was to help.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "desk",
+						"layers": [
+							{
+								"type": "exhibit",
+								"label": "A",
+								"sub": "THE LAB · 1968",
+								"x": 0.5,
+								"y": 0.2,
+								"w": 0.34,
+								"at": "start",
+								"enter": "drop",
+								"sfx": "pop",
+								"delay": -0.3
+							},
+							{
+								"type": "doc",
+								"header": "DARLEY & LATANÉ",
+								"lines": [
+									{
+										"text": "INTERCOM DISCUSSION.",
+										"at": "intercom"
+									},
+									{
+										"text": "ONE VOICE: A SEIZURE.",
+										"at": "seizure",
+										"red": true
+									}
+								],
+								"x": 0.5,
+								"y": 0.52,
+								"w": 0.82,
+								"size": 42,
+								"tilt": 1.5,
+								"enter": "up"
+							},
+							{
+								"type": "chip",
+								"text": "Darley & Latané · 1968",
+								"x": 0.07,
+								"y": 0.835,
+								"kind": "cite",
+								"size": 32,
+								"align": "left",
+								"at": "start",
+								"enter": "left",
+								"sfx": "blip",
+								"sfxVolume": 0.2
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							]
+						}
+					},
+					{
+						"bg": "cork",
+						"layers": [
+							{
+								"type": "polaroid",
+								"src": "kbust-pocket",
+								"x": 0.3,
+								"y": 0.2,
+								"w": 0.32,
+								"caption": "ALONE",
+								"rot": -4,
+								"enter": "left"
+							},
+							{
+								"type": "note",
+								"text": "I'M THE\nONLY ONE\nLISTENING",
+								"x": 0.7,
+								"y": 0.18,
+								"w": 0.32,
+								"rot": 4,
+								"at": "only",
+								"enter": "right"
+							}
+						],
+						"at": "Some",
+						"enter": "slide-l",
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							]
+						}
+					},
+					{
+						"bg": "cork",
+						"layers": [
+							{
+								"type": "polaroid",
+								"src": "kbust-pocket",
+								"x": 0.28,
+								"y": 0.2,
+								"w": 0.28,
+								"caption": "",
+								"rot": -4,
+								"enter": "none"
+							},
+							{
+								"type": "polaroid",
+								"src": "face-calm",
+								"x": 0.55,
+								"y": 0.22,
+								"w": 0.22,
+								"caption": "",
+								"rot": 3,
+								"enter": "right",
+								"at": "Others",
+								"bg": "soft"
+							},
+							{
+								"type": "polaroid",
+								"src": "face-smile",
+								"x": 0.78,
+								"y": 0.2,
+								"w": 0.22,
+								"caption": "",
+								"rot": -2,
+								"enter": "right",
+								"at": "several",
+								"bg": "soft"
+							},
+							{
+								"type": "polaroid",
+								"src": "face-skeptic",
+								"x": 0.52,
+								"y": 0.42,
+								"w": 0.22,
+								"caption": "",
+								"rot": 2,
+								"enter": "right",
+								"at": "listening#2",
+								"bg": "soft"
+							},
+							{
+								"type": "polaroid",
+								"src": "face-surprised",
+								"x": 0.78,
+								"y": 0.42,
+								"w": 0.22,
+								"caption": "",
+								"rot": -3,
+								"enter": "right",
+								"at": "too",
+								"bg": "soft"
+							},
+							{
+								"type": "note",
+								"text": "OTHERS ARE\nLISTENING TOO",
+								"x": 0.28,
+								"y": 0.44,
+								"w": 0.3,
+								"rot": -3,
+								"at": "too",
+								"enter": "left"
+							}
+						],
+						"at": "Others",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "chart",
+								"x": 0.5,
+								"y": 0.28,
+								"w": 0.9,
+								"h": 0.34,
+								"xlabel": "BELIEVED LISTENERS",
+								"ylabel": "CHANCE OF HELPING",
+								"series": [
+									{
+										"pts": [
+											[
+												0.05,
+												0.9
+											],
+											[
+												0.5,
+												0.55
+											],
+											[
+												0.95,
+												0.2
+											]
+										],
+										"color": "accent",
+										"at": "less",
+										"label": "FALLS"
+									}
+								],
+								"enter": "up",
+								"at": "start"
+							},
+							{
+								"type": "chip",
+								"text": "ILLUSTRATION OF THE TREND",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 26,
+								"bg": "soft",
+								"color": "ink",
+								"at": "start",
+								"enter": "down"
+							}
+						],
+						"at": "And#2",
+						"enter": "flash",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"shake": [
+								"less"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "real",
+			"say": "So, the effect is real... in situations like that one.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "kraft",
+						"layers": [
+							{
+								"type": "rubber",
+								"text": "CONFIRMED",
+								"sub": "IN THAT KIND OF SITUATION",
+								"x": 0.5,
+								"y": 0.26,
+								"size": 140,
+								"tilt": -8,
+								"enter": "slam",
+								"sfx": "hit",
+								"at": "real"
+							},
+							{
+								"type": "polaroid",
+								"src": "kbust-pen",
+								"x": 0.5,
+								"y": 0.5,
+								"w": 0.36,
+								"caption": "the effect is real",
+								"rot": -3,
+								"enter": "up",
+								"delay": -0.2
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							],
+							"punch": [
+								"real"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "examB",
+			"say": "Exhibit B, the big review. In 2011, researchers combined dozens of experiments. And they found the effect gets *weaker* when the danger is clear, when the attacker is right there, and when helping carries a physical risk.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "desk",
+						"layers": [
+							{
+								"type": "exhibit",
+								"label": "B",
+								"sub": "THE BIG REVIEW · 2011",
+								"x": 0.5,
+								"y": 0.2,
+								"w": 0.34,
+								"at": "start",
+								"enter": "drop",
+								"sfx": "pop",
+								"delay": -0.3
+							},
+							{
+								"type": "chip",
+								"text": "Fischer et al. · 2011",
+								"x": 0.07,
+								"y": 0.835,
+								"kind": "cite",
+								"size": 32,
+								"align": "left",
+								"at": "start",
+								"enter": "left",
+								"sfx": "blip",
+								"sfxVolume": 0.2
+							},
+							{
+								"type": "polaroid",
+								"src": "kbust-big-pen",
+								"x": 0.5,
+								"y": 0.5,
+								"w": 0.36,
+								"caption": "dozens of experiments",
+								"rot": 2,
+								"enter": "up",
+								"delay": -0.2
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							]
+						}
+					},
+					{
+						"bg": "cork",
+						"layers": [
+							{
+								"type": "note",
+								"text": "THE EFFECT\nGETS WEAKER\nWHEN...",
+								"x": 0.5,
+								"y": 0.12,
+								"w": 0.5,
+								"rot": -2,
+								"size": 68,
+								"enter": "drop",
+								"at": "weaker"
+							},
+							{
+								"type": "doc",
+								"header": "WEAKER WHEN",
+								"lines": [
+									{
+										"text": "DANGER IS CLEAR",
+										"at": "clear"
+									},
+									{
+										"text": "ATTACKER IS THERE",
+										"at": "attacker"
+									},
+									{
+										"text": "HELPING IS RISKY",
+										"at": "physical",
+										"red": true
+									}
+								],
+								"x": 0.5,
+								"y": 0.42,
+								"w": 0.84,
+								"size": 46,
+								"tilt": 1,
+								"enter": "up"
+							}
+						],
+						"at": "weaker",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "examC",
+			"say": "Exhibit C, the cameras. In 2020, researchers studied security-camera footage of two hundred and nineteen real public fights, in three cities: Amsterdam, Cape Town, and Lancaster, in England. In about nine out of ten, at least one bystander stepped in. And more people around meant it was *more* likely that someone helped, not less.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "desk",
+						"layers": [
+							{
+								"type": "exhibit",
+								"label": "C",
+								"sub": "THE CAMERAS · 2020",
+								"x": 0.5,
+								"y": 0.2,
+								"w": 0.34,
+								"at": "start",
+								"enter": "drop",
+								"sfx": "pop",
+								"delay": -0.3
+							},
+							{
+								"type": "chip",
+								"text": "Philpot et al. · 2020",
+								"x": 0.07,
+								"y": 0.835,
+								"kind": "cite",
+								"size": 32,
+								"align": "left",
+								"at": "start",
+								"enter": "left",
+								"sfx": "blip",
+								"sfxVolume": 0.2
+							},
+							{
+								"type": "counter",
+								"to": 219,
+								"size": 300,
+								"color": "paper",
+								"x": 0.5,
+								"y": 0.48,
+								"at": "two",
+								"dur": 24,
+								"enter": "none",
+								"stroke": "ink",
+								"shadow": "accent",
+								"sfx": "hit"
+							},
+							{
+								"type": "chip",
+								"text": "REAL PUBLIC CONFLICTS ON CCTV",
+								"x": 0.5,
+								"y": 0.58,
+								"size": 32,
+								"bg": "white",
+								"color": "ink",
+								"at": "two",
+								"enter": "up",
+								"sfx": "blip"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							],
+							"punch": [
+								"two"
+							]
+						}
+					},
+					{
+						"bg": "cork",
+						"layers": [
+							{
+								"type": "polaroid",
+								"src": "",
+								"x": 0.25,
+								"y": 0.18,
+								"w": 0.3,
+								"caption": "",
+								"rot": -4,
+								"big": "AMSTERDAM",
+								"enter": "left",
+								"at": "Amsterdam"
+							},
+							{
+								"type": "polaroid",
+								"src": "",
+								"x": 0.62,
+								"y": 0.2,
+								"w": 0.3,
+								"caption": "",
+								"rot": 3,
+								"big": "CAPE\nTOWN",
+								"enter": "drop",
+								"at": "Cape"
+							},
+							{
+								"type": "polaroid",
+								"src": "",
+								"x": 0.43,
+								"y": 0.44,
+								"w": 0.3,
+								"caption": "",
+								"rot": -2,
+								"big": "LANCASTER",
+								"enter": "right",
+								"at": "Lancaster"
+							},
+							{
+								"type": "string",
+								"from": [
+									0.25,
+									0.14
+								],
+								"to": [
+									0.62,
+									0.16
+								],
+								"x": 0.5,
+								"y": 0.5,
+								"w": 1.0,
+								"at": "Cape",
+								"enter": "none",
+								"sag": 0.03
+							},
+							{
+								"type": "string",
+								"from": [
+									0.62,
+									0.16
+								],
+								"to": [
+									0.43,
+									0.4
+								],
+								"x": 0.5,
+								"y": 0.5,
+								"w": 1.0,
+								"at": "Lancaster",
+								"enter": "none",
+								"sag": 0.03
+							}
+						],
+						"at": "three",
+						"enter": "blinds",
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "dots",
+								"x": 0.5,
+								"y": 0.2,
+								"w": 0.7,
+								"total": 10,
+								"cols": 5,
+								"hit": 9,
+								"hitAt": "nine#2",
+								"at": "start",
+								"delay": -0.4,
+								"step": 0.1,
+								"hitStep": 0.3,
+								"enter": "none",
+								"id": "d10"
+							},
+							{
+								"type": "text",
+								"text": "9 OF 10",
+								"x": 0.5,
+								"y": 0.46,
+								"size": 300,
+								"color": "accent",
+								"enter": "slam",
+								"sfx": "hit",
+								"at": "nine#2"
+							},
+							{
+								"type": "chip",
+								"text": "AT LEAST ONE PERSON STEPPED IN",
+								"x": 0.5,
+								"y": 0.6,
+								"size": 34,
+								"bg": "paper",
+								"color": "ink",
+								"at": "stepped",
+								"enter": "up",
+								"sfx": "blip"
+							}
+						],
+						"at": "In#3",
+						"enter": "flash",
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							],
+							"punch": [
+								"nine#2"
+							]
+						}
+					},
+					{
+						"bg": "cork",
+						"layers": [
+							{
+								"type": "note",
+								"text": "MORE PEOPLE\nAROUND =\nMORE LIKELY\nSOMEONE HELPS",
+								"x": 0.5,
+								"y": 0.2,
+								"w": 0.64,
+								"rot": -2,
+								"size": 70,
+								"enter": "drop",
+								"at": "more"
+							}
+						],
+						"at": "And#3",
+						"enter": "slide-u",
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "back",
+			"say": "Now back to the first case. In 2007, researchers went through court records and police files. They found no evidence that thirty-eight people watched the attack. And in 2016, the newspaper itself called its original story flawed.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "desk",
+						"layers": [
+							{
+								"type": "doc",
+								"header": "RE-OPENED: 2007",
+								"lines": [
+									{
+										"text": "COURT RECORDS. POLICE FILES.",
+										"at": "records"
+									},
+									{
+										"text": "38 WITNESSES: ",
+										"at": "thirty-eight"
+									},
+									{
+										"text": "NO EVIDENCE.",
+										"at": "evidence",
+										"red": true
+									}
+								],
+								"x": 0.5,
+								"y": 0.3,
+								"w": 0.84,
+								"size": 46,
+								"tilt": -1,
+								"enter": "drop",
+								"delay": -0.3,
+								"sfx": "pop"
+							},
+							{
+								"type": "chip",
+								"text": "Manning, Levine & Collins · 2007",
+								"x": 0.07,
+								"y": 0.835,
+								"kind": "cite",
+								"size": 32,
+								"align": "left",
+								"at": "start",
+								"enter": "left",
+								"sfx": "blip",
+								"sfxVolume": 0.2
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							]
+						}
+					},
+					{
+						"bg": "kraft",
+						"layers": [
+							{
+								"type": "doc",
+								"header": "NEW YORK TIMES, 1964",
+								"lines": [
+									{
+										"text": "38 WATCHED.",
+										"at": "start+0.3",
+										"redact": true,
+										"revealAt": "flawed"
+									}
+								],
+								"x": 0.5,
+								"y": 0.26,
+								"w": 0.84,
+								"size": 52,
+								"tilt": 2,
+								"enter": "up"
+							},
+							{
+								"type": "rubber",
+								"text": "FLAWED",
+								"sub": "THE NEWSPAPER, 2016",
+								"x": 0.5,
+								"y": 0.52,
+								"size": 130,
+								"tilt": -10,
+								"enter": "slam",
+								"sfx": "hit",
+								"at": "flawed"
+							}
+						],
+						"at": "newspaper",
+						"enter": "flash",
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							],
+							"punch": [
+								"flawed"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "think",
+			"say": "So how can all of this be true? Here's my reading. The lab studies used *unclear* situations: a voice on an intercom, nobody in sight. When it's unclear, we glance at each other. And if nobody moves, we decide it's probably fine. But a real fight in the street is obvious. When it's clearly serious, most people act.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "cork",
+						"layers": [
+							{
+								"type": "note",
+								"text": "MY READING\n(NOT A FINDING)",
+								"x": 0.5,
+								"y": 0.1,
+								"w": 0.54,
+								"rot": -3,
+								"size": 60,
+								"enter": "drop",
+								"delay": -0.3
+							},
+							{
+								"type": "polaroid",
+								"src": "kbust-calm",
+								"x": 0.5,
+								"y": 0.36,
+								"w": 0.36,
+								"caption": "how can both be true?",
+								"rot": 3,
+								"enter": "up",
+								"delay": -0.2
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "desk",
+						"layers": [
+							{
+								"type": "doc",
+								"header": "THE LAB",
+								"lines": [
+									{
+										"text": "A VOICE ON AN INTERCOM.",
+										"at": "voice"
+									},
+									{
+										"text": "NOBODY IN SIGHT.",
+										"at": "sight"
+									},
+									{
+										"text": "UNCLEAR.",
+										"at": "unclear",
+										"red": true
+									}
+								],
+								"x": 0.5,
+								"y": 0.26,
+								"w": 0.84,
+								"size": 44,
+								"tilt": -1.5,
+								"enter": "up"
+							}
+						],
+						"at": "lab",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "cork",
+						"layers": [
+							{
+								"type": "polaroid",
+								"src": "face-skeptic",
+								"x": 0.28,
+								"y": 0.2,
+								"w": 0.28,
+								"caption": "",
+								"rot": -4,
+								"enter": "left",
+								"bg": "soft"
+							},
+							{
+								"type": "polaroid",
+								"src": "face-calm",
+								"x": 0.7,
+								"y": 0.22,
+								"w": 0.28,
+								"caption": "",
+								"rot": 3,
+								"enter": "right",
+								"bg": "soft"
+							},
+							{
+								"type": "string",
+								"from": [
+									0.28,
+									0.16
+								],
+								"to": [
+									0.7,
+									0.18
+								],
+								"x": 0.5,
+								"y": 0.5,
+								"w": 1.0,
+								"at": "glance",
+								"enter": "none",
+								"sag": 0.03
+							},
+							{
+								"type": "note",
+								"text": "NOBODY\nMOVES =\nPROBABLY\nFINE",
+								"x": 0.5,
+								"y": 0.46,
+								"w": 0.44,
+								"rot": -2,
+								"at": "moves",
+								"enter": "drop"
+							}
+						],
+						"at": "glance",
+						"enter": "slide-l",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "text",
+								"text": "A REAL\nFIGHT IS\nOBVIOUS",
+								"x": 0.5,
+								"y": 0.24,
+								"size": 170,
+								"color": "paper",
+								"enter": "slam",
+								"sfx": "hit",
+								"at": "real"
+							},
+							{
+								"type": "rubber",
+								"text": "PEOPLE ACT",
+								"sub": null,
+								"x": 0.5,
+								"y": 0.5,
+								"size": 100,
+								"tilt": -6,
+								"enter": "slam",
+								"sfx": "hit",
+								"at": "act"
+							}
+						],
+						"at": "But",
+						"enter": "flash",
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							],
+							"punch": [
+								"act"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "verdict",
+			"say": "So, my verdict. The bystander effect is real, but the story that people just walk by is a *myth*. It depends on one thing: how clear the emergency is.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "kraft",
+						"layers": [
+							{
+								"type": "rubber",
+								"text": "CASE CLOSED",
+								"sub": "THE EFFECT IS REAL · THE MYTH IS NOT",
+								"x": 0.5,
+								"y": 0.2,
+								"size": 130,
+								"tilt": -7,
+								"enter": "slam",
+								"sfx": "hit",
+								"at": "verdict"
+							},
+							{
+								"type": "polaroid",
+								"src": "kbust-pen",
+								"x": 0.5,
+								"y": 0.5,
+								"w": 0.36,
+								"caption": "the verdict",
+								"rot": -2,
+								"enter": "up",
+								"delay": -0.2
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							],
+							"punch": [
+								"verdict"
+							]
+						}
+					},
+					{
+						"bg": "desk",
+						"layers": [
+							{
+								"type": "doc",
+								"header": "THE VERDICT",
+								"lines": [
+									{
+										"text": "THE EFFECT: REAL.",
+										"at": "real"
+									},
+									{
+										"text": "'PEOPLE WALK BY': MYTH.",
+										"at": "myth",
+										"red": true
+									},
+									{
+										"text": "DEPENDS ON: HOW CLEAR.",
+										"at": "clear"
+									}
+								],
+								"x": 0.5,
+								"y": 0.28,
+								"w": 0.86,
+								"size": 46,
+								"tilt": 1,
+								"enter": "up"
+							}
+						],
+						"at": "myth",
+						"enter": "wipe-l",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "advice",
+			"say": "If you ever see something that might be an emergency, don't assume someone else has already acted. Point at one person and say, 'You, call for help.' Or just be the first to move. These are my suggestions, not study findings.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "cork",
+						"layers": [
+							{
+								"type": "note",
+								"text": "MY ADVICE\n(NOT A FINDING)",
+								"x": 0.5,
+								"y": 0.1,
+								"w": 0.54,
+								"rot": -3,
+								"size": 60,
+								"enter": "drop",
+								"delay": -0.3
+							},
+							{
+								"type": "doc",
+								"header": "IF YOU SEE IT",
+								"lines": [
+									{
+										"text": "DON'T ASSUME",
+										"at": "don't"
+									},
+									{
+										"text": "SOMEONE ELSE HAS CALLED.",
+										"at": "someone",
+										"red": true
+									}
+								],
+								"x": 0.5,
+								"y": 0.36,
+								"w": 0.84,
+								"size": 44,
+								"tilt": -1,
+								"enter": "up"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "kraft",
+						"layers": [
+							{
+								"type": "polaroid",
+								"src": "kfull-point",
+								"x": 0.5,
+								"y": 0.3,
+								"w": 0.4,
+								"caption": "POINT AT ONE PERSON",
+								"rot": -2,
+								"enter": "drop",
+								"bottom": 0,
+								"fit": 1
+							},
+							{
+								"type": "bubble",
+								"text": "You, call for help!",
+								"x": 0.5,
+								"y": 0.56,
+								"size": 44,
+								"at": "call",
+								"enter": "pop",
+								"sfx": "pop"
+							}
+						],
+						"at": "Point",
+						"enter": "slide-l",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "text",
+								"text": "BE THE\nFIRST",
+								"x": 0.5,
+								"y": 0.26,
+								"size": 230,
+								"color": "paper",
+								"enter": "slam",
+								"sfx": "hit",
+								"at": "first"
+							},
+							{
+								"type": "img",
+								"src": "kfull-walk",
+								"x": 0.5,
+								"y": 0.58,
+								"w": 0.22,
+								"enter": "left",
+								"at": "first",
+								"filter": "sepia(0.4)"
+							}
+						],
+						"at": "Or",
+						"enter": "flash",
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							],
+							"punch": [
+								"first"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "close",
+			"say": "People aren't cold. They just need a clear signal, and someone willing to go *first*.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "kraft",
+						"layers": [
+							{
+								"type": "polaroid",
+								"src": "kbust-calm",
+								"x": 0.5,
+								"y": 0.32,
+								"w": 0.5,
+								"caption": "people aren't cold",
+								"rot": -2,
+								"enter": "drop",
+								"delay": -0.2
+							},
+							{
+								"type": "rubber",
+								"text": "A CLEAR SIGNAL",
+								"sub": null,
+								"x": 0.5,
+								"y": 0.62,
+								"size": 64,
+								"tilt": -4,
+								"enter": "slam",
+								"sfx": "hit",
+								"at": "clear"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							]
+						}
+					}
+				]
+			},
+			"tone": "prof-soft"
+		},
+		{
+			"id": "outro",
+			"say": "I'm the Professor. See you in the next lesson.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "panel",
+								"src": "panel-board",
+								"x": 0.5,
+								"y": 0.265,
+								"w": 0.86,
+								"enter": "up",
+								"zoom": [
+									1.02,
+									1.12
+								],
+								"focus": [
+									0.62,
+									0.5
+								]
+							},
+							{
+								"type": "text",
+								"text": "THE PROFESSOR",
+								"x": 0.5,
+								"y": 0.55,
+								"size": 170,
+								"color": "ink",
+								"mark": "accent",
+								"at": "Professor",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "chip",
+								"text": "EVERYDAY PSYCHOLOGY",
+								"x": 0.5,
+								"y": 0.61,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "See",
+								"enter": "up"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.04
+							]
+						}
+					}
+				]
+			}
+		}
+	],
+	"theme": "case"
+}

@@ -9,8 +9,9 @@ import {LAYERS2} from './layers2';
 import {LAYERS3} from './layers3';
 import {LAYERS4} from './layers4';
 import {LAYERS5} from './layers5';
+import {LAYERS6} from './layers6';
 
-const ALL_LAYERS = {...LAYERS, ...LAYERS2, ...LAYERS3, ...LAYERS4, ...LAYERS5};
+const ALL_LAYERS = {...LAYERS, ...LAYERS2, ...LAYERS3, ...LAYERS4, ...LAYERS5, ...LAYERS6};
 import {Cam, resolveCue, ShotCtx, useResolve, useSceneFrame} from './ShotCtx';
 import {PROF} from './theme';
 
@@ -24,6 +25,9 @@ const patterns = (): Record<string, {base: string; image?: string; size?: number
 	'ink-grid': {base: '#151514', image: 'linear-gradient(rgba(255,255,255,0.07) 3px, transparent 3px), linear-gradient(90deg, rgba(255,255,255,0.07) 3px, transparent 3px)', size: 90},
 	accent: {base: PROF.accent, image: 'radial-gradient(circle, rgba(18,18,18,0.20) 4px, transparent 4.5px)', size: 40},
 	soft: {base: PROF.paper2, image: 'radial-gradient(circle, rgba(18,18,18,0.10) 3px, transparent 3.5px)', size: 44},
+	cork: {base: '#A97B4F', image: 'radial-gradient(circle at 30% 40%, rgba(60,35,15,0.35) 4px, transparent 5px), radial-gradient(circle at 70% 75%, rgba(255,225,170,0.22) 5px, transparent 6px), radial-gradient(circle at 50% 10%, rgba(60,35,15,0.25) 3px, transparent 4px)', size: 63},
+	desk: {base: '#2A1F17', image: 'linear-gradient(90deg, rgba(255,255,255,0.04) 2px, transparent 3px), linear-gradient(rgba(0,0,0,0.25) 2px, transparent 3px)', size: 120},
+	kraft: {base: '#CDB48A', image: 'radial-gradient(circle, rgba(60,40,20,0.16) 2px, transparent 3px)', size: 31},
 });
 
 const Bg: React.FC<{spec: any}> = ({spec}) => {

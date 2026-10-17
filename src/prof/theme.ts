@@ -7,6 +7,7 @@ export const THEMES: Record<string, Partial<Palette>> = {
 	coral: {accent: '#FF5C4D', accentDeep: '#D93A2B', paper: '#F1E7E2', paper2: '#E6D7D0', soft: '#D8C7BF'},
 	blue: {accent: '#4C8DFF', accentDeep: '#2C62D6', paper: '#E7ECF2', paper2: '#D9E0EA', soft: '#C3CCD8'},
 	mint: {accent: '#2FE0A0', accentDeep: '#14B37A', paper: '#E6EEEA', paper2: '#D8E3DD', soft: '#C2D0C8'},
+	case: {paper: '#D3BC95', paper2: '#BCA277', white: '#F3ECD9', ink: '#1C1712', graphite: '#3B3026', mid: '#7B6B58', soft: '#B7A27F', accent: '#C23B30', accentDeep: '#8C241C'},
 	violet: {accent: '#A58BFF', accentDeep: '#7C5CE0', paper: '#ECE8F2', paper2: '#DFD9EA', soft: '#CBC3DA'},
 };
 
@@ -20,6 +21,7 @@ export const FONT = {
 	display: "'Anton', 'Impact', sans-serif",
 	sans: "'Space Grotesk', 'Helvetica Neue', sans-serif",
 	hand: "'Caveat Brush', 'Kalam', cursive",
+	type: "'Special Elite', 'Courier New', monospace",
 } as const;
 
 /** Colour names used in scripts -> hex. Unknown strings are passed through (e.g. "#fff"). */
