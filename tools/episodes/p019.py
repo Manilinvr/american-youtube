@@ -184,7 +184,7 @@ scenes = [
             shot(
                 "cork",
                 [
-                    note("THE EFFECT\nGETS WEAKER\nWHEN...", 0.5, 0.12, w=0.5, rot=-2, size=68, enter="drop", at="weaker"),
+                    note("THE EFFECT\nGETS WEAKER\nWHEN...", 0.5, 0.2, w=0.5, rot=-2, size=68, enter="drop", at="weaker"),
                     L("doc", header="WEAKER WHEN", lines=[{"text": "DANGER IS CLEAR", "at": "clear"}, {"text": "ATTACKER IS THERE", "at": "attacker"}, {"text": "HELPING IS RISKY", "at": "physical", "red": True}], x=0.5, y=0.42, w=0.84, size=46, tilt=1, enter="up"),
                 ],
                 at="weaker",
@@ -273,7 +273,7 @@ scenes = [
             shot(
                 "cork",
                 [
-                    note("MY READING\n(NOT A FINDING)", 0.5, 0.1, w=0.54, rot=-3, size=60, enter="drop", delay=-0.3),
+                    note("MY READING\n(NOT A FINDING)", 0.5, 0.2, w=0.54, rot=-3, size=60, enter="drop", delay=-0.3),
                     pol("kbust-calm", 0.5, 0.36, 0.36, caption="how can both be true?", rot=3, enter="up", delay=-0.2),
                 ],
                 cam={"z": [1.0, 1.06]},
@@ -341,7 +341,7 @@ scenes = [
             shot(
                 "cork",
                 [
-                    note("MY ADVICE\n(NOT A FINDING)", 0.5, 0.1, w=0.54, rot=-3, size=60, enter="drop", delay=-0.3),
+                    note("MY ADVICE\n(NOT A FINDING)", 0.5, 0.2, w=0.54, rot=-3, size=60, enter="drop", delay=-0.3),
                     L("doc", header="IF YOU SEE IT", lines=[{"text": "DON'T ASSUME", "at": "don't"}, {"text": "SOMEONE ELSE HAS CALLED.", "at": "someone", "red": True}], x=0.5, y=0.48, w=0.84, size=44, tilt=-1, enter="up"),
                 ],
                 cam={"z": [1.0, 1.06]},
