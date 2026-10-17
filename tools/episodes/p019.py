@@ -49,7 +49,7 @@ scenes = [
             shot(
                 "desk",
                 [
-                    L("doc", header="CASE FILE · 1964", lines=[{"text": "VICTIM: A YOUNG WOMAN", "at": 0.2}, {"text": "CITY: NEW YORK", "at": 1.0}, {"text": "WITNESSES: ", "at": 1.8, "red": True}], x=0.5, y=0.3, w=0.82, size=44, tilt=-2, enter="drop", delay=-0.3, sfx="pop"),
+                    L("doc", header="CASE FILE · 1964", lines=[{"text": "VICTIM: A YOUNG WOMAN", "at": 0.2}, {"text": "CITY: NEW YORK", "at": 1.0}, {"text": "WITNESSES: ", "at": 1.8, "red": True}], x=0.5, y=0.42, w=0.82, size=44, tilt=-2, enter="drop", delay=-0.3, sfx="pop"),
                     stamp("COLD CASE", x=0.62, y=0.54, size=100, at="killed", tilt=-12),
                 ],
                 cam={"z": [1.0, 1.08]},
@@ -96,7 +96,7 @@ scenes = [
             shot(
                 "desk",
                 [
-                    L("doc", header="THE THEORY", lines=[{"text": "MORE PEOPLE WATCH", "at": "more"}, {"text": "= LESS CHANCE", "at": "less"}, {"text": "ANY ONE OF THEM ACTS.", "at": "act", "red": True}], x=0.5, y=0.28, w=0.84, size=46, tilt=-1.5, enter="up"),
+                    L("doc", header="THE THEORY", lines=[{"text": "MORE PEOPLE WATCH", "at": "more"}, {"text": "= LESS CHANCE", "at": "less"}, {"text": "ANY ONE OF THEM ACTS.", "at": "act", "red": True}], x=0.5, y=0.40, w=0.84, size=46, tilt=-1.5, enter="up"),
                 ],
                 at="The#2",
                 enter="iris",
@@ -210,7 +210,7 @@ scenes = [
             shot(
                 "cork",
                 [
-                    pol("", 0.25, 0.18, 0.3, caption="", big="AMSTERDAM", rot=-4, enter="left", at="Amsterdam"),
+                    pol("", 0.25, 0.18, 0.3, caption="", big="AMSTER-\nDAM", rot=-4, enter="left", at="Amsterdam"),
                     pol("", 0.62, 0.2, 0.3, caption="", big="CAPE\nTOWN", rot=3, enter="drop", at="Cape"),
                     pol("", 0.43, 0.44, 0.3, caption="", big="LANCASTER", rot=-2, enter="right", at="Lancaster"),
                     string((0.25, 0.14), (0.62, 0.16), at="Cape", sag=0.03),
@@ -249,7 +249,7 @@ scenes = [
             shot(
                 "desk",
                 [
-                    L("doc", header="RE-OPENED: 2007", lines=[{"text": "COURT RECORDS. POLICE FILES.", "at": "records"}, {"text": "38 WITNESSES: ", "at": "thirty-eight"}, {"text": "NO EVIDENCE.", "at": "evidence", "red": True}], x=0.5, y=0.3, w=0.84, size=46, tilt=-1, enter="drop", delay=-0.3, sfx="pop"),
+                    L("doc", header="RE-OPENED: 2007", lines=[{"text": "COURT RECORDS. POLICE FILES.", "at": "records"}, {"text": "38 WITNESSES: ", "at": "thirty-eight"}, {"text": "NO EVIDENCE.", "at": "evidence", "red": True}], x=0.5, y=0.42, w=0.84, size=46, tilt=-1, enter="drop", delay=-0.3, sfx="pop"),
                     cite("Manning, Levine & Collins · 2007", "start"),
                 ],
                 cam={"z": [1.0, 1.07]},
@@ -257,7 +257,7 @@ scenes = [
             shot(
                 "kraft",
                 [
-                    L("doc", header="NEW YORK TIMES, 1964", lines=[{"text": "38 WATCHED.", "at": "start+0.3", "redact": True, "revealAt": "flawed"}], x=0.5, y=0.26, w=0.84, size=52, tilt=2, enter="up"),
+                    L("doc", header="NEW YORK TIMES, 1964", lines=[{"text": "38 WATCHED.", "at": "start+0.3", "redact": True, "revealAt": "flawed"}], x=0.5, y=0.38, w=0.84, size=52, tilt=2, enter="up"),
                     stamp("FLAWED", x=0.5, y=0.52, size=130, at="flawed", tilt=-10, sub="THE NEWSPAPER, 2016"),
                 ],
                 at="newspaper",
@@ -281,7 +281,7 @@ scenes = [
             shot(
                 "desk",
                 [
-                    L("doc", header="THE LAB", lines=[{"text": "A VOICE ON AN INTERCOM.", "at": "voice"}, {"text": "NOBODY IN SIGHT.", "at": "sight"}, {"text": "UNCLEAR.", "at": "unclear", "red": True}], x=0.5, y=0.26, w=0.84, size=44, tilt=-1.5, enter="up"),
+                    L("doc", header="THE LAB", lines=[{"text": "A VOICE ON AN INTERCOM.", "at": "voice"}, {"text": "NOBODY IN SIGHT.", "at": "sight"}, {"text": "UNCLEAR.", "at": "unclear", "red": True}], x=0.5, y=0.38, w=0.84, size=44, tilt=-1.5, enter="up"),
                 ],
                 at="lab",
                 enter="wipe-r",
@@ -326,7 +326,7 @@ scenes = [
             shot(
                 "desk",
                 [
-                    L("doc", header="THE VERDICT", lines=[{"text": "THE EFFECT: REAL.", "at": "real"}, {"text": "'PEOPLE WALK BY': MYTH.", "at": "myth", "red": True}, {"text": "DEPENDS ON: HOW CLEAR.", "at": "clear"}], x=0.5, y=0.28, w=0.86, size=46, tilt=1, enter="up"),
+                    L("doc", header="THE VERDICT", lines=[{"text": "THE EFFECT: REAL.", "at": "real"}, {"text": "'PEOPLE WALK BY': MYTH.", "at": "myth", "red": True}, {"text": "DEPENDS ON: HOW CLEAR.", "at": "clear"}], x=0.5, y=0.40, w=0.86, size=46, tilt=1, enter="up"),
                 ],
                 at="myth",
                 enter="wipe-l",
@@ -342,7 +342,7 @@ scenes = [
                 "cork",
                 [
                     note("MY ADVICE\n(NOT A FINDING)", 0.5, 0.1, w=0.54, rot=-3, size=60, enter="drop", delay=-0.3),
-                    L("doc", header="IF YOU SEE IT", lines=[{"text": "DON'T ASSUME", "at": "don't"}, {"text": "SOMEONE ELSE HAS CALLED.", "at": "someone", "red": True}], x=0.5, y=0.36, w=0.84, size=44, tilt=-1, enter="up"),
+                    L("doc", header="IF YOU SEE IT", lines=[{"text": "DON'T ASSUME", "at": "don't"}, {"text": "SOMEONE ELSE HAS CALLED.", "at": "someone", "red": True}], x=0.5, y=0.48, w=0.84, size=44, tilt=-1, enter="up"),
                 ],
                 cam={"z": [1.0, 1.06]},
             ),
