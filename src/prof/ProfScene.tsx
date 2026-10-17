@@ -6,8 +6,9 @@ import type {Visual} from '../types';
 import {clamp, easeInOut, easeOut, enterStyle, lerp, prog, rnd, spr} from './anim';
 import {LAYERS, LayerCtx} from './layers';
 import {LAYERS2} from './layers2';
+import {LAYERS3} from './layers3';
 
-const ALL_LAYERS = {...LAYERS, ...LAYERS2};
+const ALL_LAYERS = {...LAYERS, ...LAYERS2, ...LAYERS3};
 import {Cam, resolveCue, ShotCtx, useResolve, useSceneFrame} from './ShotCtx';
 import {PROF} from './theme';
 
@@ -60,7 +61,9 @@ const LayerBox: React.FC<{layer: any; from: number; index: number}> = ({layer, f
 	const {cam} = React.useContext(ShotCtx);
 	const f = useSceneFrame();
 	const resolve = useResolve();
-	const start = resolve(layer.at, from) + Math.round((layer.delay ?? 0) * fps);
+	let start = resolve(layer.at, from) + Math.round((layer.delay ?? 0) * fps);
+	// the first layer of a scene's first shot must be there almost at once, so a scene never opens on an empty frame
+	if (index === 0 && layer.at !== undefined && layer.firstIn !== false && React.useContext(ShotCtx).index === 0) start = Math.min(start, from + 6);
 	if (f < start) return null;
 	const end = resolve(layer.out, Infinity);
 	const outP = Number.isFinite(end) ? clamp((f - end) / 6) : 0;

@@ -1,0 +1,918 @@
+{
+	"id": "p009-ai-loneliness",
+	"format": "short",
+	"style": "prof",
+	"title": "Can Talking to AI Make You Lonelier?",
+	"tone": "prof",
+	"music": "gymnopedie-no-1.mp3",
+	"sources": [
+		"Phang, J., et al. / OpenAI & MIT Media Lab (2025). Investigating affective use and emotional well-being on ChatGPT; and Fang, C. M., et al. (2025). How AI and human behaviors shape psychosocial effects of chatbot use: A longitudinal randomized controlled study. (Both released March 2025.)",
+		"American Psychological Association (2026). AI chatbots and digital companions are reshaping emotional connection. APA Monitor on Psychology, Jan-Feb 2026. https://www.apa.org/monitor/2026/01-02/trends-digital-ai-relationships-emotional-connection"
+	],
+	"scenes": [
+		{
+			"id": "hook",
+			"say": "Millions of people now talk to AI about their *feelings*. Is that good for you?",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "phone",
+								"x": 0.5,
+								"y": 0.33,
+								"w": 0.42,
+								"enter": "pop",
+								"delay": -0.3,
+								"screens": [
+									{
+										"at": "start",
+										"s": "chat"
+									}
+								],
+								"rot": -3,
+								"id": "ph9"
+							},
+							{
+								"type": "heart",
+								"x": 0.82,
+								"y": 0.14,
+								"w": 0.18,
+								"at": "feelings",
+								"enter": "pop",
+								"pulse": [
+									"feelings"
+								],
+								"rot": 12
+							},
+							{
+								"type": "chip",
+								"text": "TALKING TO AI",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 44,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "img",
+								"src": "kbust-calm",
+								"x": 0.5,
+								"y": 0.36,
+								"w": 0.5,
+								"enter": "pop"
+							},
+							{
+								"type": "text",
+								"text": "GOOD\nFOR YOU?",
+								"x": 0.5,
+								"y": 0.12,
+								"size": 170,
+								"color": "accent",
+								"stroke": "ink",
+								"shadow": "paper",
+								"at": "good",
+								"enter": "slam",
+								"sfx": "hit"
+							}
+						],
+						"irisAt": [
+							0.5,
+							0.36
+						],
+						"at": "good",
+						"enter": "iris",
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							],
+							"punch": [
+								"good"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "why",
+			"say": "It makes sense. It's always awake. It never judges. And it always *answers*.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "ALWAYS AWAKE",
+								"x": 0.3,
+								"y": 0.1,
+								"size": 44,
+								"bg": "ink",
+								"color": "paper",
+								"at": "awake",
+								"enter": "left",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "NEVER JUDGES",
+								"x": 0.7,
+								"y": 0.2,
+								"size": 44,
+								"bg": "accent",
+								"color": "ink",
+								"at": "judges",
+								"enter": "right",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "ALWAYS ANSWERS",
+								"x": 0.34,
+								"y": 0.3,
+								"size": 44,
+								"bg": "white",
+								"color": "ink",
+								"at": "answers",
+								"enter": "left",
+								"sfx": "blip"
+							},
+							{
+								"type": "img",
+								"src": "kbust-mug",
+								"x": 0.5,
+								"y": 0.53,
+								"w": 0.34,
+								"at": "makes",
+								"enter": "pop"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "study",
+			"say": "In 2025, researchers at MIT and OpenAI studied this. In one study, almost a *thousand* people used a chatbot for four weeks.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "ink-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "MIT + OPENAI · 2025",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 40,
+								"bg": "accent",
+								"color": "ink",
+								"at": "researchers",
+								"enter": "down",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "OpenAI + MIT Media Lab · 2025",
+								"x": 0.07,
+								"y": 0.835,
+								"kind": "cite",
+								"size": 32,
+								"align": "left",
+								"at": "researchers",
+								"enter": "left",
+								"sfx": "blip",
+								"sfxVolume": 0.2
+							},
+							{
+								"type": "img",
+								"src": "kbust-pen",
+								"x": 0.5,
+								"y": 0.36,
+								"w": 0.5,
+								"enter": "pop"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "dots",
+								"x": 0.5,
+								"y": 0.17,
+								"w": 0.86,
+								"total": 100,
+								"cols": 20,
+								"hit": 0,
+								"at": "thousand",
+								"step": 0.1,
+								"enter": "none",
+								"id": "d100"
+							},
+							{
+								"type": "text",
+								"text": "≈ 1,000",
+								"x": 0.5,
+								"y": 0.4,
+								"size": 230,
+								"color": "ink",
+								"mark": "accent",
+								"at": "thousand",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "chip",
+								"text": "PEOPLE · 4 WEEKS",
+								"x": 0.5,
+								"y": 0.52,
+								"size": 44,
+								"bg": "ink",
+								"color": "paper",
+								"at": "four",
+								"enter": "up",
+								"sfx": "blip"
+							}
+						],
+						"at": "almost",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "result",
+			"say": "In these studies, the worrying pattern showed up mostly in the *heaviest* users.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "ILLUSTRATION, NOT REAL DATA",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 28,
+								"bg": "soft",
+								"color": "ink",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "bars",
+								"x": 0.46,
+								"y": 0.33,
+								"w": 0.7,
+								"h": 0.38,
+								"items": [
+									{
+										"label": "LIGHT USE",
+										"value": 0.3,
+										"color": "paper",
+										"at": "start"
+									},
+									{
+										"label": "HEAVIEST USE",
+										"value": 0.78,
+										"color": "accent",
+										"at": "heaviest"
+									}
+								],
+								"labelColor": "paper",
+								"enter": "none",
+								"at": "start"
+							},
+							{
+								"type": "chip",
+								"text": "A WORRYING PATTERN",
+								"x": 0.5,
+								"y": 0.6,
+								"size": 36,
+								"bg": "white",
+								"color": "ink",
+								"at": "worrying",
+								"enter": "up",
+								"sfx": "blip"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"punch": [
+								"heaviest"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "what",
+			"say": "The heaviest users reported feeling lonelier, relying on the chatbot more, and spending less time with real people.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "THE HEAVIEST USERS",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 44,
+								"bg": "ink",
+								"color": "paper",
+								"at": "heaviest",
+								"enter": "down",
+								"sfx": "blip"
+							},
+							{
+								"type": "img",
+								"src": "face-tired",
+								"x": 0.5,
+								"y": 0.56,
+								"w": 0.34,
+								"enter": "pop",
+								"delay": -0.2
+							},
+							{
+								"type": "chip",
+								"text": "LONELIER",
+								"x": 0.3,
+								"y": 0.22,
+								"size": 50,
+								"bg": "white",
+								"color": "ink",
+								"at": "lonelier",
+								"enter": "left",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "RELIED ON IT MORE",
+								"x": 0.68,
+								"y": 0.32,
+								"size": 44,
+								"bg": "ink",
+								"color": "paper",
+								"at": "relying",
+								"enter": "right",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "LESS TIME WITH PEOPLE",
+								"x": 0.4,
+								"y": 0.42,
+								"size": 44,
+								"bg": "white",
+								"color": "ink",
+								"at": "spending",
+								"enter": "left",
+								"sfx": "blip"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "img",
+								"src": "klying",
+								"x": 0.5,
+								"y": 0.33,
+								"w": 0.6,
+								"enter": "up"
+							},
+							{
+								"type": "chip",
+								"text": "REAL PEOPLE",
+								"x": 0.5,
+								"y": 0.08,
+								"size": 44,
+								"bg": "accent",
+								"color": "ink",
+								"at": "real",
+								"enter": "down",
+								"sfx": "blip"
+							}
+						],
+						"at": "real",
+						"enter": "slide-u",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "caveat",
+			"say": "But careful. This is a link, not proof. Lonely people may use it *more*. Or the two may feed each other.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "text",
+								"text": "A LINK",
+								"x": 0.5,
+								"y": 0.15,
+								"size": 240,
+								"color": "ink",
+								"mark": "accent",
+								"at": "link",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "text",
+								"text": "NOT PROOF",
+								"x": 0.5,
+								"y": 0.3,
+								"size": 190,
+								"color": "graphite",
+								"at": "proof",
+								"enter": "up"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							],
+							"punch": [
+								"link"
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "LONELY PEOPLE",
+								"x": 0.3,
+								"y": 0.14,
+								"size": 44,
+								"bg": "paper",
+								"color": "ink",
+								"at": "Lonely",
+								"enter": "left",
+								"sfx": "blip"
+							},
+							{
+								"type": "scribble",
+								"shape": "arrow",
+								"x": 0.5,
+								"y": 0.14,
+								"w": 0.14,
+								"h": 0.07,
+								"color": "accent",
+								"strokeW": 14,
+								"at": "more",
+								"dur": 10,
+								"curve": 0.0
+							},
+							{
+								"type": "chip",
+								"text": "USE AI MORE",
+								"x": 0.74,
+								"y": 0.14,
+								"size": 44,
+								"bg": "accent",
+								"color": "ink",
+								"at": "more",
+								"enter": "right",
+								"sfx": "blip"
+							}
+						],
+						"at": "Lonely",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "pulse",
+								"x": 0.5,
+								"y": 0.3,
+								"w": 1.0,
+								"enter": "none",
+								"color": "ink"
+							},
+							{
+								"type": "text",
+								"text": "A LOOP?",
+								"x": 0.5,
+								"y": 0.3,
+								"size": 240,
+								"color": "ink",
+								"stroke": "paper",
+								"strokeW": 10,
+								"at": "feed",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "img",
+								"src": "face-thinking",
+								"x": 0.5,
+								"y": 0.52,
+								"w": 0.28,
+								"at": "feed+0.2",
+								"enter": "pop",
+								"rot": -4
+							}
+						],
+						"at": "Or",
+						"enter": "flash",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "drink",
+			"say": "Think of a sweet drink and a glass of water. A sweet drink feels great right now. But it can't replace water.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "A COMPARISON, NOT SCIENCE",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 30,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "cups",
+								"x": 0.5,
+								"y": 0.3,
+								"w": 0.7,
+								"items": [
+									{
+										"label": "SWEET DRINK",
+										"sub": "FEELS GREAT NOW",
+										"level": 0.8,
+										"at": "sweet",
+										"color": "accent"
+									},
+									{
+										"label": "WATER",
+										"sub": "WHAT YOU NEED",
+										"level": 0.8,
+										"at": "water",
+										"color": "graphite"
+									}
+								],
+								"enter": "none",
+								"at": "start"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "text",
+								"text": "CAN'T\nREPLACE IT",
+								"x": 0.5,
+								"y": 0.27,
+								"size": 190,
+								"color": "ink",
+								"stroke": "paper",
+								"strokeW": 8,
+								"at": "replace",
+								"enter": "slam",
+								"sfx": "hit"
+							}
+						],
+						"at": "But",
+						"enter": "flash",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"punch": [
+								"replace"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "tip",
+			"say": "A simple idea: use it to practice what you want to say. Then go and say it to a *person*.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "A SIMPLE IDEA",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 44,
+								"bg": "ink",
+								"color": "paper",
+								"at": "simple",
+								"enter": "down",
+								"sfx": "blip"
+							},
+							{
+								"type": "phone",
+								"x": 0.3,
+								"y": 0.33,
+								"w": 0.28,
+								"enter": "left",
+								"screens": [
+									{
+										"at": "start",
+										"s": "chat"
+									}
+								],
+								"rot": -5,
+								"id": "ph9b"
+							},
+							{
+								"type": "scribble",
+								"shape": "arrow",
+								"x": 0.55,
+								"y": 0.33,
+								"w": 0.2,
+								"h": 0.08,
+								"color": "ink",
+								"strokeW": 14,
+								"at": "Then",
+								"dur": 12,
+								"curve": 0.0,
+								"outline": false
+							},
+							{
+								"type": "img",
+								"src": "kfull-point2",
+								"x": 0.78,
+								"y": 0.34,
+								"w": 0.22,
+								"at": "Then",
+								"enter": "right"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "text",
+								"text": "TELL A\nPERSON",
+								"x": 0.5,
+								"y": 0.26,
+								"size": 230,
+								"color": "accent",
+								"stroke": "ink",
+								"shadow": "paper",
+								"at": "person",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "heart",
+								"x": 0.5,
+								"y": 0.5,
+								"w": 0.2,
+								"at": "person+0.2",
+								"enter": "pop",
+								"pulse": [
+									"person"
+								]
+							}
+						],
+						"at": "person",
+						"enter": "flash",
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							],
+							"punch": [
+								"person"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "close",
+			"say": "If you often feel very low or alone, a friend or a professional can help in ways a chatbot can't.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "img",
+								"src": "kbust-calm",
+								"x": 0.5,
+								"y": 0.34,
+								"w": 0.54,
+								"enter": "pop",
+								"loop": "breathe"
+							},
+							{
+								"type": "chip",
+								"text": "A FRIEND OR A PROFESSIONAL",
+								"x": 0.5,
+								"y": 0.58,
+								"size": 36,
+								"bg": "ink",
+								"color": "paper",
+								"at": "friend",
+								"enter": "up",
+								"sfx": "blip"
+							},
+							{
+								"type": "heart",
+								"x": 0.82,
+								"y": 0.14,
+								"w": 0.16,
+								"at": "friend",
+								"enter": "pop",
+								"pulse": [
+									"professional"
+								],
+								"rot": 12
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							]
+						}
+					}
+				]
+			},
+			"tone": "prof-soft"
+		},
+		{
+			"id": "outro",
+			"say": "I'm the Professor. See you in the next lesson.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "panel",
+								"src": "panel-board",
+								"x": 0.5,
+								"y": 0.265,
+								"w": 0.86,
+								"enter": "up",
+								"zoom": [
+									1.02,
+									1.12
+								],
+								"focus": [
+									0.62,
+									0.5
+								]
+							},
+							{
+								"type": "text",
+								"text": "THE PROFESSOR",
+								"x": 0.5,
+								"y": 0.55,
+								"size": 170,
+								"color": "ink",
+								"mark": "accent",
+								"at": "Professor",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "chip",
+								"text": "EVERYDAY PSYCHOLOGY",
+								"x": 0.5,
+								"y": 0.61,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "See",
+								"enter": "up"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.04
+							]
+						}
+					}
+				]
+			}
+		}
+	]
+}

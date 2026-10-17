@@ -296,7 +296,7 @@ export const Heart: React.FC<L> = ({layer}) => {
 
 /* ------------------------------------------------------------------ phone */
 
-type Screen = 'off' | 'lock' | 'empty' | 'typing' | 'buzzing' | 'read';
+type Screen = 'off' | 'lock' | 'empty' | 'typing' | 'buzzing' | 'read' | 'feed' | 'news' | 'chat';
 
 const Bell: React.FC<{x: number; y: number; s: number; slash?: boolean}> = ({x, y, s, slash}) => (
 	<g transform={`translate(${x} ${y}) scale(${s})`} stroke={PROF.mid} strokeWidth={5} fill="none" strokeLinecap="round" strokeLinejoin="round">
@@ -332,7 +332,7 @@ export const Phone: React.FC<L> = ({layer}) => {
 	const sy = shake * (rnd(f * 2.1 + 5) - 0.5) * 18;
 	const sr = shake * (rnd(f * 3.7 + 9) - 0.5) * 5;
 	const on = screen !== 'off';
-	const glow = on ? clamp((f - litAt) / 6) : 0;
+	const glow = on ? (litAt <= 0 ? 1 : clamp((f - litAt) / 6)) : 0;
 	return (
 		<svg width={w} height={w * 2.03} viewBox="0 0 300 610" style={{overflow: 'visible', display: 'block', transform: `translate(${sx}px, ${sy}px) rotate(${sr}deg)`}}>
 			<rect x={14} y={22} width={288} height={598} rx={46} fill={PROF.ink} opacity={0.22} />
@@ -342,12 +342,63 @@ export const Phone: React.FC<L> = ({layer}) => {
 			<rect x={110} y={30} width={80} height={22} rx={11} fill={PROF.ink} />
 			{on && (
 				<g opacity={glow}>
-					<text x={150} y={196} textAnchor="middle" fontFamily={FONT.display} fontSize={104} fill={PROF.ink}>
-						2:47
-					</text>
-					<text x={150} y={232} textAnchor="middle" fontFamily={FONT.sans} fontWeight={500} fontSize={19} fill={PROF.mid}>
-						Tuesday
-					</text>
+					{screen !== 'feed' && screen !== 'news' && screen !== 'chat' && (
+						<>
+							<text x={150} y={196} textAnchor="middle" fontFamily={FONT.display} fontSize={104} fill={PROF.ink}>
+								{layer.time ?? '2:47'}
+							</text>
+							<text x={150} y={232} textAnchor="middle" fontFamily={FONT.sans} fontWeight={500} fontSize={19} fill={PROF.mid}>
+								{layer.day ?? 'Tuesday'}
+							</text>
+						</>
+					)}
+					{(screen === 'feed' || screen === 'news') && (
+						<g>
+							<clipPath id={`feedclip-${layer.id ?? 'p'}`}>
+								<rect x={26} y={70} width={248} height={500} rx={14} />
+							</clipPath>
+							<g clipPath={`url(#feedclip-${layer.id ?? 'p'})`}>
+								{Array.from({length: 7}, (_, i) => {
+									const off = (f * (layer.feedSpeed ?? 7)) % 180;
+									const y = 60 + i * 180 - off;
+									const hot = (Math.floor((f * (layer.feedSpeed ?? 7)) / 180) + i) % 3 === 0;
+									return (
+										<g key={i}>
+											<rect x={34} y={y} width={232} height={160} rx={16} fill={hot ? PROF.accent : PROF.white} stroke={PROF.ink} strokeWidth={5} />
+											{screen === 'news' ? (
+												<>
+													<text x={48} y={y + 40} fontFamily={FONT.display} fontSize={30} fill={PROF.ink}>BREAKING</text>
+													<rect x={48} y={y + 62} width={190} height={12} rx={6} fill={PROF.ink} opacity={0.75} />
+													<rect x={48} y={y + 88} width={150} height={12} rx={6} fill={PROF.ink} opacity={0.45} />
+													<rect x={48} y={y + 114} width={170} height={12} rx={6} fill={PROF.ink} opacity={0.45} />
+												</>
+											) : (
+												<>
+													<circle cx={90} cy={y + 80} r={34} fill={PROF.ink} opacity={hot ? 0.9 : 0.25} />
+													<path d={`M ${80} ${y + 62} L ${80} ${y + 98} L ${108} ${y + 80} Z`} fill={hot ? PROF.accent : PROF.white} />
+													<rect x={140} y={y + 56} width={96} height={12} rx={6} fill={PROF.ink} opacity={0.6} />
+													<rect x={140} y={y + 84} width={70} height={12} rx={6} fill={PROF.ink} opacity={0.35} />
+												</>
+											)}
+										</g>
+									);
+								})}
+							</g>
+						</g>
+					)}
+					{screen === 'chat' && (
+						<g>
+							<rect x={36} y={120} width={170} height={60} rx={26} fill={PROF.soft} />
+							<text x={52} y={158} fontFamily={FONT.sans} fontWeight={700} fontSize={22} fill={PROF.ink}>Rough day?</text>
+							<rect x={90} y={210} width={176} height={60} rx={26} fill={PROF.ink} />
+							<text x={106} y={248} fontFamily={FONT.sans} fontWeight={700} fontSize={22} fill={PROF.paper}>Kind of...</text>
+							<rect x={36} y={300} width={226} height={60} rx={26} fill={PROF.soft} />
+							<text x={52} y={338} fontFamily={FONT.sans} fontWeight={700} fontSize={22} fill={PROF.ink}>I'm here. Tell me.</text>
+							{[0, 1, 2].map((i) => (
+								<circle key={i} cx={64 + i * 26} cy={410 - Math.max(0, Math.sin(f * 0.3 - i * 0.8)) * 7} r={8} fill={PROF.graphite} />
+							))}
+						</g>
+					)}
 					{screen === 'empty' && (
 						<>
 							<Bell x={150} y={352} s={1.5} slash />

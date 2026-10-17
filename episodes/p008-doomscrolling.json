@@ -1,0 +1,1027 @@
+{
+	"id": "p008-doomscrolling",
+	"format": "short",
+	"style": "prof",
+	"title": "Why You Can't Stop Doomscrolling",
+	"tone": "prof",
+	"music": "dreamer.mp3",
+	"sources": [
+		"Shabahang, R., et al. (2024). Doomscrolling evokes existential anxiety and fosters pessimism about humanity? Computers in Human Behavior Reports, 15, 100438. https://doi.org/10.1016/j.chbr.2024.100438"
+	],
+	"scenes": [
+		{
+			"id": "hook",
+			"say": "It's two in the morning. The news is terrible. And you keep *scrolling*.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "clock",
+								"x": 0.5,
+								"y": 0.32,
+								"w": 0.56,
+								"time": [
+									{
+										"at": "start",
+										"v": 840
+									}
+								],
+								"digital": true,
+								"enter": "pop",
+								"delay": -0.3
+							},
+							{
+								"type": "chip",
+								"text": "2:00 AM",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 44,
+								"bg": "accent",
+								"color": "ink",
+								"at": "start",
+								"enter": "down"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							]
+						}
+					},
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "slab",
+								"color": "accent",
+								"w": 1.4,
+								"h": 0.34,
+								"x": 0.5,
+								"y": 0.33,
+								"rot": -6,
+								"depth": 0.5,
+								"enter": "none",
+								"at": "news"
+							},
+							{
+								"type": "phone",
+								"x": 0.5,
+								"y": 0.35,
+								"w": 0.42,
+								"at": "news",
+								"enter": "up",
+								"screens": [
+									{
+										"at": "start",
+										"s": "news"
+									}
+								],
+								"loop": "float",
+								"rot": -3,
+								"id": "ph8"
+							},
+							{
+								"type": "chip",
+								"text": "BAD NEWS",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 44,
+								"bg": "ink",
+								"color": "paper",
+								"at": "terrible",
+								"enter": "down",
+								"sfx": "blip"
+							}
+						],
+						"at": "news",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "phone",
+								"x": 0.5,
+								"y": 0.35,
+								"w": 0.42,
+								"enter": "none",
+								"screens": [
+									{
+										"at": "start",
+										"s": "news"
+									}
+								],
+								"id": "ph8b",
+								"feedSpeed": 14
+							},
+							{
+								"type": "burst",
+								"text": "ONE MORE",
+								"x": 0.82,
+								"y": 0.14,
+								"w": 0.34,
+								"at": "scrolling",
+								"enter": "slam",
+								"rot": 8,
+								"seed": 4,
+								"sfx": "hit"
+							}
+						],
+						"at": "scrolling",
+						"enter": "punch",
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							],
+							"punch": [
+								"scrolling"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "name",
+			"say": "It even has a name: *doomscrolling*. Endlessly scrolling through bad news.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "text",
+								"text": "DOOM-\nSCROLLING",
+								"x": 0.5,
+								"y": 0.25,
+								"size": 230,
+								"color": "ink",
+								"stroke": "paper",
+								"strokeW": 10,
+								"at": "doomscrolling",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "chip",
+								"text": "ENDLESS BAD NEWS",
+								"x": 0.5,
+								"y": 0.52,
+								"size": 44,
+								"bg": "ink",
+								"color": "paper",
+								"at": "Endlessly",
+								"enter": "up",
+								"sfx": "blip"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"punch": [
+								"doomscrolling"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "why",
+			"say": "Why is it so hard to stop? Think of a car crash on the highway. You don't want to look, but you *can't help* it.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "img",
+								"src": "kbust-pocket",
+								"x": 0.5,
+								"y": 0.36,
+								"w": 0.5,
+								"enter": "pop",
+								"delay": -0.2
+							},
+							{
+								"type": "chip",
+								"text": "WHY IS IT SO HARD TO STOP?",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "hard",
+								"enter": "down",
+								"sfx": "blip"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": {
+							"photo": "bg-city",
+							"blur": 6,
+							"bright": 0.7,
+							"dim": 0.15
+						},
+						"layers": [
+							{
+								"type": "chip",
+								"text": "A COMPARISON, NOT SCIENCE",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 30,
+								"bg": "soft",
+								"color": "ink",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "img",
+								"src": "face-surprised",
+								"x": 0.5,
+								"y": 0.35,
+								"w": 0.5,
+								"enter": "pop"
+							},
+							{
+								"type": "text",
+								"text": "DON'T LOOK",
+								"x": 0.5,
+								"y": 0.58,
+								"size": 110,
+								"color": "paper",
+								"stroke": "ink",
+								"at": "want",
+								"enter": "up"
+							}
+						],
+						"at": "car",
+						"enter": "slide-l",
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "text",
+								"text": "CAN'T\nHELP IT",
+								"x": 0.5,
+								"y": 0.27,
+								"size": 240,
+								"color": "ink",
+								"stroke": "paper",
+								"strokeW": 8,
+								"at": "can't",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "img",
+								"src": "face-shock",
+								"x": 0.5,
+								"y": 0.56,
+								"w": 0.3,
+								"at": "can't+0.2",
+								"enter": "pop",
+								"rot": 5
+							}
+						],
+						"at": "can't",
+						"enter": "flash",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"punch": [
+								"can't"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "study",
+			"say": "Researchers surveyed about [800|eight hundred] college students, in Iran and in the United States.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "ink-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "A SURVEY",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 44,
+								"bg": "accent",
+								"color": "ink",
+								"at": "surveyed",
+								"enter": "down",
+								"sfx": "blip"
+							},
+							{
+								"type": "counter",
+								"to": 800,
+								"size": 420,
+								"color": "paper",
+								"x": 0.5,
+								"y": 0.22,
+								"at": "800",
+								"dur": 26,
+								"enter": "none",
+								"stroke": "ink",
+								"shadow": "accent",
+								"sfx": "hit"
+							},
+							{
+								"type": "chip",
+								"text": "COLLEGE STUDENTS",
+								"x": 0.5,
+								"y": 0.4,
+								"size": 44,
+								"bg": "paper",
+								"color": "ink",
+								"at": "college",
+								"enter": "up"
+							},
+							{
+								"type": "chip",
+								"text": "Shabahang et al. · 2024",
+								"x": 0.07,
+								"y": 0.835,
+								"kind": "cite",
+								"size": 32,
+								"align": "left",
+								"at": "surveyed",
+								"enter": "left",
+								"sfx": "blip",
+								"sfxVolume": 0.2
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"punch": [
+								"800"
+							]
+						}
+					},
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "IRAN + THE UNITED STATES",
+								"x": 0.5,
+								"y": 0.1,
+								"size": 40,
+								"bg": "ink",
+								"color": "paper",
+								"at": "Iran",
+								"enter": "down",
+								"sfx": "blip"
+							},
+							{
+								"type": "dots",
+								"x": 0.5,
+								"y": 0.3,
+								"w": 0.7,
+								"total": 40,
+								"cols": 10,
+								"hit": 0,
+								"at": "Iran",
+								"step": 0.2,
+								"enter": "none",
+								"id": "d40"
+							},
+							{
+								"type": "text",
+								"text": "2 COUNTRIES",
+								"x": 0.5,
+								"y": 0.5,
+								"size": 130,
+								"color": "ink",
+								"mark": "accent",
+								"at": "United",
+								"enter": "slam"
+							}
+						],
+						"at": "Iran",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "result",
+			"say": "Those who doomscrolled more also reported more *existential anxiety*. That's worry about big questions: life, death, and what it all means.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "MORE DOOMSCROLLING",
+								"x": 0.3,
+								"y": 0.1,
+								"size": 38,
+								"bg": "ink",
+								"color": "paper",
+								"at": "more",
+								"enter": "left",
+								"sfx": "blip"
+							},
+							{
+								"type": "scribble",
+								"shape": "arrow",
+								"x": 0.5,
+								"y": 0.2,
+								"w": 0.16,
+								"h": 0.07,
+								"color": "ink",
+								"strokeW": 14,
+								"at": "existential",
+								"dur": 10,
+								"curve": 0.0,
+								"outline": false
+							},
+							{
+								"type": "chip",
+								"text": "MORE BIG-QUESTION WORRY",
+								"x": 0.5,
+								"y": 0.3,
+								"size": 40,
+								"bg": "white",
+								"color": "ink",
+								"at": "existential",
+								"enter": "up",
+								"sfx": "blip"
+							},
+							{
+								"type": "img",
+								"src": "kbust-calm",
+								"x": 0.5,
+								"y": 0.52,
+								"w": 0.42,
+								"enter": "pop",
+								"delay": -0.2
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "text",
+								"text": "EXISTENTIAL\nANXIETY",
+								"x": 0.5,
+								"y": 0.2,
+								"size": 170,
+								"color": "paper",
+								"at": "That's",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "chip",
+								"text": "LIFE",
+								"x": 0.2,
+								"y": 0.42,
+								"size": 44,
+								"bg": "accent",
+								"color": "ink",
+								"at": "life",
+								"enter": "up",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "DEATH",
+								"x": 0.5,
+								"y": 0.48,
+								"size": 44,
+								"bg": "paper",
+								"color": "ink",
+								"at": "death",
+								"enter": "up",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "MEANING",
+								"x": 0.78,
+								"y": 0.42,
+								"size": 44,
+								"bg": "accent",
+								"color": "ink",
+								"at": "means",
+								"enter": "up",
+								"sfx": "blip"
+							}
+						],
+						"at": "That's",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"punch": [
+								"That's"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "idea",
+			"say": "One idea: a nonstop stream of bad news can make the world look scarier than it really is.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "ONE IDEA",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 42,
+								"bg": "ink",
+								"color": "paper",
+								"at": "idea",
+								"enter": "down",
+								"sfx": "blip"
+							},
+							{
+								"type": "slab",
+								"color": "soft",
+								"round": true,
+								"w": 0.7,
+								"x": 0.5,
+								"y": 0.33,
+								"border": 10,
+								"enter": "pop",
+								"depth": 0.6
+							},
+							{
+								"type": "img",
+								"src": "kbust-calm",
+								"x": 0.5,
+								"y": 0.34,
+								"w": 0.4,
+								"enter": "pop"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "pulse",
+								"x": 0.5,
+								"y": 0.3,
+								"w": 1.1,
+								"enter": "none",
+								"color": "paper"
+							},
+							{
+								"type": "slab",
+								"color": "paper",
+								"round": true,
+								"w": 0.45,
+								"x": 0.5,
+								"y": 0.3,
+								"enter": "pop"
+							},
+							{
+								"type": "text",
+								"text": "SCARIER",
+								"x": 0.5,
+								"y": 0.3,
+								"size": 120,
+								"color": "ink",
+								"at": "scarier",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "chip",
+								"text": "THAN IT REALLY IS",
+								"x": 0.5,
+								"y": 0.5,
+								"size": 44,
+								"bg": "accent",
+								"color": "ink",
+								"at": "than",
+								"enter": "up",
+								"sfx": "blip"
+							}
+						],
+						"irisAt": [
+							0.5,
+							0.3
+						],
+						"at": "look",
+						"enter": "iris",
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "caveat",
+			"say": "Still, it was a survey. It shows a link, not a cause. Anxious people might scroll more, too.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "img",
+								"src": "kbust-pocket",
+								"x": 0.5,
+								"y": 0.58,
+								"w": 0.36,
+								"enter": "pop",
+								"delay": -0.2
+							},
+							{
+								"type": "chip",
+								"text": "A SURVEY",
+								"x": 0.3,
+								"y": 0.1,
+								"size": 46,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "left",
+								"sfx": "blip"
+							},
+							{
+								"type": "text",
+								"text": "A LINK",
+								"x": 0.5,
+								"y": 0.24,
+								"size": 210,
+								"color": "ink",
+								"mark": "accent",
+								"at": "link",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "text",
+								"text": "NOT A CAUSE",
+								"x": 0.5,
+								"y": 0.4,
+								"size": 130,
+								"color": "graphite",
+								"at": "cause",
+								"enter": "up"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							],
+							"punch": [
+								"link"
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "img",
+								"src": "face-tired",
+								"x": 0.5,
+								"y": 0.33,
+								"w": 0.46,
+								"enter": "pop"
+							},
+							{
+								"type": "chip",
+								"text": "ANXIOUS PEOPLE MAY SCROLL MORE",
+								"x": 0.5,
+								"y": 0.56,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "Anxious",
+								"enter": "up",
+								"sfx": "blip"
+							}
+						],
+						"at": "Anxious",
+						"enter": "slide-u",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "tip",
+			"say": "A simple idea: pick a time to check the news, and a time to *stop*. Then put the phone down.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "A SIMPLE IDEA",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 44,
+								"bg": "ink",
+								"color": "paper",
+								"at": "simple",
+								"enter": "down",
+								"sfx": "blip"
+							},
+							{
+								"type": "clock",
+								"x": 0.5,
+								"y": 0.3,
+								"w": 0.46,
+								"time": [
+									{
+										"at": "start",
+										"v": 480
+									},
+									{
+										"at": "stop",
+										"v": 495
+									}
+								],
+								"digital": true,
+								"glide": 30,
+								"enter": "pop"
+							},
+							{
+								"type": "chip",
+								"text": "CHECK THE NEWS",
+								"x": 0.28,
+								"y": 0.52,
+								"size": 36,
+								"bg": "white",
+								"color": "ink",
+								"at": "check",
+								"enter": "left",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "THEN STOP",
+								"x": 0.74,
+								"y": 0.58,
+								"size": 36,
+								"bg": "ink",
+								"color": "paper",
+								"at": "stop",
+								"enter": "right",
+								"sfx": "blip"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "img",
+								"src": "kfull-point",
+								"x": 0.5,
+								"y": 0.36,
+								"w": 0.26,
+								"enter": "up"
+							},
+							{
+								"type": "phone",
+								"x": 0.78,
+								"y": 0.4,
+								"w": 0.18,
+								"enter": "right",
+								"screens": [
+									{
+										"at": "start",
+										"s": "off"
+									}
+								],
+								"rot": 10,
+								"id": "ph8c"
+							},
+							{
+								"type": "text",
+								"text": "phone down",
+								"x": 0.5,
+								"y": 0.6,
+								"size": 120,
+								"font": "hand",
+								"color": "ink",
+								"upper": false,
+								"at": "down",
+								"enter": "pop",
+								"rot": -3
+							}
+						],
+						"at": "Then",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "close",
+			"say": "Staying informed is fine. Staying *stuck* isn't. You can look at the news... and then look away.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "img",
+								"src": "kbust-pen",
+								"x": 0.5,
+								"y": 0.34,
+								"w": 0.54,
+								"enter": "pop",
+								"loop": "breathe"
+							},
+							{
+								"type": "text",
+								"text": "look away",
+								"x": 0.5,
+								"y": 0.58,
+								"size": 160,
+								"font": "hand",
+								"color": "ink",
+								"upper": false,
+								"at": "away",
+								"enter": "pop",
+								"rot": -3
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							]
+						}
+					}
+				]
+			},
+			"tone": "prof-soft"
+		},
+		{
+			"id": "outro",
+			"say": "I'm the Professor. See you in the next lesson.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "panel",
+								"src": "panel-board",
+								"x": 0.5,
+								"y": 0.265,
+								"w": 0.86,
+								"enter": "up",
+								"zoom": [
+									1.02,
+									1.12
+								],
+								"focus": [
+									0.62,
+									0.5
+								]
+							},
+							{
+								"type": "text",
+								"text": "THE PROFESSOR",
+								"x": 0.5,
+								"y": 0.55,
+								"size": 170,
+								"color": "ink",
+								"mark": "accent",
+								"at": "Professor",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "chip",
+								"text": "EVERYDAY PSYCHOLOGY",
+								"x": 0.5,
+								"y": 0.61,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "See",
+								"enter": "up"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.04
+							]
+						}
+					}
+				]
+			}
+		}
+	]
+}

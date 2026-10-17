@@ -1,0 +1,977 @@
+{
+	"id": "p011-open-tabs",
+	"format": "short",
+	"style": "prof",
+	"title": "Why Unfinished Tasks Won't Leave Your Head",
+	"tone": "prof",
+	"music": "dreamer.mp3",
+	"sources": [
+		"Masicampo, E. J., & Baumeister, R. F. (2011). Consider it done! Plan making can eliminate the cognitive effects of unfulfilled goals. Journal of Personality and Social Psychology, 101(4), 667-683. https://doi.org/10.1037/a0024192"
+	],
+	"scenes": [
+		{
+			"id": "hook",
+			"say": "It's night. You're tired. And your brain replays everything you *haven't* done yet.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "img",
+								"src": "kbust-calm",
+								"x": 0.5,
+								"y": 0.34,
+								"w": 0.5,
+								"enter": "pop",
+								"delay": -0.3
+							},
+							{
+								"type": "chip",
+								"text": "11:48 PM",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 44,
+								"bg": "accent",
+								"color": "ink",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "bubble",
+								"text": "Email?",
+								"x": 0.2,
+								"y": 0.15,
+								"size": 44,
+								"at": "night",
+								"enter": "pop",
+								"rot": -4,
+								"sfx": "pop"
+							},
+							{
+								"type": "bubble",
+								"text": "Taxes!",
+								"x": 0.8,
+								"y": 0.22,
+								"size": 44,
+								"at": "tired",
+								"enter": "pop",
+								"rot": 4,
+								"sfx": "pop"
+							},
+							{
+								"type": "bubble",
+								"text": "Gym...",
+								"x": 0.22,
+								"y": 0.5,
+								"size": 44,
+								"at": "brain",
+								"enter": "pop",
+								"rot": -3,
+								"sfx": "pop"
+							},
+							{
+								"type": "bubble",
+								"text": "Call mom",
+								"x": 0.78,
+								"y": 0.52,
+								"size": 44,
+								"at": "replays",
+								"enter": "pop",
+								"rot": 3,
+								"sfx": "pop"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "text",
+								"text": "NOT DONE\nYET",
+								"x": 0.5,
+								"y": 0.26,
+								"size": 250,
+								"color": "ink",
+								"stroke": "paper",
+								"strokeW": 10,
+								"at": "haven't",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "img",
+								"src": "face-tired",
+								"x": 0.5,
+								"y": 0.55,
+								"w": 0.3,
+								"at": "haven't+0.2",
+								"enter": "pop",
+								"rot": 4
+							}
+						],
+						"at": "everything",
+						"enter": "flash",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"punch": [
+								"haven't"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "tabs",
+			"say": "Think of your brain as a browser. Every unfinished thing is *another open tab*.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "A COMPARISON, NOT SCIENCE",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 30,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "tabs",
+								"x": 0.5,
+								"y": 0.27,
+								"w": 0.9,
+								"h": 0.3,
+								"tabs": [
+									{
+										"label": "Email",
+										"at": "start+0.05"
+									},
+									{
+										"label": "Taxes",
+										"at": "start+0.45"
+									},
+									{
+										"label": "Call mom",
+										"at": "start+0.85"
+									},
+									{
+										"label": "Gym",
+										"at": "start+1.25"
+									},
+									{
+										"label": "Report",
+										"at": "start+1.65"
+									},
+									{
+										"label": "Dentist",
+										"at": "start+2.05"
+									}
+								],
+								"enter": "up",
+								"delay": -0.2,
+								"barLabel": "BRAIN MEMORY"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "text",
+								"text": "OPEN\nTABS",
+								"x": 0.5,
+								"y": 0.26,
+								"size": 280,
+								"color": "ink",
+								"stroke": "paper",
+								"strokeW": 10,
+								"at": "another",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "img",
+								"src": "face-shock",
+								"x": 0.5,
+								"y": 0.56,
+								"w": 0.28,
+								"at": "another+0.2",
+								"enter": "pop",
+								"rot": -4
+							}
+						],
+						"at": "another",
+						"enter": "flash",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"punch": [
+								"another"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "slow",
+			"say": "And the more tabs you keep open, the slower everything runs. Even a calm evening.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "tabs",
+								"x": 0.5,
+								"y": 0.27,
+								"w": 0.9,
+								"h": 0.3,
+								"tabs": [
+									{
+										"label": "Email",
+										"at": "start+0.0"
+									},
+									{
+										"label": "Taxes",
+										"at": "start+0.02"
+									},
+									{
+										"label": "Call mom",
+										"at": "start+0.04"
+									},
+									{
+										"label": "Gym",
+										"at": "start+0.06"
+									},
+									{
+										"label": "Report",
+										"at": "start+0.08"
+									},
+									{
+										"label": "Dentist",
+										"at": "start+0.1"
+									}
+								],
+								"enter": "none",
+								"at": "start",
+								"barLabel": "BRAIN MEMORY"
+							},
+							{
+								"type": "chip",
+								"text": "EVERYTHING RUNS SLOWER",
+								"x": 0.5,
+								"y": 0.52,
+								"size": 38,
+								"bg": "ink",
+								"color": "paper",
+								"at": "slower",
+								"enter": "up",
+								"sfx": "blip"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "study",
+			"say": "Psychologists tested this with students. They gave them an unfinished goal. Then they checked their focus on something *unrelated*.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "ink-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "A LAB EXPERIMENT",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 42,
+								"bg": "accent",
+								"color": "ink",
+								"at": "tested",
+								"enter": "down",
+								"sfx": "blip"
+							},
+							{
+								"type": "img",
+								"src": "kbust-pen",
+								"x": 0.5,
+								"y": 0.36,
+								"w": 0.5,
+								"enter": "pop"
+							},
+							{
+								"type": "chip",
+								"text": "Masicampo & Baumeister · 2011",
+								"x": 0.07,
+								"y": 0.835,
+								"kind": "cite",
+								"size": 32,
+								"align": "left",
+								"at": "tested",
+								"enter": "left",
+								"sfx": "blip",
+								"sfxVolume": 0.2
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "1. AN UNFINISHED GOAL",
+								"x": 0.5,
+								"y": 0.1,
+								"size": 40,
+								"bg": "ink",
+								"color": "paper",
+								"at": "unfinished",
+								"enter": "down",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "2. A TOTALLY DIFFERENT TASK",
+								"x": 0.5,
+								"y": 0.2,
+								"size": 40,
+								"bg": "white",
+								"color": "ink",
+								"at": "focus",
+								"enter": "up",
+								"sfx": "blip"
+							},
+							{
+								"type": "img",
+								"src": "face-thinking",
+								"x": 0.5,
+								"y": 0.45,
+								"w": 0.32,
+								"at": "focus",
+								"enter": "pop"
+							}
+						],
+						"at": "unfinished",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "result",
+			"say": "The unfinished goal kept popping into their heads. And they did *worse* on a simple puzzle.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "bubble",
+								"text": "Did I finish that?",
+								"x": 0.5,
+								"y": 0.13,
+								"size": 50,
+								"at": "popping",
+								"enter": "pop",
+								"loop": "float",
+								"sfx": "pop"
+							},
+							{
+								"type": "img",
+								"src": "face-tired",
+								"x": 0.5,
+								"y": 0.4,
+								"w": 0.44,
+								"enter": "pop"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "text",
+								"text": "WORSE",
+								"x": 0.5,
+								"y": 0.2,
+								"size": 300,
+								"color": "accent",
+								"stroke": "ink",
+								"shadow": "paper",
+								"at": "worse",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "chip",
+								"text": "ON A SIMPLE PUZZLE",
+								"x": 0.5,
+								"y": 0.4,
+								"size": 44,
+								"bg": "paper",
+								"color": "ink",
+								"at": "puzzle",
+								"enter": "up",
+								"sfx": "blip"
+							}
+						],
+						"at": "worse",
+						"enter": "flash",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"punch": [
+								"worse"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "plan",
+			"say": "Here's the twist. When students wrote a *specific plan*, saying what they'd do, when, and where, the problem went away.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "THE TWIST",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 44,
+								"bg": "ink",
+								"color": "paper",
+								"at": "twist",
+								"enter": "down",
+								"sfx": "blip"
+							},
+							{
+								"type": "text",
+								"text": "A PLAN",
+								"x": 0.5,
+								"y": 0.22,
+								"size": 290,
+								"color": "ink",
+								"mark": "accent",
+								"at": "plan",
+								"enter": "slam",
+								"sfx": "hit"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"punch": [
+								"plan"
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "WHAT",
+								"x": 0.2,
+								"y": 0.15,
+								"size": 56,
+								"bg": "ink",
+								"color": "paper",
+								"at": "what",
+								"enter": "up",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "WHEN",
+								"x": 0.5,
+								"y": 0.15,
+								"size": 56,
+								"bg": "white",
+								"color": "ink",
+								"at": "when#2",
+								"enter": "up",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "WHERE",
+								"x": 0.8,
+								"y": 0.15,
+								"size": 56,
+								"bg": "ink",
+								"color": "paper",
+								"at": "where",
+								"enter": "up",
+								"sfx": "blip"
+							},
+							{
+								"type": "img",
+								"src": "kfull-point",
+								"x": 0.5,
+								"y": 0.48,
+								"w": 0.22,
+								"at": "what",
+								"enter": "up"
+							}
+						],
+						"at": "saying",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "tabs",
+								"x": 0.5,
+								"y": 0.27,
+								"w": 0.9,
+								"h": 0.3,
+								"tabs": [
+									{
+										"label": "Email",
+										"at": "start",
+										"done": "start+0.3"
+									},
+									{
+										"label": "Taxes",
+										"at": "start",
+										"done": "start+0.3"
+									},
+									{
+										"label": "Call mom",
+										"at": "start",
+										"done": "start+0.3"
+									},
+									{
+										"label": "Gym",
+										"at": "start",
+										"done": "start+0.3"
+									},
+									{
+										"label": "Report",
+										"at": "start",
+										"done": "start+0.3"
+									},
+									{
+										"label": "Dentist",
+										"at": "start",
+										"done": "start+0.3"
+									}
+								],
+								"enter": "none",
+								"at": "start",
+								"barLabel": "BRAIN MEMORY"
+							},
+							{
+								"type": "chip",
+								"text": "ILLUSTRATION: TABS ARE NOW PARKED",
+								"x": 0.5,
+								"y": 0.52,
+								"size": 30,
+								"bg": "soft",
+								"color": "ink",
+								"at": "start",
+								"enter": "up"
+							}
+						],
+						"irisAt": [
+							0.5,
+							0.3
+						],
+						"at": "problem",
+						"enter": "iris",
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "key",
+			"say": "They didn't have to *finish* anything. Just deciding when and where was enough.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "text",
+								"text": "NO NEED TO\nFINISH",
+								"x": 0.5,
+								"y": 0.25,
+								"size": 190,
+								"color": "paper",
+								"at": "finish",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "chip",
+								"text": "JUST DECIDE WHEN + WHERE",
+								"x": 0.5,
+								"y": 0.48,
+								"size": 38,
+								"bg": "accent",
+								"color": "ink",
+								"at": "Just",
+								"enter": "up",
+								"sfx": "blip"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"punch": [
+								"finish"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "caveat",
+			"say": "These were small lab experiments with students. But the trick costs you two minutes and a piece of paper.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "SMALL LAB EXPERIMENTS",
+								"x": 0.5,
+								"y": 0.08,
+								"size": 40,
+								"bg": "ink",
+								"color": "paper",
+								"at": "small",
+								"enter": "down",
+								"sfx": "blip"
+							},
+							{
+								"type": "img",
+								"src": "kbust-big-book",
+								"x": 0.3,
+								"y": 0.38,
+								"w": 0.4,
+								"enter": "left"
+							},
+							{
+								"type": "text",
+								"text": "2 MIN",
+								"x": 0.74,
+								"y": 0.33,
+								"size": 170,
+								"color": "ink",
+								"mark": "accent",
+								"at": "two",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "chip",
+								"text": "+ A PIECE OF PAPER",
+								"x": 0.7,
+								"y": 0.45,
+								"size": 32,
+								"bg": "white",
+								"color": "ink",
+								"at": "paper",
+								"enter": "up",
+								"sfx": "blip"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "tip",
+			"say": "Tonight, write down each open thing. Next to it, write one step, and *when* you'll do it.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "TRY THIS TONIGHT",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 44,
+								"bg": "ink",
+								"color": "paper",
+								"at": "Tonight",
+								"enter": "down",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "☐ EMAIL → TUES, 9 AM",
+								"x": 0.5,
+								"y": 0.17,
+								"size": 46,
+								"bg": "white",
+								"color": "ink",
+								"at": "write",
+								"enter": "left",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "☐ TAXES → SAT, DESK",
+								"x": 0.5,
+								"y": 0.27,
+								"size": 46,
+								"bg": "white",
+								"color": "ink",
+								"at": "each",
+								"enter": "right",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "☐ GYM → WED, 6 PM",
+								"x": 0.5,
+								"y": 0.37,
+								"size": 46,
+								"bg": "white",
+								"color": "ink",
+								"at": "one",
+								"enter": "left",
+								"sfx": "blip"
+							},
+							{
+								"type": "scribble",
+								"shape": "check",
+								"x": 0.9,
+								"y": 0.37,
+								"w": 0.1,
+								"h": 0.05,
+								"color": "ink",
+								"strokeW": 14,
+								"at": "when",
+								"dur": 9,
+								"outline": false
+							},
+							{
+								"type": "img",
+								"src": "kbust-pen",
+								"x": 0.5,
+								"y": 0.55,
+								"w": 0.3,
+								"enter": "pop",
+								"at": "each"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "close",
+			"say": "You don't have to finish everything tonight. You just have to give each thing a *place*.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "img",
+								"src": "kbust-pen",
+								"x": 0.5,
+								"y": 0.34,
+								"w": 0.54,
+								"enter": "pop",
+								"loop": "breathe"
+							},
+							{
+								"type": "text",
+								"text": "a place for each",
+								"x": 0.5,
+								"y": 0.58,
+								"size": 130,
+								"font": "hand",
+								"color": "ink",
+								"upper": false,
+								"at": "place",
+								"enter": "pop",
+								"rot": -3
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							]
+						}
+					}
+				]
+			},
+			"tone": "prof-soft"
+		},
+		{
+			"id": "outro",
+			"say": "I'm the Professor. See you in the next lesson.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "panel",
+								"src": "panel-board",
+								"x": 0.5,
+								"y": 0.265,
+								"w": 0.86,
+								"enter": "up",
+								"zoom": [
+									1.02,
+									1.12
+								],
+								"focus": [
+									0.62,
+									0.5
+								]
+							},
+							{
+								"type": "text",
+								"text": "THE PROFESSOR",
+								"x": 0.5,
+								"y": 0.55,
+								"size": 170,
+								"color": "ink",
+								"mark": "accent",
+								"at": "Professor",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "chip",
+								"text": "EVERYDAY PSYCHOLOGY",
+								"x": 0.5,
+								"y": 0.61,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "See",
+								"enter": "up"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.04
+							]
+						}
+					}
+				]
+			}
+		}
+	]
+}

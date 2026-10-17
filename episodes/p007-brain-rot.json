@@ -1,0 +1,1158 @@
+{
+	"id": "p007-brain-rot",
+	"format": "short",
+	"style": "prof",
+	"title": "Is Short-Video 'Brain Rot' Real?",
+	"tone": "prof",
+	"music": "thinking-music.mp3",
+	"sources": [
+		"Nguyen, T. T., et al. (2025). Feeds, feelings, and focus: A systematic review and meta-analysis examining the cognitive and mental health correlates of short-form video use. Psychological Bulletin, 151(9), 1125-1146. https://doi.org/10.1037/bul0000498"
+	],
+	"scenes": [
+		{
+			"id": "hook",
+			"say": "You sit down to watch a movie. Ten minutes in, you're on your *phone*.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "soft",
+						"layers": [
+							{
+								"type": "slab",
+								"color": "accent",
+								"round": true,
+								"w": 0.92,
+								"x": 0.5,
+								"y": 0.35,
+								"border": 10,
+								"enter": "pop",
+								"depth": 0.6,
+								"delay": -0.3
+							},
+							{
+								"type": "img",
+								"src": "kbust-mug",
+								"x": 0.5,
+								"y": 0.37,
+								"w": 0.5,
+								"enter": "pop",
+								"delay": -0.3
+							},
+							{
+								"type": "chip",
+								"text": "MOVIE NIGHT",
+								"x": 0.5,
+								"y": 0.08,
+								"size": 44,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "text",
+								"text": "10 MIN",
+								"x": 0.5,
+								"y": 0.2,
+								"size": 300,
+								"color": "accent",
+								"stroke": "ink",
+								"shadow": "paper",
+								"at": "Ten",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "img",
+								"src": "face-skeptic",
+								"x": 0.5,
+								"y": 0.48,
+								"w": 0.42,
+								"at": "Ten+0.15",
+								"enter": "pop",
+								"rot": -4
+							}
+						],
+						"at": "Ten",
+						"enter": "punch",
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							],
+							"punch": [
+								"Ten"
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "waves",
+								"x": 0.5,
+								"y": 0.33,
+								"w": 1.0,
+								"at": "phone",
+								"dur": 60,
+								"strokeW": 14,
+								"enter": "none"
+							},
+							{
+								"type": "phone",
+								"x": 0.5,
+								"y": 0.33,
+								"w": 0.4,
+								"enter": "up",
+								"screens": [
+									{
+										"at": "start",
+										"s": "feed"
+									}
+								],
+								"rot": -3,
+								"id": "ph7"
+							},
+							{
+								"type": "burst",
+								"text": "SCROLL",
+								"x": 0.8,
+								"y": 0.12,
+								"w": 0.3,
+								"at": "phone",
+								"enter": "slam",
+								"rot": 8,
+								"seed": 2,
+								"fill": "paper",
+								"sfx": "pop"
+							}
+						],
+						"at": "phone",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "name",
+			"say": "People call it brain rot. It's not a medical term, but scientists are *studying* it.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "text",
+								"text": "BRAIN\nROT",
+								"x": 0.5,
+								"y": 0.25,
+								"size": 280,
+								"color": "paper",
+								"at": "brain",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "chip",
+								"text": "NOT A MEDICAL TERM",
+								"x": 0.5,
+								"y": 0.5,
+								"size": 42,
+								"bg": "accent",
+								"color": "ink",
+								"at": "medical",
+								"enter": "up",
+								"sfx": "blip"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"punch": [
+								"brain"
+							]
+						}
+					},
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "img",
+								"src": "kbust-pen",
+								"x": 0.5,
+								"y": 0.36,
+								"w": 0.5,
+								"enter": "up"
+							},
+							{
+								"type": "chip",
+								"text": "SCIENTISTS ARE STUDYING IT",
+								"x": 0.5,
+								"y": 0.08,
+								"size": 38,
+								"bg": "ink",
+								"color": "paper",
+								"at": "scientists",
+								"enter": "down",
+								"sfx": "blip"
+							}
+						],
+						"at": "scientists",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "food",
+			"say": "Think of short videos as *fast food*. Quick, tasty, always there. And after a while, slower things... start to taste bland.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "A COMPARISON, NOT SCIENCE",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 32,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "text",
+								"text": "FAST\nFOOD",
+								"x": 0.5,
+								"y": 0.27,
+								"size": 300,
+								"color": "ink",
+								"stroke": "paper",
+								"strokeW": 10,
+								"at": "fast",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "phone",
+								"x": 0.82,
+								"y": 0.5,
+								"w": 0.2,
+								"at": "videos",
+								"enter": "pop",
+								"screens": [
+									{
+										"at": "start",
+										"s": "feed"
+									}
+								],
+								"rot": 8,
+								"id": "ph7b"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"punch": [
+								"fast"
+							]
+						}
+					},
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "QUICK",
+								"x": 0.28,
+								"y": 0.1,
+								"size": 50,
+								"bg": "ink",
+								"color": "paper",
+								"at": "Quick",
+								"enter": "left",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "TASTY",
+								"x": 0.7,
+								"y": 0.2,
+								"size": 50,
+								"bg": "accent",
+								"color": "ink",
+								"at": "tasty",
+								"enter": "right",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "ALWAYS THERE",
+								"x": 0.36,
+								"y": 0.3,
+								"size": 50,
+								"bg": "white",
+								"color": "ink",
+								"at": "always",
+								"enter": "left",
+								"sfx": "blip"
+							},
+							{
+								"type": "img",
+								"src": "kbust-calm",
+								"x": 0.5,
+								"y": 0.52,
+								"w": 0.34,
+								"at": "always",
+								"enter": "pop"
+							}
+						],
+						"at": "Quick",
+						"enter": "slide-l",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "soft",
+						"layers": [
+							{
+								"type": "img",
+								"src": "kbust-big-book",
+								"x": 0.5,
+								"y": 0.33,
+								"w": 0.52,
+								"enter": "up"
+							},
+							{
+								"type": "chip",
+								"text": "A BOOK",
+								"x": 0.28,
+								"y": 0.08,
+								"size": 44,
+								"bg": "ink",
+								"color": "paper",
+								"at": "slower",
+								"enter": "down"
+							},
+							{
+								"type": "chip",
+								"text": "A SLOW MOVIE",
+								"x": 0.72,
+								"y": 0.58,
+								"size": 40,
+								"bg": "white",
+								"color": "ink",
+								"at": "things",
+								"enter": "up"
+							},
+							{
+								"type": "text",
+								"text": "bland?",
+								"x": 0.78,
+								"y": 0.16,
+								"size": 150,
+								"font": "hand",
+								"color": "ink",
+								"upper": false,
+								"at": "bland",
+								"enter": "pop",
+								"rot": 8
+							}
+						],
+						"at": "slower",
+						"enter": "wipe-l",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "study",
+			"say": "In 2025, researchers combined [71|seventy one] studies, with almost [100,000|one hundred thousand] people.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "A BIG REVIEW",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 42,
+								"bg": "accent",
+								"color": "ink",
+								"at": "researchers",
+								"enter": "down",
+								"sfx": "blip"
+							},
+							{
+								"type": "counter",
+								"to": 71,
+								"size": 460,
+								"color": "paper",
+								"x": 0.5,
+								"y": 0.25,
+								"at": "71",
+								"dur": 22,
+								"enter": "none",
+								"stroke": "ink",
+								"shadow": "accent",
+								"sfx": "hit"
+							},
+							{
+								"type": "chip",
+								"text": "STUDIES COMBINED",
+								"x": 0.5,
+								"y": 0.45,
+								"size": 44,
+								"bg": "paper",
+								"color": "ink",
+								"at": "71+0.3",
+								"enter": "up"
+							},
+							{
+								"type": "chip",
+								"text": "Nguyen et al. · Psychological Bulletin · 2025",
+								"x": 0.07,
+								"y": 0.835,
+								"kind": "cite",
+								"size": 32,
+								"align": "left",
+								"at": "researchers",
+								"enter": "left",
+								"sfx": "blip",
+								"sfxVolume": 0.2
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"punch": [
+								"71"
+							]
+						}
+					},
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "dots",
+								"x": 0.5,
+								"y": 0.2,
+								"w": 0.82,
+								"total": 84,
+								"cols": 14,
+								"hit": 0,
+								"at": "almost",
+								"delay": -0.2,
+								"step": 0.15,
+								"enter": "none",
+								"id": "d84"
+							},
+							{
+								"type": "text",
+								"text": "≈ 100,000",
+								"x": 0.5,
+								"y": 0.45,
+								"size": 190,
+								"color": "ink",
+								"mark": "accent",
+								"at": "almost",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "chip",
+								"text": "PEOPLE",
+								"x": 0.5,
+								"y": 0.55,
+								"size": 44,
+								"bg": "ink",
+								"color": "paper",
+								"at": "people",
+								"enter": "up"
+							}
+						],
+						"at": "almost",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "result",
+			"say": "The more people watched short videos, the weaker their attention and self-control tended to be.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "ink-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "ILLUSTRATION, NOT REAL DATA",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 28,
+								"bg": "soft",
+								"color": "ink",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "battery",
+								"x": 0.5,
+								"y": 0.22,
+								"w": 0.76,
+								"label": "ATTENTION",
+								"level": [
+									{
+										"at": "start",
+										"v": 1.0
+									},
+									{
+										"at": "weaker",
+										"v": 0.35
+									}
+								],
+								"enter": "pop"
+							},
+							{
+								"type": "chip",
+								"text": "MORE VIDEOS",
+								"x": 0.5,
+								"y": 0.4,
+								"size": 42,
+								"bg": "accent",
+								"color": "ink",
+								"at": "more",
+								"enter": "up",
+								"sfx": "blip"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "ink-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "ILLUSTRATION, NOT REAL DATA",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 28,
+								"bg": "soft",
+								"color": "ink",
+								"enter": "none",
+								"at": "start"
+							},
+							{
+								"type": "battery",
+								"x": 0.5,
+								"y": 0.22,
+								"w": 0.76,
+								"label": "ATTENTION",
+								"level": [
+									{
+										"at": "start",
+										"v": 0.35
+									}
+								],
+								"enter": "none",
+								"at": "start"
+							},
+							{
+								"type": "battery",
+								"x": 0.5,
+								"y": 0.4,
+								"w": 0.76,
+								"label": "SELF-CONTROL",
+								"level": [
+									{
+										"at": "start",
+										"v": 1.0
+									},
+									{
+										"at": "tended",
+										"v": 0.4
+									}
+								],
+								"enter": "pop"
+							}
+						],
+						"at": "self-control",
+						"enter": "slide-u",
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "mood",
+			"say": "Heavier use also went along with more stress and anxiety.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "img",
+								"src": "face-tired",
+								"x": 0.5,
+								"y": 0.33,
+								"w": 0.5,
+								"enter": "pop",
+								"delay": -0.2
+							},
+							{
+								"type": "chip",
+								"text": "MORE STRESS",
+								"x": 0.3,
+								"y": 0.6,
+								"size": 42,
+								"bg": "ink",
+								"color": "paper",
+								"at": "stress",
+								"enter": "left",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "MORE ANXIETY",
+								"x": 0.7,
+								"y": 0.54,
+								"size": 42,
+								"bg": "white",
+								"color": "ink",
+								"at": "anxiety",
+								"enter": "right",
+								"sfx": "blip"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "caveat",
+			"say": "But here's the catch. This is a *link*, not proof. Maybe short videos wear down focus. Or maybe people who struggle to focus scroll more. Or both.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "text",
+								"text": "A LINK",
+								"x": 0.5,
+								"y": 0.15,
+								"size": 260,
+								"color": "ink",
+								"mark": "accent",
+								"at": "link",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "text",
+								"text": "NOT PROOF",
+								"x": 0.5,
+								"y": 0.3,
+								"size": 200,
+								"color": "graphite",
+								"at": "proof",
+								"enter": "up"
+							},
+							{
+								"type": "scribble",
+								"shape": "strike",
+								"x": 0.5,
+								"y": 0.3,
+								"w": 0.76,
+								"h": 0.05,
+								"color": "accent",
+								"strokeW": 20,
+								"at": "proof+0.3",
+								"dur": 9,
+								"outline": false
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							],
+							"punch": [
+								"link"
+							]
+						}
+					},
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "MAYBE...",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 40,
+								"bg": "ink",
+								"color": "paper",
+								"at": "Maybe",
+								"enter": "down"
+							},
+							{
+								"type": "img",
+								"src": "face-thinking",
+								"x": 0.5,
+								"y": 0.5,
+								"w": 0.3,
+								"enter": "pop",
+								"at": "Maybe"
+							},
+							{
+								"type": "chip",
+								"text": "VIDEOS",
+								"x": 0.26,
+								"y": 0.25,
+								"size": 38,
+								"bg": "accent",
+								"color": "ink",
+								"at": "videos",
+								"enter": "left",
+								"sfx": "blip"
+							},
+							{
+								"type": "scribble",
+								"shape": "arrow",
+								"x": 0.5,
+								"y": 0.25,
+								"w": 0.2,
+								"h": 0.07,
+								"color": "ink",
+								"strokeW": 14,
+								"at": "wear",
+								"dur": 10,
+								"curve": 0.0,
+								"outline": false
+							},
+							{
+								"type": "chip",
+								"text": "LESS FOCUS",
+								"x": 0.74,
+								"y": 0.25,
+								"size": 38,
+								"bg": "white",
+								"color": "ink",
+								"at": "focus",
+								"enter": "right",
+								"sfx": "blip"
+							}
+						],
+						"at": "Maybe",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					},
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "OR MAYBE...",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 40,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "chip",
+								"text": "LESS FOCUS",
+								"x": 0.26,
+								"y": 0.25,
+								"size": 38,
+								"bg": "white",
+								"color": "ink",
+								"at": "struggle",
+								"enter": "left",
+								"sfx": "blip"
+							},
+							{
+								"type": "scribble",
+								"shape": "arrow",
+								"x": 0.5,
+								"y": 0.25,
+								"w": 0.2,
+								"h": 0.07,
+								"color": "ink",
+								"strokeW": 14,
+								"at": "scroll",
+								"dur": 10,
+								"curve": 0.0,
+								"outline": false
+							},
+							{
+								"type": "chip",
+								"text": "MORE VIDEOS",
+								"x": 0.74,
+								"y": 0.25,
+								"size": 38,
+								"bg": "accent",
+								"color": "ink",
+								"at": "scroll",
+								"enter": "right",
+								"sfx": "blip"
+							}
+						],
+						"at": "maybe#2",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "text",
+								"text": "OR\nBOTH?",
+								"x": 0.5,
+								"y": 0.26,
+								"size": 300,
+								"color": "ink",
+								"stroke": "paper",
+								"strokeW": 10,
+								"at": "both",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "img",
+								"src": "face-thinking",
+								"x": 0.5,
+								"y": 0.55,
+								"w": 0.3,
+								"at": "both+0.2",
+								"enter": "pop",
+								"rot": -4
+							}
+						],
+						"at": "both",
+						"enter": "flash",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"punch": [
+								"both"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "tip",
+			"say": "So here's a simple trick. Put the phone in another room for the first twenty minutes of your movie, or your work.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "A SIMPLE TRICK",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 44,
+								"bg": "ink",
+								"color": "paper",
+								"at": "simple",
+								"enter": "down",
+								"sfx": "blip"
+							},
+							{
+								"type": "phone",
+								"x": 0.3,
+								"y": 0.33,
+								"w": 0.26,
+								"enter": "left",
+								"screens": [
+									{
+										"at": "start",
+										"s": "lock"
+									}
+								],
+								"rot": -6,
+								"id": "ph7c"
+							},
+							{
+								"type": "scribble",
+								"shape": "arrow",
+								"x": 0.55,
+								"y": 0.33,
+								"w": 0.2,
+								"h": 0.08,
+								"color": "ink",
+								"strokeW": 14,
+								"at": "another",
+								"dur": 12,
+								"curve": 0.0,
+								"outline": false
+							},
+							{
+								"type": "chip",
+								"text": "OTHER ROOM",
+								"x": 0.78,
+								"y": 0.33,
+								"size": 38,
+								"bg": "white",
+								"color": "ink",
+								"at": "room",
+								"enter": "right",
+								"sfx": "blip"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "text",
+								"text": "20 MIN",
+								"x": 0.5,
+								"y": 0.2,
+								"size": 300,
+								"color": "accent",
+								"stroke": "ink",
+								"shadow": "paper",
+								"at": "twenty",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "img",
+								"src": "kfull-point",
+								"x": 0.5,
+								"y": 0.5,
+								"w": 0.3,
+								"at": "twenty",
+								"enter": "up"
+							}
+						],
+						"at": "twenty",
+						"enter": "flash",
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							],
+							"punch": [
+								"twenty"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "close",
+			"say": "Your attention isn't broken. It's a habit. And habits can *change*.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "img",
+								"src": "kbust-calm",
+								"x": 0.5,
+								"y": 0.34,
+								"w": 0.56,
+								"enter": "pop",
+								"loop": "breathe"
+							},
+							{
+								"type": "text",
+								"text": "a habit",
+								"x": 0.5,
+								"y": 0.58,
+								"size": 170,
+								"font": "hand",
+								"color": "ink",
+								"upper": false,
+								"at": "habit",
+								"enter": "pop",
+								"rot": -3
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							]
+						}
+					}
+				]
+			},
+			"tone": "prof-soft"
+		},
+		{
+			"id": "outro",
+			"say": "I'm the Professor. See you in the next lesson.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "panel",
+								"src": "panel-board",
+								"x": 0.5,
+								"y": 0.265,
+								"w": 0.86,
+								"enter": "up",
+								"zoom": [
+									1.02,
+									1.12
+								],
+								"focus": [
+									0.62,
+									0.5
+								]
+							},
+							{
+								"type": "text",
+								"text": "THE PROFESSOR",
+								"x": 0.5,
+								"y": 0.55,
+								"size": 170,
+								"color": "ink",
+								"mark": "accent",
+								"at": "Professor",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "chip",
+								"text": "EVERYDAY PSYCHOLOGY",
+								"x": 0.5,
+								"y": 0.61,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "See",
+								"enter": "up"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.04
+							]
+						}
+					}
+				]
+			}
+		}
+	]
+}

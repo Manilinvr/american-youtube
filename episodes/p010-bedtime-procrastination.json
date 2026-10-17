@@ -1,0 +1,890 @@
+{
+	"id": "p010-bedtime-procrastination",
+	"format": "short",
+	"style": "prof",
+	"title": "Why You Stay Up Late When You're Exhausted",
+	"tone": "prof",
+	"music": "easy-lemon.mp3",
+	"sources": [
+		"Kroese, F. M., De Ridder, D. T. D., Evers, C., & Adriaanse, M. A. (2014). Bedtime procrastination: Introducing a new area of procrastination. Frontiers in Psychology, 5, 611. https://doi.org/10.3389/fpsyg.2014.00611"
+	],
+	"scenes": [
+		{
+			"id": "hook",
+			"say": "You're exhausted. You *know* you should sleep. And you scroll anyway.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "clock",
+								"x": 0.5,
+								"y": 0.32,
+								"w": 0.56,
+								"time": [
+									{
+										"at": "start",
+										"v": 660
+									},
+									{
+										"at": "scroll",
+										"v": 780
+									}
+								],
+								"glide": 70,
+								"digital": true,
+								"enter": "pop",
+								"delay": -0.3
+							},
+							{
+								"type": "chip",
+								"text": "TIME TO SLEEP",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 44,
+								"bg": "accent",
+								"color": "ink",
+								"at": "start",
+								"enter": "down"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							]
+						}
+					},
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "slab",
+								"color": "accent",
+								"round": true,
+								"w": 0.9,
+								"x": 0.5,
+								"y": 0.34,
+								"border": 10,
+								"enter": "pop",
+								"depth": 0.6
+							},
+							{
+								"type": "img",
+								"src": "klying",
+								"x": 0.5,
+								"y": 0.36,
+								"w": 0.64,
+								"enter": "up"
+							}
+						],
+						"at": "And",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "name",
+			"say": "Researchers call it *bedtime procrastination*. Going to bed later than you planned, when nothing is stopping you.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "text",
+								"text": "BEDTIME\nPROCRASTINATION",
+								"x": 0.5,
+								"y": 0.24,
+								"size": 130,
+								"color": "ink",
+								"stroke": "paper",
+								"strokeW": 8,
+								"at": "bedtime",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "chip",
+								"text": "Kroese et al. · 2014",
+								"x": 0.07,
+								"y": 0.835,
+								"kind": "cite",
+								"size": 32,
+								"align": "left",
+								"at": "bedtime",
+								"enter": "left",
+								"sfx": "blip",
+								"sfxVolume": 0.2
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"punch": [
+								"bedtime"
+							]
+						}
+					},
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "PLANNED: 11:00 PM",
+								"x": 0.5,
+								"y": 0.1,
+								"size": 44,
+								"bg": "ink",
+								"color": "paper",
+								"at": "planned",
+								"enter": "down",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "ACTUAL: 1:00 AM",
+								"x": 0.5,
+								"y": 0.2,
+								"size": 44,
+								"bg": "accent",
+								"color": "ink",
+								"at": "later",
+								"enter": "up",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "NOTHING STOPPING YOU",
+								"x": 0.5,
+								"y": 0.34,
+								"size": 40,
+								"bg": "white",
+								"color": "ink",
+								"at": "nothing",
+								"enter": "up",
+								"sfx": "blip"
+							},
+							{
+								"type": "img",
+								"src": "kbust-pocket",
+								"x": 0.5,
+								"y": 0.56,
+								"w": 0.28,
+								"at": "nothing",
+								"enter": "pop"
+							}
+						],
+						"at": "Going",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "why",
+			"say": "Why? During the day, your time belongs to other people. At night, it's finally *yours*.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "DAYTIME",
+								"x": 0.3,
+								"y": 0.075,
+								"size": 44,
+								"bg": "ink",
+								"color": "paper",
+								"at": "day",
+								"enter": "left",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "BELONGS TO OTHERS",
+								"x": 0.5,
+								"y": 0.17,
+								"size": 42,
+								"bg": "white",
+								"color": "ink",
+								"at": "belongs",
+								"enter": "up",
+								"sfx": "blip"
+							},
+							{
+								"type": "img",
+								"src": "kbust-pocket2",
+								"x": 0.5,
+								"y": 0.45,
+								"w": 0.4,
+								"enter": "pop",
+								"delay": -0.2
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "pulse",
+								"x": 0.5,
+								"y": 0.3,
+								"w": 1.0,
+								"enter": "none",
+								"color": "paper"
+							},
+							{
+								"type": "text",
+								"text": "YOURS",
+								"x": 0.5,
+								"y": 0.28,
+								"size": 330,
+								"color": "accent",
+								"stroke": "ink",
+								"shadow": "paper",
+								"at": "yours",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "chip",
+								"text": "NIGHT TIME",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 44,
+								"bg": "paper",
+								"color": "ink",
+								"at": "night",
+								"enter": "down",
+								"sfx": "blip"
+							}
+						],
+						"at": "night",
+						"enter": "flash",
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							],
+							"punch": [
+								"yours"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "bank",
+			"say": "It's like borrowing from a bank. You borrow hours from your sleep, to pay yourself some free time. And tomorrow, you pay it back with *interest*.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "A COMPARISON, NOT SCIENCE",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 30,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "battery",
+								"x": 0.5,
+								"y": 0.2,
+								"w": 0.72,
+								"label": "SLEEP",
+								"level": [
+									{
+										"at": "start",
+										"v": 1.0
+									},
+									{
+										"at": "borrow#2",
+										"v": 0.35
+									}
+								],
+								"enter": "pop"
+							},
+							{
+								"type": "chip",
+								"text": "BORROW HOURS OF SLEEP",
+								"x": 0.5,
+								"y": 0.36,
+								"size": 38,
+								"bg": "white",
+								"color": "ink",
+								"at": "borrowing",
+								"enter": "up",
+								"sfx": "blip"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "BUY: FREE TIME",
+								"x": 0.5,
+								"y": 0.1,
+								"size": 44,
+								"bg": "accent",
+								"color": "ink",
+								"at": "free",
+								"enter": "down",
+								"sfx": "blip"
+							},
+							{
+								"type": "text",
+								"text": "+ INTEREST",
+								"x": 0.5,
+								"y": 0.3,
+								"size": 190,
+								"color": "ink",
+								"mark": "accent",
+								"at": "interest",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "img",
+								"src": "face-tired",
+								"x": 0.5,
+								"y": 0.55,
+								"w": 0.3,
+								"at": "tomorrow",
+								"enter": "pop",
+								"rot": 4
+							}
+						],
+						"at": "pay",
+						"enter": "wipe-l",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"punch": [
+								"interest"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "study",
+			"say": "In a 2014 survey of [177|one hundred seventy seven] adults, people with weaker self-control reported more bedtime procrastination.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "ink-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "A 2014 SURVEY",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 42,
+								"bg": "accent",
+								"color": "ink",
+								"at": "survey",
+								"enter": "down",
+								"sfx": "blip"
+							},
+							{
+								"type": "counter",
+								"to": 177,
+								"size": 420,
+								"color": "paper",
+								"x": 0.5,
+								"y": 0.22,
+								"at": "177",
+								"dur": 24,
+								"enter": "none",
+								"stroke": "ink",
+								"shadow": "accent",
+								"sfx": "hit"
+							},
+							{
+								"type": "chip",
+								"text": "ADULTS",
+								"x": 0.5,
+								"y": 0.4,
+								"size": 44,
+								"bg": "paper",
+								"color": "ink",
+								"at": "adults",
+								"enter": "up"
+							},
+							{
+								"type": "chip",
+								"text": "Kroese et al. · 2014",
+								"x": 0.07,
+								"y": 0.835,
+								"kind": "cite",
+								"size": 32,
+								"align": "left",
+								"at": "survey",
+								"enter": "left",
+								"sfx": "blip",
+								"sfxVolume": 0.2
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"punch": [
+								"177"
+							]
+						}
+					},
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "WEAKER SELF-CONTROL",
+								"x": 0.3,
+								"y": 0.12,
+								"size": 40,
+								"bg": "ink",
+								"color": "paper",
+								"at": "weaker",
+								"enter": "left",
+								"sfx": "blip"
+							},
+							{
+								"type": "scribble",
+								"shape": "arrow",
+								"x": 0.5,
+								"y": 0.22,
+								"w": 0.16,
+								"h": 0.07,
+								"color": "accent",
+								"strokeW": 14,
+								"at": "reported",
+								"dur": 10,
+								"curve": 0.0
+							},
+							{
+								"type": "chip",
+								"text": "MORE LATE NIGHTS",
+								"x": 0.68,
+								"y": 0.3,
+								"size": 40,
+								"bg": "accent",
+								"color": "ink",
+								"at": "more",
+								"enter": "right",
+								"sfx": "blip"
+							},
+							{
+								"type": "img",
+								"src": "kbust-pocket",
+								"x": 0.5,
+								"y": 0.5,
+								"w": 0.38,
+								"enter": "pop",
+								"delay": -0.2
+							}
+						],
+						"at": "people",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "sleep",
+			"say": "And they also reported getting too little *sleep*, even after the researchers took other factors into account.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "battery",
+								"x": 0.5,
+								"y": 0.2,
+								"w": 0.74,
+								"label": "SLEEP",
+								"level": [
+									{
+										"at": "start",
+										"v": 0.8
+									},
+									{
+										"at": "little",
+										"v": 0.3
+									}
+								],
+								"enter": "pop",
+								"delay": -0.2
+							},
+							{
+								"type": "chip",
+								"text": "TOO LITTLE SLEEP",
+								"x": 0.5,
+								"y": 0.38,
+								"size": 44,
+								"bg": "ink",
+								"color": "paper",
+								"at": "little",
+								"enter": "up",
+								"sfx": "blip"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "caveat",
+			"say": "It's one small survey. The online name, revenge bedtime procrastination, is newer and less studied. So take it as a *clue*.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "ONE SMALL SURVEY",
+								"x": 0.5,
+								"y": 0.1,
+								"size": 44,
+								"bg": "ink",
+								"color": "paper",
+								"at": "small",
+								"enter": "down",
+								"sfx": "blip"
+							},
+							{
+								"type": "img",
+								"src": "kbust-pen",
+								"x": 0.5,
+								"y": 0.52,
+								"w": 0.36,
+								"enter": "pop",
+								"delay": -0.2
+							},
+							{
+								"type": "text",
+								"text": "A CLUE",
+								"x": 0.5,
+								"y": 0.2,
+								"size": 240,
+								"color": "ink",
+								"mark": "accent",
+								"at": "clue",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "chip",
+								"text": "THE 'REVENGE' NAME IS NEWER",
+								"x": 0.5,
+								"y": 0.36,
+								"size": 34,
+								"bg": "white",
+								"color": "ink",
+								"at": "online",
+								"enter": "up",
+								"sfx": "blip"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "tip",
+			"say": "A simple idea: give yourself free time *earlier*. Fifteen minutes that are just yours, before the evening ends. Then set an alarm for bed.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "A SIMPLE IDEA",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 44,
+								"bg": "ink",
+								"color": "paper",
+								"at": "simple",
+								"enter": "down",
+								"sfx": "blip"
+							},
+							{
+								"type": "clock",
+								"x": 0.5,
+								"y": 0.3,
+								"w": 0.46,
+								"time": [
+									{
+										"at": "start",
+										"v": 480
+									},
+									{
+										"at": "Fifteen",
+										"v": 495
+									}
+								],
+								"glide": 40,
+								"enter": "pop"
+							},
+							{
+								"type": "chip",
+								"text": "15 MIN, JUST YOURS",
+								"x": 0.5,
+								"y": 0.52,
+								"size": 40,
+								"bg": "white",
+								"color": "ink",
+								"at": "yours#2",
+								"enter": "up",
+								"sfx": "blip"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "phone",
+								"x": 0.5,
+								"y": 0.3,
+								"w": 0.34,
+								"enter": "up",
+								"screens": [
+									{
+										"at": "start",
+										"s": "lock"
+									},
+									{
+										"at": "alarm",
+										"s": "buzzing"
+									}
+								],
+								"buzz": [
+									"alarm"
+								],
+								"time": "10:30",
+								"day": "Bedtime",
+								"id": "ph10"
+							},
+							{
+								"type": "burst",
+								"text": "BED!",
+								"x": 0.8,
+								"y": 0.14,
+								"w": 0.28,
+								"at": "alarm",
+								"enter": "slam",
+								"rot": 8,
+								"seed": 3,
+								"sfx": "buzz",
+								"sfxVolume": 0.3
+							}
+						],
+						"at": "Then",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							],
+							"shake": [
+								"alarm"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "close",
+			"say": "Staying up isn't laziness. It's a person trying to get a little time back. You can find it *earlier*.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "img",
+								"src": "kbust-mug",
+								"x": 0.5,
+								"y": 0.34,
+								"w": 0.54,
+								"enter": "pop",
+								"loop": "breathe"
+							},
+							{
+								"type": "text",
+								"text": "your time",
+								"x": 0.5,
+								"y": 0.58,
+								"size": 160,
+								"font": "hand",
+								"color": "ink",
+								"upper": false,
+								"at": "time",
+								"enter": "pop",
+								"rot": -3
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							]
+						}
+					}
+				]
+			},
+			"tone": "prof-soft"
+		},
+		{
+			"id": "outro",
+			"say": "I'm the Professor. See you in the next lesson.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "panel",
+								"src": "panel-board",
+								"x": 0.5,
+								"y": 0.265,
+								"w": 0.86,
+								"enter": "up",
+								"zoom": [
+									1.02,
+									1.12
+								],
+								"focus": [
+									0.62,
+									0.5
+								]
+							},
+							{
+								"type": "text",
+								"text": "THE PROFESSOR",
+								"x": 0.5,
+								"y": 0.55,
+								"size": 170,
+								"color": "ink",
+								"mark": "accent",
+								"at": "Professor",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "chip",
+								"text": "EVERYDAY PSYCHOLOGY",
+								"x": 0.5,
+								"y": 0.61,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "See",
+								"enter": "up"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.04
+							]
+						}
+					}
+				]
+			}
+		}
+	]
+}
