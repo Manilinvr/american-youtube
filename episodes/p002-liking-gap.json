@@ -1,0 +1,1022 @@
+{
+	"id": "p002-liking-gap",
+	"format": "short",
+	"style": "prof",
+	"title": "They Liked You More Than You Think",
+	"tone": "prof",
+	"music": "dreamer.mp3",
+	"sources": [
+		"Boothby, E. J., Cooney, G., Sandstrom, G. M., & Clark, M. S. (2018). The liking gap in conversations: Do people like us more than we think? Psychological Science, 29(11), 1742-1756. https://doi.org/10.1177/0956797618783714"
+	],
+	"scenes": [
+		{
+			"id": "hook",
+			"say": "You had a great conversation. Then, on the walk home, your brain starts the *review*.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "soft",
+						"layers": [
+							{
+								"type": "panel",
+								"src": "panel-lecture",
+								"x": 0.5,
+								"y": 0.3,
+								"w": 0.88,
+								"enter": "up",
+								"delay": -0.3,
+								"zoom": [
+									1.02,
+									1.14
+								],
+								"focus": [
+									0.55,
+									0.5
+								]
+							},
+							{
+								"type": "chip",
+								"text": "GREAT CHAT",
+								"x": 0.5,
+								"y": 0.08,
+								"size": 44,
+								"bg": "accent",
+								"color": "ink",
+								"at": "great",
+								"enter": "down",
+								"sfx": "blip"
+							},
+							{
+								"type": "heart",
+								"x": 0.82,
+								"y": 0.5,
+								"w": 0.16,
+								"at": "conversation",
+								"enter": "pop",
+								"rot": 10,
+								"pulse": [
+									"conversation"
+								]
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					},
+					{
+						"bg": {
+							"photo": "bg-city",
+							"blur": 8,
+							"bright": 0.7,
+							"dim": 0.2
+						},
+						"layers": [
+							{
+								"type": "img",
+								"src": "body-walk",
+								"x": 0.5,
+								"y": 0.4,
+								"w": 0.34,
+								"enter": "left",
+								"loop": "bob"
+							},
+							{
+								"type": "chip",
+								"text": "WALKING HOME",
+								"x": 0.5,
+								"y": 0.09,
+								"size": 42,
+								"bg": "ink",
+								"color": "paper",
+								"at": "home",
+								"enter": "down",
+								"sfx": "blip"
+							}
+						],
+						"at": "walk",
+						"enter": "slide-l",
+						"cam": {
+							"z": [
+								1.0,
+								1.1
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "img",
+								"src": "face-thinking",
+								"x": 0.5,
+								"y": 0.4,
+								"w": 0.52,
+								"enter": "pop"
+							},
+							{
+								"type": "text",
+								"text": "REVIEW",
+								"x": 0.5,
+								"y": 0.13,
+								"size": 210,
+								"color": "accent",
+								"stroke": "ink",
+								"shadow": "paper",
+								"at": "review",
+								"enter": "slam",
+								"sfx": "hit"
+							}
+						],
+						"irisAt": [
+							0.5,
+							0.4
+						],
+						"at": "brain",
+						"enter": "iris",
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							],
+							"punch": [
+								"review"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "replay",
+			"say": "Did I talk too much? Was that joke weird? They probably think I'm *boring*.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "ink-grid",
+						"layers": [
+							{
+								"type": "bubble",
+								"text": "Did I talk too much?",
+								"x": 0.4,
+								"y": 0.13,
+								"size": 52,
+								"at": "Did",
+								"enter": "pop",
+								"rot": -2,
+								"sfx": "pop"
+							},
+							{
+								"type": "bubble",
+								"text": "Was that joke weird?",
+								"x": 0.62,
+								"y": 0.27,
+								"size": 52,
+								"at": "Was",
+								"enter": "pop",
+								"rot": 2,
+								"sfx": "pop"
+							},
+							{
+								"type": "bubble",
+								"text": "They think I'm boring.",
+								"x": 0.45,
+								"y": 0.41,
+								"size": 52,
+								"at": "They",
+								"enter": "pop",
+								"rot": -1.5,
+								"sfx": "pop"
+							},
+							{
+								"type": "img",
+								"src": "face-tired",
+								"x": 0.5,
+								"y": 0.58,
+								"w": 0.3,
+								"at": "boring",
+								"enter": "pop",
+								"rot": 4
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							],
+							"punch": [
+								"Was",
+								"They"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "study",
+			"say": "Psychologists tested this. Strangers chatted, then each person rated how much they liked their partner, and guessed how much their partner liked *them*.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "THE TEST",
+								"x": 0.5,
+								"y": 0.08,
+								"size": 46,
+								"bg": "ink",
+								"color": "paper",
+								"at": "tested",
+								"enter": "down",
+								"sfx": "blip"
+							},
+							{
+								"type": "img",
+								"src": "face-calm",
+								"x": 0.28,
+								"y": 0.36,
+								"w": 0.4,
+								"enter": "left"
+							},
+							{
+								"type": "img",
+								"src": "face-smile",
+								"x": 0.72,
+								"y": 0.36,
+								"w": 0.38,
+								"at": "Strangers",
+								"enter": "right"
+							},
+							{
+								"type": "chip",
+								"text": "TWO STRANGERS",
+								"x": 0.5,
+								"y": 0.58,
+								"size": 42,
+								"bg": "paper",
+								"color": "ink",
+								"at": "Strangers",
+								"enter": "up"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							]
+						}
+					},
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "img",
+								"src": "face-thinking",
+								"x": 0.28,
+								"y": 0.27,
+								"w": 0.36,
+								"enter": "left"
+							},
+							{
+								"type": "img",
+								"src": "face-smile",
+								"x": 0.74,
+								"y": 0.27,
+								"w": 0.34,
+								"enter": "right"
+							},
+							{
+								"type": "scribble",
+								"shape": "arrow",
+								"x": 0.5,
+								"y": 0.27,
+								"w": 0.2,
+								"h": 0.08,
+								"color": "accent",
+								"strokeW": 16,
+								"at": "rated",
+								"dur": 12,
+								"curve": 0.0
+							},
+							{
+								"type": "chip",
+								"text": "HOW MUCH I LIKED THEM",
+								"x": 0.5,
+								"y": 0.5,
+								"size": 40,
+								"bg": "ink",
+								"color": "paper",
+								"at": "rated",
+								"enter": "up",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "HOW MUCH THEY LIKED ME?",
+								"x": 0.5,
+								"y": 0.58,
+								"size": 40,
+								"bg": "accent",
+								"color": "ink",
+								"at": "guessed",
+								"enter": "up",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "Boothby et al. · 2018",
+								"x": 0.07,
+								"y": 0.835,
+								"kind": "cite",
+								"size": 32,
+								"align": "left",
+								"at": "start",
+								"enter": "left",
+								"sfx": "blip",
+								"sfxVolume": 0.2
+							}
+						],
+						"at": "then",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "result",
+			"say": "The result? On average, people guessed *too low*. Their partner liked them more than they thought.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "ILLUSTRATION, NOT REAL DATA",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 28,
+								"bg": "soft",
+								"color": "ink",
+								"enter": "down",
+								"at": "start"
+							},
+							{
+								"type": "bars",
+								"x": 0.46,
+								"y": 0.33,
+								"w": 0.7,
+								"h": 0.4,
+								"items": [
+									{
+										"label": "YOU GUESS",
+										"value": 0.42,
+										"color": "paper",
+										"at": "average"
+									},
+									{
+										"label": "THEY FELT",
+										"value": 0.74,
+										"color": "accent",
+										"at": "too"
+									}
+								],
+								"gap": [
+									0,
+									1
+								],
+								"gapAt": "Their",
+								"labelColor": "paper",
+								"enter": "none",
+								"at": "start"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "ILLUSTRATION, NOT REAL DATA",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 28,
+								"bg": "soft",
+								"color": "ink",
+								"enter": "none",
+								"at": "start"
+							},
+							{
+								"type": "bars",
+								"x": 0.46,
+								"y": 0.33,
+								"w": 0.7,
+								"h": 0.4,
+								"items": [
+									{
+										"label": "YOU GUESS",
+										"value": 0.42,
+										"color": "paper",
+										"at": "average"
+									},
+									{
+										"label": "THEY FELT",
+										"value": 0.74,
+										"color": "accent",
+										"at": "too"
+									}
+								],
+								"gap": [
+									0,
+									1
+								],
+								"gapAt": "Their",
+								"labelColor": "paper",
+								"enter": "none",
+								"at": "start"
+							},
+							{
+								"type": "burst",
+								"text": "THE\nGAP",
+								"x": 0.78,
+								"y": 0.56,
+								"w": 0.3,
+								"at": "more",
+								"enter": "slam",
+								"rot": 8,
+								"seed": 3,
+								"sfx": "hit"
+							}
+						],
+						"at": "Their",
+						"enter": "punch",
+						"cam": {
+							"z": [
+								1.05,
+								1.12
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "name",
+			"say": "Researchers call it *the liking gap*.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "text",
+								"text": "THE LIKING\nGAP",
+								"x": 0.5,
+								"y": 0.28,
+								"size": 250,
+								"color": "ink",
+								"stroke": "paper",
+								"strokeW": 10,
+								"at": "liking",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "img",
+								"src": "face-smile",
+								"x": 0.5,
+								"y": 0.52,
+								"w": 0.36,
+								"at": "gap",
+								"enter": "pop",
+								"rot": -4
+							},
+							{
+								"type": "chip",
+								"text": "Boothby et al. · Psychological Science · 2018",
+								"x": 0.07,
+								"y": 0.64,
+								"kind": "cite",
+								"size": 32,
+								"align": "left",
+								"at": "gap",
+								"enter": "left",
+								"sfx": "blip",
+								"sfxVolume": 0.2
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"punch": [
+								"liking"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "dorm",
+			"say": "It showed up in short chats, in long chats, and even among first-year students living in the same dorm.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "WHERE IT SHOWED UP",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 40,
+								"bg": "accent",
+								"color": "ink",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "img",
+								"src": "face-smile",
+								"x": 0.2,
+								"y": 0.46,
+								"w": 0.3,
+								"enter": "left",
+								"delay": -0.2
+							},
+							{
+								"type": "img",
+								"src": "face-calm",
+								"x": 0.8,
+								"y": 0.5,
+								"w": 0.28,
+								"enter": "right",
+								"delay": -0.2
+							},
+							{
+								"type": "chip",
+								"text": "SHORT CHATS",
+								"x": 0.34,
+								"y": 0.2,
+								"size": 46,
+								"bg": "ink",
+								"color": "paper",
+								"at": "short",
+								"enter": "left",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "LONG CHATS",
+								"x": 0.66,
+								"y": 0.31,
+								"size": 46,
+								"bg": "accent",
+								"color": "ink",
+								"at": "long",
+								"enter": "right",
+								"sfx": "blip"
+							},
+							{
+								"type": "scribble",
+								"shape": "underline",
+								"x": 0.5,
+								"y": 0.38,
+								"w": 0.7,
+								"h": 0.05,
+								"color": "accent",
+								"strokeW": 16,
+								"at": "even",
+								"dur": 10
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "soft",
+						"layers": [
+							{
+								"type": "panel",
+								"src": "bg-livingroom",
+								"x": 0.5,
+								"y": 0.3,
+								"w": 0.86,
+								"enter": "up",
+								"zoom": [
+									1.02,
+									1.12
+								]
+							},
+							{
+								"type": "chip",
+								"text": "FIRST-YEAR STUDENTS, SAME DORM",
+								"x": 0.5,
+								"y": 0.58,
+								"size": 36,
+								"bg": "ink",
+								"color": "paper",
+								"at": "first",
+								"enter": "up",
+								"sfx": "blip"
+							},
+							{
+								"type": "img",
+								"src": "face-joy",
+								"x": 0.82,
+								"y": 0.14,
+								"w": 0.24,
+								"at": "students",
+								"enter": "pop",
+								"rot": 8
+							}
+						],
+						"at": "first",
+						"enter": "slide-u",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "months",
+			"say": "And the gap lasted for *months*, while they got to know each other.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "LASTED FOR MONTHS",
+								"x": 0.5,
+								"y": 0.1,
+								"size": 46,
+								"bg": "accent",
+								"color": "ink",
+								"at": "lasted",
+								"enter": "down",
+								"sfx": "blip"
+							},
+							{
+								"type": "months",
+								"x": 0.5,
+								"y": 0.3,
+								"w": 0.92,
+								"at": "gap",
+								"enter": "none",
+								"labelColor": "paper"
+							},
+							{
+								"type": "chip",
+								"text": "WHAT THEY FELT",
+								"x": 0.3,
+								"y": 0.5,
+								"size": 30,
+								"bg": "accent",
+								"color": "ink",
+								"at": "months",
+								"enter": "up"
+							},
+							{
+								"type": "chip",
+								"text": "WHAT THEY THOUGHT",
+								"x": 0.7,
+								"y": 0.5,
+								"size": 30,
+								"bg": "paper",
+								"color": "ink",
+								"at": "months+0.2",
+								"enter": "up"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "why",
+			"say": "Researchers suggest one reason: while you're busy worrying how *you're* coming across, you miss their friendly signals.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "img",
+								"src": "face-thinking",
+								"x": 0.36,
+								"y": 0.38,
+								"w": 0.5,
+								"enter": "left"
+							},
+							{
+								"type": "bubble",
+								"text": "How am I doing?",
+								"x": 0.7,
+								"y": 0.13,
+								"size": 52,
+								"at": "busy",
+								"enter": "pop",
+								"loop": "float",
+								"sfx": "pop"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "pulse",
+								"x": 0.5,
+								"y": 0.36,
+								"w": 1.1,
+								"enter": "none",
+								"color": "ink"
+							},
+							{
+								"type": "img",
+								"src": "face-smile",
+								"x": 0.5,
+								"y": 0.36,
+								"w": 0.5,
+								"enter": "pop"
+							},
+							{
+								"type": "chip",
+								"text": "THEIR FRIENDLY SIGNALS",
+								"x": 0.5,
+								"y": 0.1,
+								"size": 40,
+								"bg": "ink",
+								"color": "paper",
+								"at": "friendly",
+								"enter": "down",
+								"sfx": "blip"
+							},
+							{
+								"type": "scribble",
+								"shape": "cross",
+								"x": 0.5,
+								"y": 0.36,
+								"w": 0.62,
+								"h": 0.3,
+								"color": "ink",
+								"strokeW": 20,
+								"at": "miss",
+								"dur": 10,
+								"outline": false
+							}
+						],
+						"at": "you#3",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "tip",
+			"say": "So when the review starts, remind yourself: they probably liked you *more* than you think.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "slab",
+								"color": "accent",
+								"round": true,
+								"w": 0.84,
+								"x": 0.5,
+								"y": 0.3,
+								"border": 10,
+								"enter": "pop",
+								"depth": 0.6
+							},
+							{
+								"type": "img",
+								"src": "body-gesture",
+								"x": 0.5,
+								"y": 0.32,
+								"w": 0.3,
+								"enter": "up",
+								"loop": "breathe"
+							},
+							{
+								"type": "chip",
+								"text": "TRY THIS",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 46,
+								"bg": "ink",
+								"color": "paper",
+								"at": "remind",
+								"enter": "down",
+								"sfx": "blip"
+							},
+							{
+								"type": "text",
+								"text": "they liked you\nmore than you think",
+								"x": 0.5,
+								"y": 0.575,
+								"size": 84,
+								"font": "hand",
+								"color": "ink",
+								"upper": false,
+								"at": "they",
+								"enter": "pop",
+								"rot": -2
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "close",
+			"say": "You're probably your own harshest critic. So go a little *easier* on yourself.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "img",
+								"src": "face-smile",
+								"x": 0.5,
+								"y": 0.34,
+								"w": 0.6,
+								"enter": "pop",
+								"loop": "breathe"
+							},
+							{
+								"type": "heart",
+								"x": 0.8,
+								"y": 0.15,
+								"w": 0.18,
+								"at": "easier",
+								"enter": "pop",
+								"pulse": [
+									"easier"
+								],
+								"rot": 12
+							},
+							{
+								"type": "text",
+								"text": "go easy",
+								"x": 0.5,
+								"y": 0.58,
+								"size": 190,
+								"font": "hand",
+								"color": "ink",
+								"upper": false,
+								"at": "easier",
+								"enter": "pop",
+								"rot": -3
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							]
+						}
+					}
+				]
+			},
+			"tone": "prof-soft"
+		},
+		{
+			"id": "outro",
+			"say": "I'm the Professor. See you in the next lesson.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "panel",
+								"src": "panel-board",
+								"x": 0.5,
+								"y": 0.265,
+								"w": 0.86,
+								"enter": "up",
+								"zoom": [
+									1.02,
+									1.12
+								],
+								"focus": [
+									0.62,
+									0.5
+								]
+							},
+							{
+								"type": "text",
+								"text": "THE PROFESSOR",
+								"x": 0.5,
+								"y": 0.55,
+								"size": 170,
+								"color": "ink",
+								"mark": "accent",
+								"at": "Professor",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "chip",
+								"text": "EVERYDAY PSYCHOLOGY",
+								"x": 0.5,
+								"y": 0.61,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "See",
+								"enter": "up"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.04
+							]
+						}
+					}
+				]
+			}
+		}
+	]
+}

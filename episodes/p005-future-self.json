@@ -1,0 +1,1073 @@
+{
+	"id": "p005-future-self",
+	"format": "short",
+	"style": "prof",
+	"title": "Why You Treat Future You Like a Stranger",
+	"tone": "prof",
+	"music": "gymnopedie-no-1.mp3",
+	"sources": [
+		"Pronin, E., Olivola, C. Y., & Kennedy, K. A. (2008). Doing unto future selves as you would do unto others: Psychological distance and decision making. Personality and Social Psychology Bulletin, 34(2), 224-236. https://doi.org/10.1177/0146167207310023",
+		"Ersner-Hershfield, H., Wimmer, G. E., & Knutson, B. (2009). Saving for the future self: Neural measures of future self-continuity predict temporal discounting. Social Cognitive and Affective Neuroscience, 4(1), 85-92. https://doi.org/10.1093/scan/nsn042",
+		"Hershfield, H. E., Goldstein, D. G., Sharpe, W. F., Fox, J., Yeykelis, L., Carstensen, L. L., & Bailenson, J. N. (2011). Increasing saving behavior through age-progressed renderings of the future self. Journal of Marketing Research, 48(SPL), S23-S37.",
+		"Pronin, E. (2008). How we see ourselves and how we see others. Science, 320(5880), 1177-1180 (describes the drink experiment)."
+	],
+	"scenes": [
+		{
+			"id": "hook",
+			"say": "Present you says: 'I'll do it tomorrow.' Tomorrow you says: 'Who agreed to *this*?'",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "slab",
+								"color": "accent",
+								"round": true,
+								"w": 0.9,
+								"x": 0.5,
+								"y": 0.35,
+								"border": 10,
+								"enter": "pop",
+								"depth": 0.6,
+								"delay": -0.3
+							},
+							{
+								"type": "img",
+								"src": "face-smile",
+								"x": 0.5,
+								"y": 0.36,
+								"w": 0.5,
+								"enter": "pop",
+								"delay": -0.3
+							},
+							{
+								"type": "bubble",
+								"text": "I'll do it tomorrow.",
+								"x": 0.5,
+								"y": 0.1,
+								"size": 54,
+								"at": "Present",
+								"enter": "pop",
+								"loop": "float",
+								"sfx": "pop"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "img",
+								"src": "face-annoyed",
+								"x": 0.5,
+								"y": 0.38,
+								"w": 0.5,
+								"enter": "pop"
+							},
+							{
+								"type": "bubble",
+								"text": "Who agreed to this?",
+								"x": 0.5,
+								"y": 0.1,
+								"size": 54,
+								"at": "Who",
+								"enter": "pop",
+								"loop": "float",
+								"sfx": "pop"
+							},
+							{
+								"type": "chip",
+								"text": "TOMORROW, 8:00 AM",
+								"x": 0.5,
+								"y": 0.58,
+								"size": 40,
+								"bg": "accent",
+								"color": "ink",
+								"at": "Tomorrow#2",
+								"enter": "up",
+								"sfx": "blip"
+							}
+						],
+						"at": "Tomorrow#2",
+						"enter": "flash",
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							],
+							"punch": [
+								"Who"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "name",
+			"say": "Psychologists have a name for the gap. *Future self-continuity*: how connected you feel to the person you'll become.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "A NAME FOR THE GAP",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 40,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "text",
+								"text": "?",
+								"x": 0.5,
+								"y": 0.4,
+								"size": 460,
+								"color": "ink",
+								"rot": 8,
+								"at": "start",
+								"enter": "pop",
+								"delay": -0.2
+							},
+							{
+								"type": "text",
+								"text": "FUTURE\nSELF-CONTINUITY",
+								"x": 0.5,
+								"y": 0.2,
+								"size": 150,
+								"color": "ink",
+								"stroke": "paper",
+								"strokeW": 8,
+								"at": "Future",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "img",
+								"src": "body-front",
+								"x": 0.22,
+								"y": 0.46,
+								"w": 0.17,
+								"enter": "left",
+								"delay": -0.2
+							},
+							{
+								"type": "img",
+								"src": "body-34",
+								"x": 0.78,
+								"y": 0.46,
+								"w": 0.17,
+								"enter": "right",
+								"delay": -0.2
+							},
+							{
+								"type": "scribble",
+								"shape": "arrow",
+								"x": 0.5,
+								"y": 0.45,
+								"w": 0.24,
+								"h": 0.06,
+								"color": "paper",
+								"strokeW": 14,
+								"at": "become",
+								"dur": 12,
+								"curve": 0.0
+							},
+							{
+								"type": "chip",
+								"text": "YOU NOW",
+								"x": 0.22,
+								"y": 0.62,
+								"size": 30,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "up"
+							},
+							{
+								"type": "chip",
+								"text": "YOU LATER",
+								"x": 0.78,
+								"y": 0.62,
+								"size": 30,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "up"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "experiment",
+			"say": "In one experiment, students decided how much of a *disgusting* drink they'd swallow for science. A murky mix of soy sauce, ketchup, and water.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "A LAB EXPERIMENT",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 40,
+								"bg": "ink",
+								"color": "paper",
+								"at": "experiment",
+								"enter": "down",
+								"sfx": "blip"
+							},
+							{
+								"type": "img",
+								"src": "face-calm",
+								"x": 0.3,
+								"y": 0.3,
+								"w": 0.42,
+								"enter": "pop",
+								"rot": -5,
+								"delay": -0.2
+							},
+							{
+								"type": "img",
+								"src": "face-shock",
+								"x": 0.3,
+								"y": 0.3,
+								"w": 0.42,
+								"at": "disgusting",
+								"enter": "pop",
+								"rot": -5
+							},
+							{
+								"type": "cups",
+								"x": 0.74,
+								"y": 0.26,
+								"w": 0.36,
+								"items": [
+									{
+										"label": "",
+										"level": 0.8,
+										"at": "decided"
+									}
+								],
+								"enter": "none",
+								"id": "c1"
+							},
+							{
+								"type": "chip",
+								"text": "Pronin et al. · 2008",
+								"x": 0.07,
+								"y": 0.835,
+								"kind": "cite",
+								"size": 32,
+								"align": "left",
+								"at": "experiment",
+								"enter": "left",
+								"sfx": "blip",
+								"sfxVolume": 0.2
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "SOY SAUCE",
+								"x": 0.5,
+								"y": 0.12,
+								"size": 44,
+								"bg": "ink",
+								"color": "paper",
+								"at": "soy",
+								"enter": "down",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "KETCHUP",
+								"x": 0.5,
+								"y": 0.2,
+								"size": 44,
+								"bg": "white",
+								"color": "ink",
+								"at": "ketchup",
+								"enter": "down",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "WATER",
+								"x": 0.5,
+								"y": 0.28,
+								"size": 44,
+								"bg": "ink",
+								"color": "paper",
+								"at": "water",
+								"enter": "down",
+								"sfx": "blip"
+							},
+							{
+								"type": "cups",
+								"x": 0.5,
+								"y": 0.43,
+								"w": 0.3,
+								"items": [
+									{
+										"label": "YUCK",
+										"level": 0.85,
+										"at": "murky"
+									}
+								],
+								"enter": "none",
+								"id": "c2"
+							}
+						],
+						"at": "murky",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "numbers",
+			"say": "Drinking right now? Roughly two tablespoons. But for a session later? Roughly half a *cup*.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "ROUGH NUMBERS",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 36,
+								"bg": "soft",
+								"color": "ink",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "cups",
+								"x": 0.5,
+								"y": 0.34,
+								"w": 0.9,
+								"items": [
+									{
+										"label": "RIGHT NOW",
+										"sub": "≈ 2 TABLESPOONS",
+										"level": 0.125,
+										"at": "start"
+									},
+									{
+										"label": "FUTURE YOU",
+										"sub": "≈ ½ CUP",
+										"level": 0.5,
+										"at": "later"
+									}
+								],
+								"enter": "none",
+								"at": "start"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"punch": [
+								"cup"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "stranger",
+			"say": "And when asked about a *stranger*? About the same: half a cup.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "ROUGH NUMBERS",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 36,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "cups",
+								"x": 0.5,
+								"y": 0.33,
+								"w": 0.94,
+								"items": [
+									{
+										"label": "RIGHT NOW",
+										"sub": "≈ 2 TABLESPOONS",
+										"level": 0.125,
+										"at": "start"
+									},
+									{
+										"label": "FUTURE YOU",
+										"sub": "≈ ½ CUP",
+										"level": 0.5,
+										"at": "start+0.1"
+									},
+									{
+										"label": "A STRANGER",
+										"sub": "≈ ½ CUP",
+										"level": 0.5,
+										"at": "stranger"
+									}
+								],
+								"enter": "none",
+								"at": "start"
+							},
+							{
+								"type": "chip",
+								"text": "FUTURE YOU ≈ A STRANGER",
+								"x": 0.5,
+								"y": 0.6,
+								"size": 40,
+								"bg": "ink",
+								"color": "paper",
+								"at": "same",
+								"enter": "up",
+								"sfx": "hit"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "why",
+			"say": "One idea from the researchers: right now, you feel the yuck. Later, it's just an *idea*.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "img",
+								"src": "face-shock",
+								"x": 0.28,
+								"y": 0.34,
+								"w": 0.42,
+								"enter": "left"
+							},
+							{
+								"type": "chip",
+								"text": "RIGHT NOW: FEELS REAL",
+								"x": 0.28,
+								"y": 0.54,
+								"size": 26,
+								"bg": "ink",
+								"color": "paper",
+								"at": "right",
+								"enter": "up",
+								"sfx": "blip"
+							},
+							{
+								"type": "img",
+								"src": "face-calm",
+								"x": 0.74,
+								"y": 0.34,
+								"w": 0.36,
+								"at": "Later",
+								"enter": "right"
+							},
+							{
+								"type": "chip",
+								"text": "LATER: JUST AN IDEA",
+								"x": 0.74,
+								"y": 0.54,
+								"size": 26,
+								"bg": "accent",
+								"color": "ink",
+								"at": "Later",
+								"enter": "up",
+								"sfx": "blip"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "brain",
+			"say": "A small brain-scan study of eighteen students hints at it too. A region linked to thinking about yourself was *less* active when they pictured themselves ten years later.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "ink-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "SMALL STUDY",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 40,
+								"bg": "accent",
+								"color": "ink",
+								"at": "small",
+								"enter": "down",
+								"sfx": "blip"
+							},
+							{
+								"type": "counter",
+								"to": 18,
+								"size": 380,
+								"color": "paper",
+								"x": 0.5,
+								"y": 0.2,
+								"at": "eighteen",
+								"dur": 20,
+								"enter": "none",
+								"stroke": "ink",
+								"shadow": "accent"
+							},
+							{
+								"type": "chip",
+								"text": "STUDENTS IN A BRAIN SCANNER",
+								"x": 0.5,
+								"y": 0.36,
+								"size": 34,
+								"bg": "paper",
+								"color": "ink",
+								"at": "students",
+								"enter": "up"
+							},
+							{
+								"type": "img",
+								"src": "brain",
+								"x": 0.5,
+								"y": 0.5,
+								"w": 0.3,
+								"at": "brain-scan",
+								"enter": "pop"
+							},
+							{
+								"type": "chip",
+								"text": "Ersner-Hershfield et al. · 2009",
+								"x": 0.07,
+								"y": 0.835,
+								"kind": "cite",
+								"size": 32,
+								"align": "left",
+								"at": "small",
+								"enter": "left",
+								"sfx": "blip",
+								"sfxVolume": 0.2
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "ILLUSTRATION, NOT REAL DATA",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 28,
+								"bg": "soft",
+								"color": "ink",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "chip",
+								"text": "A \"THIS IS ME\" REGION",
+								"x": 0.5,
+								"y": 0.135,
+								"size": 34,
+								"bg": "paper",
+								"color": "ink",
+								"at": "region",
+								"enter": "down"
+							},
+							{
+								"type": "bars",
+								"x": 0.46,
+								"y": 0.34,
+								"w": 0.7,
+								"h": 0.38,
+								"items": [
+									{
+										"label": "ME NOW",
+										"value": 0.75,
+										"color": "accent",
+										"at": "region"
+									},
+									{
+										"label": "ME IN 10 YEARS",
+										"value": 0.45,
+										"color": "paper",
+										"at": "less"
+									}
+								],
+								"gap": [
+									0,
+									1
+								],
+								"gapAt": "less",
+								"labelColor": "paper",
+								"enter": "none",
+								"at": "start"
+							}
+						],
+						"at": "region",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "mirror",
+			"say": "In another study, people who saw an *aged* version of their own face said they'd set aside more money for retirement.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "img",
+								"src": "face-calm",
+								"x": 0.3,
+								"y": 0.3,
+								"w": 0.42,
+								"enter": "left"
+							},
+							{
+								"type": "img",
+								"src": "face-calm",
+								"x": 0.74,
+								"y": 0.3,
+								"w": 0.42,
+								"at": "aged",
+								"enter": "pop",
+								"rot": 5,
+								"filter": "grayscale(1) brightness(1.18) contrast(0.8) blur(0.4px)"
+							},
+							{
+								"type": "chip",
+								"text": "YOU TODAY",
+								"x": 0.3,
+								"y": 0.12,
+								"size": 28,
+								"bg": "white",
+								"color": "ink",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "chip",
+								"text": "YOU AT 70 (EDITED PHOTO)",
+								"x": 0.74,
+								"y": 0.12,
+								"size": 28,
+								"bg": "accent",
+								"color": "ink",
+								"at": "aged",
+								"enter": "down"
+							},
+							{
+								"type": "chip",
+								"text": "AN AGED VERSION OF YOU",
+								"x": 0.5,
+								"y": 0.5,
+								"size": 36,
+								"bg": "ink",
+								"color": "paper",
+								"at": "aged",
+								"enter": "up",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "Hershfield et al. · 2011",
+								"x": 0.07,
+								"y": 0.835,
+								"kind": "cite",
+								"size": 32,
+								"align": "left",
+								"at": "study",
+								"enter": "left",
+								"sfx": "blip",
+								"sfxVolume": 0.2
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "ILLUSTRATION, NOT REAL DATA",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 28,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "chip",
+								"text": "MONEY FOR RETIREMENT",
+								"x": 0.5,
+								"y": 0.135,
+								"size": 34,
+								"bg": "white",
+								"color": "ink",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "bars",
+								"x": 0.46,
+								"y": 0.34,
+								"w": 0.7,
+								"h": 0.36,
+								"items": [
+									{
+										"label": "NO PHOTO",
+										"value": 0.5,
+										"color": "white",
+										"at": "set"
+									},
+									{
+										"label": "AGED PHOTO",
+										"value": 0.7,
+										"color": "ink",
+										"at": "more"
+									}
+								],
+								"enter": "none",
+								"at": "start"
+							}
+						],
+						"at": "set",
+						"enter": "wipe-l",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "tip",
+			"say": "So make future you *real*. Picture them tomorrow morning, tired, opening this task. Then do them a favor.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "slab",
+								"color": "accent",
+								"round": true,
+								"w": 0.9,
+								"x": 0.5,
+								"y": 0.33,
+								"border": 10,
+								"enter": "pop",
+								"depth": 0.6
+							},
+							{
+								"type": "img",
+								"src": "face-tired",
+								"x": 0.5,
+								"y": 0.34,
+								"w": 0.5,
+								"enter": "pop"
+							},
+							{
+								"type": "chip",
+								"text": "TOMORROW, 8:00 AM",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 40,
+								"bg": "ink",
+								"color": "paper",
+								"at": "tomorrow",
+								"enter": "down",
+								"sfx": "blip"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "img",
+								"src": "body-gesture",
+								"x": 0.4,
+								"y": 0.38,
+								"w": 0.3,
+								"enter": "left"
+							},
+							{
+								"type": "heart",
+								"x": 0.72,
+								"y": 0.28,
+								"w": 0.22,
+								"at": "favor",
+								"enter": "pop",
+								"pulse": [
+									"favor"
+								],
+								"rot": 10
+							},
+							{
+								"type": "text",
+								"text": "do them\na favor",
+								"x": 0.5,
+								"y": 0.58,
+								"size": 120,
+								"font": "hand",
+								"color": "ink",
+								"upper": false,
+								"at": "Then",
+								"enter": "pop",
+								"rot": -3
+							}
+						],
+						"at": "Then",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "close",
+			"say": "Future you isn't a stranger. They're you, just a little *later*.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "img",
+								"src": "body-front",
+								"x": 0.26,
+								"y": 0.37,
+								"w": 0.22,
+								"enter": "left"
+							},
+							{
+								"type": "scribble",
+								"shape": "arrow",
+								"x": 0.5,
+								"y": 0.38,
+								"w": 0.2,
+								"h": 0.06,
+								"color": "ink",
+								"strokeW": 14,
+								"at": "They're",
+								"dur": 12,
+								"curve": 0.0
+							},
+							{
+								"type": "img",
+								"src": "body-34",
+								"x": 0.74,
+								"y": 0.37,
+								"w": 0.22,
+								"at": "later",
+								"enter": "right"
+							},
+							{
+								"type": "text",
+								"text": "you, later",
+								"x": 0.5,
+								"y": 0.585,
+								"size": 120,
+								"font": "hand",
+								"color": "ink",
+								"upper": false,
+								"at": "later",
+								"enter": "pop",
+								"rot": -3
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					}
+				]
+			},
+			"tone": "prof-soft"
+		},
+		{
+			"id": "outro",
+			"say": "I'm the Professor. See you in the next lesson.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "panel",
+								"src": "panel-board",
+								"x": 0.5,
+								"y": 0.265,
+								"w": 0.86,
+								"enter": "up",
+								"zoom": [
+									1.02,
+									1.12
+								],
+								"focus": [
+									0.62,
+									0.5
+								]
+							},
+							{
+								"type": "text",
+								"text": "THE PROFESSOR",
+								"x": 0.5,
+								"y": 0.55,
+								"size": 170,
+								"color": "ink",
+								"mark": "accent",
+								"at": "Professor",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "chip",
+								"text": "EVERYDAY PSYCHOLOGY",
+								"x": 0.5,
+								"y": 0.61,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "See",
+								"enter": "up"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.04
+							]
+						}
+					}
+				]
+			}
+		}
+	]
+}

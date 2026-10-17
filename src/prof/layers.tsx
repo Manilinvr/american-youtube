@@ -18,7 +18,7 @@ export const ImgLayer: React.FC<L> = ({layer}) => {
 	const {width} = useVideoConfig();
 	const name: string = layer.src;
 	const file = layer.sticker === false || name.startsWith('panel-') || name.startsWith('bg-') ? name : `${name}-s`;
-	return <Img src={staticFile(`prof/${file}.png`)} style={{width: px(layer.w, width, 0.5), display: 'block', transform: layer.flip ? 'scaleX(-1)' : undefined}} />;
+	return <Img src={staticFile(`prof/${file}.png`)} style={{width: px(layer.w, width, 0.5), display: 'block', transform: layer.flip ? 'scaleX(-1)' : undefined, filter: layer.filter}} />;
 };
 
 /** Framed picture card with a hard offset shadow; the picture drifts slowly inside the frame. */
@@ -296,7 +296,7 @@ export const Heart: React.FC<L> = ({layer}) => {
 
 /* ------------------------------------------------------------------ phone */
 
-type Screen = 'off' | 'lock' | 'empty' | 'typing' | 'buzzing';
+type Screen = 'off' | 'lock' | 'empty' | 'typing' | 'buzzing' | 'read';
 
 const Bell: React.FC<{x: number; y: number; s: number; slash?: boolean}> = ({x, y, s, slash}) => (
 	<g transform={`translate(${x} ${y}) scale(${s})`} stroke={PROF.mid} strokeWidth={5} fill="none" strokeLinecap="round" strokeLinejoin="round">
@@ -362,6 +362,17 @@ export const Phone: React.FC<L> = ({layer}) => {
 							{[0, 1, 2].map((i) => (
 								<circle key={i} cx={78 + i * 24} cy={332 - Math.max(0, Math.sin(f * 0.3 - i * 0.8)) * 8} r={8} fill={PROF.graphite} />
 							))}
+						</g>
+					)}
+					{screen === 'read' && (
+						<g>
+							<rect x={48} y={282} width={204} height={84} rx={26} fill={PROF.ink} />
+							<text x={150} y={334} textAnchor="middle" fontFamily={FONT.sans} fontWeight={700} fontSize={24} fill={PROF.paper}>
+								Are we still on?
+							</text>
+							<text x={246} y={398} textAnchor="end" fontFamily={FONT.sans} fontWeight={500} fontSize={21} fill={PROF.mid}>
+								Read 9:41 PM
+							</text>
 						</g>
 					)}
 					{screen === 'buzzing' && (

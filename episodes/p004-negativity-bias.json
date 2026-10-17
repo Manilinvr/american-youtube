@@ -1,0 +1,1064 @@
+{
+	"id": "p004-negativity-bias",
+	"format": "short",
+	"style": "prof",
+	"title": "Why One Bad Comment Beats Ten Compliments",
+	"tone": "prof",
+	"music": "thinking-music.mp3",
+	"sources": [
+		"Baumeister, R. F., Bratslavsky, E., Finkenauer, C., & Vohs, K. D. (2001). Bad is stronger than good. Review of General Psychology, 5(4), 323-370. https://doi.org/10.1037/1089-2680.5.4.323",
+		"Ito, T. A., Larsen, J. T., Smith, N. K., & Cacioppo, J. T. (1998). Negative information weighs more heavily on the brain: The negativity bias in evaluative categorizations. Journal of Personality and Social Psychology, 75(4), 887-900. https://doi.org/10.1037/0022-3514.75.4.887"
+	],
+	"scenes": [
+		{
+			"id": "hook",
+			"say": "Ten people loved your work. One person didn't. Guess which one you're still thinking about at *midnight*.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "dots",
+								"x": 0.5,
+								"y": 0.2,
+								"w": 0.92,
+								"total": 11,
+								"cols": 11,
+								"hit": 10,
+								"hitAt": "Ten",
+								"at": "start",
+								"delay": -0.5,
+								"step": 0.4,
+								"hitStep": 2,
+								"enter": "none",
+								"id": "d11"
+							},
+							{
+								"type": "chip",
+								"text": "TEN PEOPLE LOVED YOUR WORK",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "chip",
+								"text": "10 LOVED IT",
+								"x": 0.34,
+								"y": 0.33,
+								"size": 44,
+								"bg": "accent",
+								"color": "ink",
+								"at": "loved",
+								"enter": "up",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "1 DIDN'T",
+								"x": 0.72,
+								"y": 0.4,
+								"size": 44,
+								"bg": "ink",
+								"color": "paper",
+								"at": "didn't",
+								"enter": "up",
+								"sfx": "blip"
+							},
+							{
+								"type": "scribble",
+								"shape": "circle",
+								"x": 0.88,
+								"y": 0.2,
+								"w": 0.14,
+								"h": 0.08,
+								"color": "accent",
+								"strokeW": 14,
+								"at": "didn't",
+								"dur": 10
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "text",
+								"text": "12:00 AM",
+								"x": 0.5,
+								"y": 0.22,
+								"size": 240,
+								"color": "accent",
+								"stroke": "ink",
+								"shadow": "paper",
+								"at": "midnight",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "img",
+								"src": "face-tired",
+								"x": 0.5,
+								"y": 0.45,
+								"w": 0.46,
+								"at": "Guess",
+								"enter": "pop"
+							}
+						],
+						"irisAt": [
+							0.5,
+							0.4
+						],
+						"at": "Guess",
+						"enter": "iris",
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							],
+							"punch": [
+								"midnight"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "proverb",
+			"say": "As an old Russian proverb says: a spoonful of tar spoils a barrel of *honey*.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "text",
+								"text": "A BARREL\nOF HONEY",
+								"x": 0.5,
+								"y": 0.25,
+								"size": 220,
+								"color": "ink",
+								"stroke": "paper",
+								"strokeW": 8,
+								"enter": "none",
+								"delay": -0.3
+							},
+							{
+								"type": "slab",
+								"color": "ink",
+								"round": true,
+								"w": 0.2,
+								"x": 0.5,
+								"y": 0.43,
+								"at": "tar",
+								"enter": "drop",
+								"sfx": "hit"
+							},
+							{
+								"type": "text",
+								"text": "a spoonful of tar",
+								"x": 0.5,
+								"y": 0.58,
+								"size": 110,
+								"font": "hand",
+								"color": "ink",
+								"upper": false,
+								"at": "spoonful",
+								"enter": "pop",
+								"rot": -3
+							},
+							{
+								"type": "chip",
+								"text": "OLD RUSSIAN PROVERB",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 38,
+								"bg": "ink",
+								"color": "paper",
+								"at": "proverb",
+								"enter": "down",
+								"sfx": "blip"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							],
+							"shake": [
+								"tar"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "name",
+			"say": "Psychologists call it the *negativity bias*. Bad things tend to weigh more than good things.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "text",
+								"text": "NEGATIVITY\nBIAS",
+								"x": 0.5,
+								"y": 0.26,
+								"size": 230,
+								"color": "paper",
+								"at": "negativity",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "scribble",
+								"shape": "underline",
+								"x": 0.5,
+								"y": 0.43,
+								"w": 0.8,
+								"h": 0.05,
+								"color": "accent",
+								"strokeW": 16,
+								"at": "bias",
+								"dur": 10,
+								"outline": false
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"punch": [
+								"negativity"
+							]
+						}
+					},
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "scale",
+								"x": 0.5,
+								"y": 0.3,
+								"w": 0.9,
+								"count": 6,
+								"leftAt": "good",
+								"rightAt": "Bad",
+								"tilt": [
+									{
+										"at": "start",
+										"v": 0
+									},
+									{
+										"at": "weigh",
+										"v": 1
+									}
+								],
+								"enter": "up",
+								"at": "start",
+								"id": "s1"
+							},
+							{
+								"type": "chip",
+								"text": "BAD",
+								"x": 0.74,
+								"y": 0.58,
+								"size": 40,
+								"bg": "ink",
+								"color": "paper",
+								"at": "Bad",
+								"enter": "up",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "GOOD",
+								"x": 0.27,
+								"y": 0.58,
+								"size": 40,
+								"bg": "accent",
+								"color": "ink",
+								"at": "good",
+								"enter": "up"
+							}
+						],
+						"at": "Bad",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "review",
+			"say": "A famous 2001 review looked across everyday life, relationships, and learning. Bad events had more impact than good ones.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "A FAMOUS 2001 REVIEW",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 40,
+								"bg": "ink",
+								"color": "paper",
+								"at": "famous",
+								"enter": "down",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "EVERYDAY LIFE",
+								"x": 0.3,
+								"y": 0.2,
+								"size": 46,
+								"bg": "white",
+								"color": "ink",
+								"at": "everyday",
+								"enter": "left",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "RELATIONSHIPS",
+								"x": 0.7,
+								"y": 0.32,
+								"size": 46,
+								"bg": "accent",
+								"color": "ink",
+								"at": "relationships",
+								"enter": "right",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "LEARNING",
+								"x": 0.38,
+								"y": 0.44,
+								"size": 46,
+								"bg": "white",
+								"color": "ink",
+								"at": "learning",
+								"enter": "left",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "Baumeister et al. · 2001",
+								"x": 0.07,
+								"y": 0.835,
+								"kind": "cite",
+								"size": 32,
+								"align": "left",
+								"at": "famous",
+								"enter": "left",
+								"sfx": "blip",
+								"sfxVolume": 0.2
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "text",
+								"text": "BAD",
+								"x": 0.5,
+								"y": 0.2,
+								"size": 380,
+								"color": "ink",
+								"stroke": "paper",
+								"strokeW": 10,
+								"at": "Bad",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "text",
+								"text": ">",
+								"x": 0.5,
+								"y": 0.37,
+								"size": 300,
+								"color": "paper",
+								"stroke": "ink",
+								"strokeW": 12,
+								"at": "more",
+								"enter": "pop"
+							},
+							{
+								"type": "text",
+								"text": "GOOD",
+								"x": 0.5,
+								"y": 0.52,
+								"size": 260,
+								"color": "paper",
+								"stroke": "ink",
+								"strokeW": 10,
+								"at": "good",
+								"enter": "up"
+							}
+						],
+						"at": "Bad",
+						"enter": "flash",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"punch": [
+								"Bad"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "impressions",
+			"say": "Bad impressions form faster, and they're harder to *change*.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "ink-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "ILLUSTRATION, NOT REAL DATA",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 28,
+								"bg": "soft",
+								"color": "ink",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "chip",
+								"text": "TIME TO FORM AN IMPRESSION",
+								"x": 0.5,
+								"y": 0.135,
+								"size": 34,
+								"bg": "paper",
+								"color": "ink",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "bars",
+								"x": 0.46,
+								"y": 0.33,
+								"w": 0.7,
+								"h": 0.38,
+								"items": [
+									{
+										"label": "BAD",
+										"value": 0.28,
+										"color": "paper",
+										"at": "faster"
+									},
+									{
+										"label": "GOOD",
+										"value": 0.72,
+										"color": "accent",
+										"at": "faster+0.2"
+									}
+								],
+								"labelColor": "paper",
+								"enter": "none",
+								"at": "start"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "img",
+								"src": "face-angry",
+								"x": 0.5,
+								"y": 0.34,
+								"w": 0.5,
+								"enter": "pop"
+							},
+							{
+								"type": "chip",
+								"text": "HARDER TO CHANGE",
+								"x": 0.5,
+								"y": 0.58,
+								"size": 46,
+								"bg": "ink",
+								"color": "paper",
+								"at": "harder",
+								"enter": "up",
+								"sfx": "blip"
+							}
+						],
+						"at": "harder",
+						"enter": "wipe-l",
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "brain",
+			"say": "You can even see it in the brain. In one experiment, people looked at pictures while electrodes recorded their brain waves.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "pulse",
+								"x": 0.5,
+								"y": 0.3,
+								"w": 1.0,
+								"enter": "none",
+								"color": "ink"
+							},
+							{
+								"type": "img",
+								"src": "brain",
+								"x": 0.5,
+								"y": 0.3,
+								"w": 0.52,
+								"enter": "pop",
+								"loop": "breathe",
+								"delay": -0.2
+							},
+							{
+								"type": "chip",
+								"text": "YOU CAN SEE IT IN THE BRAIN",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 36,
+								"bg": "accent",
+								"color": "ink",
+								"at": "brain",
+								"enter": "down",
+								"sfx": "blip"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "wave",
+								"x": 0.5,
+								"y": 0.26,
+								"w": 0.86,
+								"h": 0.14,
+								"enter": "none",
+								"at": "electrodes"
+							},
+							{
+								"type": "chip",
+								"text": "BRAIN WAVES (EEG)",
+								"x": 0.5,
+								"y": 0.42,
+								"size": 42,
+								"bg": "accent",
+								"color": "ink",
+								"at": "waves",
+								"enter": "up",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "Ito et al. · 1998",
+								"x": 0.07,
+								"y": 0.835,
+								"kind": "cite",
+								"size": 32,
+								"align": "left",
+								"at": "pictures",
+								"enter": "left",
+								"sfx": "blip",
+								"sfxVolume": 0.2
+							}
+						],
+						"at": "pictures",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "brain2",
+			"say": "Negative pictures produced a *bigger* response than positive ones, even when both were equally intense.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "ink-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "ILLUSTRATION, NOT REAL DATA",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 28,
+								"bg": "soft",
+								"color": "ink",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "chip",
+								"text": "BRAIN RESPONSE",
+								"x": 0.5,
+								"y": 0.135,
+								"size": 34,
+								"bg": "paper",
+								"color": "ink",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "bars",
+								"x": 0.46,
+								"y": 0.33,
+								"w": 0.7,
+								"h": 0.38,
+								"items": [
+									{
+										"label": "POSITIVE",
+										"value": 0.45,
+										"color": "paper",
+										"at": "Negative#1"
+									},
+									{
+										"label": "NEGATIVE",
+										"value": 0.78,
+										"color": "accent",
+										"at": "produced"
+									}
+								],
+								"gap": [
+									0,
+									1
+								],
+								"gapAt": "bigger",
+								"labelColor": "paper",
+								"enter": "none",
+								"at": "start"
+							},
+							{
+								"type": "burst",
+								"text": "BIGGER!",
+								"x": 0.8,
+								"y": 0.47,
+								"w": 0.3,
+								"at": "bigger",
+								"enter": "slam",
+								"rot": 8,
+								"seed": 5,
+								"sfx": "hit"
+							},
+							{
+								"type": "chip",
+								"text": "EQUALLY INTENSE PICTURES",
+								"x": 0.5,
+								"y": 0.585,
+								"size": 32,
+								"bg": "white",
+								"color": "ink",
+								"at": "equally",
+								"enter": "up",
+								"sfx": "blip"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"punch": [
+								"bigger"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "why",
+			"say": "One common explanation: for our ancestors, missing a *threat* cost more than missing a good thing.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "ONE COMMON EXPLANATION",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 38,
+								"bg": "ink",
+								"color": "paper",
+								"at": "explanation",
+								"enter": "down",
+								"sfx": "blip"
+							},
+							{
+								"type": "scale",
+								"x": 0.5,
+								"y": 0.3,
+								"w": 0.9,
+								"count": 1,
+								"leftAt": "start",
+								"rightAt": "threat",
+								"tilt": [
+									{
+										"at": "start",
+										"v": 0
+									},
+									{
+										"at": "cost",
+										"v": 1
+									}
+								],
+								"enter": "up",
+								"at": "start"
+							},
+							{
+								"type": "chip",
+								"text": "MISSED A SNACK",
+								"x": 0.26,
+								"y": 0.56,
+								"size": 30,
+								"bg": "white",
+								"color": "ink",
+								"at": "start",
+								"enter": "up"
+							},
+							{
+								"type": "chip",
+								"text": "MISSED A THREAT",
+								"x": 0.74,
+								"y": 0.56,
+								"size": 30,
+								"bg": "ink",
+								"color": "paper",
+								"at": "threat",
+								"enter": "up",
+								"sfx": "blip"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "tip",
+			"say": "So when one comment stings, give the good ones equal airtime. Read them again. *Slowly*.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "TRY THIS",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 46,
+								"bg": "ink",
+								"color": "paper",
+								"at": "So",
+								"enter": "down",
+								"sfx": "blip"
+							},
+							{
+								"type": "phone",
+								"x": 0.5,
+								"y": 0.33,
+								"w": 0.34,
+								"enter": "up",
+								"screens": [
+									{
+										"at": "start",
+										"s": "lock"
+									}
+								],
+								"rot": -3
+							},
+							{
+								"type": "chip",
+								"text": "GREAT WORK!",
+								"x": 0.2,
+								"y": 0.2,
+								"size": 36,
+								"bg": "white",
+								"color": "ink",
+								"at": "good",
+								"enter": "left",
+								"rot": -6,
+								"sfx": "pop"
+							},
+							{
+								"type": "chip",
+								"text": "LOVED THIS",
+								"x": 0.82,
+								"y": 0.3,
+								"size": 36,
+								"bg": "white",
+								"color": "ink",
+								"at": "equal",
+								"enter": "right",
+								"rot": 5,
+								"sfx": "pop"
+							},
+							{
+								"type": "chip",
+								"text": "SO HELPFUL",
+								"x": 0.22,
+								"y": 0.43,
+								"size": 36,
+								"bg": "white",
+								"color": "ink",
+								"at": "airtime",
+								"enter": "left",
+								"rot": 4,
+								"sfx": "pop"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "text",
+								"text": "SLOWLY",
+								"x": 0.5,
+								"y": 0.26,
+								"size": 280,
+								"color": "accent",
+								"stroke": "ink",
+								"shadow": "paper",
+								"at": "Slowly",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "img",
+								"src": "face-smile",
+								"x": 0.5,
+								"y": 0.5,
+								"w": 0.34,
+								"at": "Slowly+0.1",
+								"enter": "pop",
+								"rot": 3
+							}
+						],
+						"at": "Read",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "close",
+			"say": "Your brain isn't being dramatic. It's being careful. But you still get to choose what you *keep*.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "scale",
+								"x": 0.5,
+								"y": 0.3,
+								"w": 0.9,
+								"count": 10,
+								"leftAt": "start+0.2",
+								"rightAt": "start",
+								"tilt": [
+									{
+										"at": "start",
+										"v": 0.8
+									},
+									{
+										"at": "choose",
+										"v": -0.8
+									}
+								],
+								"enter": "none",
+								"at": "start"
+							},
+							{
+								"type": "chip",
+								"text": "YOUR CHOICE",
+								"x": 0.5,
+								"y": 0.58,
+								"size": 44,
+								"bg": "accent",
+								"color": "ink",
+								"at": "choose",
+								"enter": "up",
+								"sfx": "blip"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					}
+				]
+			},
+			"tone": "prof-soft"
+		},
+		{
+			"id": "outro",
+			"say": "I'm the Professor. See you in the next lesson.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "panel",
+								"src": "panel-board",
+								"x": 0.5,
+								"y": 0.265,
+								"w": 0.86,
+								"enter": "up",
+								"zoom": [
+									1.02,
+									1.12
+								],
+								"focus": [
+									0.62,
+									0.5
+								]
+							},
+							{
+								"type": "text",
+								"text": "THE PROFESSOR",
+								"x": 0.5,
+								"y": 0.55,
+								"size": 170,
+								"color": "ink",
+								"mark": "accent",
+								"at": "Professor",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "chip",
+								"text": "EVERYDAY PSYCHOLOGY",
+								"x": 0.5,
+								"y": 0.61,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "See",
+								"enter": "up"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.04
+							]
+						}
+					}
+				]
+			}
+		}
+	]
+}

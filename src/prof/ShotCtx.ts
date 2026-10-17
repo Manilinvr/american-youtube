@@ -24,6 +24,8 @@ export const resolveCue = (voice: Parameters<typeof cueFrame>[0], lead: number, 
 	const m = cue.match(/^(.+?)([+-]\d*\.?\d+)$/);
 	const word = m ? m[1] : cue;
 	const off = m ? Math.round(Number(m[2]) * fps) : 0;
+	if (word === 'start') return off;
+	if (word === 'shot') return fallback + off;
 	const f = cueFrame(voice, lead, fps, word, Infinity);
 	return Number.isFinite(f) ? f + off : fallback;
 };

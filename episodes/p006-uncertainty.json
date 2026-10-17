@@ -1,0 +1,1055 @@
+{
+	"id": "p006-uncertainty",
+	"format": "short",
+	"style": "prof",
+	"title": "Why 'Maybe' Feels Worse Than Bad News",
+	"tone": "prof",
+	"music": "dreamer.mp3",
+	"sources": [
+		"de Berker, A. O., Rutledge, R. B., Mathys, C., Marshall, L., Cross, G. F., Dolan, R. J., & Bestmann, S. (2016). Computations of uncertainty mediate acute stress responses in humans. Nature Communications, 7, 10996. https://doi.org/10.1038/ncomms10996"
+	],
+	"scenes": [
+		{
+			"id": "hook",
+			"say": "You sent the text. It says 'read.' No reply. And your brain starts writing every possible *ending*.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "slab",
+								"color": "accent",
+								"round": true,
+								"w": 0.92,
+								"x": 0.5,
+								"y": 0.34,
+								"border": 10,
+								"enter": "pop",
+								"depth": 0.6,
+								"delay": -0.3
+							},
+							{
+								"type": "phone",
+								"x": 0.5,
+								"y": 0.35,
+								"w": 0.4,
+								"enter": "pop",
+								"delay": -0.3,
+								"screens": [
+									{
+										"at": -0.4,
+										"s": "read"
+									}
+								],
+								"rot": -3,
+								"loop": "float"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.1
+							],
+							"y": [
+								0.5,
+								0.4
+							]
+						}
+					},
+					{
+						"bg": "ink-grid",
+						"layers": [
+							{
+								"type": "img",
+								"src": "face-thinking",
+								"x": 0.5,
+								"y": 0.42,
+								"w": 0.46,
+								"enter": "pop"
+							},
+							{
+								"type": "bubble",
+								"text": "They're mad.",
+								"x": 0.3,
+								"y": 0.11,
+								"size": 46,
+								"at": "brain",
+								"enter": "pop",
+								"rot": -3,
+								"sfx": "pop"
+							},
+							{
+								"type": "bubble",
+								"text": "Busy?",
+								"x": 0.74,
+								"y": 0.2,
+								"size": 46,
+								"at": "starts",
+								"enter": "pop",
+								"rot": 3,
+								"sfx": "pop"
+							},
+							{
+								"type": "bubble",
+								"text": "Dead battery?",
+								"x": 0.34,
+								"y": 0.27,
+								"size": 46,
+								"at": "writing",
+								"enter": "pop",
+								"rot": -2,
+								"sfx": "pop"
+							},
+							{
+								"type": "bubble",
+								"text": "Ghosted.",
+								"x": 0.76,
+								"y": 0.34,
+								"size": 46,
+								"at": "possible",
+								"enter": "pop",
+								"rot": 4,
+								"sfx": "pop"
+							}
+						],
+						"at": "brain",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "game",
+			"say": "Scientists wanted to measure that feeling. So they turned it into a *game*.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "panel",
+								"src": "panel-laptop",
+								"x": 0.5,
+								"y": 0.3,
+								"w": 0.78,
+								"enter": "up",
+								"rot": -2,
+								"zoom": [
+									1.02,
+									1.14
+								],
+								"focus": [
+									0.5,
+									0.55
+								]
+							},
+							{
+								"type": "chip",
+								"text": "A LAB EXPERIMENT",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 42,
+								"bg": "ink",
+								"color": "paper",
+								"at": "Scientists",
+								"enter": "down",
+								"sfx": "blip"
+							},
+							{
+								"type": "text",
+								"text": "GAME",
+								"x": 0.5,
+								"y": 0.57,
+								"size": 220,
+								"color": "ink",
+								"stroke": "paper",
+								"strokeW": 10,
+								"at": "game",
+								"enter": "slam",
+								"sfx": "hit"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "rules",
+			"say": "You turn over rocks. Under some, there might be a snake. If there is, you get a mild electric *shock*.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "TURN OVER A ROCK",
+								"x": 0.5,
+								"y": 0.085,
+								"size": 44,
+								"bg": "ink",
+								"color": "paper",
+								"at": "rocks",
+								"enter": "down",
+								"sfx": "blip"
+							},
+							{
+								"type": "rocks",
+								"x": 0.5,
+								"y": 0.3,
+								"w": 0.9,
+								"items": [
+									{
+										"at": "snake",
+										"snake": true
+									},
+									{
+										"at": "shock",
+										"snake": true,
+										"shock": true
+									},
+									{}
+								],
+								"enter": "none",
+								"at": "turn"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"shake": [
+								"shock"
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "A MILD ELECTRIC SHOCK",
+								"x": 0.5,
+								"y": 0.085,
+								"size": 44,
+								"bg": "accent",
+								"color": "ink",
+								"at": "mild",
+								"enter": "down",
+								"sfx": "blip"
+							},
+							{
+								"type": "rocks",
+								"x": 0.5,
+								"y": 0.3,
+								"w": 0.9,
+								"items": [
+									{
+										"at": "snake",
+										"snake": true
+									},
+									{
+										"at": "shock",
+										"snake": true,
+										"shock": true
+									},
+									{}
+								],
+								"enter": "none",
+								"at": "turn"
+							},
+							{
+								"type": "chip",
+								"text": "de Berker et al. · 2016",
+								"x": 0.07,
+								"y": 0.835,
+								"kind": "cite",
+								"size": 32,
+								"align": "left",
+								"at": "mild",
+								"enter": "left",
+								"sfx": "blip",
+								"sfxVolume": 0.2
+							}
+						],
+						"at": "If",
+						"enter": "flash",
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							],
+							"shake": [
+								"shock"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "odds",
+			"say": "The researchers changed the odds. Sometimes a snake was impossible. Sometimes certain. Sometimes a coin flip.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "THEY CHANGED THE ODDS",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 40,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "rocks",
+								"x": 0.5,
+								"y": 0.2,
+								"w": 0.9,
+								"items": [
+									{},
+									{},
+									{}
+								],
+								"enter": "none",
+								"at": "start",
+								"delay": -0.3
+							},
+							{
+								"type": "text",
+								"text": "0%",
+								"x": 0.5,
+								"y": 0.33,
+								"size": 280,
+								"color": "ink",
+								"at": "impossible",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "chip",
+								"text": "IMPOSSIBLE",
+								"x": 0.5,
+								"y": 0.46,
+								"size": 34,
+								"bg": "white",
+								"color": "ink",
+								"at": "impossible",
+								"enter": "up"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "text",
+								"text": "100%",
+								"x": 0.5,
+								"y": 0.2,
+								"size": 280,
+								"color": "ink",
+								"stroke": "paper",
+								"strokeW": 8,
+								"at": "certain",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "chip",
+								"text": "CERTAIN",
+								"x": 0.5,
+								"y": 0.33,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "certain",
+								"enter": "up"
+							}
+						],
+						"at": "Sometimes#2",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "text",
+								"text": "50%",
+								"x": 0.5,
+								"y": 0.2,
+								"size": 280,
+								"color": "accent",
+								"stroke": "ink",
+								"shadow": "paper",
+								"at": "coin",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "chip",
+								"text": "A COIN FLIP",
+								"x": 0.5,
+								"y": 0.33,
+								"size": 34,
+								"bg": "paper",
+								"color": "ink",
+								"at": "coin",
+								"enter": "up"
+							}
+						],
+						"at": "Sometimes#3",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "result",
+			"say": "The most stressful moments weren't when a shock was *certain*. They were when it was [50/50|fifty-fifty].",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "ink-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "STRESS (ILLUSTRATIVE SHAPE)",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 30,
+								"bg": "soft",
+								"color": "ink",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "curve",
+								"x": 0.5,
+								"y": 0.3,
+								"w": 0.9,
+								"h": 0.32,
+								"dot": [
+									{
+										"at": "start",
+										"v": 0.02
+									},
+									{
+										"at": "certain",
+										"v": 1.0
+									},
+									{
+										"at": "50/50",
+										"v": 0.5
+									}
+								],
+								"enter": "up",
+								"at": "start"
+							},
+							{
+								"type": "burst",
+								"text": "PEAK\nSTRESS",
+								"x": 0.78,
+								"y": 0.55,
+								"w": 0.3,
+								"at": "50/50",
+								"enter": "slam",
+								"rot": 8,
+								"seed": 3,
+								"sfx": "hit"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"punch": [
+								"50/50"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "body",
+			"say": "And it wasn't just a feeling. Their pupils widened, and their palms sweated, as the uncertainty rose.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "45 PEOPLE",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 40,
+								"bg": "accent",
+								"color": "ink",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "eyes",
+								"x": 0.5,
+								"y": 0.28,
+								"w": 0.8,
+								"look": [
+									{
+										"at": "start",
+										"x": 0,
+										"y": 0
+									}
+								],
+								"pupil": [
+									{
+										"at": "start",
+										"v": 0.8
+									},
+									{
+										"at": "pupils",
+										"v": 1.5
+									}
+								],
+								"enter": "pop",
+								"id": "pup"
+							},
+							{
+								"type": "chip",
+								"text": "PUPILS WIDENED",
+								"x": 0.5,
+								"y": 0.48,
+								"size": 40,
+								"bg": "ink",
+								"color": "paper",
+								"at": "pupils",
+								"enter": "up",
+								"sfx": "blip"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							],
+							"keys": [
+								{
+									"at": "pupils",
+									"z": 1.18,
+									"x": 0.5,
+									"y": 0.28,
+									"secs": 0.8
+								}
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "img",
+								"src": "face-shock",
+								"x": 0.5,
+								"y": 0.34,
+								"w": 0.5,
+								"enter": "pop"
+							},
+							{
+								"type": "chip",
+								"text": "SWEATIER PALMS",
+								"x": 0.5,
+								"y": 0.58,
+								"size": 42,
+								"bg": "ink",
+								"color": "paper",
+								"at": "palms",
+								"enter": "up",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "de Berker et al. · 2016",
+								"x": 0.07,
+								"y": 0.835,
+								"kind": "cite",
+								"size": 32,
+								"align": "left",
+								"at": "palms",
+								"enter": "left",
+								"sfx": "blip",
+								"sfxVolume": 0.2
+							}
+						],
+						"at": "palms",
+						"enter": "slide-l",
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "quote",
+			"say": "One of the researchers said it's much worse not knowing whether a shock is coming than knowing for sure.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "text",
+								"text": "NOT KNOWING",
+								"x": 0.5,
+								"y": 0.18,
+								"size": 190,
+								"color": "accent",
+								"stroke": "ink",
+								"shadow": "paper",
+								"at": "not",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "text",
+								"text": ">",
+								"x": 0.5,
+								"y": 0.31,
+								"size": 200,
+								"color": "paper",
+								"at": "worse",
+								"enter": "pop"
+							},
+							{
+								"type": "text",
+								"text": "KNOWING\nFOR SURE",
+								"x": 0.5,
+								"y": 0.45,
+								"size": 160,
+								"color": "paper",
+								"at": "knowing",
+								"enter": "up"
+							},
+							{
+								"type": "chip",
+								"text": "A RESEARCHER'S TAKE",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "paper",
+								"color": "ink",
+								"at": "researchers",
+								"enter": "down",
+								"sfx": "blip"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"punch": [
+								"worse"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "caveat",
+			"say": "It was a lab game with electric shocks, not a text message. But it hints at why waiting feels so *awful*.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "A LAB GAME",
+								"x": 0.3,
+								"y": 0.12,
+								"size": 44,
+								"bg": "ink",
+								"color": "paper",
+								"at": "lab",
+								"enter": "left",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "NOT A TEXT MESSAGE",
+								"x": 0.66,
+								"y": 0.24,
+								"size": 44,
+								"bg": "white",
+								"color": "ink",
+								"at": "not",
+								"enter": "right",
+								"sfx": "blip"
+							},
+							{
+								"type": "phone",
+								"x": 0.5,
+								"y": 0.45,
+								"w": 0.26,
+								"at": "But",
+								"enter": "up",
+								"screens": [
+									{
+										"at": "start",
+										"s": "read"
+									}
+								],
+								"rot": -4
+							},
+							{
+								"type": "img",
+								"src": "face-tired",
+								"x": 0.82,
+								"y": 0.5,
+								"w": 0.26,
+								"at": "awful",
+								"enter": "pop",
+								"rot": 8
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "tip",
+			"say": "So shrink the maybe. Ask the question. Pick a time to check back. And decide what you'll do *either way*.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "SHRINK THE MAYBE",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 46,
+								"bg": "ink",
+								"color": "paper",
+								"at": "shrink",
+								"enter": "down",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "1  ASK THE QUESTION",
+								"x": 0.5,
+								"y": 0.2,
+								"size": 44,
+								"bg": "white",
+								"color": "ink",
+								"at": "Ask",
+								"enter": "left",
+								"sfx": "blip"
+							},
+							{
+								"type": "scribble",
+								"shape": "check",
+								"x": 0.9,
+								"y": 0.2,
+								"w": 0.1,
+								"h": 0.06,
+								"color": "ink",
+								"strokeW": 14,
+								"at": "Pick",
+								"dur": 8,
+								"outline": false
+							},
+							{
+								"type": "chip",
+								"text": "2  PICK A TIME TO CHECK",
+								"x": 0.5,
+								"y": 0.31,
+								"size": 44,
+								"bg": "white",
+								"color": "ink",
+								"at": "Pick",
+								"enter": "right",
+								"sfx": "blip"
+							},
+							{
+								"type": "scribble",
+								"shape": "check",
+								"x": 0.9,
+								"y": 0.31,
+								"w": 0.1,
+								"h": 0.06,
+								"color": "ink",
+								"strokeW": 14,
+								"at": "decide",
+								"dur": 8,
+								"outline": false
+							},
+							{
+								"type": "chip",
+								"text": "3  PLAN FOR BOTH OUTCOMES",
+								"x": 0.5,
+								"y": 0.42,
+								"size": 44,
+								"bg": "white",
+								"color": "ink",
+								"at": "decide",
+								"enter": "left",
+								"sfx": "blip"
+							},
+							{
+								"type": "scribble",
+								"shape": "check",
+								"x": 0.9,
+								"y": 0.42,
+								"w": 0.1,
+								"h": 0.06,
+								"color": "ink",
+								"strokeW": 14,
+								"at": "either",
+								"dur": 8,
+								"outline": false
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "text",
+								"text": "EITHER\nWAY",
+								"x": 0.5,
+								"y": 0.26,
+								"size": 250,
+								"color": "accent",
+								"stroke": "ink",
+								"shadow": "paper",
+								"at": "either",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "img",
+								"src": "face-calm",
+								"x": 0.5,
+								"y": 0.52,
+								"w": 0.34,
+								"at": "way",
+								"enter": "pop",
+								"rot": -3
+							}
+						],
+						"at": "either",
+						"enter": "flash",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"punch": [
+								"either"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "close",
+			"say": "Bad news is something you can deal with. 'Maybe' is a door your brain keeps *open*.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": {
+							"photo": "bg-window",
+							"blur": 6,
+							"bright": 0.75,
+							"dim": 0.15
+						},
+						"layers": [
+							{
+								"type": "text",
+								"text": "MAYBE",
+								"x": 0.5,
+								"y": 0.2,
+								"size": 320,
+								"color": "paper",
+								"stroke": "ink",
+								"shadow": "ink",
+								"at": "Maybe",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "img",
+								"src": "face-calm",
+								"x": 0.5,
+								"y": 0.48,
+								"w": 0.4,
+								"at": "door",
+								"enter": "pop"
+							},
+							{
+								"type": "scribble",
+								"shape": "underline",
+								"x": 0.5,
+								"y": 0.3,
+								"w": 0.74,
+								"h": 0.05,
+								"color": "accent",
+								"strokeW": 18,
+								"at": "open",
+								"dur": 12,
+								"outline": true
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							]
+						}
+					}
+				]
+			},
+			"tone": "prof-soft"
+		},
+		{
+			"id": "outro",
+			"say": "I'm the Professor. See you in the next lesson.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "panel",
+								"src": "panel-board",
+								"x": 0.5,
+								"y": 0.265,
+								"w": 0.86,
+								"enter": "up",
+								"zoom": [
+									1.02,
+									1.12
+								],
+								"focus": [
+									0.62,
+									0.5
+								]
+							},
+							{
+								"type": "text",
+								"text": "THE PROFESSOR",
+								"x": 0.5,
+								"y": 0.55,
+								"size": 170,
+								"color": "ink",
+								"mark": "accent",
+								"at": "Professor",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "chip",
+								"text": "EVERYDAY PSYCHOLOGY",
+								"x": 0.5,
+								"y": 0.61,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "See",
+								"enter": "up"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.04
+							]
+						}
+					}
+				]
+			}
+		}
+	]
+}

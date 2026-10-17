@@ -2,6 +2,8 @@
 
 Текущая концепция канала: **Профессор рассказывает о психологии человека в повседневных ситуациях**. Никаких сравнений людей с животными (это было в «Specimen: You», `sNNN`). Формат: **Shorts 45 с – 2 мин** (`format: "short"`, 1080×1920) и **длинные 8–15 мин** (`format: "long"`, 1920×1080).
 
+Образцы: `p001`–`p006` (общие помощники — `tools/prof/lib.py`: `scene`, `shot`, `L`, `img`, `text`, `chip`, `cite`, `build`; сценарии `tools/episodes/p00N.py`).
+
 Образец: [`episodes/p001-phantom-vibration.json`](../episodes/p001-phantom-vibration.json) (67 с, 11 сцен, 33 смены кадра). Его собирает скрипт [`tools/episodes/p001.py`](../tools/episodes/p001.py): копируйте его для нового ролика.
 
 ## Как это работает
@@ -57,6 +59,8 @@
 | `counter`, `ring`, `dots`, `calendar` | числа, кольцо %, сетка из точек (N людей, доля подсвечена), календарь на 2 недели |
 | `graph` | «сигнал» с планкой; участки выше планки жёлтые (`bumps`, `bar:[{at,v}]`) |
 | `phone` | векторный телефон (`screens:[{at,s}]`: `off/lock/empty/typing/buzzing`, `buzz:[слова]`) |
+| `scale`, `bars`, `cups`, `curve`, `months` | весы (монеты против гири; `tilt:[{at,v}]`), столбики с «скобкой разрыва» (`gap:[i,j]`), стаканы с уровнем, кривая «шанс → стресс» с движущейся точкой, ряд месяцев. Подписи на тёмном фоне: `labelColor: "paper"` |
+| `eyes`, `gaze`, `rocks` | пара глаз (`look:[{at,x,y}]`, `blur`, `jitter`, `pupil`), лучи взгляда, камни, под которыми может быть змея/удар током |
 | `burst`, `heart`, `waves`, `pulse`, `wave`, `bubble`, `scribble`, `slab`, `bigword` | всплеск, сердце, дуги вибрации, кольца, волна, пузырь, маркерные каракули (`circle/underline/arrow/cross/check/strike`), цветная плита, гигантское слово на фоне |
 
 ### Слова-метки (`at`) — частая ошибка
@@ -70,6 +74,12 @@
 `python3 tools/prof/assets.py [--preview]` режет лист на вырезы. Лица: `face-calm/smile/serious/surprised/thinking/annoyed/laugh/tired/angry/shock/joy/skeptic`; тело: `body-front/side/back/34/coffee/walk/point/book/gesture/pockets`; предметы: `prop-laptop/mug/books/notebook/pen/backpack/cap/headphones`, `brain`; панели: `panel-board/thinking/armchair/laptop/sofa/street/window/lecture/walk`; фоны: `bg-classroom/city/livingroom/window`. Русский текст на доске панели `panel-board` закрашен. **Панели с русскими надписями (`pose`-списки на доске) не использовать**.
 
 Ограничение: лист 1536×1024, лица всего ~70 px. Мы увеличиваем ×4 с резкостью линий, этого хватает для лица на 500 px, но для крупных планов нужны исходники выше. Лучше всего: каждый нужный ракурс/эмоцию сгенерировать отдельной картинкой в 2K и положить в `assets/prof-source/`.
+
+## Быстрая проверка
+
+- `python3 tools/prof/check_cues.py <id>` — каждое слово-метка и слово озвучки, на которое она попала (ловит «Is» → «So **is**» до рендера);
+- `python3 tools/prof/review.py <id> 30` — кадры каждую секунду, листы по 24 в `out/review-<id>-N.png`;
+- с первого кадра на экране должна быть картинка: слоям первого кадра ставьте `delay=-0.3` (появляются «уже наполовину»), а не `at` позже.
 
 ## Проверка перед публикацией
 

@@ -1,0 +1,1155 @@
+{
+	"id": "p003-being-stared-at",
+	"format": "short",
+	"style": "prof",
+	"title": "Can You Really Feel Someone Staring at You?",
+	"tone": "prof",
+	"music": "easy-lemon.mp3",
+	"sources": [
+		"Mareschal, I., Calder, A. J., & Clifford, C. W. G. (2013). Humans have an expectation that gaze is directed toward them. Current Biology, 23(8), 717-721. https://doi.org/10.1016/j.cub.2013.03.030",
+		"Colwell, J., Schroder, S., & Sladen, D. (2000). The ability to detect unseen staring: A literature review and empirical tests. British Journal of Psychology, 91(1), 71-85.",
+		"Titchener, E. B. (1898). The 'feeling of being stared at'. Science, 8(208), 895-897."
+	],
+	"scenes": [
+		{
+			"id": "hook",
+			"say": "You're on the train. And suddenly, you just *know*: someone is staring at you.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": {
+							"photo": "bg-window",
+							"blur": 7,
+							"bright": 0.7,
+							"dim": 0.15
+						},
+						"layers": [
+							{
+								"type": "img",
+								"src": "body-back",
+								"x": 0.5,
+								"y": 0.4,
+								"w": 0.3,
+								"enter": "pop",
+								"loop": "breathe",
+								"delay": -0.3
+							},
+							{
+								"type": "chip",
+								"text": "ON THE TRAIN",
+								"x": 0.5,
+								"y": 0.085,
+								"size": 42,
+								"bg": "ink",
+								"color": "paper",
+								"at": "train",
+								"enter": "down",
+								"sfx": "blip"
+							},
+							{
+								"type": "text",
+								"text": "?",
+								"x": 0.8,
+								"y": 0.2,
+								"size": 380,
+								"color": "accent",
+								"stroke": "ink",
+								"strokeW": 16,
+								"rot": 10,
+								"at": "suddenly",
+								"enter": "pop",
+								"sfx": "blip"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.12
+							],
+							"y": [
+								0.5,
+								0.42
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "eyes",
+								"x": 0.5,
+								"y": 0.3,
+								"w": 0.84,
+								"look": [
+									{
+										"at": "start",
+										"x": 0,
+										"y": 0.1
+									}
+								],
+								"enter": "pop"
+							},
+							{
+								"type": "gaze",
+								"x": 0.5,
+								"y": 0.5,
+								"w": 0.9,
+								"rays": 11,
+								"color": "accent",
+								"rot": 180,
+								"enter": "none",
+								"at": "someone"
+							},
+							{
+								"type": "text",
+								"text": "STARING",
+								"x": 0.5,
+								"y": 0.5,
+								"size": 190,
+								"color": "accent",
+								"stroke": "ink",
+								"shadow": "paper",
+								"at": "staring",
+								"enter": "slam",
+								"sfx": "hit"
+							}
+						],
+						"at": "someone",
+						"enter": "punch",
+						"cam": {
+							"z": [
+								1.0,
+								1.1
+							],
+							"shake": [
+								"staring"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "turn",
+			"say": "You turn around... and they *are*! So, is it a sixth sense?",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "soft",
+						"layers": [
+							{
+								"type": "img",
+								"src": "body-back",
+								"x": 0.5,
+								"y": 0.4,
+								"w": 0.3,
+								"enter": "none",
+								"out": "around"
+							},
+							{
+								"type": "img",
+								"src": "face-shock",
+								"x": 0.5,
+								"y": 0.38,
+								"w": 0.5,
+								"at": "around",
+								"enter": "pop"
+							},
+							{
+								"type": "burst",
+								"text": "THEY\nARE!",
+								"x": 0.8,
+								"y": 0.15,
+								"w": 0.3,
+								"at": "are",
+								"enter": "slam",
+								"rot": 8,
+								"seed": 4,
+								"sfx": "hit"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							],
+							"punch": [
+								"are"
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "text",
+								"text": "6TH\nSENSE?",
+								"x": 0.5,
+								"y": 0.3,
+								"size": 280,
+								"color": "ink",
+								"stroke": "paper",
+								"strokeW": 10,
+								"at": "sixth",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "img",
+								"src": "face-skeptic",
+								"x": 0.5,
+								"y": 0.55,
+								"w": 0.34,
+								"at": "sense",
+								"enter": "pop",
+								"rot": -5
+							}
+						],
+						"at": "sixth",
+						"enter": "flash",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"punch": [
+								"sixth"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "study",
+			"say": "Scientists have tested it for over a hundred years. Careful tests have found no reliable sixth sense.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "gaze",
+								"x": 0.5,
+								"y": 0.3,
+								"w": 0.8,
+								"rays": 11,
+								"color": "ink",
+								"rot": 180,
+								"enter": "none"
+							},
+							{
+								"type": "chip",
+								"text": "SCIENTISTS HAVE TESTED IT",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 36,
+								"bg": "accent",
+								"color": "ink",
+								"enter": "down",
+								"at": "start"
+							},
+							{
+								"type": "img",
+								"src": "body-back",
+								"x": 0.5,
+								"y": 0.47,
+								"w": 0.25,
+								"enter": "up",
+								"delay": -0.2
+							},
+							{
+								"type": "eyes",
+								"x": 0.5,
+								"y": 0.17,
+								"w": 0.4,
+								"look": [
+									{
+										"at": "start",
+										"x": 0,
+										"y": 0.3
+									}
+								],
+								"enter": "down",
+								"at": "start",
+								"id": "st0"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							]
+						}
+					},
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "text",
+								"text": "100+",
+								"x": 0.5,
+								"y": 0.2,
+								"size": 400,
+								"color": "ink",
+								"mark": "accent",
+								"at": "hundred",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "chip",
+								"text": "YEARS OF TESTS",
+								"x": 0.5,
+								"y": 0.38,
+								"size": 46,
+								"bg": "ink",
+								"color": "paper",
+								"at": "years",
+								"enter": "up",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "1898 · 1913 · 2000",
+								"x": 0.5,
+								"y": 0.46,
+								"size": 36,
+								"bg": "white",
+								"color": "ink",
+								"at": "years",
+								"enter": "up"
+							}
+						],
+						"at": "hundred",
+						"enter": "punch",
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							],
+							"punch": [
+								"hundred"
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "text",
+								"text": "SIXTH SENSE",
+								"x": 0.5,
+								"y": 0.26,
+								"size": 200,
+								"color": "paper",
+								"at": "Careful",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "scribble",
+								"shape": "strike",
+								"x": 0.5,
+								"y": 0.27,
+								"w": 0.88,
+								"h": 0.06,
+								"color": "accent",
+								"strokeW": 26,
+								"at": "reliable",
+								"dur": 9,
+								"outline": false
+							},
+							{
+								"type": "chip",
+								"text": "NO RELIABLE EVIDENCE",
+								"x": 0.5,
+								"y": 0.42,
+								"size": 40,
+								"bg": "accent",
+								"color": "ink",
+								"at": "reliable",
+								"enter": "up",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "Colwell et al. · 2000 (review)",
+								"x": 0.07,
+								"y": 0.835,
+								"kind": "cite",
+								"size": 32,
+								"align": "left",
+								"at": "Careful",
+								"enter": "left",
+								"sfx": "blip",
+								"sfxVolume": 0.2
+							}
+						],
+						"at": "Careful",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "clue",
+			"say": "So why does it feel so real? Here's a clue from a 2013 study. People judged where a face was looking, when its eyes were fuzzy and hard to read.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "img",
+								"src": "face-thinking",
+								"x": 0.5,
+								"y": 0.36,
+								"w": 0.56,
+								"enter": "pop",
+								"delay": -0.2
+							},
+							{
+								"type": "text",
+								"text": "?",
+								"x": 0.84,
+								"y": 0.16,
+								"size": 300,
+								"color": "accent",
+								"stroke": "ink",
+								"strokeW": 14,
+								"rot": 10,
+								"at": "real",
+								"enter": "pop"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "2013 LAB STUDY",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 42,
+								"bg": "accent",
+								"color": "ink",
+								"at": "2013",
+								"enter": "down",
+								"sfx": "blip"
+							},
+							{
+								"type": "eyes",
+								"x": 0.5,
+								"y": 0.3,
+								"w": 0.8,
+								"look": [
+									{
+										"at": "start",
+										"x": 0.3,
+										"y": 0
+									}
+								],
+								"enter": "none",
+								"at": "start",
+								"id": "clue"
+							},
+							{
+								"type": "chip",
+								"text": "WHERE IS IT LOOKING?",
+								"x": 0.5,
+								"y": 0.52,
+								"size": 40,
+								"bg": "paper",
+								"color": "ink",
+								"at": "judged",
+								"enter": "up",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "Mareschal et al. · Current Biology · 2013",
+								"x": 0.07,
+								"y": 0.835,
+								"kind": "cite",
+								"size": 32,
+								"align": "left",
+								"at": "2013",
+								"enter": "left",
+								"sfx": "blip",
+								"sfxVolume": 0.2
+							}
+						],
+						"at": "Here's",
+						"enter": "slide-l",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "2013 LAB STUDY",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 42,
+								"bg": "accent",
+								"color": "ink",
+								"enter": "none",
+								"at": "2013"
+							},
+							{
+								"type": "eyes",
+								"x": 0.5,
+								"y": 0.3,
+								"w": 0.8,
+								"look": [
+									{
+										"at": "start",
+										"x": 0.3,
+										"y": 0
+									}
+								],
+								"blur": 7,
+								"jitter": 0.9,
+								"enter": "none",
+								"at": "start",
+								"id": "clue2"
+							},
+							{
+								"type": "chip",
+								"text": "FUZZY, HARD TO READ",
+								"x": 0.5,
+								"y": 0.52,
+								"size": 40,
+								"bg": "paper",
+								"color": "ink",
+								"at": "fuzzy",
+								"enter": "up",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "Mareschal et al. · Current Biology · 2013",
+								"x": 0.07,
+								"y": 0.835,
+								"kind": "cite",
+								"size": 32,
+								"align": "left",
+								"at": "2013",
+								"enter": "none",
+								"sfx": "blip",
+								"sfxVolume": 0.2
+							}
+						],
+						"at": "when",
+						"enter": "cut",
+						"cam": {
+							"z": [
+								1.0,
+								1.1
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "result",
+			"say": "When the eyes were hard to read, people tended to see the gaze as aimed *at them*.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "ink-grid",
+						"layers": [
+							{
+								"type": "eyes",
+								"x": 0.5,
+								"y": 0.24,
+								"w": 0.76,
+								"look": [
+									{
+										"at": "start",
+										"x": 0.3,
+										"y": 0
+									},
+									{
+										"at": "aimed",
+										"x": 0,
+										"y": 0.15
+									}
+								],
+								"blur": 6,
+								"jitter": 0.9,
+								"enter": "none",
+								"id": "res"
+							},
+							{
+								"type": "gaze",
+								"x": 0.5,
+								"y": 0.38,
+								"w": 0.7,
+								"rays": 9,
+								"color": "accent",
+								"rot": 180,
+								"at": "aimed",
+								"enter": "none"
+							},
+							{
+								"type": "img",
+								"src": "face-surprised",
+								"x": 0.5,
+								"y": 0.56,
+								"w": 0.36,
+								"at": "aimed",
+								"enter": "pop",
+								"rot": 3
+							},
+							{
+								"type": "burst",
+								"text": "AT ME!",
+								"x": 0.76,
+								"y": 0.5,
+								"w": 0.28,
+								"at": "them",
+								"enter": "slam",
+								"rot": 8,
+								"seed": 2,
+								"sfx": "hit"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							],
+							"punch": [
+								"them"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "prior",
+			"say": "The researchers call it an expectation: when we're unsure, the brain assumes someone is looking *at us*.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "pulse",
+								"x": 0.5,
+								"y": 0.32,
+								"w": 1.0,
+								"enter": "none",
+								"color": "ink"
+							},
+							{
+								"type": "img",
+								"src": "brain",
+								"x": 0.5,
+								"y": 0.32,
+								"w": 0.5,
+								"enter": "pop",
+								"loop": "breathe"
+							},
+							{
+								"type": "chip",
+								"text": "EXPECTATION",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 46,
+								"bg": "ink",
+								"color": "paper",
+								"at": "expectation",
+								"enter": "down",
+								"sfx": "blip"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "eyes",
+								"x": 0.5,
+								"y": 0.2,
+								"w": 0.7,
+								"look": [
+									{
+										"at": "start",
+										"x": 0,
+										"y": 0.2
+									}
+								],
+								"enter": "none",
+								"id": "pr"
+							},
+							{
+								"type": "gaze",
+								"x": 0.5,
+								"y": 0.38,
+								"w": 0.9,
+								"rays": 11,
+								"color": "accent",
+								"rot": 180,
+								"enter": "none"
+							},
+							{
+								"type": "text",
+								"text": "AT ME",
+								"x": 0.5,
+								"y": 0.52,
+								"size": 260,
+								"color": "accent",
+								"stroke": "ink",
+								"shadow": "paper",
+								"at": "assumes",
+								"enter": "slam",
+								"sfx": "hit"
+							}
+						],
+						"at": "assumes",
+						"enter": "flash",
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							],
+							"punch": [
+								"assumes"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "why",
+			"say": "Why? One idea: it's a *safer* bet. Wrongly assuming a stare costs little. Missing a real one might cost more.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "A SAFER BET",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 46,
+								"bg": "accent",
+								"color": "ink",
+								"at": "safer",
+								"enter": "down",
+								"sfx": "blip"
+							},
+							{
+								"type": "scale",
+								"x": 0.5,
+								"y": 0.3,
+								"w": 0.9,
+								"count": 1,
+								"leftAt": "Wrongly",
+								"rightAt": "Missing",
+								"tilt": [
+									{
+										"at": "start",
+										"v": 0
+									},
+									{
+										"at": "Missing",
+										"v": 0.9
+									}
+								],
+								"enter": "up"
+							},
+							{
+								"type": "chip",
+								"text": "IMAGINED STARE",
+								"x": 0.26,
+								"y": 0.55,
+								"size": 32,
+								"bg": "white",
+								"color": "ink",
+								"at": "Wrongly",
+								"enter": "up"
+							},
+							{
+								"type": "chip",
+								"text": "MISSED STARE",
+								"x": 0.74,
+								"y": 0.55,
+								"size": 32,
+								"bg": "ink",
+								"color": "paper",
+								"at": "Missing",
+								"enter": "up",
+								"sfx": "blip"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "about",
+			"say": "And a direct gaze often means something is *about to happen*: a conversation, or a threat.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "eyes",
+								"x": 0.5,
+								"y": 0.22,
+								"w": 0.7,
+								"look": [
+									{
+										"at": "start",
+										"x": 0,
+										"y": 0
+									}
+								],
+								"enter": "pop",
+								"id": "abt"
+							},
+							{
+								"type": "chip",
+								"text": "A CONVERSATION",
+								"x": 0.3,
+								"y": 0.42,
+								"size": 40,
+								"bg": "paper",
+								"color": "ink",
+								"at": "conversation",
+								"enter": "left",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "OR A THREAT",
+								"x": 0.68,
+								"y": 0.5,
+								"size": 40,
+								"bg": "accent",
+								"color": "ink",
+								"at": "threat",
+								"enter": "right",
+								"sfx": "blip"
+							},
+							{
+								"type": "burst",
+								"text": "!",
+								"x": 0.85,
+								"y": 0.12,
+								"w": 0.2,
+								"at": "happen",
+								"enter": "slam",
+								"rot": 10,
+								"seed": 6,
+								"sfx": "hit"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "img",
+								"src": "face-shock",
+								"x": 0.5,
+								"y": 0.34,
+								"w": 0.5,
+								"enter": "pop"
+							},
+							{
+								"type": "chip",
+								"text": "OR A THREAT",
+								"x": 0.5,
+								"y": 0.58,
+								"size": 46,
+								"bg": "ink",
+								"color": "paper",
+								"at": "threat",
+								"enter": "up",
+								"sfx": "blip"
+							}
+						],
+						"at": "threat",
+						"enter": "slide-u",
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "tip",
+			"say": "So the next time you feel watched, remember: your brain is *guessing*. And it guesses, 'me.'",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "slab",
+								"color": "accent",
+								"round": true,
+								"w": 0.9,
+								"x": 0.5,
+								"y": 0.33,
+								"border": 10,
+								"enter": "pop",
+								"depth": 0.6
+							},
+							{
+								"type": "img",
+								"src": "face-skeptic",
+								"x": 0.5,
+								"y": 0.34,
+								"w": 0.5,
+								"enter": "pop"
+							},
+							{
+								"type": "text",
+								"text": "JUST A GUESS",
+								"x": 0.5,
+								"y": 0.58,
+								"size": 150,
+								"color": "ink",
+								"mark": "accent",
+								"at": "guessing",
+								"enter": "slam",
+								"sfx": "hit"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "close",
+			"say": "No sixth sense. Just a careful brain, keeping an *eye* out for you.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "eyes",
+								"x": 0.5,
+								"y": 0.26,
+								"w": 0.7,
+								"look": [
+									{
+										"at": "start",
+										"x": -0.3,
+										"y": 0
+									},
+									{
+										"at": "careful",
+										"x": 0.3,
+										"y": 0
+									},
+									{
+										"at": "eye",
+										"x": 0,
+										"y": 0.1
+									}
+								],
+								"enter": "pop",
+								"id": "cl"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							]
+						}
+					},
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "slab",
+								"color": "accent",
+								"round": true,
+								"w": 0.86,
+								"x": 0.5,
+								"y": 0.32,
+								"border": 10,
+								"enter": "pop",
+								"depth": 0.6
+							},
+							{
+								"type": "img",
+								"src": "face-smile",
+								"x": 0.5,
+								"y": 0.33,
+								"w": 0.5,
+								"enter": "pop"
+							},
+							{
+								"type": "heart",
+								"x": 0.8,
+								"y": 0.14,
+								"w": 0.16,
+								"at": "you",
+								"enter": "pop",
+								"pulse": [
+									"you"
+								],
+								"rot": 12
+							}
+						],
+						"irisAt": [
+							0.5,
+							0.33
+						],
+						"at": "keeping",
+						"enter": "iris",
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							]
+						}
+					}
+				]
+			},
+			"tone": "prof-soft"
+		},
+		{
+			"id": "outro",
+			"say": "I'm the Professor. See you in the next lesson.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "panel",
+								"src": "panel-board",
+								"x": 0.5,
+								"y": 0.265,
+								"w": 0.86,
+								"enter": "up",
+								"zoom": [
+									1.02,
+									1.12
+								],
+								"focus": [
+									0.62,
+									0.5
+								]
+							},
+							{
+								"type": "text",
+								"text": "THE PROFESSOR",
+								"x": 0.5,
+								"y": 0.55,
+								"size": 170,
+								"color": "ink",
+								"mark": "accent",
+								"at": "Professor",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "chip",
+								"text": "EVERYDAY PSYCHOLOGY",
+								"x": 0.5,
+								"y": 0.61,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "See",
+								"enter": "up"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.04
+							]
+						}
+					}
+				]
+			}
+		}
+	]
+}

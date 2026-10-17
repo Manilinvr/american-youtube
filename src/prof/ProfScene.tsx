@@ -5,6 +5,9 @@ import {Sfx} from '../components/Sfx';
 import type {Visual} from '../types';
 import {clamp, easeInOut, easeOut, enterStyle, lerp, prog, rnd, spr} from './anim';
 import {LAYERS, LayerCtx} from './layers';
+import {LAYERS2} from './layers2';
+
+const ALL_LAYERS = {...LAYERS, ...LAYERS2};
 import {Cam, resolveCue, ShotCtx, useResolve, useSceneFrame} from './ShotCtx';
 import {PROF} from './theme';
 
@@ -63,7 +66,7 @@ const LayerBox: React.FC<{layer: any; from: number; index: number}> = ({layer, f
 	const outP = Number.isFinite(end) ? clamp((f - end) / 6) : 0;
 	if (outP >= 1) return null;
 	const t = f - start;
-	const Comp = LAYERS[layer.type];
+	const Comp = ALL_LAYERS[layer.type];
 	if (!Comp) return null;
 
 	const depth = layer.depth ?? 1;
