@@ -105,3 +105,13 @@
 - **Новые входы кадра**: `blinds`, `spin`, `split`, `zoom-out`.
 - **Шаблоны хуков** (`tools/prof/lib.py`): `hook_number`, `hook_quote`, `hook_versus`, `hook_countdown`.
 - Краткое руководство для меня: `.claude/skills/prof-design/SKILL.md`.
+
+
+## Тема «case» — стиль «досье» (p019)
+
+`"theme": "case"` в JSON (после `build(...)` дописать поле, как в `tools/episodes/p019.py`). Тёмно-кремовая бумага, красная ручка, шрифт пишущей машинки; субтитры — `CaseCaptions` (лента со скотчем), переходы только `flash`/`iris`.
+
+- **Фоны**: `cork` (пробка), `desk` (тёмный стол), `kraft` (крафт), плюс `ink`.
+- **Слои** (`src/prof/layers6.tsx`): `polaroid` (`src`, `caption`, `big` — текст вместо фото), `note` (стикер), `doc` (бланк: `header`, `lines:[{text, at, red, redact, revealAt}]`), `string` (красная нить `from`/`to` в долях кадра), `rubber` (печать `text`, `sub`), `exhibit` (бирка A/B/C).
+- **Вёрстка**: на вертикали контент держать в верхней половине, но не у самого края: `y` стикеров ≥ 0.2, бланков ≈ 0.4; короткие слова-плашки в `big` переносить (`"AMSTER-\nDAM"`).
+- Метки «MY READING / MY ADVICE (NOT A FINDING)» обязательны для собственных выводов.

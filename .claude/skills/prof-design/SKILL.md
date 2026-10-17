@@ -35,3 +35,6 @@ Read `docs/professor-style.md` for the full layer reference. This skill is the s
 
 ## Sound
 Do not embed copyrighted trending songs (Content ID). The owner adds a trending sound from the YouTube Shorts library at upload, quietly (10-15%).
+
+## Тема `case` («досье»)
+Для расследований и «разбора дела»: `theme:"case"`, фоны `cork/desk/kraft`, слои `polaroid/note/doc/string/rubber/exhibit`. Подробности и правила вёрстки — `docs/professor-style.md`, образец `tools/episodes/p019.py`.
