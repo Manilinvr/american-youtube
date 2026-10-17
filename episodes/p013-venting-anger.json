@@ -1,0 +1,1606 @@
+{
+	"id": "p013-venting-anger",
+	"format": "short",
+	"style": "prof",
+	"title": "Does 'Letting It Out' Really Help When You're Angry?",
+	"tone": "prof",
+	"music": "gymnopedie-no-1.mp3",
+	"sources": [
+		"Bushman, B. J. (2002). Does venting anger feed or extinguish the flame? Catharsis, rumination, distraction, anger, and aggressive responding. Personality and Social Psychology Bulletin, 28(6), 724-731. https://doi.org/10.1177/0146167202289002"
+	],
+	"scenes": [
+		{
+			"id": "hook",
+			"say": "You're furious. Someone says, 'Don't bottle it up. Let it out. Punch a pillow. Scream into the car.' It sounds so *logical*. Pressure builds, so you release it. But wait. Is anger really like steam in a pot?",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "img",
+								"src": "kbust-pocket",
+								"x": 0.5,
+								"y": 0.36,
+								"w": 0.52,
+								"enter": "pop",
+								"delay": -0.3
+							},
+							{
+								"type": "burst",
+								"text": "ARGH!",
+								"x": 0.8,
+								"y": 0.12,
+								"w": 0.3,
+								"at": "start",
+								"enter": "slam",
+								"rot": 8,
+								"seed": 3,
+								"fill": "paper",
+								"sfx": "hit",
+								"delay": -0.2
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "text",
+								"text": "LET IT\nOUT!",
+								"x": 0.5,
+								"y": 0.27,
+								"size": 270,
+								"color": "accent",
+								"enter": "slam",
+								"sfx": "hit",
+								"at": "Let"
+							}
+						],
+						"at": "Let",
+						"enter": "punch",
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							],
+							"punch": [
+								"Let"
+							]
+						}
+					},
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "THE LOGIC",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "chip",
+								"text": "PRESSURE BUILDS",
+								"x": 0.3,
+								"y": 0.2,
+								"size": 44,
+								"bg": "ink",
+								"color": "paper",
+								"at": "Pressure",
+								"enter": "left",
+								"sfx": "blip"
+							},
+							{
+								"type": "scribble",
+								"shape": "arrow",
+								"x": 0.5,
+								"y": 0.2,
+								"w": 0.14,
+								"h": 0.06,
+								"color": "accent",
+								"strokeW": 14,
+								"at": "release",
+								"dur": 10,
+								"curve": 0.0
+							},
+							{
+								"type": "chip",
+								"text": "YOU RELEASE IT",
+								"x": 0.74,
+								"y": 0.2,
+								"size": 44,
+								"bg": "accent",
+								"color": "ink",
+								"at": "release",
+								"enter": "right",
+								"sfx": "blip"
+							},
+							{
+								"type": "img",
+								"src": "kbust-pen2",
+								"x": 0.5,
+								"y": 0.5,
+								"w": 0.34,
+								"enter": "pop",
+								"at": "logical"
+							}
+						],
+						"at": "It",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "text",
+								"text": "LIKE STEAM\nIN A POT?",
+								"x": 0.5,
+								"y": 0.27,
+								"size": 190,
+								"color": "ink",
+								"enter": "slam",
+								"sfx": "hit",
+								"at": "steam"
+							},
+							{
+								"type": "img",
+								"src": "face-skeptic",
+								"x": 0.5,
+								"y": 0.58,
+								"w": 0.3,
+								"at": "steam",
+								"enter": "pop",
+								"rot": -4
+							}
+						],
+						"at": "steam",
+						"enter": "punch",
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							],
+							"punch": [
+								"steam"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "idea",
+			"say": "That idea is old. It's called *catharsis*. The thinking goes: if you act out your anger, it drains away. And if that's true, hitting a punching bag should calm you down.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "THE OLD IDEA: CATHARSIS",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "accent",
+								"color": "ink",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "text",
+								"text": "CATHARSIS",
+								"x": 0.5,
+								"y": 0.25,
+								"size": 190,
+								"color": "paper",
+								"enter": "slam",
+								"sfx": "hit",
+								"at": "catharsis"
+							},
+							{
+								"type": "img",
+								"src": "kbust-calm",
+								"x": 0.5,
+								"y": 0.52,
+								"w": 0.32,
+								"enter": "pop",
+								"at": "catharsis+0.2"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "battery",
+								"x": 0.5,
+								"y": 0.2,
+								"w": 0.76,
+								"label": "ANGER",
+								"level": [
+									{
+										"at": "start",
+										"v": 1.0
+									},
+									{
+										"at": "drains",
+										"v": 0.1
+									}
+								],
+								"glide": 40,
+								"enter": "pop"
+							},
+							{
+								"type": "chip",
+								"text": "ACT IT OUT = ANGER DRAINS",
+								"x": 0.5,
+								"y": 0.4,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "act",
+								"enter": "up",
+								"sfx": "blip"
+							}
+						],
+						"at": "The",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "THE PREDICTION",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "img",
+								"src": "kfull-point",
+								"x": 0.5,
+								"y": 0.42,
+								"w": 0.34,
+								"enter": "up"
+							},
+							{
+								"type": "chip",
+								"text": "PUNCHING BAG → CALM",
+								"x": 0.5,
+								"y": 0.18,
+								"size": 44,
+								"bg": "white",
+								"color": "ink",
+								"at": "hitting",
+								"enter": "down",
+								"sfx": "blip"
+							}
+						],
+						"at": "And",
+						"enter": "slide-u",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "test",
+			"say": "So how would you test it? Well, make people angry first. In a famous 2002 experiment, six hundred students wrote an essay, and then got insulting feedback on it from another student.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "HOW TO TEST IT",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "chip",
+								"text": "Bushman · 2002",
+								"x": 0.07,
+								"y": 0.835,
+								"kind": "cite",
+								"size": 32,
+								"align": "left",
+								"at": "start",
+								"enter": "left",
+								"sfx": "blip",
+								"sfxVolume": 0.2
+							},
+							{
+								"type": "img",
+								"src": "kbust-pen",
+								"x": 0.5,
+								"y": 0.36,
+								"w": 0.5,
+								"enter": "pop",
+								"delay": -0.2
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "ink-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "STEP 1: MAKE THEM ANGRY",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "accent",
+								"color": "ink",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "counter",
+								"to": 600,
+								"size": 420,
+								"color": "paper",
+								"x": 0.5,
+								"y": 0.22,
+								"at": "six",
+								"dur": 24,
+								"enter": "none",
+								"stroke": "ink",
+								"shadow": "accent",
+								"sfx": "hit"
+							},
+							{
+								"type": "chip",
+								"text": "STUDENTS",
+								"x": 0.5,
+								"y": 0.42,
+								"size": 44,
+								"bg": "paper",
+								"color": "ink",
+								"at": "students",
+								"enter": "up",
+								"sfx": "blip"
+							}
+						],
+						"at": "In",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"punch": [
+								"six"
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "A WRITTEN ESSAY",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "card",
+								"kind": "neutral",
+								"title": "FEEDBACK ON YOUR ESSAY",
+								"text": "\"ONE OF THE WORST\nESSAYS I'VE READ.\"",
+								"x": 0.5,
+								"y": 0.26,
+								"w": 0.9,
+								"size": 46,
+								"at": "insulting",
+								"enter": "up",
+								"sfx": "blip"
+							},
+							{
+								"type": "img",
+								"src": "face-angry",
+								"x": 0.5,
+								"y": 0.56,
+								"w": 0.28,
+								"at": "insulting+0.2",
+								"enter": "pop",
+								"rot": 5
+							}
+						],
+						"at": "then",
+						"enter": "slide-u",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "groups",
+			"say": "Then they were split into three groups. Group one hit a punching bag while thinking about the person who insulted them. Group two hit the bag too, but thought about getting *fit*. And group three just sat quietly.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "THREE GROUPS",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "img",
+								"src": "kbust-big-pen",
+								"x": 0.5,
+								"y": 0.36,
+								"w": 0.5,
+								"enter": "pop",
+								"delay": -0.2
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "card",
+								"kind": "against",
+								"title": "GROUP 1: RUMINATE",
+								"text": "HIT THE BAG.\nTHINK ABOUT\nTHE INSULTER.",
+								"x": 0.5,
+								"y": 0.27,
+								"w": 0.88,
+								"size": 50,
+								"enter": "pop",
+								"sfx": "blip"
+							}
+						],
+						"at": "Group",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "card",
+								"kind": "for",
+								"title": "GROUP 2: DISTRACT",
+								"text": "HIT THE BAG.\nTHINK ABOUT\nGETTING FIT.",
+								"x": 0.5,
+								"y": 0.27,
+								"w": 0.88,
+								"size": 50,
+								"enter": "pop",
+								"sfx": "blip"
+							}
+						],
+						"at": "two",
+						"enter": "wipe-l",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "card",
+								"kind": "neutral",
+								"title": "GROUP 3: CONTROL",
+								"text": "NO BAG.\nJUST SIT\nQUIETLY.",
+								"x": 0.5,
+								"y": 0.27,
+								"w": 0.88,
+								"size": 50,
+								"enter": "pop",
+								"sfx": "blip"
+							}
+						],
+						"at": "three#2",
+						"enter": "slide-u",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "pred",
+			"say": "Now, if catharsis is right, who ends up calmest? The group that vented the most. The one that really *went for it*.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "IF CATHARSIS IS RIGHT...",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "img",
+								"src": "face-thinking",
+								"x": 0.5,
+								"y": 0.36,
+								"w": 0.44,
+								"enter": "pop",
+								"delay": -0.2
+							},
+							{
+								"type": "chip",
+								"text": "CALMEST = THE VENTERS?",
+								"x": 0.5,
+								"y": 0.62,
+								"size": 40,
+								"bg": "accent",
+								"color": "ink",
+								"at": "calmest",
+								"enter": "up",
+								"sfx": "blip"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "text",
+								"text": "GROUP 1\nWINS?",
+								"x": 0.5,
+								"y": 0.26,
+								"size": 240,
+								"color": "ink",
+								"enter": "slam",
+								"sfx": "hit",
+								"at": "vented"
+							},
+							{
+								"type": "img",
+								"src": "kfull-point2",
+								"x": 0.5,
+								"y": 0.56,
+								"w": 0.2,
+								"at": "vented+0.2",
+								"enter": "up"
+							}
+						],
+						"at": "The",
+						"enter": "flash",
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							],
+							"punch": [
+								"vented"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "result",
+			"say": "But that's not what happened. The group that hit the bag while thinking about their insulter ended up the *angriest*. And when they got a chance to blast that person with loud noise, they chose the loudest blasts.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "text",
+								"text": "NOT WHAT\nHAPPENED",
+								"x": 0.5,
+								"y": 0.25,
+								"size": 210,
+								"color": "paper",
+								"enter": "slam",
+								"sfx": "hit",
+								"at": "not"
+							},
+							{
+								"type": "img",
+								"src": "face-shock",
+								"x": 0.5,
+								"y": 0.58,
+								"w": 0.3,
+								"at": "not+0.2",
+								"enter": "pop",
+								"rot": 5
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"punch": [
+								"not"
+							]
+						}
+					},
+					{
+						"bg": "ink-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "ILLUSTRATION, NOT REAL DATA",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 28,
+								"bg": "soft",
+								"color": "ink",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "bars",
+								"x": 0.46,
+								"y": 0.3,
+								"w": 0.74,
+								"h": 0.4,
+								"items": [
+									{
+										"label": "RUMINATE",
+										"value": 0.82,
+										"color": "accent",
+										"at": "angriest"
+									},
+									{
+										"label": "DISTRACT",
+										"value": 0.45,
+										"color": "paper",
+										"at": "angriest+0.3"
+									},
+									{
+										"label": "SIT",
+										"value": 0.45,
+										"color": "paper",
+										"at": "angriest+0.6"
+									}
+								],
+								"labelColor": "paper",
+								"enter": "none",
+								"at": "start"
+							},
+							{
+								"type": "chip",
+								"text": "HOW ANGRY AFTERWARD",
+								"x": 0.5,
+								"y": 0.58,
+								"size": 32,
+								"bg": "white",
+								"color": "ink",
+								"at": "angriest",
+								"enter": "up"
+							}
+						],
+						"at": "group",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "THEN: BLAST YOUR INSULTER WITH NOISE",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "waves",
+								"x": 0.5,
+								"y": 0.3,
+								"w": 1.0,
+								"at": "loud",
+								"dur": 120,
+								"strokeW": 18,
+								"enter": "none"
+							},
+							{
+								"type": "text",
+								"text": "LOUDEST\nBLASTS",
+								"x": 0.5,
+								"y": 0.3,
+								"size": 200,
+								"color": "ink",
+								"enter": "slam",
+								"sfx": "hit",
+								"at": "loudest"
+							}
+						],
+						"at": "And",
+						"enter": "slide-l",
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							],
+							"shake": [
+								"loudest"
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "bars",
+								"x": 0.46,
+								"y": 0.3,
+								"w": 0.74,
+								"h": 0.4,
+								"items": [
+									{
+										"label": "RUMINATE",
+										"value": 0.85,
+										"color": "accent",
+										"at": "start"
+									},
+									{
+										"label": "DISTRACT",
+										"value": 0.55,
+										"color": "paper",
+										"at": "start"
+									},
+									{
+										"label": "SIT",
+										"value": 0.4,
+										"color": "paper",
+										"at": "start"
+									}
+								],
+								"labelColor": "paper",
+								"enter": "none",
+								"at": "start"
+							},
+							{
+								"type": "chip",
+								"text": "ILLUSTRATION: HOW AGGRESSIVE",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 28,
+								"bg": "soft",
+								"color": "ink",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "chip",
+								"text": "Bushman · 2002",
+								"x": 0.07,
+								"y": 0.835,
+								"kind": "cite",
+								"size": 32,
+								"align": "left",
+								"at": "start",
+								"enter": "left",
+								"sfx": "blip",
+								"sfxVolume": 0.2
+							}
+						],
+						"at": "chose",
+						"enter": "wipe-l",
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "think",
+			"say": "Let's think about why. When you hit the bag *and* replay the insult, you're not releasing anything. You're rehearsing. You're feeding the anger with fresh fuel, again and again. It's less like letting steam out of a pot, and more like fanning a fire.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "LET'S THINK ABOUT WHY",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "img",
+								"src": "kbust-pen2",
+								"x": 0.5,
+								"y": 0.38,
+								"w": 0.5,
+								"enter": "pop",
+								"delay": -0.2
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "text",
+								"text": "NOT\nRELEASING",
+								"x": 0.5,
+								"y": 0.25,
+								"size": 220,
+								"color": "ink",
+								"enter": "slam",
+								"sfx": "hit",
+								"at": "not"
+							},
+							{
+								"type": "scribble",
+								"shape": "strike",
+								"x": 0.5,
+								"y": 0.25,
+								"w": 0.8,
+								"h": 0.06,
+								"color": "ink",
+								"strokeW": 20,
+								"at": "releasing",
+								"dur": 9,
+								"outline": false
+							}
+						],
+						"at": "releasing",
+						"enter": "flash",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"punch": [
+								"releasing"
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "text",
+								"text": "REHEARSING",
+								"x": 0.5,
+								"y": 0.25,
+								"size": 180,
+								"color": "accent",
+								"enter": "slam",
+								"sfx": "hit",
+								"at": "rehearsing"
+							},
+							{
+								"type": "img",
+								"src": "kfull-point",
+								"x": 0.5,
+								"y": 0.52,
+								"w": 0.26,
+								"at": "rehearsing+0.2",
+								"enter": "up"
+							}
+						],
+						"at": "rehearsing",
+						"enter": "punch",
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							],
+							"punch": [
+								"rehearsing"
+							]
+						}
+					},
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "A COMPARISON, NOT SCIENCE",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 30,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "cups",
+								"x": 0.5,
+								"y": 0.3,
+								"w": 0.7,
+								"items": [
+									{
+										"label": "STEAM POT",
+										"sub": "LETTING IT OUT",
+										"level": 0.2,
+										"at": "steam",
+										"color": "paper"
+									},
+									{
+										"label": "FIRE",
+										"sub": "FANNING IT",
+										"level": 0.9,
+										"at": "fanning",
+										"color": "accent"
+									}
+								],
+								"enter": "none",
+								"at": "start"
+							}
+						],
+						"at": "less",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "counter",
+			"say": "Now, a fair objection. It was one lab study, with college students. And talking about your feelings with a supportive friend is a very different thing from punching a bag while you stew. So I'm not saying, 'never express anger.' I'm saying: *how* you do it matters.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "A FAIR OBJECTION",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "chip",
+								"text": "ONE LAB STUDY",
+								"x": 0.3,
+								"y": 0.2,
+								"size": 44,
+								"bg": "ink",
+								"color": "paper",
+								"at": "one",
+								"enter": "left",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "COLLEGE STUDENTS",
+								"x": 0.68,
+								"y": 0.3,
+								"size": 44,
+								"bg": "white",
+								"color": "ink",
+								"at": "college",
+								"enter": "right",
+								"sfx": "blip"
+							},
+							{
+								"type": "img",
+								"src": "face-skeptic",
+								"x": 0.5,
+								"y": 0.56,
+								"w": 0.28,
+								"enter": "pop",
+								"at": "one"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "card",
+								"kind": "against",
+								"title": "STEWING + PUNCHING",
+								"text": "KEEPS THE\nANGER GOING.",
+								"x": 0.5,
+								"y": 0.2,
+								"w": 0.88,
+								"size": 46,
+								"at": "punching",
+								"enter": "left",
+								"sfx": "blip"
+							},
+							{
+								"type": "card",
+								"kind": "for",
+								"title": "TALKING TO A FRIEND",
+								"text": "A DIFFERENT\nTHING.",
+								"x": 0.5,
+								"y": 0.42,
+								"w": 0.88,
+								"size": 46,
+								"at": "friend",
+								"enter": "right",
+								"sfx": "blip"
+							}
+						],
+						"at": "And",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "text",
+								"text": "HOW\nMATTERS",
+								"x": 0.5,
+								"y": 0.27,
+								"size": 250,
+								"color": "accent",
+								"enter": "slam",
+								"sfx": "hit",
+								"at": "matters"
+							}
+						],
+						"at": "matters",
+						"enter": "punch",
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							],
+							"punch": [
+								"matters"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "verdict",
+			"say": "So here's my verdict. 'Let it out' is only half-true. Feeling your anger is fine. Fueling it is not. Venting by replaying the insult makes the fire bigger, not smaller.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "stamp",
+								"text": "VERDICT",
+								"sub": "HALF TRUE",
+								"x": 0.5,
+								"y": 0.22,
+								"size": 170,
+								"at": "verdict",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "img",
+								"src": "kbust-calm",
+								"x": 0.5,
+								"y": 0.5,
+								"w": 0.36,
+								"enter": "pop",
+								"delay": -0.2
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"punch": [
+								"verdict"
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "FEELING IT",
+								"x": 0.3,
+								"y": 0.12,
+								"size": 56,
+								"bg": "white",
+								"color": "ink",
+								"at": "Feeling",
+								"enter": "left",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "= FINE",
+								"x": 0.72,
+								"y": 0.12,
+								"size": 56,
+								"bg": "ink",
+								"color": "paper",
+								"at": "fine",
+								"enter": "right",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "FUELING IT",
+								"x": 0.3,
+								"y": 0.28,
+								"size": 56,
+								"bg": "ink",
+								"color": "paper",
+								"at": "Fueling",
+								"enter": "left",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "= NOT",
+								"x": 0.72,
+								"y": 0.28,
+								"size": 56,
+								"bg": "white",
+								"color": "ink",
+								"at": "not",
+								"enter": "right",
+								"sfx": "blip"
+							},
+							{
+								"type": "img",
+								"src": "face-angry",
+								"x": 0.5,
+								"y": 0.56,
+								"w": 0.28,
+								"enter": "pop",
+								"at": "Fueling",
+								"rot": 4
+							}
+						],
+						"at": "Feeling",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "advice",
+			"say": "What can you do instead? Three small things, and these are my suggestions, not findings. One: let your body calm down first, a short walk or slow breathing. Two: do something that takes your mind off it. Three: when you're calmer, talk it through with someone, or say what you need, without the replay.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "WHAT TO DO INSTEAD (MY ADVICE)",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "img",
+								"src": "kfull-walk",
+								"x": 0.5,
+								"y": 0.4,
+								"w": 0.3,
+								"enter": "left"
+							},
+							{
+								"type": "chip",
+								"text": "1  CALM THE BODY FIRST",
+								"x": 0.5,
+								"y": 0.16,
+								"size": 40,
+								"bg": "white",
+								"color": "ink",
+								"at": "One",
+								"enter": "down",
+								"sfx": "blip"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "2  TAKE YOUR MIND OFF IT",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "phone",
+								"x": 0.5,
+								"y": 0.33,
+								"w": 0.3,
+								"enter": "up",
+								"screens": [
+									{
+										"at": "start",
+										"s": "lock"
+									}
+								],
+								"rot": -3,
+								"id": "ph13"
+							}
+						],
+						"at": "Two",
+						"enter": "slide-l",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "3  LATER: TALK IT THROUGH",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "accent",
+								"color": "ink",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "img",
+								"src": "face-smile",
+								"x": 0.3,
+								"y": 0.38,
+								"w": 0.34,
+								"enter": "left"
+							},
+							{
+								"type": "img",
+								"src": "face-calm",
+								"x": 0.72,
+								"y": 0.38,
+								"w": 0.34,
+								"enter": "right"
+							},
+							{
+								"type": "bubble",
+								"text": "Here's what I need.",
+								"x": 0.5,
+								"y": 0.16,
+								"size": 48,
+								"at": "need",
+								"enter": "pop",
+								"sfx": "pop"
+							}
+						],
+						"at": "Three",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "close",
+			"say": "Anger isn't a pot of steam that needs a valve. It's more like a fire. And you don't put out a fire by feeding it. You give it *time*, and you stop adding fuel.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "img",
+								"src": "kbust-calm",
+								"x": 0.5,
+								"y": 0.34,
+								"w": 0.54,
+								"enter": "pop",
+								"loop": "breathe"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							]
+						}
+					},
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "slab",
+								"color": "accent",
+								"round": true,
+								"w": 0.86,
+								"x": 0.5,
+								"y": 0.32,
+								"border": 10,
+								"enter": "pop",
+								"depth": 0.6
+							},
+							{
+								"type": "img",
+								"src": "kbust-pen",
+								"x": 0.5,
+								"y": 0.34,
+								"w": 0.5,
+								"enter": "pop"
+							},
+							{
+								"type": "text",
+								"text": "stop adding fuel",
+								"x": 0.5,
+								"y": 0.58,
+								"size": 130,
+								"font": "hand",
+								"color": "ink",
+								"upper": false,
+								"enter": "pop",
+								"rot": -3
+							}
+						],
+						"irisAt": [
+							0.5,
+							0.34
+						],
+						"at": "stop",
+						"enter": "iris",
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							]
+						}
+					}
+				]
+			},
+			"tone": "prof-soft"
+		},
+		{
+			"id": "outro",
+			"say": "I'm the Professor. See you in the next lesson.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "panel",
+								"src": "panel-board",
+								"x": 0.5,
+								"y": 0.265,
+								"w": 0.86,
+								"enter": "up",
+								"zoom": [
+									1.02,
+									1.12
+								],
+								"focus": [
+									0.62,
+									0.5
+								]
+							},
+							{
+								"type": "text",
+								"text": "THE PROFESSOR",
+								"x": 0.5,
+								"y": 0.55,
+								"size": 170,
+								"color": "ink",
+								"mark": "accent",
+								"at": "Professor",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "chip",
+								"text": "EVERYDAY PSYCHOLOGY",
+								"x": 0.5,
+								"y": 0.61,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "See",
+								"enter": "up"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.04
+							]
+						}
+					}
+				]
+			}
+		}
+	]
+}

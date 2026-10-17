@@ -1,0 +1,1597 @@
+{
+	"id": "p016-positive-thinking",
+	"format": "short",
+	"style": "prof",
+	"title": "Does Positive Thinking Actually Work?",
+	"tone": "prof",
+	"music": "thinking-music.mp3",
+	"sources": [
+		"Wood, J. V., Perunovic, W. Q. E., & Lee, J. W. (2009). Positive self-statements: Power for some, peril for others. Psychological Science, 20(7), 860-866.",
+		"Oettingen, G., & Mayer, D. (2002). The motivating function of thinking about the future: Expectations versus fantasies. Journal of Personality and Social Psychology, 83(5), 1198-1212."
+	],
+	"scenes": [
+		{
+			"id": "hook",
+			"say": "Stand in front of the mirror and say, 'I'm confident. I'm lovable. I can do this.' The advice is everywhere: think positive and good things happen. It sounds so *reasonable*. But does it actually work? Or is it possible that, for some of us, it backfires?",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "img",
+								"src": "kbust-calm",
+								"x": 0.5,
+								"y": 0.36,
+								"w": 0.52,
+								"enter": "pop",
+								"delay": -0.3
+							},
+							{
+								"type": "bubble",
+								"text": "I'm confident!",
+								"x": 0.5,
+								"y": 0.1,
+								"size": 52,
+								"at": "start",
+								"enter": "pop",
+								"loop": "float",
+								"delay": -0.2
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "text",
+								"text": "THINK\nPOSITIVE",
+								"x": 0.5,
+								"y": 0.27,
+								"size": 250,
+								"color": "accent",
+								"enter": "slam",
+								"sfx": "hit",
+								"at": "positive"
+							}
+						],
+						"at": "positive",
+						"enter": "punch",
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							],
+							"punch": [
+								"positive"
+							]
+						}
+					},
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "THE ADVICE",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "chip",
+								"text": "SAY IT",
+								"x": 0.3,
+								"y": 0.2,
+								"size": 56,
+								"bg": "ink",
+								"color": "paper",
+								"at": "say",
+								"enter": "left",
+								"sfx": "blip"
+							},
+							{
+								"type": "scribble",
+								"shape": "arrow",
+								"x": 0.5,
+								"y": 0.2,
+								"w": 0.14,
+								"h": 0.07,
+								"color": "accent",
+								"strokeW": 14,
+								"at": "think",
+								"dur": 10,
+								"curve": 0.0
+							},
+							{
+								"type": "chip",
+								"text": "BELIEVE IT",
+								"x": 0.74,
+								"y": 0.2,
+								"size": 56,
+								"bg": "accent",
+								"color": "ink",
+								"at": "think",
+								"enter": "right",
+								"sfx": "blip"
+							},
+							{
+								"type": "img",
+								"src": "kbust-pen",
+								"x": 0.5,
+								"y": 0.5,
+								"w": 0.36,
+								"enter": "pop",
+								"at": "reasonable"
+							}
+						],
+						"at": "The",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "text",
+								"text": "OR DOES IT\nBACKFIRE?",
+								"x": 0.5,
+								"y": 0.27,
+								"size": 190,
+								"color": "ink",
+								"enter": "slam",
+								"sfx": "hit",
+								"at": "backfires"
+							},
+							{
+								"type": "img",
+								"src": "face-skeptic",
+								"x": 0.5,
+								"y": 0.58,
+								"w": 0.3,
+								"at": "backfires",
+								"enter": "pop",
+								"rot": -4
+							}
+						],
+						"at": "backfires",
+						"enter": "punch",
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							],
+							"punch": [
+								"backfires"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "test1",
+			"say": "Let's test the first half of that advice, positive self-talk. In 2009, psychologists asked people to repeat the sentence, 'I'm a lovable person.' Some had high self-esteem, some had low. Then they checked how everyone felt.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "2009: THE SELF-TALK TEST",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "chip",
+								"text": "Wood, Perunovic & Lee · 2009",
+								"x": 0.07,
+								"y": 0.835,
+								"kind": "cite",
+								"size": 32,
+								"align": "left",
+								"at": "start",
+								"enter": "left",
+								"sfx": "blip",
+								"sfxVolume": 0.2
+							},
+							{
+								"type": "img",
+								"src": "kbust-pen",
+								"x": 0.5,
+								"y": 0.38,
+								"w": 0.5,
+								"enter": "pop",
+								"delay": -0.2
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "REPEAT THIS SENTENCE",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "card",
+								"kind": "for",
+								"title": "SAY IT",
+								"text": "\"I'M A LOVABLE\nPERSON.\"",
+								"x": 0.5,
+								"y": 0.24,
+								"w": 0.9,
+								"size": 56,
+								"at": "sentence",
+								"enter": "up",
+								"sfx": "blip"
+							}
+						],
+						"at": "asked",
+						"enter": "slide-u",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "TWO KINDS OF PEOPLE",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "chip",
+								"text": "HIGH SELF-ESTEEM",
+								"x": 0.3,
+								"y": 0.2,
+								"size": 44,
+								"bg": "accent",
+								"color": "ink",
+								"at": "high",
+								"enter": "left",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "LOW SELF-ESTEEM",
+								"x": 0.7,
+								"y": 0.3,
+								"size": 44,
+								"bg": "ink",
+								"color": "paper",
+								"at": "low",
+								"enter": "right",
+								"sfx": "blip"
+							},
+							{
+								"type": "img",
+								"src": "face-calm",
+								"x": 0.5,
+								"y": 0.56,
+								"w": 0.3,
+								"enter": "pop",
+								"at": "high"
+							}
+						],
+						"at": "Some",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "result1",
+			"say": "So who felt better? People with high self-esteem got a modest boost. That's the good news. But the people with *low* self-esteem, the very people the advice is meant for, actually felt worse than those who didn't repeat it.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "HIGH SELF-ESTEEM",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "text",
+								"text": "A SMALL\nBOOST",
+								"x": 0.5,
+								"y": 0.25,
+								"size": 230,
+								"color": "ink",
+								"enter": "slam",
+								"sfx": "hit",
+								"at": "modest"
+							},
+							{
+								"type": "img",
+								"src": "face-smile",
+								"x": 0.5,
+								"y": 0.58,
+								"w": 0.3,
+								"at": "modest+0.2",
+								"enter": "pop",
+								"rot": 4
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"punch": [
+								"modest"
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "LOW SELF-ESTEEM",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "accent",
+								"color": "ink",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "text",
+								"text": "FELT\nWORSE",
+								"x": 0.5,
+								"y": 0.26,
+								"size": 270,
+								"color": "accent",
+								"enter": "slam",
+								"sfx": "hit",
+								"at": "worse"
+							},
+							{
+								"type": "img",
+								"src": "face-tired",
+								"x": 0.5,
+								"y": 0.58,
+								"w": 0.3,
+								"at": "worse+0.2",
+								"enter": "pop",
+								"rot": -4
+							}
+						],
+						"at": "But",
+						"enter": "flash",
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							],
+							"punch": [
+								"worse"
+							]
+						}
+					},
+					{
+						"bg": "ink-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "ILLUSTRATION, NOT REAL DATA",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 28,
+								"bg": "soft",
+								"color": "ink",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "pairs",
+								"x": 0.5,
+								"y": 0.17,
+								"w": 0.86,
+								"h": 0.36,
+								"legendA": "DIDN'T REPEAT",
+								"legendB": "REPEATED IT",
+								"labelColor": "paper",
+								"groups": [
+									{
+										"label": "HIGH SELF-ESTEEM",
+										"a": 0.45,
+										"b": 0.6,
+										"at": "start"
+									},
+									{
+										"label": "LOW SELF-ESTEEM",
+										"a": 0.45,
+										"b": 0.3,
+										"at": "start+0.3"
+									}
+								],
+								"enter": "none",
+								"at": "start"
+							},
+							{
+								"type": "chip",
+								"text": "HOW THEY FELT AFTERWARD",
+								"x": 0.5,
+								"y": 0.58,
+								"size": 32,
+								"bg": "white",
+								"color": "ink",
+								"at": "start",
+								"enter": "up"
+							}
+						],
+						"at": "actually",
+						"enter": "wipe-l",
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "think1",
+			"say": "Let's think about why that could happen. If you don't believe a sentence, what does your mind do when you say it out loud? It argues back. 'Lovable? Me? Remember last week?' The positive sentence becomes an *invitation* for every negative thought you've got.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "WHY WOULD IT BACKFIRE?",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "img",
+								"src": "face-thinking",
+								"x": 0.5,
+								"y": 0.38,
+								"w": 0.44,
+								"enter": "pop",
+								"delay": -0.2
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "bubble",
+								"text": "I'm lovable.",
+								"x": 0.3,
+								"y": 0.12,
+								"size": 50,
+								"at": "say",
+								"enter": "pop",
+								"sfx": "pop"
+							},
+							{
+								"type": "bubble",
+								"text": "Lovable? Me?",
+								"x": 0.7,
+								"y": 0.24,
+								"size": 50,
+								"at": "argues",
+								"enter": "pop",
+								"sfx": "pop",
+								"rot": 3
+							},
+							{
+								"type": "bubble",
+								"text": "Remember last week?",
+								"x": 0.4,
+								"y": 0.36,
+								"size": 44,
+								"at": "Remember",
+								"enter": "pop",
+								"sfx": "pop",
+								"rot": -3
+							},
+							{
+								"type": "img",
+								"src": "face-tired",
+								"x": 0.5,
+								"y": 0.58,
+								"w": 0.28,
+								"enter": "pop",
+								"at": "argues",
+								"rot": 4
+							}
+						],
+						"at": "If",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "text",
+								"text": "AN INVITATION\nTO ARGUE",
+								"x": 0.5,
+								"y": 0.27,
+								"size": 150,
+								"color": "accent",
+								"enter": "slam",
+								"sfx": "hit",
+								"at": "invitation"
+							}
+						],
+						"at": "invitation",
+						"enter": "punch",
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							],
+							"punch": [
+								"invitation"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "second",
+			"say": "So the problem might be the *distance* between the sentence and what you actually believe. Now the second half of the advice: positive visions of the future. Picture the dream job, the perfect result. Does *that* help?",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "THE GAP BETWEEN SENTENCE AND BELIEF",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "chip",
+								"text": "WHAT YOU SAY",
+								"x": 0.3,
+								"y": 0.2,
+								"size": 44,
+								"bg": "accent",
+								"color": "ink",
+								"at": "sentence",
+								"enter": "left",
+								"sfx": "blip"
+							},
+							{
+								"type": "scribble",
+								"shape": "arrow",
+								"x": 0.5,
+								"y": 0.3,
+								"w": 0.28,
+								"h": 0.07,
+								"color": "ink",
+								"strokeW": 14,
+								"at": "distance",
+								"dur": 12,
+								"curve": 0.0,
+								"outline": false
+							},
+							{
+								"type": "chip",
+								"text": "WHAT YOU BELIEVE",
+								"x": 0.7,
+								"y": 0.4,
+								"size": 44,
+								"bg": "ink",
+								"color": "paper",
+								"at": "believe",
+								"enter": "right",
+								"sfx": "blip"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "THE SECOND HALF: POSITIVE VISIONS",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "text",
+								"text": "PICTURE\nTHE DREAM",
+								"x": 0.5,
+								"y": 0.26,
+								"size": 190,
+								"color": "ink",
+								"enter": "slam",
+								"sfx": "hit",
+								"at": "Picture"
+							},
+							{
+								"type": "img",
+								"src": "face-smile",
+								"x": 0.5,
+								"y": 0.58,
+								"w": 0.3,
+								"at": "Picture+0.2",
+								"enter": "pop",
+								"rot": 4
+							}
+						],
+						"at": "Now",
+						"enter": "flash",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"punch": [
+								"Picture"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "test2",
+			"say": "A psychologist named Gabriele Oettingen studied this. In 2002, her team followed four different groups of people: graduates looking for a job, students with a crush, students facing an exam, and patients having a hip replacement. They measured two things: how positively people *expected* things to go, and how positively they *fantasized* about it.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "2002: OETTINGEN & MAYER",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "chip",
+								"text": "Oettingen & Mayer · 2002",
+								"x": 0.07,
+								"y": 0.835,
+								"kind": "cite",
+								"size": 32,
+								"align": "left",
+								"at": "start",
+								"enter": "left",
+								"sfx": "blip",
+								"sfxVolume": 0.2
+							},
+							{
+								"type": "img",
+								"src": "kbust-pen2",
+								"x": 0.5,
+								"y": 0.38,
+								"w": 0.5,
+								"enter": "pop",
+								"delay": -0.2
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					},
+					{
+						"bg": "ink-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "FOUR GROUPS OF PEOPLE",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "accent",
+								"color": "ink",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "chip",
+								"text": "JOB SEEKERS",
+								"x": 0.3,
+								"y": 0.18,
+								"size": 44,
+								"bg": "paper",
+								"color": "ink",
+								"at": "job",
+								"enter": "left",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "A CRUSH",
+								"x": 0.7,
+								"y": 0.27,
+								"size": 44,
+								"bg": "accent",
+								"color": "ink",
+								"at": "crush",
+								"enter": "right",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "AN EXAM",
+								"x": 0.32,
+								"y": 0.36,
+								"size": 44,
+								"bg": "paper",
+								"color": "ink",
+								"at": "exam",
+								"enter": "left",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "A HIP REPLACEMENT",
+								"x": 0.62,
+								"y": 0.45,
+								"size": 40,
+								"bg": "accent",
+								"color": "ink",
+								"at": "hip",
+								"enter": "right",
+								"sfx": "blip"
+							}
+						],
+						"at": "followed",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "TWO DIFFERENT THINGS",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "card",
+								"kind": "neutral",
+								"title": "EXPECTING",
+								"text": "\"I THINK THIS\nWILL GO WELL.\"",
+								"x": 0.5,
+								"y": 0.2,
+								"w": 0.9,
+								"size": 44,
+								"at": "expected",
+								"enter": "left",
+								"sfx": "blip"
+							},
+							{
+								"type": "card",
+								"kind": "neutral",
+								"title": "FANTASIZING",
+								"text": "\"I'M DAYDREAMING\nABOUT IT GOING\nPERFECTLY.\"",
+								"x": 0.5,
+								"y": 0.44,
+								"w": 0.9,
+								"size": 44,
+								"at": "fantasized",
+								"enter": "right",
+								"sfx": "blip"
+							}
+						],
+						"at": "They",
+						"enter": "slide-u",
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "result2",
+			"say": "And here's the surprise. People who *expected* success tended to put in more effort, and do better. But the people who fantasized the most about success tended to put in *less* effort, and do worse.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "EXPECTING",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "accent",
+								"color": "ink",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "text",
+								"text": "MORE EFFORT\nBETTER RESULTS",
+								"x": 0.5,
+								"y": 0.25,
+								"size": 130,
+								"color": "ink",
+								"enter": "slam",
+								"sfx": "hit",
+								"at": "expected"
+							},
+							{
+								"type": "img",
+								"src": "kfull-point",
+								"x": 0.5,
+								"y": 0.58,
+								"w": 0.2,
+								"at": "expected+0.2",
+								"enter": "up"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "FANTASIZING",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "accent",
+								"color": "ink",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "text",
+								"text": "LESS EFFORT\nWORSE RESULTS",
+								"x": 0.5,
+								"y": 0.25,
+								"size": 130,
+								"color": "accent",
+								"enter": "slam",
+								"sfx": "hit",
+								"at": "less"
+							},
+							{
+								"type": "img",
+								"src": "face-surprised",
+								"x": 0.5,
+								"y": 0.58,
+								"w": 0.3,
+								"at": "less+0.2",
+								"enter": "pop",
+								"rot": 4
+							}
+						],
+						"at": "But",
+						"enter": "flash",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"punch": [
+								"less"
+							]
+						}
+					},
+					{
+						"bg": "ink-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "ILLUSTRATION, NOT REAL DATA",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 28,
+								"bg": "soft",
+								"color": "ink",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "pairs",
+								"x": 0.5,
+								"y": 0.17,
+								"w": 0.86,
+								"h": 0.36,
+								"legendA": "EFFORT",
+								"legendB": "RESULTS",
+								"labelColor": "paper",
+								"groups": [
+									{
+										"label": "EXPECTED SUCCESS",
+										"a": 0.7,
+										"b": 0.7,
+										"at": "start"
+									},
+									{
+										"label": "FANTASIZED A LOT",
+										"a": 0.32,
+										"b": 0.32,
+										"at": "start+0.3"
+									}
+								],
+								"enter": "none",
+								"at": "start"
+							}
+						],
+						"at": "surprise",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "think2",
+			"say": "Why? The researchers' proposal is interesting. When you vividly picture success, part of your mind may feel as if you've *already arrived*. And if you've already arrived, why spend the energy? It's a proposal, not a proven mechanism. But it fits.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "THE AUTHORS' PROPOSAL",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "img",
+								"src": "kbust-pen",
+								"x": 0.5,
+								"y": 0.38,
+								"w": 0.5,
+								"enter": "pop",
+								"delay": -0.2
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "text",
+								"text": "ALREADY\nARRIVED?",
+								"x": 0.5,
+								"y": 0.26,
+								"size": 210,
+								"color": "ink",
+								"enter": "slam",
+								"sfx": "hit",
+								"at": "already"
+							},
+							{
+								"type": "img",
+								"src": "kbust-mug",
+								"x": 0.5,
+								"y": 0.58,
+								"w": 0.3,
+								"at": "already+0.2",
+								"enter": "pop"
+							}
+						],
+						"at": "When",
+						"enter": "flash",
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							],
+							"punch": [
+								"already"
+							]
+						}
+					},
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "battery",
+								"x": 0.5,
+								"y": 0.2,
+								"w": 0.76,
+								"label": "ENERGY",
+								"level": [
+									{
+										"at": "start",
+										"v": 1.0
+									},
+									{
+										"at": "spend",
+										"v": 0.3
+									}
+								],
+								"glide": 40,
+								"enter": "pop"
+							},
+							{
+								"type": "chip",
+								"text": "A PROPOSAL, NOT PROVEN",
+								"x": 0.5,
+								"y": 0.4,
+								"size": 36,
+								"bg": "ink",
+								"color": "paper",
+								"at": "proposal",
+								"enter": "up",
+								"sfx": "blip"
+							}
+						],
+						"at": "And",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "verdict",
+			"say": "So here's my verdict. Positive thinking isn't useless, but it's not magic, and the kind matters. Believing you *can* do it, based on real reasons, helps. Repeating sentences you don't believe can backfire. And pure daydreaming, without a plan, may quietly drain your drive.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "stamp",
+								"text": "VERDICT",
+								"sub": "DEPENDS ON THE KIND",
+								"x": 0.5,
+								"y": 0.22,
+								"size": 150,
+								"at": "verdict",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "img",
+								"src": "kbust-calm",
+								"x": 0.5,
+								"y": 0.5,
+								"w": 0.36,
+								"enter": "pop",
+								"delay": -0.2
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"punch": [
+								"verdict"
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "card",
+								"kind": "for",
+								"title": "HELPS",
+								"text": "BELIEVING YOU CAN,\nFOR REAL REASONS.",
+								"x": 0.5,
+								"y": 0.2,
+								"w": 0.9,
+								"size": 44,
+								"at": "Believing",
+								"enter": "left",
+								"sfx": "blip"
+							},
+							{
+								"type": "card",
+								"kind": "against",
+								"title": "CAN BACKFIRE",
+								"text": "SENTENCES YOU\nDON'T BELIEVE.",
+								"x": 0.5,
+								"y": 0.42,
+								"w": 0.9,
+								"size": 44,
+								"at": "Repeating",
+								"enter": "right",
+								"sfx": "blip"
+							}
+						],
+						"at": "Believing",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "card",
+								"kind": "against",
+								"title": "MAY DRAIN YOUR DRIVE",
+								"text": "DAYDREAMING\nWITHOUT A PLAN.",
+								"x": 0.5,
+								"y": 0.26,
+								"w": 0.9,
+								"size": 46,
+								"at": "daydreaming",
+								"enter": "up",
+								"sfx": "blip"
+							}
+						],
+						"at": "pure",
+						"enter": "slide-u",
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "advice",
+			"say": "So what should you do instead? Three suggestions, mine, not study results. One: pick sentences you can actually believe, like 'I'm learning,' instead of 'I'm perfect.' Two: after you picture the goal, also picture what might get in the way. Three: turn it into a small plan. When, where, and what exactly.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "WHAT TO DO (MY ADVICE)",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "card",
+								"kind": "for",
+								"title": "1  BELIEVABLE WORDS",
+								"text": "\"I'M LEARNING\"\nNOT \"I'M PERFECT\"",
+								"x": 0.5,
+								"y": 0.24,
+								"w": 0.9,
+								"size": 44,
+								"at": "One",
+								"enter": "left",
+								"sfx": "blip"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					},
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "2  PICTURE THE OBSTACLE TOO",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "img",
+								"src": "kbust-pocket",
+								"x": 0.5,
+								"y": 0.36,
+								"w": 0.5,
+								"enter": "pop",
+								"delay": -0.2
+							},
+							{
+								"type": "chip",
+								"text": "WHAT MIGHT GET IN THE WAY?",
+								"x": 0.5,
+								"y": 0.62,
+								"size": 34,
+								"bg": "accent",
+								"color": "ink",
+								"at": "way",
+								"enter": "up",
+								"sfx": "blip"
+							}
+						],
+						"at": "Two",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "3  A SMALL PLAN",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "accent",
+								"color": "ink",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "chip",
+								"text": "WHAT",
+								"x": 0.2,
+								"y": 0.2,
+								"size": 56,
+								"bg": "paper",
+								"color": "ink",
+								"at": "exactly",
+								"enter": "up",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "WHEN",
+								"x": 0.5,
+								"y": 0.2,
+								"size": 56,
+								"bg": "accent",
+								"color": "ink",
+								"at": "When",
+								"enter": "up",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "WHERE",
+								"x": 0.8,
+								"y": 0.2,
+								"size": 56,
+								"bg": "paper",
+								"color": "ink",
+								"at": "where",
+								"enter": "up",
+								"sfx": "blip"
+							},
+							{
+								"type": "img",
+								"src": "kfull-point",
+								"x": 0.5,
+								"y": 0.5,
+								"w": 0.22,
+								"enter": "up",
+								"at": "Three"
+							}
+						],
+						"at": "Three",
+						"enter": "slide-u",
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "close",
+			"say": "Hope is good. Just don't let it do the job of *work*. Believe you can, then show your brain a plan.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "img",
+								"src": "kbust-calm",
+								"x": 0.5,
+								"y": 0.34,
+								"w": 0.54,
+								"enter": "pop",
+								"loop": "breathe"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							]
+						}
+					},
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "slab",
+								"color": "accent",
+								"round": true,
+								"w": 0.86,
+								"x": 0.5,
+								"y": 0.32,
+								"border": 10,
+								"enter": "pop",
+								"depth": 0.6
+							},
+							{
+								"type": "img",
+								"src": "kbust-pen",
+								"x": 0.5,
+								"y": 0.34,
+								"w": 0.5,
+								"enter": "pop"
+							},
+							{
+								"type": "text",
+								"text": "hope + a plan",
+								"x": 0.5,
+								"y": 0.58,
+								"size": 140,
+								"font": "hand",
+								"color": "ink",
+								"upper": false,
+								"enter": "pop",
+								"rot": -3
+							}
+						],
+						"irisAt": [
+							0.5,
+							0.34
+						],
+						"at": "Believe",
+						"enter": "iris",
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							]
+						}
+					}
+				]
+			},
+			"tone": "prof-soft"
+		},
+		{
+			"id": "outro",
+			"say": "I'm the Professor. See you in the next lesson.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "panel",
+								"src": "panel-board",
+								"x": 0.5,
+								"y": 0.265,
+								"w": 0.86,
+								"enter": "up",
+								"zoom": [
+									1.02,
+									1.12
+								],
+								"focus": [
+									0.62,
+									0.5
+								]
+							},
+							{
+								"type": "text",
+								"text": "THE PROFESSOR",
+								"x": 0.5,
+								"y": 0.55,
+								"size": 170,
+								"color": "ink",
+								"mark": "accent",
+								"at": "Professor",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "chip",
+								"text": "EVERYDAY PSYCHOLOGY",
+								"x": 0.5,
+								"y": 0.61,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "See",
+								"enter": "up"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.04
+							]
+						}
+					}
+				]
+			}
+		}
+	]
+}

@@ -7,8 +7,9 @@ import {clamp, easeInOut, easeOut, enterStyle, lerp, prog, rnd, spr} from './ani
 import {LAYERS, LayerCtx} from './layers';
 import {LAYERS2} from './layers2';
 import {LAYERS3} from './layers3';
+import {LAYERS4} from './layers4';
 
-const ALL_LAYERS = {...LAYERS, ...LAYERS2, ...LAYERS3};
+const ALL_LAYERS = {...LAYERS, ...LAYERS2, ...LAYERS3, ...LAYERS4};
 import {Cam, resolveCue, ShotCtx, useResolve, useSceneFrame} from './ShotCtx';
 import {PROF} from './theme';
 
@@ -137,6 +138,15 @@ const ShotView: React.FC<{shot: any; index: number; from: number; dur: number}> 
 		if (k.z !== undefined) z = lerp(z, k.z, p);
 		if (k.x !== undefined) fx = lerp(fx, k.x, p);
 		if (k.y !== undefined) fy = lerp(fy, k.y, p);
+	}
+	// automatic "beats": a long shot gets a small push-in and sideways drift every ~2.4 s, so nothing sits still
+	if (c.beat !== false) {
+		const period = Math.round(2.4 * fps);
+		const k = Math.floor(local / period);
+		const ph = prog(local - k * period, 16, easeInOut);
+		const steps = Math.min(k, 3);
+		z += 0.035 * (steps + (k > 3 ? 0 : ph)) * (index % 2 === 0 ? 1 : 1);
+		fx += (k % 2 === 0 ? 1 : -1) * 0.025 * ph;
 	}
 	let dx = 0;
 	let dy = 0;

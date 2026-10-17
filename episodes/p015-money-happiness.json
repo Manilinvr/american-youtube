@@ -1,0 +1,1804 @@
+{
+	"id": "p015-money-happiness",
+	"format": "short",
+	"style": "prof",
+	"title": "Does Money Buy Happiness? Two Scientists Disagreed, Then Worked It Out",
+	"tone": "prof",
+	"music": "dreamer.mp3",
+	"sources": [
+		"Kahneman, D., & Deaton, A. (2010). High income improves evaluation of life but not emotional well-being. PNAS, 107(38), 16489-16493.",
+		"Killingsworth, M. A. (2021). Experienced well-being rises with income, even above $75,000 per year. PNAS, 118(4), e2016976118.",
+		"Killingsworth, M. A., Kahneman, D., & Mellers, B. (2023). Income and emotional well-being: A conflict resolved. PNAS, 120(10), e2208661120. https://doi.org/10.1073/pnas.2208661120"
+	],
+	"scenes": [
+		{
+			"id": "hook",
+			"say": "'Money can't buy happiness.' We say it all the time. And a famous study once said: after a certain income, more money does *nothing*. Then another study said the opposite. So who's right? Here's the twist: the two scientists teamed up to find out.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "img",
+								"src": "kbust-pocket",
+								"x": 0.5,
+								"y": 0.36,
+								"w": 0.52,
+								"enter": "pop",
+								"delay": -0.3
+							},
+							{
+								"type": "burst",
+								"text": "$$$",
+								"x": 0.8,
+								"y": 0.12,
+								"w": 0.3,
+								"at": "start",
+								"enter": "slam",
+								"rot": 8,
+								"seed": 3,
+								"fill": "paper",
+								"sfx": "pop",
+								"delay": -0.2
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "text",
+								"text": "MONEY CAN'T\nBUY HAPPINESS",
+								"x": 0.5,
+								"y": 0.27,
+								"size": 170,
+								"color": "accent",
+								"enter": "slam",
+								"sfx": "hit",
+								"at": "Money"
+							}
+						],
+						"at": "Money",
+						"enter": "punch",
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							],
+							"punch": [
+								"Money"
+							]
+						}
+					},
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "STUDY 1: IT STOPS HELPING",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "chart",
+								"x": 0.5,
+								"y": 0.28,
+								"w": 0.9,
+								"h": 0.34,
+								"series": [
+									{
+										"pts": [
+											[
+												0.05,
+												0.12
+											],
+											[
+												0.5,
+												0.6
+											],
+											[
+												0.95,
+												0.62
+											]
+										],
+										"color": "accent",
+										"at": "famous",
+										"label": "A PLATEAU"
+									}
+								],
+								"enter": "up",
+								"at": "start",
+								"xlabel": "INCOME",
+								"ylabel": "DAY-TO-DAY HAPPINESS"
+							},
+							{
+								"type": "chip",
+								"text": "ILLUSTRATION OF THE SHAPE",
+								"x": 0.5,
+								"y": 0.56,
+								"size": 28,
+								"bg": "soft",
+								"color": "ink",
+								"at": "start",
+								"enter": "up"
+							}
+						],
+						"at": "And",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					},
+					{
+						"bg": "ink-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "STUDY 2: THE OPPOSITE",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "accent",
+								"color": "ink",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "chart",
+								"x": 0.5,
+								"y": 0.28,
+								"w": 0.9,
+								"h": 0.34,
+								"series": [
+									{
+										"pts": [
+											[
+												0.05,
+												0.12
+											],
+											[
+												0.5,
+												0.5
+											],
+											[
+												0.95,
+												0.9
+											]
+										],
+										"color": "accent",
+										"at": "Then",
+										"label": "KEEPS RISING"
+									}
+								],
+								"enter": "up",
+								"at": "start",
+								"xlabel": "INCOME",
+								"ylabel": "DAY-TO-DAY HAPPINESS"
+							},
+							{
+								"type": "chip",
+								"text": "ILLUSTRATION OF THE SHAPE",
+								"x": 0.5,
+								"y": 0.56,
+								"size": 28,
+								"bg": "soft",
+								"color": "ink",
+								"at": "start",
+								"enter": "up"
+							}
+						],
+						"at": "Then",
+						"enter": "wipe-l",
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "text",
+								"text": "WHO'S\nRIGHT?",
+								"x": 0.5,
+								"y": 0.27,
+								"size": 270,
+								"color": "ink",
+								"enter": "slam",
+								"sfx": "hit",
+								"at": "right"
+							},
+							{
+								"type": "img",
+								"src": "face-thinking",
+								"x": 0.5,
+								"y": 0.58,
+								"w": 0.3,
+								"at": "right",
+								"enter": "pop",
+								"rot": -4
+							}
+						],
+						"at": "right",
+						"enter": "punch",
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							],
+							"punch": [
+								"right"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "first",
+			"say": "Study one, in 2010, led by Nobel-winning psychologist Daniel Kahneman with economist Angus Deaton. They found that people's day-to-day happiness rose with income, but then flattened out, at around seventy-five thousand dollars a year.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "2010: KAHNEMAN + DEATON",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "chip",
+								"text": "Kahneman & Deaton · 2010",
+								"x": 0.07,
+								"y": 0.835,
+								"kind": "cite",
+								"size": 32,
+								"align": "left",
+								"at": "start",
+								"enter": "left",
+								"sfx": "blip",
+								"sfxVolume": 0.2
+							},
+							{
+								"type": "img",
+								"src": "kbust-pen",
+								"x": 0.5,
+								"y": 0.38,
+								"w": 0.5,
+								"enter": "pop",
+								"delay": -0.2
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					},
+					{
+						"bg": "ink-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "THEY FOUND A PLATEAU",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "accent",
+								"color": "ink",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "chart",
+								"x": 0.5,
+								"y": 0.28,
+								"w": 0.9,
+								"h": 0.34,
+								"series": [
+									{
+										"pts": [
+											[
+												0.05,
+												0.12
+											],
+											[
+												0.55,
+												0.62
+											],
+											[
+												0.95,
+												0.64
+											]
+										],
+										"color": "accent",
+										"at": "rose",
+										"label": ""
+									}
+								],
+								"marks": [
+									{
+										"x": 0.55,
+										"label": "≈ $75K",
+										"at": "seventy"
+									}
+								],
+								"enter": "up",
+								"at": "start",
+								"xlabel": "INCOME",
+								"ylabel": "DAY-TO-DAY HAPPINESS"
+							},
+							{
+								"type": "chip",
+								"text": "ILLUSTRATION OF THE SHAPE",
+								"x": 0.5,
+								"y": 0.56,
+								"size": 28,
+								"bg": "soft",
+								"color": "ink",
+								"at": "start",
+								"enter": "up"
+							}
+						],
+						"at": "They",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "text",
+								"text": "FLAT AFTER\n≈ $75K",
+								"x": 0.5,
+								"y": 0.27,
+								"size": 190,
+								"color": "ink",
+								"enter": "slam",
+								"sfx": "hit",
+								"at": "flattened"
+							},
+							{
+								"type": "img",
+								"src": "face-calm",
+								"x": 0.5,
+								"y": 0.58,
+								"w": 0.3,
+								"at": "flattened",
+								"enter": "pop",
+								"rot": -4
+							}
+						],
+						"at": "flattened",
+						"enter": "punch",
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							],
+							"punch": [
+								"flattened"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "second",
+			"say": "Study two, in 2021, came from Matthew Killingsworth. He didn't ask people to remember how happy they were. He pinged them on their phones at random moments, and asked, right now, how do you feel? Over thirty-three thousand workers answered, more than a million and a half times.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "2021: KILLINGSWORTH",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "chip",
+								"text": "Killingsworth · 2021",
+								"x": 0.07,
+								"y": 0.835,
+								"kind": "cite",
+								"size": 32,
+								"align": "left",
+								"at": "start",
+								"enter": "left",
+								"sfx": "blip",
+								"sfxVolume": 0.2
+							},
+							{
+								"type": "phone",
+								"x": 0.5,
+								"y": 0.33,
+								"w": 0.32,
+								"enter": "up",
+								"screens": [
+									{
+										"at": "start",
+										"s": "chat"
+									}
+								],
+								"rot": -3,
+								"id": "ph15"
+							},
+							{
+								"type": "bubble",
+								"text": "How do you feel right now?",
+								"x": 0.5,
+								"y": 0.14,
+								"size": 40,
+								"at": "pinged",
+								"enter": "pop",
+								"sfx": "pop"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "NOT MEMORY. RIGHT NOW.",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "text",
+								"text": "RIGHT\nNOW",
+								"x": 0.5,
+								"y": 0.26,
+								"size": 270,
+								"color": "ink",
+								"enter": "slam",
+								"sfx": "hit",
+								"at": "right"
+							},
+							{
+								"type": "img",
+								"src": "face-smile",
+								"x": 0.5,
+								"y": 0.58,
+								"w": 0.3,
+								"at": "right+0.2",
+								"enter": "pop",
+								"rot": 4
+							}
+						],
+						"at": "He",
+						"enter": "flash",
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							],
+							"punch": [
+								"right"
+							]
+						}
+					},
+					{
+						"bg": "ink-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "THE SAMPLE",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "accent",
+								"color": "ink",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "counter",
+								"to": 33000,
+								"suffix": "+",
+								"size": 300,
+								"color": "paper",
+								"x": 0.5,
+								"y": 0.2,
+								"at": "thirty-three",
+								"dur": 26,
+								"enter": "none",
+								"stroke": "ink",
+								"shadow": "accent",
+								"sfx": "hit"
+							},
+							{
+								"type": "chip",
+								"text": "WORKERS",
+								"x": 0.5,
+								"y": 0.36,
+								"size": 44,
+								"bg": "paper",
+								"color": "ink",
+								"at": "workers",
+								"enter": "up",
+								"sfx": "blip"
+							},
+							{
+								"type": "dots",
+								"x": 0.5,
+								"y": 0.5,
+								"w": 0.7,
+								"total": 48,
+								"cols": 12,
+								"hit": 0,
+								"at": "thirty-three",
+								"step": 0.15,
+								"enter": "none",
+								"id": "d48"
+							}
+						],
+						"at": "Over",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "text",
+								"text": "1.7 MILLION\nCHECK-INS",
+								"x": 0.5,
+								"y": 0.27,
+								"size": 150,
+								"color": "ink",
+								"enter": "slam",
+								"sfx": "hit",
+								"at": "million"
+							},
+							{
+								"type": "img",
+								"src": "face-surprised",
+								"x": 0.5,
+								"y": 0.58,
+								"w": 0.3,
+								"at": "million",
+								"enter": "pop",
+								"rot": -4
+							}
+						],
+						"at": "million",
+						"enter": "punch",
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							],
+							"punch": [
+								"million"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "result2",
+			"say": "And his result? No plateau. Happiness kept rising with income, even above that old threshold. Each doubling of income gave a similar lift.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "text",
+								"text": "NO\nPLATEAU",
+								"x": 0.5,
+								"y": 0.26,
+								"size": 270,
+								"color": "accent",
+								"enter": "slam",
+								"sfx": "hit",
+								"at": "plateau"
+							},
+							{
+								"type": "img",
+								"src": "face-shock",
+								"x": 0.5,
+								"y": 0.58,
+								"w": 0.3,
+								"at": "plateau+0.2",
+								"enter": "pop",
+								"rot": 4
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							],
+							"punch": [
+								"plateau"
+							]
+						}
+					},
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "chart",
+								"x": 0.5,
+								"y": 0.28,
+								"w": 0.9,
+								"h": 0.34,
+								"series": [
+									{
+										"pts": [
+											[
+												0.05,
+												0.12
+											],
+											[
+												0.5,
+												0.5
+											],
+											[
+												0.95,
+												0.88
+											]
+										],
+										"color": "accent",
+										"at": "rising",
+										"label": ""
+									}
+								],
+								"marks": [
+									{
+										"x": 0.55,
+										"label": "OLD THRESHOLD",
+										"at": "above"
+									}
+								],
+								"enter": "up",
+								"at": "start",
+								"xlabel": "INCOME",
+								"ylabel": "DAY-TO-DAY HAPPINESS"
+							},
+							{
+								"type": "chip",
+								"text": "ILLUSTRATION OF THE SHAPE",
+								"x": 0.5,
+								"y": 0.56,
+								"size": 28,
+								"bg": "soft",
+								"color": "ink",
+								"at": "start",
+								"enter": "up"
+							}
+						],
+						"at": "Happiness",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "EACH DOUBLING, SIMILAR LIFT",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "chip",
+								"text": "EXAMPLE: $40K → $80K",
+								"x": 0.5,
+								"y": 0.2,
+								"size": 44,
+								"bg": "white",
+								"color": "ink",
+								"at": "doubling",
+								"enter": "left",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "EXAMPLE: $80K → $160K",
+								"x": 0.5,
+								"y": 0.3,
+								"size": 44,
+								"bg": "ink",
+								"color": "paper",
+								"at": "similar",
+								"enter": "right",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "ABOUT THE SAME BOOST",
+								"x": 0.5,
+								"y": 0.42,
+								"size": 40,
+								"bg": "paper",
+								"color": "ink",
+								"at": "lift",
+								"enter": "up",
+								"sfx": "blip"
+							}
+						],
+						"at": "Each",
+						"enter": "slide-u",
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "think",
+			"say": "Now let's think. Two careful studies, two opposite answers. They can't both be fully right. Unless they were measuring different *people*. And that's exactly the question they asked next.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "LET'S THINK",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "img",
+								"src": "kbust-pen2",
+								"x": 0.5,
+								"y": 0.38,
+								"w": 0.5,
+								"enter": "pop",
+								"delay": -0.2
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "card",
+								"kind": "neutral",
+								"title": "STUDY 1",
+								"text": "PLATEAU",
+								"x": 0.5,
+								"y": 0.2,
+								"w": 0.8,
+								"size": 70,
+								"at": "Two",
+								"enter": "left",
+								"sfx": "blip"
+							},
+							{
+								"type": "card",
+								"kind": "neutral",
+								"title": "STUDY 2",
+								"text": "NO PLATEAU",
+								"x": 0.5,
+								"y": 0.4,
+								"w": 0.8,
+								"size": 70,
+								"at": "opposite",
+								"enter": "right",
+								"sfx": "blip"
+							}
+						],
+						"at": "Two",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "text",
+								"text": "DIFFERENT\nPEOPLE?",
+								"x": 0.5,
+								"y": 0.27,
+								"size": 200,
+								"color": "accent",
+								"enter": "slam",
+								"sfx": "hit",
+								"at": "different"
+							},
+							{
+								"type": "img",
+								"src": "face-thinking",
+								"x": 0.5,
+								"y": 0.58,
+								"w": 0.3,
+								"at": "different",
+								"enter": "pop",
+								"rot": -4
+							}
+						],
+						"at": "different",
+						"enter": "punch",
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							],
+							"punch": [
+								"different"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "together",
+			"say": "So in 2023, Killingsworth and Kahneman, the very person who'd been challenged, worked together, along with a third scientist. They re-checked the data by *how happy people were to begin with*.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "2023: THEY TEAMED UP",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "chip",
+								"text": "Killingsworth, Kahneman & Mellers · 2023",
+								"x": 0.07,
+								"y": 0.835,
+								"kind": "cite",
+								"size": 32,
+								"align": "left",
+								"at": "start",
+								"enter": "left",
+								"sfx": "blip",
+								"sfxVolume": 0.2
+							},
+							{
+								"type": "img",
+								"src": "face-smile",
+								"x": 0.3,
+								"y": 0.36,
+								"w": 0.32,
+								"enter": "left"
+							},
+							{
+								"type": "img",
+								"src": "face-calm",
+								"x": 0.7,
+								"y": 0.36,
+								"w": 0.32,
+								"enter": "right"
+							},
+							{
+								"type": "chip",
+								"text": "+ A THIRD SCIENTIST",
+								"x": 0.5,
+								"y": 0.6,
+								"size": 40,
+								"bg": "accent",
+								"color": "ink",
+								"at": "third",
+								"enter": "up",
+								"sfx": "blip"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "THE NEW QUESTION",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "text",
+								"text": "HOW HAPPY\nTO BEGIN WITH?",
+								"x": 0.5,
+								"y": 0.26,
+								"size": 160,
+								"color": "ink",
+								"enter": "slam",
+								"sfx": "hit",
+								"at": "how"
+							},
+							{
+								"type": "img",
+								"src": "kbust-pen",
+								"x": 0.5,
+								"y": 0.58,
+								"w": 0.3,
+								"at": "how+0.2",
+								"enter": "pop"
+							}
+						],
+						"at": "They",
+						"enter": "flash",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"punch": [
+								"how"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "answer",
+			"say": "And look what happened. For most people, happiness kept rising with income. But for the *least* happy group, about one in five, it rose and then flattened. Both studies were right, about different people.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "ink-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "MOST PEOPLE",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "accent",
+								"color": "ink",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "chart",
+								"x": 0.5,
+								"y": 0.28,
+								"w": 0.9,
+								"h": 0.34,
+								"series": [
+									{
+										"pts": [
+											[
+												0.05,
+												0.14
+											],
+											[
+												0.5,
+												0.52
+											],
+											[
+												0.95,
+												0.9
+											]
+										],
+										"color": "accent",
+										"at": "most",
+										"label": "KEEPS RISING"
+									}
+								],
+								"enter": "up",
+								"at": "start",
+								"xlabel": "INCOME",
+								"ylabel": "DAY-TO-DAY HAPPINESS"
+							},
+							{
+								"type": "chip",
+								"text": "ILLUSTRATION OF THE SHAPE",
+								"x": 0.5,
+								"y": 0.56,
+								"size": 28,
+								"bg": "soft",
+								"color": "ink",
+								"at": "start",
+								"enter": "up"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					},
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "THE LEAST HAPPY ≈ 1 IN 5",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "chart",
+								"x": 0.5,
+								"y": 0.28,
+								"w": 0.9,
+								"h": 0.34,
+								"series": [
+									{
+										"pts": [
+											[
+												0.05,
+												0.08
+											],
+											[
+												0.55,
+												0.36
+											],
+											[
+												0.95,
+												0.38
+											]
+										],
+										"color": "ink",
+										"at": "least",
+										"label": "RISES, THEN FLAT"
+									}
+								],
+								"enter": "up",
+								"at": "start",
+								"xlabel": "INCOME",
+								"ylabel": "DAY-TO-DAY HAPPINESS"
+							},
+							{
+								"type": "chip",
+								"text": "ILLUSTRATION OF THE SHAPE",
+								"x": 0.5,
+								"y": 0.56,
+								"size": 28,
+								"bg": "soft",
+								"color": "ink",
+								"at": "start",
+								"enter": "up"
+							}
+						],
+						"at": "least",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "text",
+								"text": "BOTH\nRIGHT",
+								"x": 0.5,
+								"y": 0.27,
+								"size": 270,
+								"color": "ink",
+								"enter": "slam",
+								"sfx": "hit",
+								"at": "Both"
+							},
+							{
+								"type": "img",
+								"src": "face-surprised",
+								"x": 0.5,
+								"y": 0.58,
+								"w": 0.3,
+								"at": "Both",
+								"enter": "pop",
+								"rot": -4
+							}
+						],
+						"at": "Both",
+						"enter": "punch",
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							],
+							"punch": [
+								"Both"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "why",
+			"say": "Why would the unhappiest flatten? One reading: if your unhappiness comes from things money can't fix, for example grief, loneliness, or a health problem, then extra income doesn't touch it. Money helps the problems money can solve.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "ONE READING (AN INTERPRETATION)",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "img",
+								"src": "face-tired",
+								"x": 0.5,
+								"y": 0.38,
+								"w": 0.44,
+								"enter": "pop",
+								"delay": -0.2
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "GRIEF",
+								"x": 0.28,
+								"y": 0.14,
+								"size": 56,
+								"bg": "ink",
+								"color": "paper",
+								"at": "grief",
+								"enter": "left",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "LONELINESS",
+								"x": 0.7,
+								"y": 0.24,
+								"size": 56,
+								"bg": "white",
+								"color": "ink",
+								"at": "loneliness",
+								"enter": "right",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "HEALTH",
+								"x": 0.34,
+								"y": 0.34,
+								"size": 56,
+								"bg": "ink",
+								"color": "paper",
+								"at": "health",
+								"enter": "left",
+								"sfx": "blip"
+							}
+						],
+						"at": "then",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "text",
+								"text": "MONEY FIXES\nMONEY PROBLEMS",
+								"x": 0.5,
+								"y": 0.27,
+								"size": 130,
+								"color": "accent",
+								"enter": "slam",
+								"sfx": "hit",
+								"at": "Money#2"
+							},
+							{
+								"type": "img",
+								"src": "face-calm",
+								"x": 0.5,
+								"y": 0.58,
+								"w": 0.3,
+								"at": "Money#2",
+								"enter": "pop",
+								"rot": -4
+							}
+						],
+						"at": "Money#2",
+						"enter": "punch",
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							],
+							"punch": [
+								"Money#2"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "caveat",
+			"say": "Two honest warnings. First, these numbers show a link, not proof that money *causes* happiness. Maybe happier people earn more, or both come from something else. Second, scientists still argue about exactly where that flattening point is. So I won't give you a magic number.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "WARNING 1: A LINK, NOT PROOF",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "chip",
+								"text": "MONEY → HAPPY?",
+								"x": 0.3,
+								"y": 0.2,
+								"size": 48,
+								"bg": "ink",
+								"color": "paper",
+								"at": "causes",
+								"enter": "left",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "HAPPY → MONEY?",
+								"x": 0.7,
+								"y": 0.3,
+								"size": 48,
+								"bg": "accent",
+								"color": "ink",
+								"at": "happier",
+								"enter": "right",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "SOMETHING ELSE → BOTH?",
+								"x": 0.5,
+								"y": 0.4,
+								"size": 40,
+								"bg": "white",
+								"color": "ink",
+								"at": "both",
+								"enter": "up",
+								"sfx": "blip"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "WARNING 2: THE EXACT POINT IS DISPUTED",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "img",
+								"src": "face-skeptic",
+								"x": 0.5,
+								"y": 0.3,
+								"w": 0.4,
+								"enter": "pop",
+								"delay": -0.2
+							},
+							{
+								"type": "text",
+								"text": "NO MAGIC\nNUMBER",
+								"x": 0.5,
+								"y": 0.26,
+								"size": 210,
+								"color": "ink",
+								"enter": "slam",
+								"sfx": "hit",
+								"at": "magic"
+							},
+							{
+								"type": "img",
+								"src": "face-skeptic",
+								"x": 0.5,
+								"y": 0.58,
+								"w": 0.3,
+								"at": "magic+0.2",
+								"enter": "pop",
+								"rot": -4
+							}
+						],
+						"at": "Second",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"punch": [
+								"magic"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "verdict",
+			"say": "So here's my verdict. Money does help for most people, and there's no clear point where it suddenly stops. But it's not a cure for unhappiness that comes from somewhere else.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "stamp",
+								"text": "VERDICT",
+								"sub": "HELPS, BUT NOT A CURE",
+								"x": 0.5,
+								"y": 0.22,
+								"size": 150,
+								"at": "verdict",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "img",
+								"src": "kbust-calm",
+								"x": 0.5,
+								"y": 0.5,
+								"w": 0.36,
+								"enter": "pop",
+								"delay": -0.2
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"punch": [
+								"verdict"
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "card",
+								"kind": "for",
+								"title": "FOR MOST PEOPLE",
+								"text": "MORE MONEY\nGENERALLY HELPS.",
+								"x": 0.5,
+								"y": 0.22,
+								"w": 0.9,
+								"size": 46,
+								"at": "most",
+								"enter": "left",
+								"sfx": "blip"
+							},
+							{
+								"type": "card",
+								"kind": "against",
+								"title": "NOT A CURE",
+								"text": "IT WON'T FIX\nUNHAPPINESS FROM\nELSEWHERE.",
+								"x": 0.5,
+								"y": 0.46,
+								"w": 0.9,
+								"size": 46,
+								"at": "cure",
+								"enter": "right",
+								"sfx": "blip"
+							}
+						],
+						"at": "Money",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "advice",
+			"say": "My practical takeaway, my suggestion, not a finding. If you're struggling with money, take it seriously. It's a real source of stress, and fixing it can really help. But if money's already okay and you still feel low, don't just chase a bigger number. Look at the other parts: people, health, meaning.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "MY SUGGESTION, NOT A FINDING",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "card",
+								"kind": "for",
+								"title": "IF MONEY IS TIGHT",
+								"text": "TAKE IT SERIOUSLY.\nFIXING IT HELPS.",
+								"x": 0.5,
+								"y": 0.22,
+								"w": 0.9,
+								"size": 46,
+								"at": "struggling",
+								"enter": "left",
+								"sfx": "blip"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					},
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "IF MONEY IS OKAY, BUT YOU FEEL LOW",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "chip",
+								"text": "PEOPLE",
+								"x": 0.28,
+								"y": 0.2,
+								"size": 56,
+								"bg": "ink",
+								"color": "paper",
+								"at": "people",
+								"enter": "left",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "HEALTH",
+								"x": 0.7,
+								"y": 0.3,
+								"size": 56,
+								"bg": "accent",
+								"color": "ink",
+								"at": "health",
+								"enter": "right",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "MEANING",
+								"x": 0.34,
+								"y": 0.4,
+								"size": 56,
+								"bg": "white",
+								"color": "ink",
+								"at": "meaning",
+								"enter": "left",
+								"sfx": "blip"
+							}
+						],
+						"at": "But",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "close",
+			"say": "Money isn't the secret to happiness, and it isn't irrelevant either. It's a tool. A good one, for the jobs it can do.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "img",
+								"src": "kbust-calm",
+								"x": 0.5,
+								"y": 0.34,
+								"w": 0.54,
+								"enter": "pop",
+								"loop": "breathe"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							]
+						}
+					},
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "slab",
+								"color": "accent",
+								"round": true,
+								"w": 0.86,
+								"x": 0.5,
+								"y": 0.32,
+								"border": 10,
+								"enter": "pop",
+								"depth": 0.6
+							},
+							{
+								"type": "img",
+								"src": "kbust-pen",
+								"x": 0.5,
+								"y": 0.34,
+								"w": 0.5,
+								"enter": "pop"
+							},
+							{
+								"type": "text",
+								"text": "a tool, not a cure",
+								"x": 0.5,
+								"y": 0.58,
+								"size": 130,
+								"font": "hand",
+								"color": "ink",
+								"upper": false,
+								"enter": "pop",
+								"rot": -3
+							}
+						],
+						"irisAt": [
+							0.5,
+							0.34
+						],
+						"at": "tool",
+						"enter": "iris",
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							]
+						}
+					}
+				]
+			},
+			"tone": "prof-soft"
+		},
+		{
+			"id": "outro",
+			"say": "I'm the Professor. See you in the next lesson.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "panel",
+								"src": "panel-board",
+								"x": 0.5,
+								"y": 0.265,
+								"w": 0.86,
+								"enter": "up",
+								"zoom": [
+									1.02,
+									1.12
+								],
+								"focus": [
+									0.62,
+									0.5
+								]
+							},
+							{
+								"type": "text",
+								"text": "THE PROFESSOR",
+								"x": 0.5,
+								"y": 0.55,
+								"size": 170,
+								"color": "ink",
+								"mark": "accent",
+								"at": "Professor",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "chip",
+								"text": "EVERYDAY PSYCHOLOGY",
+								"x": 0.5,
+								"y": 0.61,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "See",
+								"enter": "up"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.04
+							]
+						}
+					}
+				]
+			}
+		}
+	]
+}

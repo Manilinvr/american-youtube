@@ -1,0 +1,1836 @@
+{
+	"id": "p012-willpower-battery",
+	"format": "short",
+	"style": "prof",
+	"title": "Is Willpower Really a Battery?",
+	"tone": "prof",
+	"music": "thinking-music.mp3",
+	"sources": [
+		"Baumeister, R. F., Bratslavsky, E., Muraven, M., & Tice, D. M. (1998). Ego depletion: Is the active self a limited resource? Journal of Personality and Social Psychology, 74(5), 1252-1265.",
+		"Hagger, M. S., et al. (2016). A multilab preregistered replication of the ego-depletion effect. Perspectives on Psychological Science, 11(4), 546-573. https://doi.org/10.1177/1745691616652873",
+		"Vohs, K. D., et al. (2021). A multisite preregistered paradigmatic test of the ego-depletion effect. Psychological Science, 32(10), 1566-1581. https://doi.org/10.1177/0956797621989733"
+	],
+	"scenes": [
+		{
+			"id": "hook",
+			"say": "Everyone says willpower is like a battery. You use it up during the day, and by evening, you're empty. It feels *true*. So why can't scientists find the battery?",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "battery",
+								"x": 0.5,
+								"y": 0.24,
+								"w": 0.8,
+								"label": "WILLPOWER",
+								"level": [
+									{
+										"at": "start",
+										"v": 1.0
+									},
+									{
+										"at": "evening",
+										"v": 0.12
+									}
+								],
+								"glide": 60,
+								"enter": "pop",
+								"delay": -0.3
+							},
+							{
+								"type": "img",
+								"src": "kbust-mug",
+								"x": 0.5,
+								"y": 0.45,
+								"w": 0.4,
+								"enter": "pop",
+								"delay": -0.2
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "soft",
+						"layers": [
+							{
+								"type": "battery",
+								"x": 0.5,
+								"y": 0.2,
+								"w": 0.8,
+								"label": "EMPTY",
+								"level": [
+									{
+										"at": "start",
+										"v": 0.1
+									}
+								],
+								"enter": "none",
+								"at": "start"
+							},
+							{
+								"type": "img",
+								"src": "face-tired",
+								"x": 0.5,
+								"y": 0.46,
+								"w": 0.36,
+								"enter": "pop",
+								"delay": -0.2,
+								"rot": -4
+							},
+							{
+								"type": "burst",
+								"text": "EVENING",
+								"x": 0.8,
+								"y": 0.5,
+								"w": 0.3,
+								"at": "empty",
+								"enter": "slam",
+								"rot": 8,
+								"seed": 3,
+								"sfx": "hit"
+							}
+						],
+						"at": "evening",
+						"enter": "slide-l",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "text",
+								"text": "FEELS\nTRUE",
+								"x": 0.5,
+								"y": 0.22,
+								"size": 270,
+								"color": "accent",
+								"stroke": "ink",
+								"shadow": "paper",
+								"at": "true",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "img",
+								"src": "face-tired",
+								"x": 0.5,
+								"y": 0.5,
+								"w": 0.34,
+								"at": "true+0.2",
+								"enter": "pop",
+								"rot": -4
+							}
+						],
+						"at": "true",
+						"enter": "punch",
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							],
+							"punch": [
+								"true"
+							]
+						}
+					},
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "battery",
+								"x": 0.5,
+								"y": 0.2,
+								"w": 0.8,
+								"label": "???",
+								"level": [
+									{
+										"at": "start",
+										"v": 0.0
+									}
+								],
+								"enter": "none",
+								"at": "start"
+							},
+							{
+								"type": "text",
+								"text": "WHERE IS\nTHE BATTERY?",
+								"x": 0.5,
+								"y": 0.42,
+								"size": 150,
+								"color": "ink",
+								"mark": "accent",
+								"at": "find",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "scribble",
+								"shape": "circle",
+								"x": 0.5,
+								"y": 0.2,
+								"w": 0.9,
+								"h": 0.16,
+								"color": "accent",
+								"strokeW": 16,
+								"at": "find",
+								"dur": 12
+							}
+						],
+						"at": "So",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "origin",
+			"say": "The idea comes from a famous experiment in 1998. People sat in front of fresh chocolates. Some were allowed to eat them. Others had to eat *radishes* instead, and resist the chocolate.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "1998: THE FAMOUS EXPERIMENT",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "chip",
+								"text": "Baumeister et al. · 1998",
+								"x": 0.07,
+								"y": 0.835,
+								"kind": "cite",
+								"size": 32,
+								"align": "left",
+								"at": "start",
+								"enter": "left",
+								"sfx": "blip",
+								"sfxVolume": 0.2
+							},
+							{
+								"type": "img",
+								"src": "kbust-pen",
+								"x": 0.5,
+								"y": 0.38,
+								"w": 0.5,
+								"enter": "pop",
+								"delay": -0.2
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "FRESH CHOCOLATES",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "img",
+								"src": "kbust-mug",
+								"x": 0.5,
+								"y": 0.34,
+								"w": 0.46,
+								"enter": "pop",
+								"delay": -0.2
+							},
+							{
+								"type": "text",
+								"text": "DON'T EAT\nTHEM",
+								"x": 0.5,
+								"y": 0.58,
+								"size": 90,
+								"color": "ink",
+								"at": "resist",
+								"enter": "slam",
+								"sfx": "hit"
+							}
+						],
+						"at": "People",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "GROUP A: CHOCOLATE",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "slab",
+								"color": "graphite",
+								"round": true,
+								"w": 0.34,
+								"x": 0.3,
+								"y": 0.3,
+								"border": 10,
+								"enter": "pop",
+								"at": "allowed"
+							},
+							{
+								"type": "text",
+								"text": "YUM",
+								"x": 0.3,
+								"y": 0.3,
+								"size": 120,
+								"color": "paper",
+								"at": "allowed",
+								"enter": "slam"
+							},
+							{
+								"type": "chip",
+								"text": "GROUP B: RADISHES",
+								"x": 0.7,
+								"y": 0.2,
+								"size": 36,
+								"bg": "accent",
+								"color": "ink",
+								"at": "Others",
+								"enter": "right",
+								"sfx": "blip"
+							},
+							{
+								"type": "slab",
+								"color": "accent",
+								"round": true,
+								"w": 0.34,
+								"x": 0.7,
+								"y": 0.36,
+								"border": 10,
+								"enter": "pop",
+								"at": "radishes"
+							},
+							{
+								"type": "text",
+								"text": "BLEH",
+								"x": 0.7,
+								"y": 0.36,
+								"size": 120,
+								"color": "ink",
+								"at": "radishes",
+								"enter": "slam"
+							}
+						],
+						"at": "Some",
+						"enter": "slide-l",
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "result1",
+			"say": "Then everyone got a puzzle that, secretly, couldn't be solved. The radish group gave up sooner. Their willpower, it seemed, was *used up*.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "ink-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "THE TWIST: AN IMPOSSIBLE PUZZLE",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "accent",
+								"color": "ink",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "text",
+								"text": "UNSOLVABLE",
+								"x": 0.5,
+								"y": 0.2,
+								"size": 170,
+								"color": "paper",
+								"at": "secretly",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "img",
+								"src": "face-skeptic",
+								"x": 0.5,
+								"y": 0.5,
+								"w": 0.34,
+								"enter": "pop",
+								"delay": -0.2
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "ILLUSTRATION, NOT REAL DATA",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 28,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "bars",
+								"x": 0.46,
+								"y": 0.3,
+								"w": 0.7,
+								"h": 0.4,
+								"items": [
+									{
+										"label": "CHOCOLATE",
+										"value": 0.8,
+										"color": "paper",
+										"at": "start"
+									},
+									{
+										"label": "RADISHES",
+										"value": 0.4,
+										"color": "ink",
+										"at": "radish"
+									}
+								],
+								"enter": "none",
+								"at": "start"
+							},
+							{
+								"type": "chip",
+								"text": "TIME BEFORE GIVING UP",
+								"x": 0.5,
+								"y": 0.58,
+								"size": 32,
+								"bg": "white",
+								"color": "ink",
+								"at": "gave",
+								"enter": "up"
+							}
+						],
+						"at": "radish",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "spread",
+			"say": "The idea spread everywhere. Hundreds of experiments seemed to agree. A 2010 review of almost two hundred tests found a medium-sized effect.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "THE IDEA SPREADS",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "dots",
+								"x": 0.5,
+								"y": 0.3,
+								"w": 0.88,
+								"total": 150,
+								"cols": 15,
+								"hit": 150,
+								"hitAt": "start+0.3",
+								"at": "start",
+								"delay": -0.4,
+								"step": 0.05,
+								"hitStep": 0.04,
+								"enter": "none",
+								"id": "d150"
+							},
+							{
+								"type": "text",
+								"text": "≈ 200 TESTS",
+								"x": 0.5,
+								"y": 0.55,
+								"size": 140,
+								"color": "ink",
+								"mark": "accent",
+								"at": "almost",
+								"enter": "slam",
+								"sfx": "hit"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "A 2010 REVIEW",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "text",
+								"text": "MEDIUM\nEFFECT",
+								"x": 0.5,
+								"y": 0.25,
+								"size": 250,
+								"color": "ink",
+								"stroke": "paper",
+								"strokeW": 10,
+								"at": "medium",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "img",
+								"src": "face-surprised",
+								"x": 0.5,
+								"y": 0.56,
+								"w": 0.3,
+								"at": "medium+0.2",
+								"enter": "pop",
+								"rot": -4
+							}
+						],
+						"at": "A",
+						"enter": "flash",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"punch": [
+								"medium"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "doubt",
+			"say": "But here's where I get suspicious. A result that big should be easy to repeat. So labs tried. In 2016, *twenty-three* labs ran the same test, with over two thousand people. The effect? Almost zero.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "MY FIRST DOUBT",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "img",
+								"src": "kbust-pocket",
+								"x": 0.5,
+								"y": 0.4,
+								"w": 0.46,
+								"enter": "pop",
+								"delay": -0.2
+							},
+							{
+								"type": "scribble",
+								"shape": "underline",
+								"x": 0.5,
+								"y": 0.14,
+								"w": 0.7,
+								"h": 0.04,
+								"color": "paper",
+								"strokeW": 14,
+								"at": "suspicious",
+								"dur": 10
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "text",
+								"text": "EASY TO\nREPEAT?",
+								"x": 0.5,
+								"y": 0.25,
+								"size": 220,
+								"color": "paper",
+								"at": "easy",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "img",
+								"src": "face-skeptic",
+								"x": 0.5,
+								"y": 0.56,
+								"w": 0.3,
+								"at": "easy+0.2",
+								"enter": "pop",
+								"rot": -4
+							}
+						],
+						"at": "easy",
+						"enter": "flash",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"punch": [
+								"easy"
+							]
+						}
+					},
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "A BIG, CAREFUL REPEAT · 2016",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "chip",
+								"text": "Hagger et al. · 2016",
+								"x": 0.07,
+								"y": 0.835,
+								"kind": "cite",
+								"size": 32,
+								"align": "left",
+								"at": "start",
+								"enter": "left",
+								"sfx": "blip",
+								"sfxVolume": 0.2
+							},
+							{
+								"type": "counter",
+								"to": 23,
+								"size": 420,
+								"color": "ink",
+								"x": 0.5,
+								"y": 0.22,
+								"at": "twenty",
+								"dur": 18,
+								"enter": "none",
+								"stroke": "paper",
+								"shadow": "accent",
+								"sfx": "hit"
+							},
+							{
+								"type": "chip",
+								"text": "LABS",
+								"x": 0.5,
+								"y": 0.42,
+								"size": 40,
+								"bg": "ink",
+								"color": "paper",
+								"at": "labs",
+								"enter": "up",
+								"sfx": "blip"
+							}
+						],
+						"at": "In",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"punch": [
+								"twenty"
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "AND THE PEOPLE",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "counter",
+								"to": 2141,
+								"size": 330,
+								"color": "ink",
+								"x": 0.5,
+								"y": 0.25,
+								"at": "over",
+								"dur": 24,
+								"enter": "none",
+								"stroke": "paper",
+								"shadow": "paper",
+								"sfx": "hit"
+							},
+							{
+								"type": "dots",
+								"x": 0.5,
+								"y": 0.48,
+								"w": 0.7,
+								"total": 60,
+								"cols": 12,
+								"hit": 0,
+								"at": "over",
+								"step": 0.2,
+								"enter": "none",
+								"id": "d60"
+							}
+						],
+						"at": "over",
+						"enter": "slide-u",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"punch": [
+								"over"
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "text",
+								"text": "≈ 0",
+								"x": 0.5,
+								"y": 0.24,
+								"size": 520,
+								"color": "accent",
+								"stroke": "ink",
+								"shadow": "paper",
+								"at": "Almost",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "chip",
+								"text": "THE EFFECT",
+								"x": 0.5,
+								"y": 0.45,
+								"size": 44,
+								"bg": "paper",
+								"color": "ink",
+								"at": "Almost+0.3",
+								"enter": "up"
+							}
+						],
+						"at": "effect",
+						"enter": "flash",
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							],
+							"punch": [
+								"Almost"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "again",
+			"say": "Maybe that particular test was just a bad one. Fair point. So in 2021, *thirty-six* labs tried again, with thirty-five hundred people and a new design. Again: a tiny effect, close to zero.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "MAYBE THE TEST WAS BAD?",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "img",
+								"src": "face-thinking",
+								"x": 0.5,
+								"y": 0.4,
+								"w": 0.4,
+								"enter": "pop",
+								"delay": -0.2
+							},
+							{
+								"type": "chip",
+								"text": "FAIR POINT",
+								"x": 0.5,
+								"y": 0.64,
+								"size": 40,
+								"bg": "accent",
+								"color": "ink",
+								"at": "Fair",
+								"enter": "up",
+								"sfx": "blip"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "img",
+								"src": "kbust-pen",
+								"x": 0.5,
+								"y": 0.36,
+								"w": 0.5,
+								"enter": "pop",
+								"delay": -0.2
+							},
+							{
+								"type": "chip",
+								"text": "A NEW DESIGN",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 40,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							}
+						],
+						"at": "Fair",
+						"enter": "wipe-l",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "ink-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "TRY AGAIN · 2021",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "accent",
+								"color": "ink",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "chip",
+								"text": "Vohs et al. · 2021",
+								"x": 0.07,
+								"y": 0.835,
+								"kind": "cite",
+								"size": 32,
+								"align": "left",
+								"at": "start",
+								"enter": "left",
+								"sfx": "blip",
+								"sfxVolume": 0.2
+							},
+							{
+								"type": "counter",
+								"to": 36,
+								"size": 420,
+								"color": "paper",
+								"x": 0.5,
+								"y": 0.22,
+								"at": "thirty-six",
+								"dur": 20,
+								"enter": "none",
+								"stroke": "ink",
+								"shadow": "accent",
+								"sfx": "hit"
+							},
+							{
+								"type": "chip",
+								"text": "LABS · 3,531 PEOPLE",
+								"x": 0.5,
+								"y": 0.42,
+								"size": 40,
+								"bg": "paper",
+								"color": "ink",
+								"at": "thirty-five",
+								"enter": "up",
+								"sfx": "blip"
+							}
+						],
+						"at": "thirty-six",
+						"enter": "wipe-l",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"punch": [
+								"thirty-six"
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "text",
+								"text": "≈ 0\nAGAIN",
+								"x": 0.5,
+								"y": 0.27,
+								"size": 300,
+								"color": "ink",
+								"stroke": "paper",
+								"strokeW": 10,
+								"enter": "slam",
+								"sfx": "hit"
+							}
+						],
+						"at": "Again#2",
+						"enter": "flash",
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							],
+							"punch": [
+								"Again#2"
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "text",
+								"text": "CLOSE TO\nZERO",
+								"x": 0.5,
+								"y": 0.26,
+								"size": 230,
+								"color": "accent",
+								"stroke": "ink",
+								"shadow": "paper",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "img",
+								"src": "kbust-calm",
+								"x": 0.5,
+								"y": 0.56,
+								"w": 0.3,
+								"at": "close+0.2",
+								"enter": "pop"
+							}
+						],
+						"at": "close",
+						"enter": "punch",
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							],
+							"punch": [
+								"close"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "think1",
+			"say": "So let's think. There are two possibilities. One: the battery exists, but we keep measuring it badly. Two: there's no battery.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "LET'S THINK",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "img",
+								"src": "kbust-pen2",
+								"x": 0.5,
+								"y": 0.38,
+								"w": 0.5,
+								"enter": "pop",
+								"delay": -0.2
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					},
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "card",
+								"kind": "neutral",
+								"title": "POSSIBILITY 1",
+								"text": "THE BATTERY EXISTS.\nWE MEASURE IT BADLY.",
+								"x": 0.5,
+								"y": 0.22,
+								"w": 0.86,
+								"size": 50,
+								"at": "One",
+								"enter": "left",
+								"sfx": "blip"
+							},
+							{
+								"type": "card",
+								"kind": "neutral",
+								"title": "POSSIBILITY 2",
+								"text": "THERE IS\nNO BATTERY.",
+								"x": 0.5,
+								"y": 0.45,
+								"w": 0.86,
+								"size": 50,
+								"at": "Two#2",
+								"enter": "right",
+								"sfx": "blip"
+							}
+						],
+						"at": "One",
+						"enter": "slide-u",
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "think2",
+			"say": "Notice a detail. In the big 2021 study, the only *hint* of an effect showed up in people who already felt tired. That isn't a battery draining. That's just... tiredness.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "ink-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "A DETAIL WORTH NOTICING",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "accent",
+								"color": "ink",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "img",
+								"src": "face-tired",
+								"x": 0.5,
+								"y": 0.36,
+								"w": 0.44,
+								"enter": "pop",
+								"delay": -0.2
+							},
+							{
+								"type": "chip",
+								"text": "ONLY A HINT",
+								"x": 0.5,
+								"y": 0.62,
+								"size": 44,
+								"bg": "paper",
+								"color": "ink",
+								"at": "hint",
+								"enter": "up",
+								"sfx": "blip"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "THE BIG 2021 STUDY",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "chip",
+								"text": "Vohs et al. · 2021",
+								"x": 0.07,
+								"y": 0.835,
+								"kind": "cite",
+								"size": 32,
+								"align": "left",
+								"at": "start",
+								"enter": "left",
+								"sfx": "blip",
+								"sfxVolume": 0.2
+							},
+							{
+								"type": "dots",
+								"x": 0.5,
+								"y": 0.3,
+								"w": 0.8,
+								"total": 100,
+								"cols": 20,
+								"hit": 0,
+								"at": "start",
+								"delay": -0.4,
+								"step": 0.1,
+								"enter": "none",
+								"id": "d100b"
+							},
+							{
+								"type": "text",
+								"text": "ONLY A HINT",
+								"x": 0.5,
+								"y": 0.5,
+								"size": 130,
+								"color": "ink",
+								"mark": "accent",
+								"at": "hint",
+								"enter": "slam",
+								"sfx": "hit"
+							}
+						],
+						"at": "big",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					},
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "IN THE 2021 STUDY",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "slab",
+								"color": "soft",
+								"round": true,
+								"w": 0.8,
+								"x": 0.5,
+								"y": 0.3,
+								"border": 10,
+								"enter": "pop",
+								"at": "already"
+							},
+							{
+								"type": "img",
+								"src": "face-tired",
+								"x": 0.5,
+								"y": 0.3,
+								"w": 0.44,
+								"at": "already",
+								"enter": "pop",
+								"rot": 4
+							},
+							{
+								"type": "chip",
+								"text": "ALREADY TIRED",
+								"x": 0.5,
+								"y": 0.56,
+								"size": 40,
+								"bg": "accent",
+								"color": "ink",
+								"at": "already",
+								"enter": "up",
+								"sfx": "blip"
+							}
+						],
+						"at": "already",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "battery",
+								"x": 0.5,
+								"y": 0.2,
+								"w": 0.7,
+								"label": "TIRED?",
+								"level": [
+									{
+										"at": "start",
+										"v": 0.3
+									}
+								],
+								"enter": "none",
+								"at": "start"
+							},
+							{
+								"type": "scribble",
+								"shape": "cross",
+								"x": 0.5,
+								"y": 0.2,
+								"w": 0.7,
+								"h": 0.16,
+								"color": "ink",
+								"strokeW": 18,
+								"at": "isn't",
+								"dur": 10,
+								"outline": false
+							},
+							{
+								"type": "text",
+								"text": "JUST\nTIREDNESS",
+								"x": 0.5,
+								"y": 0.42,
+								"size": 160,
+								"color": "ink",
+								"stroke": "paper",
+								"strokeW": 8,
+								"at": "tiredness",
+								"enter": "slam",
+								"sfx": "hit"
+							}
+						],
+						"at": "isn't",
+						"enter": "flash",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"punch": [
+								"tiredness"
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "verdict",
+			"say": "So here's my verdict. Willpower is *not* a fuel tank that runs dry. But you're not a machine either. When you're tired, bored, or stressed, self-control gets harder.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "stamp",
+								"text": "VERDICT",
+								"sub": "NOT A FUEL TANK",
+								"x": 0.5,
+								"y": 0.22,
+								"size": 170,
+								"at": "verdict",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "img",
+								"src": "kbust-calm",
+								"x": 0.5,
+								"y": 0.5,
+								"w": 0.36,
+								"enter": "pop",
+								"delay": -0.2
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							],
+							"punch": [
+								"verdict"
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "img",
+								"src": "kbust-calm",
+								"x": 0.5,
+								"y": 0.36,
+								"w": 0.44,
+								"enter": "pop",
+								"delay": -0.2
+							},
+							{
+								"type": "chip",
+								"text": "BUT YOU'RE NOT A MACHINE",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "chip",
+								"text": "TIRED",
+								"x": 0.2,
+								"y": 0.6,
+								"size": 56,
+								"bg": "white",
+								"color": "ink",
+								"at": "tired",
+								"enter": "left",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "BORED",
+								"x": 0.78,
+								"y": 0.66,
+								"size": 56,
+								"bg": "ink",
+								"color": "paper",
+								"at": "bored",
+								"enter": "right",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "STRESSED",
+								"x": 0.36,
+								"y": 0.4,
+								"size": 56,
+								"bg": "white",
+								"color": "ink",
+								"at": "stressed",
+								"enter": "left",
+								"sfx": "blip"
+							},
+							{
+								"type": "text",
+								"text": "HARDER",
+								"x": 0.5,
+								"y": 0.56,
+								"size": 110,
+								"color": "ink",
+								"at": "harder",
+								"enter": "slam"
+							}
+						],
+						"at": "But",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "advice",
+			"say": "So don't plan around saving up willpower. Plan around *rest*, and make good choices easier when you're tired. Pack the gym bag the night before. Hide the cookies. Take real breaks.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "WHAT TO DO (MY ADVICE, NOT A FINDING)",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "chip",
+								"text": "1  REST FIRST",
+								"x": 0.5,
+								"y": 0.2,
+								"size": 46,
+								"bg": "white",
+								"color": "ink",
+								"at": "rest",
+								"enter": "left",
+								"sfx": "blip"
+							},
+							{
+								"type": "chip",
+								"text": "2  MAKE IT EASY",
+								"x": 0.5,
+								"y": 0.3,
+								"size": 46,
+								"bg": "ink",
+								"color": "paper",
+								"at": "easier",
+								"enter": "right",
+								"sfx": "blip"
+							},
+							{
+								"type": "img",
+								"src": "kbust-pen",
+								"x": 0.5,
+								"y": 0.42,
+								"w": 0.34,
+								"enter": "pop",
+								"at": "rest"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					},
+					{
+						"bg": "paper-grid",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "3  PACK THE GYM BAG",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "img",
+								"src": "kfull-bag",
+								"x": 0.3,
+								"y": 0.38,
+								"w": 0.28,
+								"enter": "left"
+							},
+							{
+								"type": "chip",
+								"text": "THE NIGHT BEFORE",
+								"x": 0.7,
+								"y": 0.2,
+								"size": 36,
+								"bg": "accent",
+								"color": "ink",
+								"at": "night",
+								"enter": "right",
+								"sfx": "blip"
+							}
+						],
+						"at": "Pack",
+						"enter": "slide-l",
+						"cam": {
+							"z": [
+								1.0,
+								1.05
+							]
+						}
+					},
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "4  HIDE THE COOKIES",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "slab",
+								"color": "ink",
+								"round": true,
+								"w": 0.5,
+								"x": 0.5,
+								"y": 0.3,
+								"enter": "pop"
+							},
+							{
+								"type": "text",
+								"text": "OUT OF\nSIGHT",
+								"x": 0.5,
+								"y": 0.3,
+								"size": 120,
+								"color": "accent",
+								"at": "Hide",
+								"enter": "slam",
+								"sfx": "hit"
+							}
+						],
+						"at": "Hide",
+						"enter": "flash",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					},
+					{
+						"bg": "ink",
+						"layers": [
+							{
+								"type": "chip",
+								"text": "5  TAKE REAL BREAKS",
+								"x": 0.5,
+								"y": 0.075,
+								"size": 34,
+								"bg": "accent",
+								"color": "ink",
+								"at": "start",
+								"enter": "down"
+							},
+							{
+								"type": "clock",
+								"x": 0.5,
+								"y": 0.3,
+								"w": 0.44,
+								"time": [
+									{
+										"at": "start",
+										"v": 600
+									},
+									{
+										"at": "Take",
+										"v": 615
+									}
+								],
+								"glide": 30,
+								"enter": "pop"
+							}
+						],
+						"at": "Take",
+						"enter": "wipe-r",
+						"cam": {
+							"z": [
+								1.0,
+								1.06
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"id": "close",
+			"say": "Your willpower isn't running out. It's just... tired. And that's something you can *fix*.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "accent",
+						"layers": [
+							{
+								"type": "img",
+								"src": "kbust-calm",
+								"x": 0.5,
+								"y": 0.34,
+								"w": 0.54,
+								"enter": "pop",
+								"loop": "breathe"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.07
+							]
+						}
+					},
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "slab",
+								"color": "accent",
+								"round": true,
+								"w": 0.86,
+								"x": 0.5,
+								"y": 0.32,
+								"border": 10,
+								"enter": "pop",
+								"depth": 0.6
+							},
+							{
+								"type": "img",
+								"src": "kbust-pen",
+								"x": 0.5,
+								"y": 0.34,
+								"w": 0.5,
+								"enter": "pop"
+							},
+							{
+								"type": "text",
+								"text": "rest, then try",
+								"x": 0.5,
+								"y": 0.58,
+								"size": 140,
+								"font": "hand",
+								"color": "ink",
+								"upper": false,
+								"enter": "pop",
+								"rot": -3
+							}
+						],
+						"irisAt": [
+							0.5,
+							0.34
+						],
+						"at": "that's",
+						"enter": "iris",
+						"cam": {
+							"z": [
+								1.0,
+								1.08
+							]
+						}
+					}
+				]
+			},
+			"tone": "prof-soft"
+		},
+		{
+			"id": "outro",
+			"say": "I'm the Professor. See you in the next lesson.",
+			"transition": "cut",
+			"visual": {
+				"type": "prof",
+				"shots": [
+					{
+						"bg": "paper",
+						"layers": [
+							{
+								"type": "panel",
+								"src": "panel-board",
+								"x": 0.5,
+								"y": 0.265,
+								"w": 0.86,
+								"enter": "up",
+								"zoom": [
+									1.02,
+									1.12
+								],
+								"focus": [
+									0.62,
+									0.5
+								]
+							},
+							{
+								"type": "text",
+								"text": "THE PROFESSOR",
+								"x": 0.5,
+								"y": 0.55,
+								"size": 170,
+								"color": "ink",
+								"mark": "accent",
+								"at": "Professor",
+								"enter": "slam",
+								"sfx": "hit"
+							},
+							{
+								"type": "chip",
+								"text": "EVERYDAY PSYCHOLOGY",
+								"x": 0.5,
+								"y": 0.61,
+								"size": 34,
+								"bg": "ink",
+								"color": "paper",
+								"at": "See",
+								"enter": "up"
+							}
+						],
+						"cam": {
+							"z": [
+								1.0,
+								1.04
+							]
+						}
+					}
+				]
+			}
+		}
+	]
+}

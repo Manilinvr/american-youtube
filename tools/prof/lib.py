@@ -76,3 +76,37 @@ def build(eid, title, music, sources, scenes, tone="prof"):
     out = ROOT / "episodes" / f"{eid}.json"
     out.write_text(json.dumps(ep, indent="\t", ensure_ascii=False) + "\n")
     print(f"{eid}: {len(scenes)} scenes, {sum(len(s['visual']['shots']) for s in scenes)} shots")
+
+
+# ---- helpers for the "reasoning" format (p012+) -----------------------------------------------------------------
+def tag(label, bg="ink", color="paper", at="start", **kw):
+    """Small label at the top of a shot."""
+    return chip(label, 0.5, 0.075, size=34, bg=bg, color=color, at=at, enter="down", **kw)
+
+
+def big(t, size=250, y=0.27, at=None, color="ink", **kw):
+    """Big slammed headline (use \\n for two lines)."""
+    d = dict(color=color, enter="slam", sfx="hit")
+    d.update(kw)
+    if at is not None:
+        d["at"] = at
+    return text(t, 0.5, y, size, **d)
+
+
+def face_shot(bg, src, label=None, at=None, enter=None, w=0.46, y=0.38, extra=None, cam=None, **kw):
+    """A shot with the professor (a cut-out) and an optional label chip."""
+    layers = [img(src, 0.5, y, w, enter="pop", delay=-0.2)]
+    if label:
+        layers.append(tag(label, **kw))
+    layers += extra or []
+    return shot(bg, layers, at=at, enter=enter, cam=cam or {"z": [1.0, 1.06]})
+
+
+def slam_shot(bg, t, size=250, at=None, enter="punch", sub=None, face=None, color="ink", **kw):
+    """Headline slam with an optional sub-chip and a reaction face under it."""
+    layers = [big(t, size=size, color=color, **({"at": at} if at is not None else {}))]
+    if sub:
+        layers.append(chip(sub, 0.5, 0.46, size=40, bg="paper" if bg.startswith("ink") else "ink", color="ink" if bg.startswith("ink") else "paper", at=at or "start", enter="up", sfx="blip"))
+    if face:
+        layers.append(img(face, 0.5, 0.58, 0.3, at=at or "start", enter="pop", rot=-4))
+    return shot(bg, layers, at=at, enter=enter, cam={"z": [1.0, 1.07], **({"punch": [at]} if at else {})})

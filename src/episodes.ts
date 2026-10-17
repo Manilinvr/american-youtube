@@ -20,9 +20,14 @@ import p008 from '../episodes/p008-doomscrolling.json';
 import p009 from '../episodes/p009-ai-loneliness.json';
 import p010 from '../episodes/p010-bedtime-procrastination.json';
 import p011 from '../episodes/p011-open-tabs.json';
+import p012 from '../episodes/p012-willpower-battery.json';
+import p013 from '../episodes/p013-venting-anger.json';
+import p014 from '../episodes/p014-dunning-kruger.json';
+import p015 from '../episodes/p015-money-happiness.json';
+import p016 from '../episodes/p016-positive-thinking.json';
 
 /** Every episode in episodes/ must be listed here to show up in Remotion Studio. */
-export const EPISODES: Episode[] = [s001 as Episode, s002 as Episode, s003 as Episode, ep001 as unknown as Episode, ep002 as unknown as Episode, ep003 as unknown as Episode, ep004 as unknown as Episode, ep005 as unknown as Episode, ep006 as unknown as Episode, p001 as unknown as Episode, p002 as unknown as Episode, p003 as unknown as Episode, p004 as unknown as Episode, p005 as unknown as Episode, p006 as unknown as Episode, p007 as unknown as Episode, p008 as unknown as Episode, p009 as unknown as Episode, p010 as unknown as Episode, p011 as unknown as Episode];
+export const EPISODES: Episode[] = [s001 as Episode, s002 as Episode, s003 as Episode, ep001 as unknown as Episode, ep002 as unknown as Episode, ep003 as unknown as Episode, ep004 as unknown as Episode, ep005 as unknown as Episode, ep006 as unknown as Episode, p001 as unknown as Episode, p002 as unknown as Episode, p003 as unknown as Episode, p004 as unknown as Episode, p005 as unknown as Episode, p006 as unknown as Episode, p007 as unknown as Episode, p008 as unknown as Episode, p009 as unknown as Episode, p010 as unknown as Episode, p011 as unknown as Episode, p012 as unknown as Episode, p013 as unknown as Episode, p014 as unknown as Episode, p015 as unknown as Episode, p016 as unknown as Episode];
 
 export const getEpisode = (id: string): Episode => {
 	const ep = EPISODES.find((e) => e.id === id);
