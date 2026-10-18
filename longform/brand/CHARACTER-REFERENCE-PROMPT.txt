@@ -1,0 +1,35 @@
+ГЛАВНЫЙ ПРОМПТ — сгенерируй это первым (16:9). Скопируй целиком, ничего не сокращай.
+====================================================================
+
+Mixed-media cinematic illustration: a flat 2D hand-drawn cartoon character composited into a photorealistic real-world room, as if a cartoon were placed into a real photograph.
+
+THE CHARACTER — a calm, friendly psychology professor. A slim adult man of average height standing in a relaxed neutral pose in the center of the frame, full body visible from head to shoes, body turned three-quarters toward the viewer, head turned slightly toward the camera, one hand in his trouser pocket, the other arm loose at his side.
+
+HEAD AND FACE (flat 2D cartoon): a large, smooth, slightly rounded-oval cartoon head about one third bigger than a real human head, flat warm-ivory skin colour (#F1E6D6) with one very soft shadow on the side away from the light, outlined with a smooth bold black line of even weight; small simple rounded ears. Short, thick, jet-black hair with a soft side part and a few messy tufts sticking up on top and over the forehead, drawn as one solid black shape with small notches. Large perfectly round glasses with thin black wire frames, slightly bigger than his eyes, always worn. Relaxed half-closed eyes behind the glasses: each eye is a short curved black upper-eyelid line with a small black pupil just below it, giving a calm, knowing, slightly amused look. Thin short black eyebrows above the frames. No drawn nose (or only a tiny curved line). A small closed gentle smile drawn as a short curved black line. Clean, minimal, intelligent face: no blush, no wrinkles, no teeth, no realistic features.
+
+HANDS (flat 2D cartoon): cartoon hands with four fingers, warm-ivory with the same bold black outline as the head.
+
+CLOTHES (photorealistic real fabric): a black knitted turtleneck sweater, a charcoal-grey wool blazer with natural fabric texture and soft folds, black trousers, black sneakers with white rubber soles. The clothes look like real clothing photographed in the room and fit his slim body naturally.
+
+ENVIRONMENT (photorealistic): a cosy real living room in the evening, photographed on a 35mm lens at eye level: a wall of real bookshelves softly out of focus behind him, a worn leather armchair to one side, a warm floor lamp, wooden floor. Shallow depth of field, gentle film grain, muted desaturated colour grading with deep warm-brown and charcoal shadows, low-key moody light from the floor lamp on the left and a faint cool window light from the right. The cartoon head and hands are lit by the same lamp: a soft warm highlight on the lamp side and a gentle shadow on the far side, and he casts a realistic soft contact shadow on the floor, so he looks physically present in the room.
+
+COMPOSITION: 16:9, the character is the clear focus in the center, generous empty space around him, calm and quiet atmosphere, cinematic framing.
+
+Negative / avoid: realistic human face, realistic nose with nostrils, eyelashes, open wide eyes, long hair, grey hair, beard, missing glasses, square glasses, 3D render, Pixar style, anime, chibi, big cartoon body, sketchy pencil look, watercolor, extra fingers, distorted hands, text, letters, captions, watermark, logo, oversaturated colours, flat cartoon background, studio backdrop.
+
+
+====================================================================
+ДОПОЛНИТЕЛЬНО (по желанию) — лист персонажа с трёх сторон для референса
+====================================================================
+
+Character turnaround reference sheet of the same psychology professor described above, flat 2D cartoon head and hands with bold black outlines (warm-ivory skin, short messy jet-black hair with tufts, large round thin black wire glasses, relaxed half-closed eyes, small calm smile, no nose, four-finger hands) and photorealistic clothes (black turtleneck, charcoal wool blazer, black trousers, black sneakers with white soles). Three full-body views side by side on a plain light warm-grey photographic background with soft real floor shadows: front view, three-quarter view, side profile. Same height, same proportions, same lighting in all three. No text, no letters, no watermark.
+
+
+====================================================================
+КАК ПОЛЬЗОВАТЬСЯ
+====================================================================
+1. Сгенерируй главный промпт 4–8 раз и выбери картинку, где лицо, очки и волосы получились точнее всего.
+2. Эту картинку прикрепляй к КАЖДОЙ следующей генерации как Character Reference / Image Reference, сила 0.7–0.85.
+3. В следующих промптах блоки HEAD AND FACE, HANDS и CLOTHES копируй дословно, меняй только окружение, действие, эмоцию и свет.
+4. Эмоции — только бровями, веками, маленьким ртом и позой. Очки и причёска не меняются никогда.
+5. Если голова начинает выглядеть объёмной или реалистичной, добавь в начало: "flat 2D cartoon head, bold black outline, cel shading".
