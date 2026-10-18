@@ -5,7 +5,7 @@ This video looks at what psychology research says is really going on when you pu
 In this video:
 00:00 The email you can't open
 01:16 What procrastination actually is
-01:50 The "mood-freezing" candle experiment
+02:09 The "mood-freezing" candle experiment
 03:12 The avoidance loop: why escaping feels so good
 04:10 "But I work better under pressure"
 05:27 Three things your brain is doing
@@ -30,7 +30,7 @@ SOURCES
 • Rozental, A., Forsell, E., Svensson, A., Andersson, G., & Carlbring, P. (2015). Internet-based cognitive–behavior therapy for procrastination: A randomized controlled trial. Journal of Consulting and Clinical Psychology, 83(4), 808–824. https://doi.org/10.1037/ccp0000023
 
 FURTHER READING
-• Pronin, E. (2008). How we see ourselves and how we see others. Science, 320(5880), 1177–1180. https://doi.org/10.1126/science.1154199
+• Pronin, E. (2008). How we see ourselves and how we see others. Science, 320, 1177–1180. https://doi.org/10.1126/science.1154199
 • Rozental, A., Bennett, S., Forsström, D., Ebert, D. D., et al. (2018). Targeting procrastination using psychological treatments: A systematic review and meta-analysis. Frontiers in Psychology, 9, 1588. https://doi.org/10.3389/fpsyg.2018.01588
 
 Several of these studies are small or correlational; the video says so where it matters.
