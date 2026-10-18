@@ -25,13 +25,17 @@ for s in range(1,136):
     if abs(r-16/9)<0.03:
         im=im.resize((W,H),Image.LANCZOS)
     else:
-        # contain on a canvas filled with the image's own edge colour
-        edge=ImageStat.Stat(im.crop((0,0,im.width,20))).median
-        canvas=Image.new('RGB',(W,H),tuple(int(v) for v in edge))
-        sc=H/im.height; im2=im.resize((int(im.width*sc),H),Image.LANCZOS)
-        # soft blurred fill on the sides
-        bg=im.resize((W,H),Image.LANCZOS).filter(ImageFilter.GaussianBlur(40))
-        canvas.paste(bg,(0,0)); canvas.paste(im2,((W-im2.width)//2,0)); im=canvas
+        # fill the whole 16:9 frame: stretch width a little, then crop height around the drawing
+        im=im.resize((int(im.width*1.15),im.height),Image.LANCZOS)
+        ch=int(im.width*9/16)
+        import numpy as np
+        g=np.asarray(im.convert('L'),dtype=np.float32)
+        ink=(np.abs(g-np.median(g))>40).sum(axis=1)   # how much drawing is in each row
+        rows=np.where(ink>im.width*0.01)[0]
+        rows=rows[rows>im.height*0.01]
+        first=int(rows[0]) if len(rows) else 0
+        by=min(max(0,first-int(im.height*0.03)),im.height-ch)
+        im=im.crop((0,by,im.width,by+ch)).resize((W,H),Image.LANCZOS)
     im.save(out+f'S{s:03d}.jpg',quality=90)
 json.dump(used,open('scene_images.json','w'))
 print('done', len(os.listdir(out)))

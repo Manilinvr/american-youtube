@@ -66,6 +66,7 @@ for k,(sid,a,b,du,typ,ph) in enumerate(tl):
     if a<60 and typ not in ('КАРТОЧКА','СРАВНЕНИЕ') and o is None:  # livelier hook
         if cam['s1']>cam['s0']: cam['s1']=cam['s0']+0.16
     for key,v in (('x0',0),('x1',0),('y0',0),('y1',0),('ox',50),('oy',50)): cam.setdefault(key,v)
+    if int(sid[1:])<=17 and o is None: cam['oy']=20; cam['y0']=0; cam['y1']=0
     SC.append({'id':sid,'from':round(a*FPS),'to':round(b*FPS),'fade':sid in blocks and sid!='S001','cam':cam,'type':typ})
 start={x['id']:x['from']/FPS for x in SC}; end={x['id']:x['to']/FPS for x in SC}
 # ---------- overlays
