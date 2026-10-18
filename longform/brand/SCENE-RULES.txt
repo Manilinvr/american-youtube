@@ -1,0 +1,53 @@
+ПРАВИЛА НАПОЛНЕНИЯ КАДРА — вставлять в КАЖДЫЙ промпт сцены
+====================================================================
+Порядок промпта:
+[STYLE] + [CHARACTER] + [SCENE DRESSING — блок ниже, целиком] + LOCATION + ACTION + PROPS + LIGHT + CAMERA + [Negative]
+
+
+[SCENE DRESSING — копировать дословно]
+--------------------------------------------------------------------
+SCENE DRESSING: the room is a real, lived-in place with believable detail, not an empty set. Build the frame in three layers:
+FOREGROUND — one or two real objects close to the camera, softly out of focus, partly framing the shot (the edge of a mug, a plant leaf, a chair back, a stack of books).
+MIDGROUND — the professor and the one main prop he is physically interacting with, sharp and clearly readable; his hands visibly touch, hold, push, open or look at it.
+BACKGROUND — 4 to 7 pieces of real decor that match the location and the topic (shelves with books and small objects, framed pictures without readable text, a lamp, curtains, plants, a coat on a hook, a window with a view), slightly blurred.
+Every object must have a reason to be there: it either belongs naturally to this location or supports the idea of the scene. Small story details are welcome (a half-drunk coffee, an unopened envelope, a phone face down, crumpled notes). Keep the frame organised: clear path for the eye to the professor's face and the main prop, no random clutter, no floating objects, no duplicated items, no readable text on any surface.
+
+
+[LOCATION — менять каждые 2–3 кадра, не повторять одну локацию больше 4 кадров подряд]
+--------------------------------------------------------------------
+Дом:      cosy living room with bookshelves · small kitchen with a window · bedroom at night · home desk corner by a window · hallway with coats and a mirror · bathroom mirror in the morning · balcony with plants at dusk
+Работа:   open-plan office · small meeting room with a whiteboard · coworking café · university lecture hall · professor's study with old books · library reading room
+Город:    coffee shop by the window · park bench in autumn · subway car · bus stop in the rain · bookshop aisle · rooftop at sunset · laundromat at night
+Наука:    small psychology lab with a table and two chairs · lecture stage with a chalkboard (no readable writing) · archive room with files
+
+
+[PROPS — один главный предмет на кадр, с которым он взаимодействует; выбирать по смыслу фразы]
+--------------------------------------------------------------------
+Откладывание / задачи:   laptop with an unopened email, sticky notes, calendar, to-do notebook, alarm clock, pile of paperwork
+Чувства / тревога:       cup of tea, blanket, phone face down, rain on the window, crumpled letter, journal and pen
+Исследования:            clipboard, stopwatch, folders, glass jars, small puzzle, handheld game, magazines, chalk
+Отношения / люди:        two cups on a table, phone with a message, photo frame (no faces), umbrella shared
+Отдых / решения:         armchair and book, record player, plant he is watering, window he opens, coffee he pours
+Объяснение идей:         chalkboard with simple drawings, pointer stick, desk globe, magnifying glass, model of a staircase
+
+
+[ACTION — глагол обязателен]
+--------------------------------------------------------------------
+Каждый кадр: он ДЕЛАЕТ что-то с главным предметом — holds, opens, pushes away, reaches for, writes in, pours, points at, turns off, picks up, looks closely through.
+Не «stands next to a laptop», а «pushes the laptop lid halfway closed with one finger, eyebrows raised».
+
+
+ПРИМЕР ГОТОВОГО ПРОМПТА СЦЕНЫ
+====================================================================
+[STYLE] + [CHARACTER] + [SCENE DRESSING]
+LOCATION: a small real kitchen in the morning.
+ACTION: the professor pushes an unopened white envelope away across the table with one finger while reaching for his coffee with the other hand, eyebrows slightly guilty.
+PROPS: main prop — the envelope; foreground — a blurred glass jar of cookies on the left edge; background — a window with morning light, a kettle, hanging mugs, a small potted herb, a wall calendar with crossed-out days (no numbers), a jacket on the chair.
+LIGHT: warm sunlight from the window behind him, soft shadows.
+CAMERA: medium shot at table height, shallow depth of field.
+[Negative]
+
+
+ДОБАВИТЬ В NEGATIVE
+====================================================================
+empty room, plain background, studio backdrop, random clutter, floating objects, duplicated objects, readable text, letters on signs, logos, brand names
