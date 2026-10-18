@@ -1,0 +1,110 @@
+ОФОРМЛЕНИЕ КАНАЛА — всё в одном файле
+============================================================
+
+
+1. ОПИСАНИЕ КАНАЛА (YouTube Studio → Настройка → Основные сведения → Описание)
+------------------------------------------------------------
+Why do we do the things we do? Short, calm, illustrated videos about everyday psychology — procrastination, overthinking, anxiety, habits, relationships and the quiet patterns behind them. Every episode is built on real research (sources in the description), explained simply, without hype or diagnoses.
+
+New episodes every week. Educational content — not a substitute for professional help.
+
+
+2. АВАТАР 800×800 (Настройка → Брендинг → Фото профиля)
+------------------------------------------------------------
+PROMPT:
+STYLE (keep identical in every image):
+Mixed-media cinematic illustration: a flat 2D hand-drawn cartoon character composited into a photorealistic real-world environment.
+ENVIRONMENT: photorealistic, shot like a real photograph on a 35mm lens at eye level or slightly above, natural indoor locations (apartments, offices, kitchens, bedrooms, streets), real materials and textures, soft shallow depth of field, gentle film grain, muted desaturated colour grading with deep warm-brown and charcoal shadows, low-key moody lighting from practical sources (TV screen, laptop, desk lamp, window), realistic soft shadows. Calm, quiet, slightly melancholic atmosphere.
+CHARACTER RENDERING: the character's head and hands are a clean flat 2D cartoon drawing with smooth bold black ink outlines of even weight, matte cel shading with one very soft gradient, no texture; clothing, blanket, shoes and props the character touches are photorealistic real fabric and objects that fit the scene; the cartoon parts are lit by the same light source as the room (soft coloured light and a gentle shadow on the side facing away from the light), so the character looks physically present in the photo, sitting or standing with real weight and contact shadows.
+COMPOSITION: 16:9, one clear action, the character is the main focus, plenty of negative space, cinematic framing. + CHARACTER (copy word for word into every prompt):
+The same recurring cartoon man — a calm, friendly psychology professor — in every image.
+Head: a large, smooth, slightly rounded-oval cartoon head, about one third bigger than a real human head, flat warm-ivory skin (#F1E6D6) with a very soft shadow on the side away from the light, outlined with a smooth bold black line of even weight; small simple rounded ears.
+Hair: short, thick, jet-black hair with a soft side part and a few messy tufts sticking up on top and over the forehead, drawn as one solid black shape with small notches; never long, never grey.
+Glasses: large perfectly round glasses with thin black wire frames, slightly bigger than his eyes, sitting low on the face; always worn.
+Eyes: relaxed, half-closed eyes behind the glasses — each a short curved black upper eyelid line with a small black pupil just under it, giving a calm, knowing, slightly amused look; thin, short black eyebrows above the frames that tilt to show emotion.
+Nose and mouth: no drawn nose or only a tiny curved line; a small closed smile drawn as a short curved black line (opens into a small dark oval only when surprised or talking).
+Overall face: clean, minimal, gentle and intelligent; no blush, no wrinkles, no teeth, no realistic features.
+Hands: cartoon hands with four fingers, warm-ivory with black outline, same style as the head.
+Body and clothes: slim adult man of average height under realistic clothes: a black turtleneck sweater, a charcoal-grey wool blazer, black trousers and black sneakers with white soles (alternative casual outfit when the scene is at home: a dark charcoal knitted crewneck sweater and the same black trousers).
+Emotion is shown through the eyebrows, the eyelids, the small mouth and body posture; the glasses and hair never change. + SCENE: extreme close-up portrait of his round head and shoulders, three-quarter view, looking slightly to the side with curious raised eyebrows and a tiny smile, centred in a perfect square. LIGHT: warm soft desk-lamp light from the left, dark warm-brown blurred room behind him. CAMERA: square 1:1 composition, head fills 70% of the frame, simple dark blurred background, readable at very small size. Negative: text, letters, logo.
+
+Совет: YouTube обрезает аватар в круг — голова и очки должны быть в центре, проверь при размере 98×98 px.
+
+
+3. БАННЕР 2560×1440 (Настройка → Брендинг → Баннер)
+------------------------------------------------------------
+PROMPT:
+STYLE (keep identical in every image):
+Mixed-media cinematic illustration: a flat 2D hand-drawn cartoon character composited into a photorealistic real-world environment.
+ENVIRONMENT: photorealistic, shot like a real photograph on a 35mm lens at eye level or slightly above, natural indoor locations (apartments, offices, kitchens, bedrooms, streets), real materials and textures, soft shallow depth of field, gentle film grain, muted desaturated colour grading with deep warm-brown and charcoal shadows, low-key moody lighting from practical sources (TV screen, laptop, desk lamp, window), realistic soft shadows. Calm, quiet, slightly melancholic atmosphere.
+CHARACTER RENDERING: the character's head and hands are a clean flat 2D cartoon drawing with smooth bold black ink outlines of even weight, matte cel shading with one very soft gradient, no texture; clothing, blanket, shoes and props the character touches are photorealistic real fabric and objects that fit the scene; the cartoon parts are lit by the same light source as the room (soft coloured light and a gentle shadow on the side facing away from the light), so the character looks physically present in the photo, sitting or standing with real weight and contact shadows.
+COMPOSITION: 16:9, one clear action, the character is the main focus, plenty of negative space, cinematic framing. + CHARACTER (copy word for word into every prompt):
+The same recurring cartoon man — a calm, friendly psychology professor — in every image.
+Head: a large, smooth, slightly rounded-oval cartoon head, about one third bigger than a real human head, flat warm-ivory skin (#F1E6D6) with a very soft shadow on the side away from the light, outlined with a smooth bold black line of even weight; small simple rounded ears.
+Hair: short, thick, jet-black hair with a soft side part and a few messy tufts sticking up on top and over the forehead, drawn as one solid black shape with small notches; never long, never grey.
+Glasses: large perfectly round glasses with thin black wire frames, slightly bigger than his eyes, sitting low on the face; always worn.
+Eyes: relaxed, half-closed eyes behind the glasses — each a short curved black upper eyelid line with a small black pupil just under it, giving a calm, knowing, slightly amused look; thin, short black eyebrows above the frames that tilt to show emotion.
+Nose and mouth: no drawn nose or only a tiny curved line; a small closed smile drawn as a short curved black line (opens into a small dark oval only when surprised or talking).
+Overall face: clean, minimal, gentle and intelligent; no blush, no wrinkles, no teeth, no realistic features.
+Hands: cartoon hands with four fingers, warm-ivory with black outline, same style as the head.
+Body and clothes: slim adult man of average height under realistic clothes: a black turtleneck sweater, a charcoal-grey wool blazer, black trousers and black sneakers with white soles (alternative casual outfit when the scene is at home: a dark charcoal knitted crewneck sweater and the same black trousers).
+Emotion is shown through the eyebrows, the eyelids, the small mouth and body posture; the glasses and hair never change. + SCENE: ultra-wide cinematic shot of a cosy dim apartment at dusk; he sits small on the left side on a windowsill with a mug, looking out at city lights, thoughtful eyebrows; the middle of the frame is calm, empty, softly blurred wall space. LIGHT: blue dusk through the window, one warm lamp inside. CAMERA: 2560x1440, very wide, keep all important elements inside the central 1546x423 area, the centre left empty for the channel name added later. Negative: text, letters, logo.
+
+Текст на баннере (добавить в Canva/CapCut, внутри центральной зоны 1546×423):
+• Название канала — шрифт Kalam Bold или Permanent Marker, цвет #F1E6D6 (тёплый светлый), лёгкая тень.
+• Под ним строка: «Everyday psychology, explained calmly» — шрифт Special Elite или Courier, меньше в 3 раза.
+• Справа внизу (тоже в безопасной зоне): «New episodes every week».
+
+
+4. ЗАСТАВКА В КОНЦЕ ВИДЕО 1920×1080 (end screen, последние 20 с)
+------------------------------------------------------------
+PROMPT:
+STYLE (keep identical in every image):
+Mixed-media cinematic illustration: a flat 2D hand-drawn cartoon character composited into a photorealistic real-world environment.
+ENVIRONMENT: photorealistic, shot like a real photograph on a 35mm lens at eye level or slightly above, natural indoor locations (apartments, offices, kitchens, bedrooms, streets), real materials and textures, soft shallow depth of field, gentle film grain, muted desaturated colour grading with deep warm-brown and charcoal shadows, low-key moody lighting from practical sources (TV screen, laptop, desk lamp, window), realistic soft shadows. Calm, quiet, slightly melancholic atmosphere.
+CHARACTER RENDERING: the character's head and hands are a clean flat 2D cartoon drawing with smooth bold black ink outlines of even weight, matte cel shading with one very soft gradient, no texture; clothing, blanket, shoes and props the character touches are photorealistic real fabric and objects that fit the scene; the cartoon parts are lit by the same light source as the room (soft coloured light and a gentle shadow on the side facing away from the light), so the character looks physically present in the photo, sitting or standing with real weight and contact shadows.
+COMPOSITION: 16:9, one clear action, the character is the main focus, plenty of negative space, cinematic framing. + CHARACTER (copy word for word into every prompt):
+The same recurring cartoon man — a calm, friendly psychology professor — in every image.
+Head: a large, smooth, slightly rounded-oval cartoon head, about one third bigger than a real human head, flat warm-ivory skin (#F1E6D6) with a very soft shadow on the side away from the light, outlined with a smooth bold black line of even weight; small simple rounded ears.
+Hair: short, thick, jet-black hair with a soft side part and a few messy tufts sticking up on top and over the forehead, drawn as one solid black shape with small notches; never long, never grey.
+Glasses: large perfectly round glasses with thin black wire frames, slightly bigger than his eyes, sitting low on the face; always worn.
+Eyes: relaxed, half-closed eyes behind the glasses — each a short curved black upper eyelid line with a small black pupil just under it, giving a calm, knowing, slightly amused look; thin, short black eyebrows above the frames that tilt to show emotion.
+Nose and mouth: no drawn nose or only a tiny curved line; a small closed smile drawn as a short curved black line (opens into a small dark oval only when surprised or talking).
+Overall face: clean, minimal, gentle and intelligent; no blush, no wrinkles, no teeth, no realistic features.
+Hands: cartoon hands with four fingers, warm-ivory with black outline, same style as the head.
+Body and clothes: slim adult man of average height under realistic clothes: a black turtleneck sweater, a charcoal-grey wool blazer, black trousers and black sneakers with white soles (alternative casual outfit when the scene is at home: a dark charcoal knitted crewneck sweater and the same black trousers).
+Emotion is shown through the eyebrows, the eyelids, the small mouth and body posture; the glasses and hair never change. + SCENE: he sits on the right side of a dim living room sofa, turned toward the viewer, giving a small friendly wave; the left two-thirds of the frame is a softly blurred dark wall with empty space for two video cards and a subscribe circle. LIGHT: warm lamp from the right. CAMERA: 16:9, medium wide shot. Negative: text, letters, logo.
+
+В Studio → Конечная заставка: два видео слева (последнее + рекомендованное) и кнопка подписки поверх пустой стены.
+
+
+5. ЗНАЧОК ВИДЕО (watermark)
+------------------------------------------------------------
+Круг 150×150 px с головой персонажа на прозрачном фоне (можно взять кадр аватара и вырезать голову). Поставить в Studio → Настройка → Брендинг → Значок видео, показывать «В течение всего видео».
+
+
+6. КЛЮЧЕВЫЕ СЛОВА КАНАЛА (Настройка → Основные сведения → Ключевые слова)
+------------------------------------------------------------
+psychology, everyday psychology, human behavior, procrastination, overthinking, anxiety, habits, self improvement, mental health education, why we do what we do, cognitive biases, motivation
+
+
+7. ТЕГИ К РОЛИКУ lf001 (при загрузке видео → Теги)
+------------------------------------------------------------
+why do i procrastinate, procrastination psychology, procrastination, why you procrastinate, how to stop procrastinating, procrastination is not laziness, procrastination and emotions, psychology of procrastination, fear of failure, perfectionism, self compassion, self handicapping, avoidance, emotional regulation, motivation, productivity, psychology explained, everyday psychology, human behavior, mental health education
+
+
+8. ПЛЕЙЛИСТЫ (создать сразу, даже с одним видео)
+------------------------------------------------------------
+• Why We Procrastinate
+• Anxiety & Overthinking
+• Self-Esteem & the Inner Critic
+• Relationships & Social Life
+• Habits, Focus & Decisions
+
+
+9. НАЗВАНИЕ КАНАЛА — варианты (если ещё не выбрано)
+------------------------------------------------------------
+• The Quiet Professor
+• Inner Workings
+• Why You Do That
+Название впиши в баннер и в первую строку описания.
