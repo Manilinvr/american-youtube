@@ -1,0 +1,57 @@
+ЛИСТ ПЕРСОНАЖА — главный герой канала (профессор)
+Прикладывай картинку professor-sofa.png как референс (Image / Character Reference, сила 0.8).
+Генерируй промпты по порядку: сначала 1, потом выбранную удачную картинку прикладывай к 2, 3, 4.
+====================================================================
+
+ОПИСАНИЕ ПЕРСОНАЖА (одинаковое во всех промптах — уже вставлено ниже)
+--------------------------------------------------------------------
+A friendly cartoon psychology professor drawn in a clean flat 2D animation style: bold smooth black outlines of even weight, flat colours with simple two-tone cel shading (one soft shadow tone), no textures, no gradients, no 3D.
+Head: large, slightly wide rounded head with a soft broad jaw, about one third of his total height; warm peach skin (#F2D3B3) with a slightly darker peach shadow on one side; small rounded ears.
+Hair: short jet-black hair, swept up and back, with a few small spiky tufts sticking out at the back of the crown; drawn as one solid black shape.
+Glasses: large perfectly round glasses with thin black frames, always on.
+Eyes: white eyes with small dark pupils and heavy half-closed upper eyelids, giving a relaxed, knowing, slightly amused look; thin arched black eyebrows above the frames.
+Nose: a single curved black line shaped like a hook, starting between the eyes.
+Mouth: a small lopsided friendly smile (a small dark open mouth when talking).
+Hands: cartoon hands with four fingers, same peach skin.
+Clothes (flat colours, same outline style): black turtleneck sweater, charcoal-grey blazer with notched lapels and two flap pockets, slim black trousers, black sneakers with white soles and three white stripes on the side.
+Body: slim, average height, relaxed posture.
+
+
+1. ПОВОРОТ ПЕРСОНАЖА — 4 ракурса (главный, генерировать первым) — 16:9
+--------------------------------------------------------------------
+Character turnaround model sheet of one character, full body from head to shoes, shown four times side by side in a straight row at the same size and height: front view, three-quarter view facing left, side profile facing left, back view. Neutral standing pose, arms relaxed at the sides, calm neutral expression with his small smile.
+A friendly cartoon psychology professor drawn in a clean flat 2D animation style: bold smooth black outlines of even weight, flat colours with simple two-tone cel shading, no textures, no gradients, no 3D. Large slightly wide rounded head with a soft broad jaw, about one third of his total height, warm peach skin (#F2D3B3) with a slightly darker peach shadow, small rounded ears. Short jet-black hair swept up and back with a few small spiky tufts at the back of the crown. Large perfectly round thin black glasses. White eyes with small dark pupils and heavy half-closed upper eyelids, relaxed knowing look, thin arched black eyebrows. Nose as a single curved hook line. Small lopsided friendly smile. Four-finger cartoon hands. Black turtleneck, charcoal-grey blazer with notched lapels and two flap pockets, slim black trousers, black sneakers with white soles and three white side stripes.
+Plain flat light-grey background (#E9E7E3), a soft simple oval shadow under each figure, nothing else. Even soft lighting, identical proportions, colours and details in all four views.
+Negative: background objects, room, furniture, scenery, text, labels, letters, numbers, watermark, logo, extra characters, different outfits between views, 3D render, realistic face, anime, chibi, extra fingers, missing glasses, long hair.
+
+
+2. ОДИН ПОРТРЕТ В ПОЛНЫЙ РОСТ — главный эталон — 9:16 или 1:1
+--------------------------------------------------------------------
+Single full-body character portrait of the same character, standing in the centre, body turned slightly three-quarters toward the viewer, head turned to the camera, one hand raised in a small friendly wave, the other hand in his trouser pocket, warm knowing smile.
+[вставь сюда абзац описания персонажа из промпта 1, от "A friendly cartoon psychology professor" до "three white side stripes."]
+Plain flat light-grey background (#E9E7E3), soft oval floor shadow, nothing else, generous empty space around him.
+Negative: background objects, scenery, text, letters, watermark, logo, extra characters, 3D render, realistic face, anime, extra fingers, missing glasses.
+
+
+3. ЛИСТ ЭМОЦИЙ — 6 голов — 16:9
+--------------------------------------------------------------------
+Expression sheet of the same character: six head-and-shoulders portraits in a neat grid of 3 columns and 2 rows, same size and same angle (slight three-quarter): 1) calm knowing smile, 2) curious with one eyebrow raised, 3) surprised with wide open eyes and a small open mouth, 4) worried with eyebrows tilted up, 5) laughing with eyes closed, 6) thoughtful looking up with a hand on his chin. Glasses, hair and outfit identical in every portrait.
+[вставь сюда абзац описания персонажа из промпта 1]
+Plain flat light-grey background (#E9E7E3), no frames, no labels.
+Negative: text, numbers, labels, letters, watermark, background objects, different hairstyles, missing glasses, 3D render, realistic face, anime.
+
+
+4. ЛИСТ ПОЗ — 6 поз в полный рост — 16:9
+--------------------------------------------------------------------
+Pose sheet of the same character, six full-body poses in a row at the same scale: 1) walking with a book under his arm, 2) sitting on an invisible chair with legs crossed, 3) pointing to the side as if explaining, 4) holding a coffee mug with both hands, 5) shrugging with palms up, 6) leaning forward reading a sheet of paper. Same outfit, glasses and proportions in every pose.
+[вставь сюда абзац описания персонажа из промпта 1]
+Plain flat light-grey background (#E9E7E3), soft oval floor shadows only, no furniture, no props except the book, mug and paper.
+Negative: room, furniture, scenery, text, letters, watermark, extra characters, different outfits, 3D render, realistic face, anime, extra fingers.
+
+
+СОВЕТЫ
+--------------------------------------------------------------------
+• Генерируй каждый промпт 4–6 раз и бери вариант, где очки, причёска и кеды совпадают с референсом точнее всего.
+• Лучшую картинку из промпта 1 потом прикладывай ко ВСЕМ сценам ролика — это главный эталон героя.
+• Если генератор дорисовывает фон, усиль в начале промпта: "isolated character on a plain flat light-grey background".
+• Если лицо уходит в 3D, добавь в начало: "flat 2D cartoon, bold black outlines, cel shading".
