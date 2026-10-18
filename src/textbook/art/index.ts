@@ -4,6 +4,7 @@ import {CatchEye, GazeTest, LabStare, Relax, SaferMistake, Tally, Train, TurnAro
 import {Ancestor, Barrel, Comments, EEG, Keep, Reread, Review, Scale} from './ep004';
 import {Drink, Favor, Glasses, Handoff, HighFive, Mirror, Morning, Scanner} from './ep005';
 import {AlertFork, BodySignals, Branches, MaybeDoor, ReadNoReply, RockGame, ShrinkMaybe, StressCurve} from './ep006';
+import {Chronometer, FallEstimate, FallResult, KitchenGlass, MemoryReel, NewRoute, ScadTower, SlowmoGlass, VacationStrip} from './ep007';
 import {StudyCard, TitleCard} from './generic';
 import {Bedroom, DayDesk, LoopCloseup, NightBed, Notebook} from './night';
 import {Evidence, Neuron, Note, WhiteBear} from './science';
@@ -68,4 +69,14 @@ export const ART: Record<string, React.FC<any>> = {
 	'alert-fork': AlertFork,
 	'shrink-maybe': ShrinkMaybe,
 	'maybe-door': MaybeDoor,
+	// ep007 slow motion
+	'kitchen-glass': KitchenGlass,
+	'slowmo-glass': SlowmoGlass,
+	'scad-tower': ScadTower,
+	'fall-estimate': FallEstimate,
+	chronometer: Chronometer,
+	'fall-result': FallResult,
+	'memory-reel': MemoryReel,
+	'vacation-strip': VacationStrip,
+	'new-route': NewRoute,
 };

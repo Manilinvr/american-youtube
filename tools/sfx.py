@@ -113,7 +113,26 @@ def shower() -> np.ndarray:
     return out[:-fade] * 0.5
 
 
-EFFECTS = {f.__name__: f for f in [pop, whoosh, ding, tick, boing, scratch, scribble, page, stamp, shower]}
+def heartbeat() -> np.ndarray:
+    # one slow, soft heartbeat: two low thumps ("lub-dub"), for slow-motion moments
+    x = t(1.1)
+    out = np.zeros_like(x)
+    for start, amp in [(0.0, 1.0), (0.24, 0.7)]:
+        k = np.clip(x - start, 0, None)
+        on = x >= start
+        out += on * amp * np.sin(2 * np.pi * (48 + 30 * np.exp(-20 * k)) * k) * np.exp(-14 * k) * np.minimum(1, k / 0.006)
+    return out
+
+
+def clink() -> np.ndarray:
+    # a drinking glass caught in the hand: a short, bright glassy tap
+    x = t(0.6)
+    tone = sum(a * np.sin(2 * np.pi * f * x) for f, a in [(2093, 1), (3520, 0.45), (5274, 0.2)])
+    tap = rng.standard_normal(len(x)) * np.exp(-200 * x) * 0.3
+    return (tone * env(len(x), 0.001, 9) + tap) * 0.5
+
+
+EFFECTS = {f.__name__: f for f in [pop, whoosh, ding, tick, boing, scratch, scribble, page, stamp, shower, heartbeat, clink]}
 
 
 def write(name: str, audio: np.ndarray) -> None:
