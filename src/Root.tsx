@@ -7,6 +7,7 @@ import {EpisodeVideo} from './EpisodeVideo';
 import {EPISODES} from './episodes';
 import {calculateEpisodeMetadata, FPS} from './timing';
 import type {EpisodeProps} from './types';
+import {Longform, LONGFORM_DURATION} from './longform/Longform';
 
 export const RemotionRoot: React.FC = () => (
 	<>
@@ -23,6 +24,7 @@ export const RemotionRoot: React.FC = () => (
 				durationInFrames={FPS * 30}
 			/>
 		))}
+		<Composition id="lf001-procrastination" component={Longform} fps={30} width={1920} height={1080} durationInFrames={LONGFORM_DURATION} />
 		<Composition id="sketch-sheet" component={SketchSheet} fps={FPS} width={1920} height={1080} durationInFrames={FPS * 4} />
 		<Still id="rig-sheet" component={RigSheet} width={1800} height={1000} />
 		{/* channel branding (npm run branding) */}
