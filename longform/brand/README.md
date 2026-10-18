@@ -12,15 +12,20 @@ COMPOSITION: 16:9, one clear action, the character is the main focus, plenty of 
 
 ```text
 CHARACTER (copy word for word into every prompt):
-The same recurring cartoon man in every image. His head is a very large, perfectly smooth round ball, slightly wider than tall, colour warm ivory-beige (#EADBC8) with a soft peach shadow on one side, outlined with a smooth bold black line. No hair, no ears, no neck visible, no wrinkles.
-Face: two large round eyes placed close together in the upper middle of the head, each a white circle with a thick black outline and a small solid black pupil; thin, curved black eyebrows floating above the eyes (they carry most of the emotion); a small nose drawn as a single curved black line shaped like a hook or a reversed "J" between and slightly below the eyes; a small simple mouth (a short curved line when calm, a small open oval with a dark-red inside when surprised). Face features sit slightly off-centre toward the side he is looking at. No cheeks blush, no teeth unless shouting, no realistic features.
-Hands: cartoon hands with four fingers, ivory-beige with black outline, same style as the head.
-Body and clothes: an average adult man's body under realistic clothes: a dark charcoal-teal knitted crewneck sweater with a navy t-shirt collar visible underneath, dark trousers, clean white leather sneakers. The head is about one third larger than a real human head would be.
-Emotion is shown only through eyebrows, eye direction, the mouth and body posture.
+The same recurring cartoon man — a calm, friendly psychology professor — in every image.
+Head: a large, smooth, slightly rounded-oval cartoon head, about one third bigger than a real human head, flat warm-ivory skin (#F1E6D6) with a very soft shadow on the side away from the light, outlined with a smooth bold black line of even weight; small simple rounded ears.
+Hair: short, thick, jet-black hair with a soft side part and a few messy tufts sticking up on top and over the forehead, drawn as one solid black shape with small notches; never long, never grey.
+Glasses: large perfectly round glasses with thin black wire frames, slightly bigger than his eyes, sitting low on the face; always worn.
+Eyes: relaxed, half-closed eyes behind the glasses — each a short curved black upper eyelid line with a small black pupil just under it, giving a calm, knowing, slightly amused look; thin, short black eyebrows above the frames that tilt to show emotion.
+Nose and mouth: no drawn nose or only a tiny curved line; a small closed smile drawn as a short curved black line (opens into a small dark oval only when surprised or talking).
+Overall face: clean, minimal, gentle and intelligent; no blush, no wrinkles, no teeth, no realistic features.
+Hands: cartoon hands with four fingers, warm-ivory with black outline, same style as the head.
+Body and clothes: slim adult man of average height under realistic clothes: a black turtleneck sweater, a charcoal-grey wool blazer, black trousers and black sneakers with white soles (alternative casual outfit when the scene is at home: a dark charcoal knitted crewneck sweater and the same black trousers).
+Emotion is shown through the eyebrows, the eyelids, the small mouth and body posture; the glasses and hair never change.
 ```
 
 ```text
-Negative: realistic human face, nose with nostrils, ears, hair, eyelashes, 3D render, Pixar style, anime, chibi, thick watercolor, sketchy pencil look, extra fingers, distorted hands, text, letters, captions, watermark, logo, bright saturated colours, flat cartoon background, studio backdrop.
+Negative: realistic human face, realistic nose with nostrils, eyelashes, long hair, grey hair, beard, glasses missing, square glasses, 3D render, Pixar style, anime, chibi, thick watercolor, sketchy pencil look, extra fingers, distorted hands, text, letters, captions, watermark, logo, bright saturated colours, flat cartoon background, studio backdrop.
 ```
 
 ```text
