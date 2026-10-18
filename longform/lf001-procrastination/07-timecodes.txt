@@ -1,0 +1,140 @@
+lf001 · Why You Procrastinate Even When You Care
+Таймкоды кадров по озвучке 819011bd-full.mp3 (длина 12:24.43)
+Кадр показывается от START до END (до начала следующего).
+
+Кадр  START      END        ДЛИТ.   ФРАЗА
+S001  0:00.00    0:02.50      2.5 с  There's an email in your inbox.
+S002  0:02.50    0:05.04      2.5 с  It would take maybe twenty minutes to answer.
+S003  0:05.04    0:08.08      3.0 с  It's been sitting there for nine days.
+S004  0:08.08    0:11.50      3.4 с  In those nine days, you've cleaned out the fridge.
+S005  0:11.50    0:13.76      2.3 с  You've reorganized your desktop.
+S006  0:13.76    0:18.10      4.3 с  You've watched an entire documentary about octopuses.
+S007  0:18.10    0:21.52      3.4 с  Every morning you tell yourself: today.
+S008  0:21.52    0:26.24      4.7 с  ...the moment you see that subject line, something small tightens in your chest.
+S009  0:26.24    0:30.28      4.0 с  And you click away.
+S010  0:30.28    0:35.94      5.7 с  It's not some boring email you don't care about. It's the one that matters most.
+S011  0:35.94    0:40.56      4.6 с  So what's going on? If you didn't care, avoiding it would make sense.
+S012  0:40.56    0:46.38      5.8 с  But you do care. A lot. And somehow, that's exactly the one you can't open.
+S013  0:46.38    0:49.46      3.1 с  The usual verdict is simple. You're lazy.
+S014  0:49.46    0:53.00      3.5 с  You have no discipline. You just need to try harder.
+S015  0:53.00    0:57.40      4.4 с  But lazy people don't lie awake feeling guilty about an email.
+S016  0:57.40    1:04.74      7.3 с  Lazy people don't care. And you clearly do.
+S017  1:04.74    1:07.74      3.0 с  Procrastination often isn't a time problem.
+S018  1:07.74    1:10.02      2.3 с  It's a feeling problem.
+S019  1:10.02    1:19.74      9.7 с  Let's look at three things your brain is doing... and what the evidence says actually helps.  ⟵ долгий кадр: медленный наезд/панорама
+S020  1:19.74    1:26.42      6.7 с  Not every delay is procrastination. Waiting until you have more information is just smart.
+S021  1:26.42    1:37.84     11.4 с  The psychologist Piers Steel defines procrastination as voluntarily delaying something you intended to do, even though you expect to be worse off for the delay.  ⟵ долгий кадр: медленный наезд/панорама
+S022  1:37.84    1:42.88      5.0 с  That last part is the key. You know it will cost you. You do it anyway.
+S023  1:42.88    1:49.84      7.0 с  In 2007, Steel pulled together close to seven hundred findings on procrastination.
+S024  1:49.84    2:00.20     10.4 с  One of the strongest patterns wasn't about character. It was about the task: the more unpleasant it felt, the more likely people were to put it off.  ⟵ долгий кадр: медленный наезд/панорама
+S025  2:00.20    2:07.68      7.5 с  Fuschia Sirois and Timothy Pychyl describe procrastination as a way of repairing your mood right now...
+S026  2:07.68    2:10.46      2.8 с  ...and handing the bill to your future self.
+S027  2:10.46    2:15.28      4.8 с  One clever experiment shows just how central that is.
+S028  2:15.28    2:24.68      9.4 с  In 2001, Dianne Tice, Ellen Bratslavsky, and Roy Baumeister had students read a short, upsetting story and imagine being in it.  ⟵ долгий кадр: медленный наезд/панорама
+S029  2:24.68    2:29.76      5.1 с  Then they were told a math test was coming and given fifteen minutes to practice.
+S030  2:29.76    2:34.08      4.3 с  Nearby sat a puzzle, a video game, and some magazines.
+S031  2:34.08    2:38.56      4.5 с  But first, the researcher lit an aromatherapy candle.
+S032  2:38.56    2:41.56      3.0 с  Some students were told it would freeze their mood.
+S033  2:41.56    2:46.18      4.6 с  As long as it burned, nothing they did would make them feel better.
+S034  2:46.18    2:50.20      4.0 с  Students in a bad mood, with fun distractions in the room, spent almost fourteen of those fifteen minutes not practicing.
+S035  2:50.20    2:54.16      4.0 с  …almost fourteen of those fifteen minutes… under six minutes.
+S036  2:54.16    2:59.02      4.9 с  But when they believed their mood was frozen, that dropped to under six minutes.
+S037  2:59.02    3:05.26      6.2 с  When feeling better was off the table, the reason to procrastinate disappeared.
+S038  3:05.26    3:11.90      6.6 с  It was a small lab study, so it can't explain every delay.
+S039  3:11.90    3:18.18      6.3 с  A lot of procrastination isn't about the task. It's about the feeling the task gives you.
+S040  3:18.18    3:21.32      3.1 с  Let's slow it down and watch it happen to you.
+S041  3:21.32    3:27.72      6.4 с  You open your inbox. You see the subject line. That's the event.
+S042  3:27.72    3:36.96      9.2 с  Your mind adds a story. What if my reply sounds stupid? What if they're already annoyed that I'm late?  ⟵ долгий кадр: медленный наезд/панорама
+S043  3:36.96    3:42.12      5.2 с  Then comes the feeling. Not panic. Just a quick, sharp flicker of dread.
+S044  3:42.12    3:46.96      4.8 с  So you react. A new tab. A quick look at your phone. Just one video.
+S045  3:46.96    3:51.86      4.9 с  And here's the trap. It works. The dread fades almost instantly.
+S046  3:51.86    3:57.52      5.7 с  And your brain learns a simple lesson: avoiding that email makes me feel better.
+S047  3:57.52    4:01.78      4.3 с  But the email doesn't fade. Every day it waits, it gets heavier.
+S048  4:01.78    4:07.18      5.4 с  Now you're not just replying. You're replying late. Now you need an apology.
+S049  4:07.18    4:12.12      4.9 с  The task grows, the dread grows, and the escape gets more tempting.
+S050  4:12.12    4:14.88      2.8 с  Relief now. Interest added later.
+S051  4:14.88    4:20.26      5.4 с  But maybe you're thinking: that's not me. I actually work better under pressure.
+S052  4:20.26    4:28.98      8.7 с  In 1997, Dianne Tice and Roy Baumeister followed college students through a semester-long health psychology course.
+S053  4:28.98    4:37.74      8.8 с  Early on, the procrastinators looked like the winners. They reported less stress and fewer symptoms of illness than the other students.
+S054  4:37.74    4:40.36      2.6 с  Then the deadlines arrived.
+S055  4:40.36    4:50.62     10.3 с  By the end of the semester, the procrastinators reported more stress, more symptoms, and more visits to health professionals. Their grades were lower too.  ⟵ долгий кадр: медленный наезд/панорама
+S056  4:50.62    4:59.02      8.4 с  The researchers called it a self-defeating pattern, with short-term benefits and long-term costs.
+S057  4:59.02    5:10.38     11.4 с  But in 2023, a much larger one followed more than three and a half thousand university students in Sweden for nine months.  ⟵ долгий кадр: медленный наезд/панорама
+S058  5:10.38    5:24.36     14.0 с  Slightly more likely… depression, anxiety, and stress. Also poor sleep, loneliness, money trouble, and disabling pain in the shoulders and arms.  ⟵ долгий кадр: медленный наезд/панорама
+S059  5:24.36    5:37.02     12.7 с  Slightly is the honest word. The researchers called these links weak, and a study like this can't prove that procrastination caused any of it.  ⟵ долгий кадр: медленный наезд/панорама
+S060  5:37.02    5:40.82      3.8 с  The relief is real. So is the bill.
+S061  5:40.82    5:44.66      3.8 с  So why does this hit hardest with the things you care about most?
+S062  5:44.66    5:47.50      2.8 с  Here are three things your brain is doing.
+S063  5:47.50    5:51.36      3.9 с  One. It's reacting to the feeling, not the task.
+S064  5:51.36    5:59.12      7.8 с  In a study by Allan Blunt and Timothy Pychyl, students rated projects they were working on and projects they were putting off.
+S065  5:59.12    6:01.90      2.8 с  The ones they avoided tended to feel boring…
+S066  6:01.90    6:02.90      1.0 с  …frustrating…
+S067  6:02.90    6:04.08      1.2 с  …or resented.
+S068  6:04.08    6:05.96      1.9 с  Often they felt meaningless.
+S069  6:05.96    6:10.38      4.4 с  And when it was time to actually do them, the steps felt unclear.
+S070  6:10.38    6:14.42      4.0 с  Notice what's not on that list. "I'm a bad person."
+S071  6:14.42    6:22.40      8.0 с  Your brain isn't judging your character. It's reacting to a signal: this is going to feel bad. And it steers away.
+S072  6:22.40    6:25.58      3.2 с  Two. The more it matters, the more it threatens.
+S073  6:25.58    6:27.80      2.2 с  This answers our question.
+S074  6:27.80    6:40.00     12.2 с  In a 2000 study, Joseph Ferrari and Dianne Tice gave students a math task, plus time beforehand to practice, or to play with a puzzle or a video game instead.  ⟵ долгий кадр: медленный наезд/панорама
+S075  6:40.00    6:44.74      4.7 с  Some were told the task was a meaningful test of their cognitive skills.
+S076  6:44.74    6:49.04      4.3 с  Others were told the same task was just a fun game.
+S077  6:49.04    7:01.82     12.8 с  Chronic procrastinators practiced less, but only when the task was framed as a test of their ability. When it was just a game, they practiced like everyone else.  ⟵ долгий кадр: медленный наезд/панорама
+S078  7:01.82    7:07.36      5.5 с  If you start late and do badly, you can always say: well, I barely tried.
+S079  7:07.36    7:13.66      6.3 с  Psychologists call this self-handicapping. It protects your self-image, at the cost of your results.
+S080  7:13.66    7:24.56     10.9 с  And it's not ambition itself. A 2017 analysis of forty-four studies found that simply setting high standards went with slightly less procrastination.  ⟵ долгий кадр: медленный наезд/панорама
+S081  7:24.56    7:31.92      7.4 с  The link came from the anxious side of perfectionism: worrying about mistakes, and about what others think.
+S082  7:31.92    7:37.26      5.3 с  So when you care, the task can stop being just a task. It becomes a verdict on you.
+S083  7:37.26    7:39.28      2.0 с  And verdicts are scary.
+S084  7:39.28    7:43.84      4.6 с  Three. Your brain treats future you a bit like someone else.
+S085  7:43.84    7:51.36      7.5 с  Emily Pronin and her colleagues asked students to drink a disgusting mix of ketchup, soy sauce, and water, for science.
+S086  7:51.36    7:55.68      4.3 с  Deciding for right now, they chose about two tablespoons.
+S087  7:55.68    8:04.22      8.5 с  Deciding for their future selves, next semester, they signed up for about half a cup. The same amount they chose for another student.
+S088  8:04.22    8:07.08      2.9 с  So when you say "I'll do it tomorrow,"…
+S089  8:07.08    8:13.36      6.3 с  …you're not just delaying. You're handing the dread to someone your brain treats a little less like you.
+S090  8:13.36    8:16.42      3.1 с  Try this. Think about the last thing you put off.
+S091  8:16.42    8:21.14      4.7 с  Not the task itself. The moment right before you avoided it.
+S092  8:21.14    8:23.54      2.4 с  What was the feeling? Boredom?
+S093  8:23.54    8:25.12      1.6 с  Not knowing where to start?
+S094  8:25.12    8:28.34      3.2 с  Or the fear that whatever you made wouldn't be good enough?
+S095  8:28.34    8:32.72      4.4 с  You don't have to agree with anything I've said. Just check.
+S096  8:32.72    8:36.50      3.8 с  Were you avoiding the work, or the feeling that came with it?
+S097  8:36.50    8:40.34      3.8 с  Now here's where a lot of advice gets it backwards.
+S098  8:40.34    8:47.34      7.0 с  If procrastination is a lack of discipline, the obvious fix is to be harder on yourself. More pressure.
+S099  8:47.34    8:50.44      3.1 с  More guilt. More "what is wrong with you?"
+S100  8:50.44    8:56.86      6.4 с  But look at what guilt does inside the loop. It's one more bad feeling attached to the task.
+S101  8:56.86    9:02.30      5.4 с  And the brain's favorite way to escape a bad feeling is to avoid the task.
+S102  9:02.30    9:11.50      9.2 с  In 2010, Michael Wohl, Timothy Pychyl, and Shannon Bennett followed a hundred and nineteen first-year students across two midterms.  ⟵ долгий кадр: медленный наезд/панорама
+S103  9:11.50    9:17.32      5.8 с  Before the first, they measured how hard students were on themselves for procrastinating.
+S104  9:17.32    9:25.80      8.5 с  Among students who had procrastinated a lot, the ones who forgave themselves procrastinated less before the second exam.
+S105  9:25.80    9:30.82      5.0 с  Part of the reason seemed to be that they felt less bad about the first one.
+S106  9:30.82    9:36.65      5.8 с  It's one study, and it can't prove cause and effect.
+S107  9:36.65    9:44.30      7.6 с  Fuschia Sirois found that people who procrastinate more tend to be less compassionate toward themselves, and more stressed.
+S108  9:44.30    9:50.70      6.4 с  The harsh voice that's supposed to keep you in line may be part of what keeps you stuck.
+S109  9:50.70    9:56.06      5.4 с  So what can you actually do? Three things worth trying. None of them is magic.
+S110  9:56.06    9:59.42      3.4 с  First, shrink the start until it stops setting off the alarm.
+S111  9:59.42    10:04.76     5.3 с  Not "answer the email." Just "open it and write one clumsy sentence."
+S112  10:04.76   10:11.04     6.3 с  The goal isn't to finish. It's to get past the moment of dread, because that's where procrastination wins.
+S113  10:11.04   10:16.76     5.7 с  This one follows from the research more than it's been tested on its own.
+S114  10:16.76   10:18.64     1.9 с  Second, make an if-then plan.
+S115  10:18.64   10:23.60     5.0 с  "If it's nine a.m. and I've poured my coffee, then I open the email."
+S116  10:23.60   10:35.80    12.2 с  A 2024 review of more than six hundred tests found that plans like this do help people follow through. The effect is smaller than earlier studies suggested, but it's real.  ⟵ долгий кадр: медленный наезд/панорама
+S117  10:35.80   10:40.88     5.1 с  Third, when you slip, forgive the slip.
+S118  10:40.88   10:46.44     5.6 с  "I avoided it because it felt bad. That's human. What's the next small step?"
+S119  10:46.44   11:02.64    16.2 с  And if putting things off is seriously hurting your work, your health, or your relationships… A video can't diagnose that. A professional can help.  ⟵ долгий кадр: медленный наезд/панорама
+S120  11:02.64   11:14.68    12.0 с  In one randomized trial in Sweden, a ten-week online program based on cognitive behavioral therapy reduced procrastination compared with a waiting list.  ⟵ долгий кадр: медленный наезд/панорама
+S121  11:14.68   11:17.00     2.3 с  So here's the short version.
+S122  11:17.00   11:21.18     4.2 с  You're not lazy. You're trying to feel better, right now.
+S123  11:21.18   11:25.54     4.4 с  Procrastination works for five minutes, and charges you for weeks.
+S124  11:25.54   11:29.64     4.1 с  The more you care, the more the task feels like a verdict.
+S125  11:29.64   11:37.36     7.7 с  And the way out is less about forcing yourself, and more about making the start feel safe enough to begin.
+S126  11:37.36   11:40.68     3.3 с  Let's go back to that email. Day ten.
+S127  11:40.68   11:45.56     4.9 с  You open your inbox. You see the subject line. You feel the flicker.
+S128  11:45.56   11:49.84     4.3 с  But this time, you notice it. Oh. There it is. That's the feeling.
+S129  11:49.84   11:52.72     2.9 с  You don't fight it. You don't scold yourself.
+S130  11:52.72   11:57.66     4.9 с  You just write one sentence. "Hi, sorry for the slow reply."
+S131  11:57.66   12:04.20     6.5 с  And maybe the thing you've been running from for ten days turns out to be smaller than it was in your head.
+S132  12:04.20   12:06.78     2.6 с  You were never really avoiding the email.
+S133  12:06.78   12:10.42     3.6 с  You were avoiding a feeling. And feelings, unlike emails, pass on their own.
+S134  12:10.42   12:12.60     2.2 с  (финальный кадр после последней фразы)
+S135  12:12.60   12:24.43    11.8 с  What's the thing you've been putting off? … boredom, confusion, or the fear of not being good enough. I read the comments.  ⟵ долгий кадр: медленный наезд/панорама
