@@ -8,6 +8,7 @@ import {EPISODES} from './episodes';
 import {calculateEpisodeMetadata, FPS} from './timing';
 import type {EpisodeProps} from './types';
 import {Longform, LONGFORM_DURATION} from './longform/Longform';
+import {LamalmaBanner, LamalmaLogo} from './longform/brand/ChannelArt';
 
 export const RemotionRoot: React.FC = () => (
 	<>
@@ -28,6 +29,8 @@ export const RemotionRoot: React.FC = () => (
 		<Composition id="sketch-sheet" component={SketchSheet} fps={FPS} width={1920} height={1080} durationInFrames={FPS * 4} />
 		<Still id="rig-sheet" component={RigSheet} width={1800} height={1000} />
 		{/* channel branding (npm run branding) */}
+		<Still id="lamalma-banner" component={LamalmaBanner} width={2560} height={1440} />
+		<Still id="lamalma-logo" component={LamalmaLogo} width={800} height={800} />
 		<Still id="banner" component={Banner} width={2560} height={1440} defaultProps={{showSafe: false}} />
 		<Still id="avatar" component={Avatar} width={800} height={800} />
 		<Still id="watermark" component={Watermark} width={150} height={150} />
