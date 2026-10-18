@@ -63,7 +63,7 @@ This video is for education only. It isn't a diagnosis or a substitute for help 
 — Professor Lamalma · everyday psychology, explained calmly
 
 
-3. ТЕГИ (поле «Теги», 485 символов из 500 — вставить одной строкой)
+3. ТЕГИ (поле «Теги», 418 символов из 500 — вставить одной строкой)
 ----------------------------------------------------------------------
 why do i procrastinate, procrastination psychology, procrastination, why you procrastinate, how to stop procrastinating, procrastination is not laziness, procrastination and emotions, psychology of procrastination, fear of failure, perfectionism, self compassion, self handicapping, avoidance, emotional regulation, motivation, productivity, psychology explained, everyday psychology, human behavior, Professor Lamalma
 
