@@ -31,7 +31,7 @@ SOURCES
 
 FURTHER READING
 • Pronin, E. (2008). How we see ourselves and how we see others. Science, 320(5880), 1177–1180. https://doi.org/10.1126/science.1154199
-• Rozental, A., et al. (2018). Treating procrastination using cognitive behavior therapy: A pilot randomized controlled trial comparing treatment delivered via the internet or in groups. — see also their 2018 meta-analysis of procrastination treatments in Frontiers in Psychology: https://doi.org/10.3389/fpsyg.2018.01588
+• Rozental, A., Bennett, S., Forsström, D., Ebert, D. D., et al. (2018). Targeting procrastination using psychological treatments: A systematic review and meta-analysis. Frontiers in Psychology, 9, 1588. https://doi.org/10.3389/fpsyg.2018.01588
 
 Several of these studies are small or correlational; the video says so where it matters.
 
