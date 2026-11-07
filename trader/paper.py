@@ -167,7 +167,9 @@ def daily(now=None):
     """Ежедневный отчёт: сделки за последние 24 часа, итог с начала, новости на завтра."""
     now = now or now_utc()
     trades, status = update(now)
-    day0 = now - pd.Timedelta(days=1)
+    # окно — с прошлого отчёта: в воскресенье с вечера пятницы (в субботу отчёта нет)
+    sunday = now.tz_convert("Europe/Moscow").dayofweek == 6
+    day0 = now - pd.Timedelta(days=2 if sunday else 1)
     tr = trades.copy()
     if len(tr):
         tr["exit_time"] = pd.to_datetime(tr.exit_time, utc=True)
