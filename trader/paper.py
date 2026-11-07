@@ -2,6 +2,7 @@
 
     python3 trader/paper.py update   # пересчитать журнал сделок и статусы схем
     python3 trader/paper.py report   # + написать отчёт за неделю (reports/weekly/ДАТА.md)
+    python3 trader/paper.py daily    # + отчёт за день (reports/daily/ДАТА.md)
 
 Как это работает. Правила каждой схемы зафиксированы в strategies.py. Программа
 отыгрывает их на всех свечах с даты старта схемы (по умолчанию — понедельник
@@ -63,8 +64,6 @@ def update(now=None):
         tr = tr[tr.exit_time < now]
         if st["excluded_on"]:
             tr = tr[tr.exit_time < pd.Timestamp(st["excluded_on"], tz="UTC")]
-        tr = tr.assign(scheme=label)
-        all_tr.append(tr)
         # правило двух недель
         if st["status"] == "active":
             k = 0
@@ -78,6 +77,9 @@ def update(now=None):
                               reason=f"минус {net:.0f}$ за период {w0:%d.%m}–{(w1 - pd.Timedelta(days=1)):%d.%m}")
                     break
                 k += 1
+            if st["excluded_on"]:  # после исключения сделки не считаются
+                tr = tr[tr.exit_time < pd.Timestamp(st["excluded_on"], tz="UTC")]
+        all_tr.append(tr.assign(scheme=label))
     trades = pd.concat(all_tr, ignore_index=True) if all_tr else pd.DataFrame(
         columns=["scheme", "strategy", "pair", "tf", "dir", "entry_time", "exit_time", "usd", "R"])
     trades.to_csv(os.path.join(JOURNAL, "trades.csv"), index=False)
@@ -161,9 +163,69 @@ def report(now=None):
     return path
 
 
+def daily(now=None):
+    """Ежедневный отчёт: сделки за последние 24 часа, итог с начала, новости на завтра."""
+    now = now or now_utc()
+    trades, status = update(now)
+    day0 = now - pd.Timedelta(days=1)
+    tr = trades.copy()
+    if len(tr):
+        tr["exit_time"] = pd.to_datetime(tr.exit_time, utc=True)
+        tr["entry_time"] = pd.to_datetime(tr.entry_time, utc=True)
+    dt = tr[tr.exit_time >= day0] if len(tr) else tr
+    msk = now.tz_convert("Europe/Moscow")
+    start = pd.Timestamp(FORWARD_START, tz="UTC")
+    L = [f"# Отчёт за день {msk:%d.%m.%Y} ({['пн','вт','ср','чт','пт','сб','вс'][msk.dayofweek]})", ""]
+    if now < start:
+        L += [f"Демо-торговля стартует в понедельник {start:%d.%m.%Y} с открытия рынка. Сегодня — план на неделю.", ""]
+    else:
+        L += [f"День {(now - start).days + 1} демо-обучения из ~60. Риск каждой сделки $20.", ""]
+    ds, cs = engine.stats(dt), engine.stats(tr)
+    act = sum(v["status"] == "active" for v in status.values())
+    L += ["| | Сделок | Плюс/минус | Винрейт | Заработано | Потеряно | Итог |", "|---|---|---|---|---|---|---|",
+          _row("За день", ds), _row("С начала обучения", cs), "", f"Схем в работе: **{act}** из {len(status)}.", ""]
+    if len(dt):
+        rows = []
+        for label, g in dt.groupby("scheme"):
+            st = engine.stats(g)
+            rows.append((st["net_usd"], _row(f"`{label}` {REGISTRY[status[label]['id']]['name']}", st)))
+        rows.sort(key=lambda r: -r[0])
+        L += ["## Схемы за день", "", "| Схема | Сделок | Плюс/минус | Винрейт | Заработано | Потеряно | Итог |",
+              "|---|---|---|---|---|---|---|", *[r for _, r in rows], ""]
+        top = dt.sort_values("usd")
+        L += ["## Лучшая и худшая сделка дня", ""]
+        for _, r in pd.concat([top.tail(1), top.head(1)]).iterrows():
+            L.append(f"- {r.pair} {r.dir} ({r.scheme}): вход {r.entry_time.tz_convert('Europe/Moscow'):%H:%M} МСК по {r.entry}, "
+                     f"выход {r.exit_time.tz_convert('Europe/Moscow'):%H:%M} ({r.exit_reason}), **{r.usd:+.2f}$**")
+        L += [""]
+    elif now >= start:
+        L += ["Сделок за день не было.", ""]
+    newly = [k for k, v in status.items() if v["excluded_on"] and day0 <= pd.Timestamp(v["excluded_on"], tz="UTC") <= now]
+    if newly:
+        L += ["## ❌ Исключены сегодня (минус за 2 недели)", ""] + [f"- `{k}` — {status[k]['reason']}" for k in newly] + [""]
+    ev = news.load()
+    horizon = now + pd.Timedelta(days=7 if now < start or msk.dayofweek >= 5 else 1)
+    ev = ev[(ev.time >= now) & (ev.time < horizon)]
+    L += [f"## 📰 Важные новости {'на неделю' if horizon - now > pd.Timedelta(days=1) else 'на завтра'} — в эти часы роботы не торгуют", ""]
+    if len(ev):
+        tm = ev.time.dt.tz_convert("Europe/Moscow")
+        L += [f"- {['пн','вт','ср','чт','пт','сб','вс'][t.dayofweek]} {t:%d.%m %H:%M} МСК — **{c}** {ti}" for t, c, ti in zip(tm, ev.ccy, ev.title)]
+    else:
+        L += ["- в календаре пока нет важных новостей на этот период (календарь обновляется каждый день)"]
+    L += [""]
+    out = os.path.join(ROOT, "reports", "daily")
+    os.makedirs(out, exist_ok=True)
+    path = os.path.join(out, f"{msk:%Y-%m-%d}.md")
+    open(path, "w").write("\n".join(L))
+    return path
+
+
 if __name__ == "__main__":
     cmd = sys.argv[1] if len(sys.argv) > 1 else "update"
-    if cmd == "report":
+    if cmd == "daily":
+        when = pd.Timestamp(sys.argv[2], tz="UTC") if len(sys.argv) > 2 else None
+        print(daily(when))
+    elif cmd == "report":
         when = pd.Timestamp(sys.argv[2], tz="UTC") if len(sys.argv) > 2 else None
         print(report(when))
     else:
