@@ -28,6 +28,10 @@
 - `backtest.py` — проверка всех схем на истории → `reports/backtest.md`.
 - `paper.py` — демо-торговля вперёд, журнал `journal/trades.csv`, статусы `journal/status.json`,
   пятничный отчёт `reports/weekly/ДАТА.md`.
+- `news.py` — календарь важных новостей (ForexFactory + даты ФРС). Для всех схем: не входить
+  за 30 мин до и 30 мин после новости по валютам пары, закрывать сделку за 15 мин до новости,
+  не входить после аномальной свечи (> 3 ATR). На истории фильтр улучшил 38 схем из 59
+  (`reports/news_filter_effect.csv`).
 - `cot.py` — позиции «китов» по данным CFTC → `reports/cot_latest.md`.
 - `market_study.py` — обзор рынка за 10 лет → `reports/market_10y.md`.
 

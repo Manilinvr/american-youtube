@@ -73,4 +73,9 @@ def update(pairs=PAIRS, intervals=("15m", "1h", "1d")):
 
 
 if __name__ == "__main__":
+    import news
+    try:
+        news.update()  # заодно обновляем календарь новостей
+    except Exception as e:
+        print("новости не обновились:", e)
     update(intervals=tuple(sys.argv[1:]) or ("15m", "1h", "1d"))

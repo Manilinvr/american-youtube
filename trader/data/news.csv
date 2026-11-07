@@ -1,0 +1,109 @@
+time,ccy,title,source
+2021-01-27 19:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2021-03-17 18:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2021-04-28 18:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2021-06-16 18:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2021-07-28 18:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2021-09-22 18:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2021-11-03 18:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2021-12-15 19:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2022-01-26 19:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2022-03-16 18:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2022-05-04 18:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2022-06-15 18:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2022-07-27 18:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2022-09-21 18:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2022-11-02 18:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2022-12-14 19:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2023-02-01 19:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2023-03-22 18:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2023-05-03 18:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2023-06-14 18:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2023-07-26 18:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2023-09-20 18:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2023-11-01 18:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2023-12-13 19:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2024-01-05 13:30:00+00:00,USD,Non-Farm Payrolls (правило: 1-я пятница),rule
+2024-01-31 19:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2024-02-02 13:30:00+00:00,USD,Non-Farm Payrolls (правило: 1-я пятница),rule
+2024-03-01 13:30:00+00:00,USD,Non-Farm Payrolls (правило: 1-я пятница),rule
+2024-03-20 18:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2024-04-05 12:30:00+00:00,USD,Non-Farm Payrolls (правило: 1-я пятница),rule
+2024-05-01 18:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2024-05-03 12:30:00+00:00,USD,Non-Farm Payrolls (правило: 1-я пятница),rule
+2024-06-07 12:30:00+00:00,USD,Non-Farm Payrolls (правило: 1-я пятница),rule
+2024-06-12 18:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2024-07-05 12:30:00+00:00,USD,Non-Farm Payrolls (правило: 1-я пятница),rule
+2024-07-31 18:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2024-08-02 12:30:00+00:00,USD,Non-Farm Payrolls (правило: 1-я пятница),rule
+2024-09-06 12:30:00+00:00,USD,Non-Farm Payrolls (правило: 1-я пятница),rule
+2024-09-18 18:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2024-10-04 12:30:00+00:00,USD,Non-Farm Payrolls (правило: 1-я пятница),rule
+2024-11-01 12:30:00+00:00,USD,Non-Farm Payrolls (правило: 1-я пятница),rule
+2024-11-07 19:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2024-12-06 13:30:00+00:00,USD,Non-Farm Payrolls (правило: 1-я пятница),rule
+2024-12-18 19:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2025-01-03 13:30:00+00:00,USD,Non-Farm Payrolls (правило: 1-я пятница),rule
+2025-01-29 19:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2025-02-07 13:30:00+00:00,USD,Non-Farm Payrolls (правило: 1-я пятница),rule
+2025-03-07 13:30:00+00:00,USD,Non-Farm Payrolls (правило: 1-я пятница),rule
+2025-03-19 18:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2025-04-04 12:30:00+00:00,USD,Non-Farm Payrolls (правило: 1-я пятница),rule
+2025-05-02 12:30:00+00:00,USD,Non-Farm Payrolls (правило: 1-я пятница),rule
+2025-05-07 18:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2025-06-06 12:30:00+00:00,USD,Non-Farm Payrolls (правило: 1-я пятница),rule
+2025-06-18 18:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2025-07-04 12:30:00+00:00,USD,Non-Farm Payrolls (правило: 1-я пятница),rule
+2025-07-30 18:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2025-08-01 12:30:00+00:00,USD,Non-Farm Payrolls (правило: 1-я пятница),rule
+2025-09-05 12:30:00+00:00,USD,Non-Farm Payrolls (правило: 1-я пятница),rule
+2025-09-17 18:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2025-10-03 12:30:00+00:00,USD,Non-Farm Payrolls (правило: 1-я пятница),rule
+2025-10-29 18:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2025-11-07 13:30:00+00:00,USD,Non-Farm Payrolls (правило: 1-я пятница),rule
+2025-12-05 13:30:00+00:00,USD,Non-Farm Payrolls (правило: 1-я пятница),rule
+2025-12-10 19:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2026-01-02 13:30:00+00:00,USD,Non-Farm Payrolls (правило: 1-я пятница),rule
+2026-01-28 19:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2026-02-06 13:30:00+00:00,USD,Non-Farm Payrolls (правило: 1-я пятница),rule
+2026-03-06 13:30:00+00:00,USD,Non-Farm Payrolls (правило: 1-я пятница),rule
+2026-03-18 18:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2026-04-03 12:30:00+00:00,USD,Non-Farm Payrolls (правило: 1-я пятница),rule
+2026-04-29 18:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2026-05-01 12:30:00+00:00,USD,Non-Farm Payrolls (правило: 1-я пятница),rule
+2026-06-05 12:30:00+00:00,USD,Non-Farm Payrolls (правило: 1-я пятница),rule
+2026-06-17 18:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2026-07-03 12:30:00+00:00,USD,Non-Farm Payrolls (правило: 1-я пятница),rule
+2026-07-29 18:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2026-08-07 12:30:00+00:00,USD,Non-Farm Payrolls (правило: 1-я пятница),rule
+2026-09-04 12:30:00+00:00,USD,Non-Farm Payrolls (правило: 1-я пятница),rule
+2026-09-16 18:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2026-10-02 12:30:00+00:00,USD,Non-Farm Payrolls (правило: 1-я пятница),rule
+2026-10-28 18:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2026-11-03 03:30:00+00:00,AUD,Cash Rate,forexfactory
+2026-11-03 03:30:00+00:00,AUD,RBA Monetary Policy Statement,forexfactory
+2026-11-03 03:30:00+00:00,AUD,RBA Rate Statement,forexfactory
+2026-11-03 04:30:00+00:00,AUD,RBA Press Conference,forexfactory
+2026-11-03 21:45:00+00:00,NZD,Employment Change q/q,forexfactory
+2026-11-03 21:45:00+00:00,NZD,Unemployment Rate,forexfactory
+2026-11-05 12:00:00+00:00,GBP,BOE Monetary Policy Report,forexfactory
+2026-11-05 12:00:00+00:00,GBP,Monetary Policy Summary,forexfactory
+2026-11-05 12:00:00+00:00,GBP,MPC Official Bank Rate Votes,forexfactory
+2026-11-05 12:00:00+00:00,GBP,Official Bank Rate,forexfactory
+2026-11-05 12:30:00+00:00,GBP,BOE Gov Bailey Speaks,forexfactory
+2026-11-06 13:30:00+00:00,CAD,Unemployment Rate,forexfactory
+2026-11-06 13:30:00+00:00,CAD,Employment Change,forexfactory
+2026-11-06 13:30:00+00:00,USD,Non-Farm Payrolls (правило: 1-я пятница),rule
+2026-11-06 13:30:00+00:00,USD,Average Hourly Earnings m/m,forexfactory
+2026-11-06 13:30:00+00:00,USD,Non-Farm Employment Change,forexfactory
+2026-11-06 13:30:00+00:00,USD,Unemployment Rate,forexfactory
+2026-11-06 16:00:00+00:00,JPY,BOJ Gov Ueda Speaks,forexfactory
+2026-12-09 19:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2027-01-27 19:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2027-03-17 18:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2027-04-28 18:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2027-06-09 18:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2027-07-28 18:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2027-09-15 18:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2027-10-27 18:00:00+00:00,USD,FOMC Statement,federalreserve.gov
+2027-12-08 19:00:00+00:00,USD,FOMC Statement,federalreserve.gov

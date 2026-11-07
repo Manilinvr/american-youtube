@@ -13,7 +13,7 @@
 """
 import json, os, sys
 import pandas as pd
-import engine
+import engine, news
 from backtest import run
 from strategies import REGISTRY
 
@@ -142,6 +142,15 @@ def report(now=None):
     L += [f"## ✅ Рабочие схемы (винрейт ≥ {GOOD_WINRATE:.0f}%, итог в плюсе, от {MIN_TRADES} сделок)", ""]
     L += (["| Схема | Сделок | Плюс/минус | Винрейт | Заработано | Потеряно | Итог |", "|---|---|---|---|---|---|---|", *cands]
           if cands else ["Пока нет. Нужно больше сделок."])
+    L += [""]
+    ev = news.load()
+    ev = ev[(ev.time >= week0) & (ev.time < now + pd.Timedelta(days=3))]
+    L += ["## 📰 Важные новости недели (входы за 30 мин до/после запрещены, сделки закрыты за 15 мин до)", ""]
+    if len(ev):
+        msk = ev.time.dt.tz_convert("Europe/Moscow")
+        L += [f"- {t:%a %d.%m %H:%M} МСК — **{c}** {ti}" for t, c, ti in zip(msk, ev.ccy, ev.title)]
+    else:
+        L += ["- календарь за эту неделю не загружен — работал только фильтр «аномальной свечи»"]
     L += [""]
     if newly:
         L += ["## ❌ Исключены на этой неделе", ""] + [f"- `{k}` — {status[k]['reason']}" for k in newly] + [""]

@@ -7,21 +7,28 @@
 """
 import json, os, sys
 import pandas as pd
-import fetch, engine
+import fetch, engine, news
 from strategies import REGISTRY
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 MIN_TRADES = 20  # меньше сделок — статистика ничего не значит
 
 
-def run(strat, pairs=fetch.PAIRS, tf=None, start=None):
+NEWS_FILTER = True  # новостной фильтр (news.py) для всех схем
+
+
+def run(strat, pairs=fetch.PAIRS, tf=None, start=None, news_filter=None):
     tf = tf or strat["tf"]
+    use_news = NEWS_FILTER if news_filter is None else news_filter
+    ev = news.load() if use_news else None
     out = []
     for pair in pairs:
         df = fetch.load(pair, tf)
         if len(df) < 300:
             continue
         sig, exits = strat["fn"](df, pair)
+        if use_news:
+            sig, exits = news.apply(pair, df, sig, exits, tf, ev)
         tr = engine.simulate(pair, df, sig, exits, tf=tf, strategy=strat["id"])
         if start is not None and len(tr):
             start = pd.Timestamp(start)
