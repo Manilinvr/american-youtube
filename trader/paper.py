@@ -30,20 +30,28 @@ def now_utc():
     return pd.Timestamp.now(tz="UTC")
 
 
-def load_status():
+def next_monday(now=None):
+    now = (now or now_utc()).normalize()
+    return now + pd.Timedelta(days=(7 - now.dayofweek) % 7 or 7)
+
+
+def load_status(now=None):
     st = json.load(open(STATUS)) if os.path.exists(STATUS) else {}
+    # новая схема стартует со следующего понедельника — никаких сделок задним числом
+    start = max(pd.Timestamp(FORWARD_START, tz="UTC"), next_monday(now))
+    since = FORWARD_START if not st else f"{start:%Y-%m-%d}"
     for sid, s in REGISTRY.items():
         for tf in TFS:
             if tf in s["test_tfs"]:
                 st.setdefault(f"{sid} [{tf}]", {"id": sid, "tf": tf, "status": "active",
-                                                "since": FORWARD_START, "excluded_on": None, "reason": None})
+                                                "since": since, "excluded_on": None, "reason": None})
     return st
 
 
 def update(now=None):
     now = now or now_utc()
     os.makedirs(JOURNAL, exist_ok=True)
-    status = load_status()
+    status = load_status(now)
     all_tr = []
     for label, st in status.items():
         if st["id"] not in REGISTRY:
