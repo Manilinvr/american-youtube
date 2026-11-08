@@ -98,6 +98,11 @@ time,ccy,title,source
 2026-11-06 13:30:00+00:00,USD,Non-Farm Employment Change,forexfactory
 2026-11-06 13:30:00+00:00,USD,Unemployment Rate,forexfactory
 2026-11-06 16:00:00+00:00,JPY,BOJ Gov Ueda Speaks,forexfactory
+2026-11-10 13:30:00+00:00,USD,Core CPI m/m,forexfactory
+2026-11-10 13:30:00+00:00,USD,CPI m/m,forexfactory
+2026-11-12 07:00:00+00:00,GBP,GDP m/m,forexfactory
+2026-11-13 13:30:00+00:00,USD,Core PPI m/m,forexfactory
+2026-11-13 13:30:00+00:00,USD,PPI m/m,forexfactory
 2026-12-09 19:00:00+00:00,USD,FOMC Statement,federalreserve.gov
 2027-01-27 19:00:00+00:00,USD,FOMC Statement,federalreserve.gov
 2027-03-17 18:00:00+00:00,USD,FOMC Statement,federalreserve.gov
