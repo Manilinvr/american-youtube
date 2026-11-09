@@ -7,7 +7,7 @@
 """
 import json, os, sys
 import pandas as pd
-import fetch, engine, news
+import fetch, engine, news, binary
 from strategies import REGISTRY
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -17,7 +17,21 @@ MIN_TRADES = 20  # меньше сделок — статистика ничег
 NEWS_FILTER = True  # новостной фильтр (news.py) для всех схем
 
 
-def run(strat, pairs=fetch.PAIRS, tf=None, start=None, news_filter=None):
+MODE = "binary"  # "binary" = Pocket Option (ставка $20, выплата из pocketoption.json); "cfd" = обычный форекс со стопом/тейком
+
+
+def combos(strat):
+    """Варианты схемы: (таймфрейм, экспирация в минутах или None для cfd)."""
+    if MODE != "binary":
+        return [(tf, None) for tf in strat["test_tfs"] if tf != "1d"]
+    return [(tf, e) for tf in strat["test_tfs"] for e in binary.CFG["expiries_min"].get(tf, [])]
+
+
+def label(sid, tf, expiry):
+    return f"{sid} [{tf}→{expiry}м]" if expiry else f"{sid} [{tf}]"
+
+
+def run(strat, pairs=fetch.PAIRS, tf=None, start=None, news_filter=None, expiry=None):
     tf = tf or strat["tf"]
     use_news = NEWS_FILTER if news_filter is None else news_filter
     ev = news.load() if use_news else None
@@ -26,10 +40,16 @@ def run(strat, pairs=fetch.PAIRS, tf=None, start=None, news_filter=None):
         df = fetch.load(pair, tf)
         if len(df) < 300:
             continue
+        if expiry and not binary.allowed(pair):
+            continue  # выплата ниже порога — пару не торгуем
         sig, exits = strat["fn"](df, pair)
         if use_news:
             sig, exits = news.apply(pair, df, sig, exits, tf, ev)
-        tr = engine.simulate(pair, df, sig, exits, tf=tf, strategy=strat["id"])
+        if expiry:
+            tr = binary.simulate(pair, df, sig, tf, expiry, strategy=strat["id"],
+                                 events=news.events_for(pair, ev) if use_news else None)
+        else:
+            tr = engine.simulate(pair, df, sig, exits, tf=tf, strategy=strat["id"])
         if start is not None and len(tr):
             start = pd.Timestamp(start)
             start = start.tz_localize("UTC") if start.tzinfo is None else start
@@ -54,24 +74,27 @@ def main(ids):
     for sid, st in REGISTRY.items():
         if ids and sid not in ids:
             continue
-        for tf in st.get("test_tfs", [st["tf"]]):
-            tr = run(st, tf=tf)
+        for tf, exp in combos(st):
+            tr = run(st, tf=tf, expiry=exp)
             s = engine.stats(tr)
-            label = f"{sid} [{tf}]"
-            summary[label] = s
-            rows.append((s["net_usd"], fmt_row(f"`{label}` {st['name']}", s)))
+            lab = label(sid, tf, exp)
+            summary[lab] = s
+            rows.append((s["net_usd"], fmt_row(f"`{lab}` {st['name']}", s)))
             if len(tr):
-                tr["label"] = label
+                tr["label"] = lab
                 alltr.append(tr)
                 for pair, g in tr.groupby("pair"):
                     ps = engine.stats(g)
                     if ps["trades"] >= MIN_TRADES and ps["winrate"] >= 70 and ps["net_usd"] > 0:
-                        best.append((ps["net_usd"], fmt_row(f"`{label}` {pair}", ps)))
-            print(f"{label:28s} {s['trades']:5d} сделок  винрейт {s['winrate']:5.1f}%  итог {s['net_usd']:+9.0f}$  PF {s['pf']:.2f}")
+                        best.append((ps["net_usd"], fmt_row(f"`{lab}` {pair}", ps)))
+            print(f"{lab:34s} {s['trades']:5d} сделок  винрейт {s['winrate']:5.1f}%  итог {s['net_usd']:+9.0f}$  PF {s['pf']:.2f}")
     rows.sort(reverse=True); best.sort(reverse=True)
     md = ["# Проверка стратегий на истории", "",
-          "Риск каждой сделки $20. Спред вычтен. 15m — последние ~60 дней, 1h — ~2.8 года, 1d — 10 лет.",
-          "PF — прибыль / убыток (больше 1 = в плюсе). Ср. R — средний результат сделки в долях риска.", "",
+          ("Pocket Option, бинарные опционы: ставка $20, выигрыш +$20×выплата, проигрыш −$20; выплата из pocketoption.json, "
+           "только пары с выплатой ≥ 85%, только будни (без OTC), без ставок во время важных новостей. "
+           "Безубыточный винрейт при 85% — 54.1%." if MODE == "binary" else
+           "Риск каждой сделки $20. Спред вычтен."), "15m — последние ~60 дней, 1h — ~2.8 года.",
+          "PF — заработано / потеряно (больше 1 = в плюсе). Ср. R — средний результат ставки в долях от $20.", "",
           "## Все стратегии", "", HEAD, *[r for _, r in rows], "",
           f"## Пары, где винрейт ≥ 70% и итог в плюсе (от {MIN_TRADES} сделок)", "",
           HEAD, *([r for _, r in best] or ["| — | | | | | | | | | |"]), ""]

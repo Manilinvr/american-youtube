@@ -15,7 +15,7 @@
 import json, os, sys
 import pandas as pd
 import engine, news
-from backtest import run
+from backtest import run, combos, label
 from strategies import REGISTRY
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -42,9 +42,8 @@ def load_status(now=None):
     start = max(pd.Timestamp(FORWARD_START, tz="UTC"), next_monday(now))
     since = FORWARD_START if not st else f"{start:%Y-%m-%d}"
     for sid, s in REGISTRY.items():
-        for tf in TFS:
-            if tf in s["test_tfs"]:
-                st.setdefault(f"{sid} [{tf}]", {"id": sid, "tf": tf, "status": "active",
+        for tf, exp in combos(s):
+            st.setdefault(label(sid, tf, exp), {"id": sid, "tf": tf, "expiry": exp, "status": "active",
                                                 "since": since, "excluded_on": None, "reason": None})
     return st
 
@@ -58,7 +57,7 @@ def update(now=None):
         if st["id"] not in REGISTRY:
             continue
         since = pd.Timestamp(st["since"], tz="UTC")
-        tr = run(REGISTRY[st["id"]], tf=st["tf"], start=since)
+        tr = run(REGISTRY[st["id"]], tf=st["tf"], start=since, expiry=st.get("expiry"))
         if not len(tr):
             continue
         tr = tr[tr.exit_time < now]
@@ -112,7 +111,8 @@ def report(now=None):
     day_n = (now - pd.Timestamp(FORWARD_START, tz="UTC")).days
     L = [f"# Отчёт за неделю {week0:%d.%m} – {now:%d.%m.%Y}", "",
          f"Демо-обучение: день {max(day_n, 0)} из ~60 (до {pd.Timestamp(LEARNING_END):%d.%m.%Y}). "
-         f"Реальные деньги не используются. Риск каждой сделки **$20**: стоп = −$20, прибыль = $20 × (тейк/стоп).", ""]
+         f"Реальные деньги не используются. Модель Pocket Option: ставка **$20**, выигрыш +$20 × выплата (85%) = **+$17**, проигрыш **−$20**; "
+         f"безубыточный винрейт 54.1%. Только пары с выплатой ≥ 85%, без OTC.", ""]
     ws = engine.stats(wk)
     cs = engine.stats(tr)
     L += ["## Итог", "",
@@ -181,8 +181,11 @@ def daily(now=None):
     if now < start:
         L += [f"Демо-торговля стартует в понедельник {start:%d.%m.%Y} с открытия рынка. Сегодня — план на неделю.", ""]
     else:
-        L += [f"День {(now - start).days + 1} демо-обучения из ~60. Риск каждой сделки $20.", ""]
+        L += [f"День {(now - start).days + 1} демо-обучения из ~60. Pocket Option: ставка $20, выигрыш +$17 (выплата 85%), проигрыш −$20, "
+              f"безубыточность при 54.1% выигрышей.", ""]
     ds, cs = engine.stats(dt), engine.stats(tr)
+    if len(dt) and "usd" in dt and len(dt) > 1:
+        dt = dt.sort_values("usd")
     act = sum(v["status"] == "active" for v in status.values())
     L += ["| | Сделок | Плюс/минус | Винрейт | Заработано | Потеряно | Итог |", "|---|---|---|---|---|---|---|",
           _row("За день", ds), _row("С начала обучения", cs), "", f"Схем в работе: **{act}** из {len(status)}.", ""]
@@ -195,10 +198,10 @@ def daily(now=None):
         L += ["## Схемы за день", "", "| Схема | Сделок | Плюс/минус | Винрейт | Заработано | Потеряно | Итог |",
               "|---|---|---|---|---|---|---|", *[r for _, r in rows], ""]
         top = dt.sort_values("usd")
-        L += ["## Лучшая и худшая сделка дня", ""]
+        L += ["## Пример выигрыша и проигрыша дня", ""]
         for _, r in pd.concat([top.tail(1), top.head(1)]).iterrows():
             L.append(f"- {r.pair} {r.dir} ({r.scheme}): вход {r.entry_time.tz_convert('Europe/Moscow'):%H:%M} МСК по {r.entry}, "
-                     f"выход {r.exit_time.tz_convert('Europe/Moscow'):%H:%M} ({r.exit_reason}), **{r.usd:+.2f}$**")
+                     f"итог {r.exit_time.tz_convert('Europe/Moscow'):%H:%M} по {r.exit}, **{r.usd:+.2f}$**")
         L += [""]
     elif now >= start:
         L += ["Сделок за день не было.", ""]
