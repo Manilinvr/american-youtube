@@ -2,9 +2,26 @@
   "_note": "Выплаты Pocket Option по НЕ-OTC валютным парам. Владелец обновляет по данным платформы. Торгуем только пары с выплатой >= min_payout. OTC не торгуем (только рабочие дни, реальный рынок).",
   "min_payout": 0.85,
   "stake_usd": 20,
-  "expiries_min": {"15m": [15, 30, 60], "1h": [60]},
+  "expiries_min": {
+    "15m": [
+      15,
+      30,
+      60
+    ],
+    "1h": [
+      60
+    ]
+  },
   "payouts": {
-    "EURUSD": 0.85, "GBPUSD": 0.85, "USDJPY": 0.85, "AUDUSD": 0.85, "USDCAD": 0.85,
-    "USDCHF": 0.85, "NZDUSD": 0.85, "EURJPY": 0.85, "GBPJPY": 0.85, "EURGBP": 0.85
+    "EURUSD": 0.95,
+    "GBPUSD": 0.95,
+    "USDJPY": 0.95,
+    "AUDUSD": 0.95,
+    "USDCAD": 0.95,
+    "USDCHF": 0.95,
+    "NZDUSD": 0.95,
+    "EURJPY": 0.95,
+    "GBPJPY": 0.95,
+    "EURGBP": 0.95
   }
 }
