@@ -25,6 +25,9 @@ FORWARD_START = "2026-11-09"
 LEARNING_END = "2027-01-08"
 TFS = ("15m", "1h")
 GOOD_WINRATE, MIN_TRADES = 70.0, 20
+# Решение владельца: по итогам первой недели исключаем все схемы, у которых
+# итог недели в минусе (в момент пятничного отчёта). Дальше — правило двух недель.
+FIRST_CUT = "2026-11-13 18:10"
 
 
 def now_utc():
@@ -63,6 +66,13 @@ def update(now=None):
         tr = tr[tr.exit_time < now]
         if st["excluded_on"]:
             tr = tr[tr.exit_time < pd.Timestamp(st["excluded_on"], tz="UTC")]
+        # досрочное исключение по итогам первой недели
+        cut = pd.Timestamp(FIRST_CUT, tz="UTC")
+        if st["status"] == "active" and now >= cut and since < cut:
+            net = tr[tr.exit_time < cut].usd.sum()
+            if net < 0:
+                st.update(status="excluded", excluded_on=FIRST_CUT,
+                          reason=f"минус {net:.0f}$ за первую неделю ({since:%d.%m}–{cut:%d.%m})")
         # правило двух недель
         if st["status"] == "active":
             k = 0
