@@ -27,12 +27,12 @@ def run(cfg_path):
     stake = float(cfg["stake_usd"])
     open_ = []          # (exit_time, pair, usd)
     taken, skipped, stopped = [], {"пара занята": 0, "нет денег": 0, "день остановлен": 0}, None
-    curve = [(start, bal)]
     for _, r in c.iterrows():
         # закрываем истёкшие сделки
         for o in sorted([o for o in open_ if o[0] <= r.entry_time]):
-            bal += o[2] + stake; open_.remove(o); curve.append((o[0], bal))
-        pnl_day = bal - cfg["start_balance"]
+            bal += o[2] + stake; open_.remove(o)
+        # результат дня по закрытым сделкам (ставки открытых сделок ещё не проиграны)
+        pnl_day = bal + stake * len(open_) - cfg["start_balance"]
         if stopped is None and (pnl_day <= cfg["stop_loss_day_usd"] or pnl_day >= cfg["take_profit_day_usd"]):
             stopped = (r.entry_time, "дневной стоп" if pnl_day < 0 else "дневная цель")
         if stopped:
@@ -45,9 +45,11 @@ def run(cfg_path):
         open_.append((r.exit_time, r.pair, r.usd))
         taken.append(r)
     for o in sorted(open_):
-        bal += o[2] + stake; curve.append((o[0], bal))
+        bal += o[2] + stake
     tr = pd.DataFrame(taken)
-    min_bal = min(b for _, b in curve)
+    run_b, min_bal = float(cfg["start_balance"]), float(cfg["start_balance"])
+    for _, r in (tr.sort_values("exit_time").iterrows() if len(tr) else []):
+        run_b += r.usd; min_bal = min(min_bal, run_b)
     msk = lambda ts: ts.tz_convert("Europe/Moscow").strftime("%H:%M")
     L = [f"# Счёт $1000 — {start:%d.%m.%Y}", "",
          f"Схемы: {', '.join('`'+s+'`' for s in cfg['schemes'])}.",

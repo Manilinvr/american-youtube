@@ -49,4 +49,5 @@
 cd trader
 python3 fetch.py && python3 cot.py && python3 paper.py report   # пятница
 python3 fetch.py && python3 paper.py daily                     # остальные дни
+python3 account.py accounts/challenge_ДАТА.json                # счёт с балансом (задание владельца)
 ```

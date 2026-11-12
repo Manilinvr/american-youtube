@@ -103,6 +103,19 @@ def _row(name, s, extra=""):
             f"+${s['won_usd']:.0f} | −${abs(s['lost_usd']):.0f} | **{s['net_usd']:+.0f}$** |{extra}")
 
 
+def pair_table(d, title):
+    """Разбивка сделок по валютным парам."""
+    if not len(d):
+        return []
+    L = [f"## {title}", "", "| Пара | Сделок | Плюс/минус | % выигрышных | Заработано | Потеряно | Итог |", "|---|---|---|---|---|---|---|"]
+    rows = []
+    for pair, g in d.groupby("pair"):
+        st = engine.stats(g)
+        rows.append((st["net_usd"], _row(pair, st)))
+    rows.sort(key=lambda r: -r[0])
+    return L + [r for _, r in rows] + [""]
+
+
 def report(now=None):
     now = now or now_utc()
     trades, status = update(now)
@@ -129,6 +142,7 @@ def report(now=None):
           "| | Сделок | Плюс/минус | Винрейт | Заработано | Потеряно | Итог |", "|---|---|---|---|---|---|---|",
           _row("За неделю", ws), _row("С начала обучения", cs), "",
           f"Схем в работе: **{len(act)}**, исключено всего: **{len(exc)}** (на этой неделе: {len(newly)}).", ""]
+    L += pair_table(wk, "По валютным парам за неделю")
     # таблица по схемам за неделю
     rows = []
     for label in act + newly:
@@ -199,6 +213,8 @@ def daily(now=None):
     act = sum(v["status"] == "active" for v in status.values())
     L += ["| | Сделок | Плюс/минус | Винрейт | Заработано | Потеряно | Итог |", "|---|---|---|---|---|---|---|",
           _row("За день", ds), _row("С начала обучения", cs), "", f"Схем в работе: **{act}** из {len(status)}.", ""]
+    L += pair_table(dt, "По валютным парам за день")
+    L += pair_table(tr, "По валютным парам с начала обучения")
     if len(dt):
         rows = []
         for label, g in dt.groupby("scheme"):
