@@ -33,8 +33,9 @@ def run(cfg_path):
             bal += o[2] + stake; open_.remove(o)
         # результат дня по закрытым сделкам (ставки открытых сделок ещё не проиграны)
         pnl_day = bal + stake * len(open_) - cfg["start_balance"]
-        if stopped is None and (pnl_day <= cfg["stop_loss_day_usd"] or pnl_day >= cfg["take_profit_day_usd"]):
-            stopped = (r.entry_time, "дневной стоп" if pnl_day < 0 else "дневная цель")
+        tp = cfg.get("take_profit_day_usd")
+        if stopped is None and (pnl_day <= cfg["stop_loss_day_usd"] or (tp is not None and pnl_day >= tp)):
+            stopped = (r.entry_time, "баланс исчерпан" if pnl_day <= -cfg["start_balance"] else ("дневной стоп" if pnl_day < 0 else "дневная цель"))
         if stopped:
             skipped["день остановлен"] += 1; continue
         if sum(1 for o in open_ if o[1] == r.pair) >= cfg["max_open_per_pair"]:
@@ -53,7 +54,7 @@ def run(cfg_path):
     msk = lambda ts: ts.tz_convert("Europe/Moscow").strftime("%H:%M")
     L = [f"# Счёт $1000 — {start:%d.%m.%Y}", "",
          f"Схемы: {', '.join('`'+s+'`' for s in cfg['schemes'])}.",
-         f"Пары: {', '.join(cfg['pairs'])}. Ставка ${stake:.0f}, одна сделка на пару, стоп дня −${-cfg['stop_loss_day_usd']}, цель дня +${cfg['take_profit_day_usd']}.",
+         f"Пары: {', '.join(cfg['pairs'])}. Ставка ${stake:.0f}. Правила риска: {cfg['risk_rule']}.",
          f"Отбор (сделан до начала дня): {cfg['selection_rule']}; {cfg['pairs_rule']}.", ""]
     if len(tr):
         w, l, z = (tr.usd > 0).sum(), (tr.usd < 0).sum(), (tr.usd == 0).sum()
