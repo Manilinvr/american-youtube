@@ -1,0 +1,19 @@
+name: deriv-probe
+# Проверка доступа к публичному API Deriv (без токена): условия Rise/Fall по валютным парам.
+on:
+  workflow_dispatch:
+  push:
+    branches: [claude/fervent-lamport-avvaxv]
+    paths: [trader/deriv/probe.py, .github/workflows/deriv-probe.yml]
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install websockets==13.1
+      - run: python trader/deriv/probe.py
