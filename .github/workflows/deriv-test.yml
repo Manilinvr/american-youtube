@@ -1,0 +1,20 @@
+name: deriv-test
+# Пробная сделка $1 на ДЕМО-счёте Deriv (проверка покупки). Запускается изменением trader/deriv/test_trade.flag.
+on:
+  push:
+    branches: [claude/fervent-lamport-avvaxv]
+    paths: [trader/deriv/test_trade.flag]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install pandas==2.2.3 numpy==2.1.3 websockets==13.1
+      - run: cd trader && python deriv/robot.py test_trade
+        env:
+          DERIV_TOKEN: ${{ secrets.DERIV_TOKEN }}
