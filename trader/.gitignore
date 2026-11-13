@@ -1,2 +1,3 @@
 __pycache__/
 reports/backtest_trades.csv.gz
+reports/backtest_trades_cfd.csv.gz
