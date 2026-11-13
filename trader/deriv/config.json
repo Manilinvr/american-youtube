@@ -1,0 +1,8 @@
+{
+  "_note": "Настройки робота Deriv. App ID не секретный (идентификатор приложения владельца). Токен — только в GitHub Secrets (DERIV_TOKEN), никогда в репозитории.",
+  "app_id": "34X2app1qQlvhanrmnMEl",
+  "rest": "https://api.derivws.com",
+  "ws_public": "wss://api.derivws.com/trading/v1/options/ws/public",
+  "stake_usd": 20,
+  "currency": "USD"
+}

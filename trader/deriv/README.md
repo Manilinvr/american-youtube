@@ -17,4 +17,4 @@
 3. Там же создать **Personal Access Token** со scope **trade** (без admin/payments).
 4. В GitHub: репозиторий → Settings → Secrets and variables → Actions:
    - секрет `DERIV_TOKEN` = токен (никому не пересылать, в чат не вставлять);
-   - переменная (Variables) `DERIV_APP_ID` = App ID.
+   - App ID уже сохранён в `trader/deriv/config.json` (не секрет).
