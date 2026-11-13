@@ -19,6 +19,14 @@
 | Pocket Option (бинарные опционы) | `journal/` | `reports/daily/ДАТА.md`, `reports/weekly/ДАТА.md` | `python3 paper.py daily` |
 | Форекс со стопами (первая версия: плечо, стоп-лосс/тейк-профит, риск $20) | `journal/cfd/` | `reports/daily/ДАТА_cfd.md`, `reports/weekly/ДАТА_cfd.md` | `TRADER_MODE=cfd python3 paper.py daily` |
 
+## Часы торговли Pocket Option (с 16.11)
+Только **10, 13–14, 17–18, 20 МСК** (`pocketoption.json` → `trading_hours_msk`). Решение и анализ — `research/time_decision_2026-11-13.md`.
+Теневой журнал во все часы для проверки фильтра: `TRADER_SHADOW=1 python3 paper.py update` → `journal/allhours/`.
+
+## Счёт дня (с 16.11)
+Каждый день у каждой модели счёт **$1000**: торгуем весь день; если баланс ≤ $100 — стоп до конца дня и отдельный отчёт
+(ежечасная проверка `python3 paper.py check`, `TRADER_MODE=cfd python3 paper.py check`).
+
 ## Правила владельца
 - Торгуем валютными парами, сделки от 15 минут (таймфреймы 15m и 1h).
 - 13.11 (по итогам первой недели) исключаются все схемы с минусом за неделю.

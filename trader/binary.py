@@ -20,6 +20,8 @@ NEWS_WIN = pd.Timedelta("30min")
 _TH = CFG.get("trading_hours_msk") or {}
 HOURS_FROM = pd.Timestamp(_TH["from"], tz="Europe/Moscow").value if _TH.get("from") else None
 HOURS_OK = set(_TH.get("allowed", range(24)))
+if os.environ.get("TRADER_SHADOW"):   # теневой журнал: те же схемы во все часы — для проверки фильтра
+    HOURS_FROM = None
 
 
 def hour_allowed(t_ns):

@@ -21,7 +21,7 @@ NEWS_FILTER = True  # новостной фильтр (news.py) для всех 
 #        "cfd"    = обычный форекс со стопом/тейком и кредитным плечом (риск $20 на сделку).
 # Выбирается переменной окружения TRADER_MODE (по умолчанию binary).
 MODE = os.environ.get("TRADER_MODE", "binary")
-SUFFIX = "" if MODE == "binary" else f"_{MODE}"
+SUFFIX = ("" if MODE == "binary" else f"_{MODE}") + ("_allhours" if os.environ.get("TRADER_SHADOW") else "")
 
 
 def combos(strat):

@@ -20,6 +20,9 @@ from strategies import REGISTRY
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 JOURNAL = os.path.join(ROOT, "journal") if MODE == "binary" else os.path.join(ROOT, "journal", MODE)
+SHADOW = bool(os.environ.get("TRADER_SHADOW"))
+if SHADOW:
+    JOURNAL = os.path.join(JOURNAL, "allhours")
 MODEL_TEXT = ("Модель Pocket Option: ставка **$20**, выигрыш +$20 × выплата (95%) = **+$19**, проигрыш **−$20**; "
               "безубыточность — 51.3% выигрышных сделок. Только пары с выплатой ≥ 85%, без OTC."
               if MODE == "binary" else
@@ -180,7 +183,7 @@ def report(now=None):
     trades, status = update(now)
     week0 = now - pd.Timedelta(days=7)
     bt = {}
-    p = os.path.join(ROOT, "reports", f"backtest_summary{SUFFIX}.json")
+    p = os.path.join(ROOT, "reports", f"backtest_summary{SUFFIX.replace('_allhours', '')}.json")
     if os.path.exists(p):
         bt = json.load(open(p))
     tr = trades.copy()
@@ -272,6 +275,13 @@ def daily(now=None):
           _row("За день", ds), _row("С начала обучения", cs), "", f"Схем в работе: **{act}** из {len(status)}.", ""]
     if now >= pd.Timestamp(ACCOUNT_START, tz="UTC"):
         L += account_section(day_account(tr, day0, now))
+    shadow = os.path.join(ROOT, "journal", "allhours", "trades.csv")
+    if MODE == "binary" and not SHADOW and os.path.exists(shadow) and now >= pd.Timestamp("2026-11-16", tz="UTC"):
+        sh = pd.read_csv(shadow)
+        sh["exit_time"] = pd.to_datetime(sh.exit_time, utc=True)
+        sd = engine.stats(sh[sh.exit_time >= day0])
+        L += [f"🕒 Фильтр часов (торгуем 10, 13–14, 17–18, 20 МСК). Для проверки: если бы торговали во все часы — "
+              f"{sd['trades']} сделок, {sd['winrate']:.0f}% выигрышных, итог **{sd['net_usd']:+.0f}$** (виртуально).", ""]
     L += pair_table(dt, "По валютным парам за день")
     L += pair_table(tr, "По валютным парам с начала обучения")
     if len(dt):
