@@ -1119,10 +1119,10 @@
   "id": "overshoot_fade",
   "tf": "1h",
   "expiry": 60,
-  "status": "active",
+  "status": "excluded",
   "since": "2026-11-16",
-  "excluded_on": null,
-  "reason": null
+  "excluded_on": "2026-11-16",
+  "reason": "провал проверки на истории до старта: 1h 2.8 года — 49% выигрышных, по Deriv −$399"
  },
  "overshoot_follow [15m→15м]": {
   "id": "overshoot_follow",
