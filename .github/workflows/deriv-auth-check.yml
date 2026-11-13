@@ -1,0 +1,21 @@
+name: deriv-auth-check
+# Проверка токена Deriv из секрета DERIV_TOKEN: вход, демо-счёт, баланс. Сделок не открывает.
+on:
+  workflow_dispatch:
+  push:
+    branches: [claude/fervent-lamport-avvaxv]
+    paths: [trader/deriv/auth_check.py, .github/workflows/deriv-auth-check.yml]
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install websockets==13.1
+      - run: python trader/deriv/auth_check.py
+        env:
+          DERIV_TOKEN: ${{ secrets.DERIV_TOKEN }}
