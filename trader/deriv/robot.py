@@ -243,7 +243,8 @@ async def settle_virtual(ws, st):
         if cs:
             px = cs[-1]["close"]
             mv = (px - v["spot"]) * (1 if v["side"] == "CALL" else -1)
-            v["profit"] = round(STAKE * v["payout_pct"], 2) if mv > 0 else (0.0 if mv == 0 else -STAKE)
+            # у Deriv Rise/Fall «строго выше/ниже»: ничья = проигрыш
+            v["profit"] = round(STAKE * v["payout_pct"], 2) if mv > 0 else -STAKE
             append_csv("virtual.csv", [v])
     st["virtual"] = left
 
