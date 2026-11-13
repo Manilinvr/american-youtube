@@ -41,6 +41,9 @@ FIRST_CUT = "2026-11-13 18:10"
 # Торгуем весь день, пока баланс > $100; при балансе ≤ $100 торговля на день прекращается.
 ACCOUNT_START = "2026-11-16"
 ACCOUNT_BALANCE, ACCOUNT_STOP = 1000.0, 100.0
+# Решение владельца 13.11: при балансе ≥ $2000 торговый день заканчивается (цель),
+# а торговля продолжается в теневом режиме — для отчёта «что было бы дальше».
+ACCOUNT_TARGET = 2000.0
 
 
 def now_utc():
@@ -129,51 +132,65 @@ def pair_table(d, title):
     return L + [r for _, r in rows] + [""]
 
 
-def day_account(tr, day0, now):
+def day_account(tr, day0, now, target="default"):
     """Счёт $1000 на день: сделки активных схем по порядку входа.
     Pocket Option: ставка $20 списывается при открытии, нужна свободная сумма ≥ $20.
     Форекс: риск $20 на сделку (маржа с плечом не ограничивает счёт).
     Если баланс опустился до $100 или ниже — новых сделок до конца дня нет."""
+    if target == "default":
+        target = ACCOUNT_TARGET
     if not len(tr):
         return None
     d = tr[(tr.entry_time >= day0) & (tr.exit_time < now)].sort_values(["entry_time", "scheme", "pair"])
     stake = 20.0
-    bal, open_, taken, skip_money, stop_at = ACCOUNT_BALANCE, [], [], 0, None
-    low = ACCOUNT_BALANCE
+    bal, open_, taken, skip_money, stop_at, why = ACCOUNT_BALANCE, [], [], 0, None, None
+    low = high = ACCOUNT_BALANCE
     for _, r in d.iterrows():
         for o in sorted([o for o in open_ if o[0] <= r.entry_time]):
-            bal += o[1]; open_.remove(o); low = min(low, bal)
+            bal += o[1]; open_.remove(o); low = min(low, bal); high = max(high, bal)
         if stop_at is None and bal <= ACCOUNT_STOP:
-            stop_at = r.entry_time
+            stop_at, why = r.entry_time, "stop"
+        if stop_at is None and target is not None and bal >= target:
+            stop_at, why = r.entry_time, "target"
         if stop_at is not None:
             continue
-        if MODE == "binary" and bal - stake * len(open_) < stake:
+        # бюджет риска: даже если ВСЕ открытые сделки и эта закроются в минус ($20 каждая),
+        # баланс не должен опуститься ниже $100 — так счёт физически не уходит под стоп
+        if bal - stake * (len(open_) + 1) < ACCOUNT_STOP:
             skip_money += 1
             continue
         open_.append((r.exit_time, r.usd))
         taken.append(r)
     for o in sorted(open_):
-        bal += o[1]; low = min(low, bal)
+        bal += o[1]; low = min(low, bal); high = max(high, bal)
     t = pd.DataFrame(taken)
-    return {"start": ACCOUNT_BALANCE, "end": bal, "low": low, "trades": t, "stop_at": stop_at,
+    return {"start": ACCOUNT_BALANCE, "end": bal, "low": low, "high": high, "trades": t, "stop_at": stop_at, "why": why,
             "skip_money": skip_money, "skip_stop": len(d) - len(taken) - skip_money}
 
 
-def account_section(acc):
+def account_section(acc, shadow=None):
     if acc is None:
         return []
     t = acc["trades"]
     msk = lambda ts: ts.tz_convert("Europe/Moscow").strftime("%H:%M")
     st = engine.stats(t) if len(t) else engine.stats(None)
-    L = ["## 💰 Счёт дня: $1000", "",
-         "| Было | Стало | Итог дня | Сделок | Плюс/минус | % выигрышных | Минимум баланса |", "|---|---|---|---|---|---|---|",
+    L = [f"## 💰 Счёт дня: $1000 (стоп при ≤ ${ACCOUNT_STOP:.0f}, цель ${ACCOUNT_TARGET:.0f})", "",
+         "| Было | Стало | Итог дня | Сделок | Плюс/минус | % выигрышных | Минимум | Максимум |", "|---|---|---|---|---|---|---|---|",
          f"| $1000 | **${acc['end']:.0f}** | **{acc['end'] - acc['start']:+.0f}$** | {st['trades']} | {st['wins']}/{st['losses']} | "
-         f"{st['winrate']:.0f}% | ${acc['low']:.0f} |", ""]
-    if acc["stop_at"] is not None:
+         f"{st['winrate']:.0f}% | ${acc['low']:.0f} | ${acc['high']:.0f} |", ""]
+    if acc["why"] == "stop":
         L += [f"⛔ **Торговля остановлена в {msk(acc['stop_at'])} МСК: баланс опустился до ${ACCOUNT_STOP:.0f} или ниже.** "
               f"Пропущено сигналов после остановки: {acc['skip_stop']}.", ""]
+    if acc["why"] == "target":
+        L += [f"🎯 **Цель дня достигнута в {msk(acc['stop_at'])} МСК: баланс ${ACCOUNT_TARGET:.0f}+ — реальная торговля на сегодня закончена.**", ""]
+        if shadow is not None:
+            ss = engine.stats(shadow["trades"]) if len(shadow["trades"]) else engine.stats(None)
+            L += [f"👻 **Теневой режим (если бы продолжили торговать после цели):** конец дня **${shadow['end']:.0f}** "
+                  f"({shadow['end'] - acc['end']:+.0f}$ к остановке), всего сделок {ss['trades']}, {ss['winrate']:.0f}% выигрышных, "
+                  f"минимум ${shadow['low']:.0f}, максимум ${shadow['high']:.0f}"
+                  + (f"; теневой счёт дошёл бы до стопа $100 в {msk(shadow['stop_at'])} МСК" if shadow['why'] == 'stop' else "") + ".", ""]
     if acc["skip_money"]:
-        L += [f"Пропущено сигналов из-за нехватки свободных денег (все $ в открытых ставках): {acc['skip_money']}.", ""]
+        L += [f"Пропущено сигналов из-за лимита риска (иначе при проигрыше всех открытых сделок баланс ушёл бы ниже $100): {acc['skip_money']}.", ""]
     L += pair_table(t, "Счёт дня по валютным парам")
     return L
 
@@ -274,7 +291,7 @@ def daily(now=None):
     L += ["| | Сделок | Плюс/минус | % выигрышных | Заработано | Потеряно | Итог |", "|---|---|---|---|---|---|---|",
           _row("За день", ds), _row("С начала обучения", cs), "", f"Схем в работе: **{act}** из {len(status)}.", ""]
     if now >= pd.Timestamp(ACCOUNT_START, tz="UTC"):
-        L += account_section(day_account(tr, day0, now))
+        L += account_section(day_account(tr, day0, now), day_account(tr, day0, now, target=None))
     shadow = os.path.join(ROOT, "journal", "allhours", "trades.csv")
     if MODE == "binary" and not SHADOW and os.path.exists(shadow) and now >= pd.Timestamp("2026-11-16", tz="UTC"):
         sh = pd.read_csv(shadow)
@@ -336,19 +353,21 @@ def check_stop(now=None):
     for c in ("entry_time", "exit_time"):
         tr[c] = pd.to_datetime(tr[c], utc=True)
     acc = day_account(tr, day0, now)
-    flag = os.path.join(JOURNAL, f"stop_notified_{msk:%Y-%m-%d}")
-    if acc is None or acc["stop_at"] is None:
+    if acc is None or acc["why"] is None:
         print(f"OK: баланс ${acc['end'] if acc else 1000:.0f}"); return None
+    flag = os.path.join(JOURNAL, f"{acc['why']}_notified_{msk:%Y-%m-%d}")
     if os.path.exists(flag):
-        print("STOP уже сообщён"); return None
-    L = [f"# ⛔ Стоп торговли {msk:%d.%m.%Y}{TITLE}", "",
-         f"Баланс дня опустился до ${ACCOUNT_STOP:.0f} или ниже — торговля прекращена до конца дня (правило владельца).", ""]
-    L += account_section(acc)
-    out = os.path.join(ROOT, "reports", "daily", f"{msk:%Y-%m-%d}_stop{SUFFIX}.md")
+        print("уже сообщён"); return None
+    head = (f"# ⛔ Стоп торговли {msk:%d.%m.%Y}{TITLE}" if acc["why"] == "stop" else f"# 🎯 Цель дня достигнута {msk:%d.%m.%Y}{TITLE}")
+    text = (f"Баланс дня опустился до ${ACCOUNT_STOP:.0f} или ниже — торговля прекращена до конца дня (правило владельца)."
+            if acc["why"] == "stop" else
+            f"Баланс дня достиг ${ACCOUNT_TARGET:.0f} — реальная торговля на сегодня закончена; дальше — теневой режим, итог в вечернем отчёте.")
+    L = [head, "", text, ""] + account_section(acc, day_account(tr, day0, now, target=None))
+    out = os.path.join(ROOT, "reports", "daily", f"{msk:%Y-%m-%d}_{acc['why']}{SUFFIX}.md")
     os.makedirs(os.path.dirname(out), exist_ok=True)
     open(out, "w").write("\n".join(L))
     open(flag, "w").write(str(now))
-    print("STOP", out)
+    print(acc["why"].upper(), out)
     return out
 
 
