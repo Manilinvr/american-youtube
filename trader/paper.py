@@ -212,7 +212,7 @@ def report(now=None):
     newly = [k for k in exc if status[k]["excluded_on"] and pd.Timestamp(status[k]["excluded_on"], tz="UTC") >= week0]
     day_n = (now - pd.Timestamp(FORWARD_START, tz="UTC")).days
     L = [f"# Отчёт за неделю {week0:%d.%m} – {now:%d.%m.%Y}{TITLE}", "",
-         f"Демо-обучение: день {max(day_n, 0)} из ~60 (до {pd.Timestamp(LEARNING_END):%d.%m.%Y}). "
+         f"Демо-обучение: день {max(day_n + 1, 0)} из ~60 (до {pd.Timestamp(LEARNING_END):%d.%m.%Y}). "
          f"Реальные деньги не используются. {MODEL_TEXT}", ""]
     ws = engine.stats(wk)
     cs = engine.stats(tr)

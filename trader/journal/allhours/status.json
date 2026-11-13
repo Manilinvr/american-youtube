@@ -30,10 +30,10 @@
   "id": "rsi2_meanrev",
   "tf": "1h",
   "expiry": 60,
-  "status": "active",
+  "status": "excluded",
   "since": "2026-11-09",
-  "excluded_on": null,
-  "reason": null
+  "excluded_on": "2026-11-13 18:10",
+  "reason": "минус -182$ за первую неделю (09.11–13.11)"
  },
  "bb_fade_range [15m→15м]": {
   "id": "bb_fade_range",
@@ -102,10 +102,10 @@
   "id": "london_breakout",
   "tf": "1h",
   "expiry": 60,
-  "status": "active",
+  "status": "excluded",
   "since": "2026-11-09",
-  "excluded_on": null,
-  "reason": null
+  "excluded_on": "2026-11-13 18:10",
+  "reason": "минус -23$ за первую неделю (09.11–13.11)"
  },
  "asian_sweep_reversal [15m→15м]": {
   "id": "asian_sweep_reversal",
@@ -147,28 +147,28 @@
   "id": "ema_pullback",
   "tf": "15m",
   "expiry": 15,
-  "status": "active",
+  "status": "excluded",
   "since": "2026-11-09",
-  "excluded_on": null,
-  "reason": null
+  "excluded_on": "2026-11-13 18:10",
+  "reason": "минус -810$ за первую неделю (09.11–13.11)"
  },
  "ema_pullback [15m→30м]": {
   "id": "ema_pullback",
   "tf": "15m",
   "expiry": 30,
-  "status": "active",
+  "status": "excluded",
   "since": "2026-11-09",
-  "excluded_on": null,
-  "reason": null
+  "excluded_on": "2026-11-13 18:10",
+  "reason": "минус -846$ за первую неделю (09.11–13.11)"
  },
  "ema_pullback [15m→60м]": {
   "id": "ema_pullback",
   "tf": "15m",
   "expiry": 60,
-  "status": "active",
+  "status": "excluded",
   "since": "2026-11-09",
-  "excluded_on": null,
-  "reason": null
+  "excluded_on": "2026-11-13 18:10",
+  "reason": "минус -231$ за первую неделю (09.11–13.11)"
  },
  "ema_pullback [1h→60м]": {
   "id": "ema_pullback",
@@ -183,19 +183,19 @@
   "id": "stoch_pullback",
   "tf": "15m",
   "expiry": 15,
-  "status": "active",
+  "status": "excluded",
   "since": "2026-11-09",
-  "excluded_on": null,
-  "reason": null
+  "excluded_on": "2026-11-13 18:10",
+  "reason": "минус -254$ за первую неделю (09.11–13.11)"
  },
  "stoch_pullback [15m→30м]": {
   "id": "stoch_pullback",
   "tf": "15m",
   "expiry": 30,
-  "status": "active",
+  "status": "excluded",
   "since": "2026-11-09",
-  "excluded_on": null,
-  "reason": null
+  "excluded_on": "2026-11-13 18:10",
+  "reason": "минус -231$ за первую неделю (09.11–13.11)"
  },
  "stoch_pullback [15m→60м]": {
   "id": "stoch_pullback",
@@ -210,19 +210,19 @@
   "id": "stoch_pullback",
   "tf": "1h",
   "expiry": 60,
-  "status": "active",
+  "status": "excluded",
   "since": "2026-11-09",
-  "excluded_on": null,
-  "reason": null
+  "excluded_on": "2026-11-13 18:10",
+  "reason": "минус -107$ за первую неделю (09.11–13.11)"
  },
  "turtle_soup [15m→15м]": {
   "id": "turtle_soup",
   "tf": "15m",
   "expiry": 15,
-  "status": "active",
+  "status": "excluded",
   "since": "2026-11-09",
-  "excluded_on": null,
-  "reason": null
+  "excluded_on": "2026-11-13 18:10",
+  "reason": "минус -85$ за первую неделю (09.11–13.11)"
  },
  "turtle_soup [15m→30м]": {
   "id": "turtle_soup",
@@ -237,10 +237,10 @@
   "id": "turtle_soup",
   "tf": "15m",
   "expiry": 60,
-  "status": "active",
+  "status": "excluded",
   "since": "2026-11-09",
-  "excluded_on": null,
-  "reason": null
+  "excluded_on": "2026-11-13 18:10",
+  "reason": "минус -23$ за первую неделю (09.11–13.11)"
  },
  "turtle_soup [1h→60м]": {
   "id": "turtle_soup",
@@ -273,10 +273,10 @@
   "id": "donchian_trend",
   "tf": "15m",
   "expiry": 60,
-  "status": "active",
+  "status": "excluded",
   "since": "2026-11-09",
-  "excluded_on": null,
-  "reason": null
+  "excluded_on": "2026-11-13 18:10",
+  "reason": "минус -68$ за первую неделю (09.11–13.11)"
  },
  "donchian_trend [1h→60м]": {
   "id": "donchian_trend",
@@ -291,10 +291,10 @@
   "id": "macd_ema200",
   "tf": "15m",
   "expiry": 15,
-  "status": "active",
+  "status": "excluded",
   "since": "2026-11-09",
-  "excluded_on": null,
-  "reason": null
+  "excluded_on": "2026-11-13 18:10",
+  "reason": "минус -150$ за первую неделю (09.11–13.11)"
  },
  "macd_ema200 [15m→30м]": {
   "id": "macd_ema200",
@@ -318,10 +318,10 @@
   "id": "macd_ema200",
   "tf": "1h",
   "expiry": 60,
-  "status": "active",
+  "status": "excluded",
   "since": "2026-11-09",
-  "excluded_on": null,
-  "reason": null
+  "excluded_on": "2026-11-13 18:10",
+  "reason": "минус -46$ за первую неделю (09.11–13.11)"
  },
  "holy_grail [15m→15м]": {
   "id": "holy_grail",
@@ -336,28 +336,28 @@
   "id": "holy_grail",
   "tf": "15m",
   "expiry": 30,
-  "status": "active",
+  "status": "excluded",
   "since": "2026-11-09",
-  "excluded_on": null,
-  "reason": null
+  "excluded_on": "2026-11-13 18:10",
+  "reason": "минус -290$ за первую неделю (09.11–13.11)"
  },
  "holy_grail [15m→60м]": {
   "id": "holy_grail",
   "tf": "15m",
   "expiry": 60,
-  "status": "active",
+  "status": "excluded",
   "since": "2026-11-09",
-  "excluded_on": null,
-  "reason": null
+  "excluded_on": "2026-11-13 18:10",
+  "reason": "минус -84$ за первую неделю (09.11–13.11)"
  },
  "holy_grail [1h→60м]": {
   "id": "holy_grail",
   "tf": "1h",
   "expiry": 60,
-  "status": "active",
+  "status": "excluded",
   "since": "2026-11-09",
-  "excluded_on": null,
-  "reason": null
+  "excluded_on": "2026-11-13 18:10",
+  "reason": "минус -22$ за первую неделю (09.11–13.11)"
  },
  "inside_bar_breakout [15m→15м]": {
   "id": "inside_bar_breakout",
@@ -390,10 +390,10 @@
   "id": "inside_bar_breakout",
   "tf": "1h",
   "expiry": 60,
-  "status": "active",
+  "status": "excluded",
   "since": "2026-11-09",
-  "excluded_on": null,
-  "reason": null
+  "excluded_on": "2026-11-13 18:10",
+  "reason": "минус -27$ за первую неделю (09.11–13.11)"
  },
  "keltner_squeeze [15m→15м]": {
   "id": "keltner_squeeze",
@@ -417,10 +417,10 @@
   "id": "keltner_squeeze",
   "tf": "15m",
   "expiry": 60,
-  "status": "active",
+  "status": "excluded",
   "since": "2026-11-09",
-  "excluded_on": null,
-  "reason": null
+  "excluded_on": "2026-11-13 18:10",
+  "reason": "минус -77$ за первую неделю (09.11–13.11)"
  },
  "keltner_squeeze [1h→60м]": {
   "id": "keltner_squeeze",
@@ -435,19 +435,19 @@
   "id": "rsi2_v06",
   "tf": "15m",
   "expiry": 15,
-  "status": "active",
+  "status": "excluded",
   "since": "2026-11-09",
-  "excluded_on": null,
-  "reason": null
+  "excluded_on": "2026-11-13 18:10",
+  "reason": "минус -18$ за первую неделю (09.11–13.11)"
  },
  "rsi2_v06 [15m→30м]": {
   "id": "rsi2_v06",
   "tf": "15m",
   "expiry": 30,
-  "status": "active",
+  "status": "excluded",
   "since": "2026-11-09",
-  "excluded_on": null,
-  "reason": null
+  "excluded_on": "2026-11-13 18:10",
+  "reason": "минус -110$ за первую неделю (09.11–13.11)"
  },
  "rsi2_v06 [15m→60м]": {
   "id": "rsi2_v06",
@@ -498,10 +498,10 @@
   "id": "double7_meanrev",
   "tf": "1h",
   "expiry": 60,
-  "status": "active",
+  "status": "excluded",
   "since": "2026-11-09",
-  "excluded_on": null,
-  "reason": null
+  "excluded_on": "2026-11-13 18:10",
+  "reason": "минус -48$ за первую неделю (09.11–13.11)"
  },
  "bb_reentry_fade [15m→15м]": {
   "id": "bb_reentry_fade",
@@ -516,10 +516,10 @@
   "id": "bb_reentry_fade",
   "tf": "15m",
   "expiry": 30,
-  "status": "active",
+  "status": "excluded",
   "since": "2026-11-09",
-  "excluded_on": null,
-  "reason": null
+  "excluded_on": "2026-11-13 18:10",
+  "reason": "минус -16$ за первую неделю (09.11–13.11)"
  },
  "bb_reentry_fade [15m→60м]": {
   "id": "bb_reentry_fade",
@@ -570,46 +570,46 @@
   "id": "pivot_s1r1_fade",
   "tf": "15m",
   "expiry": 15,
-  "status": "active",
+  "status": "excluded",
   "since": "2026-11-09",
-  "excluded_on": null,
-  "reason": null
+  "excluded_on": "2026-11-13 18:10",
+  "reason": "минус -8$ за первую неделю (09.11–13.11)"
  },
  "pivot_s1r1_fade [15m→30м]": {
   "id": "pivot_s1r1_fade",
   "tf": "15m",
   "expiry": 30,
-  "status": "active",
+  "status": "excluded",
   "since": "2026-11-09",
-  "excluded_on": null,
-  "reason": null
+  "excluded_on": "2026-11-13 18:10",
+  "reason": "минус -8$ за первую неделю (09.11–13.11)"
  },
  "pivot_s1r1_fade [15m→60м]": {
   "id": "pivot_s1r1_fade",
   "tf": "15m",
   "expiry": 60,
-  "status": "active",
+  "status": "excluded",
   "since": "2026-11-09",
-  "excluded_on": null,
-  "reason": null
+  "excluded_on": "2026-11-13 18:10",
+  "reason": "минус -27$ за первую неделю (09.11–13.11)"
  },
  "pivot_s1r1_fade [1h→60м]": {
   "id": "pivot_s1r1_fade",
   "tf": "1h",
   "expiry": 60,
-  "status": "active",
+  "status": "excluded",
   "since": "2026-11-09",
-  "excluded_on": null,
-  "reason": null
+  "excluded_on": "2026-11-13 18:10",
+  "reason": "минус -44$ за первую неделю (09.11–13.11)"
  },
  "round_number_fade [15m→15м]": {
   "id": "round_number_fade",
   "tf": "15m",
   "expiry": 15,
-  "status": "active",
+  "status": "excluded",
   "since": "2026-11-09",
-  "excluded_on": null,
-  "reason": null
+  "excluded_on": "2026-11-13 18:10",
+  "reason": "минус -24$ за первую неделю (09.11–13.11)"
  },
  "round_number_fade [15m→30м]": {
   "id": "round_number_fade",
@@ -633,10 +633,10 @@
   "id": "round_number_fade",
   "tf": "1h",
   "expiry": 60,
-  "status": "active",
+  "status": "excluded",
   "since": "2026-11-09",
-  "excluded_on": null,
-  "reason": null
+  "excluded_on": "2026-11-13 18:10",
+  "reason": "минус -21$ за первую неделю (09.11–13.11)"
  },
  "fix_reversal [15m→15м]": {
   "id": "fix_reversal",
@@ -651,19 +651,19 @@
   "id": "fix_reversal",
   "tf": "15m",
   "expiry": 30,
-  "status": "active",
+  "status": "excluded",
   "since": "2026-11-09",
-  "excluded_on": null,
-  "reason": null
+  "excluded_on": "2026-11-13 18:10",
+  "reason": "минус -150$ за первую неделю (09.11–13.11)"
  },
  "fix_reversal [15m→60м]": {
   "id": "fix_reversal",
   "tf": "15m",
   "expiry": 60,
-  "status": "active",
+  "status": "excluded",
   "since": "2026-11-09",
-  "excluded_on": null,
-  "reason": null
+  "excluded_on": "2026-11-13 18:10",
+  "reason": "минус -170$ за первую неделю (09.11–13.11)"
  },
  "lien_fader [15m→15м]": {
   "id": "lien_fader",
@@ -696,10 +696,10 @@
   "id": "lien_fader",
   "tf": "1h",
   "expiry": 60,
-  "status": "active",
+  "status": "excluded",
   "since": "2026-11-09",
-  "excluded_on": null,
-  "reason": null
+  "excluded_on": "2026-11-13 18:10",
+  "reason": "минус -62$ за первую неделю (09.11–13.11)"
  },
  "raschke_8020 [15m→15м]": {
   "id": "raschke_8020",
@@ -714,10 +714,10 @@
   "id": "raschke_8020",
   "tf": "15m",
   "expiry": 30,
-  "status": "active",
+  "status": "excluded",
   "since": "2026-11-09",
-  "excluded_on": null,
-  "reason": null
+  "excluded_on": "2026-11-13 18:10",
+  "reason": "минус -4$ за первую неделю (09.11–13.11)"
  },
  "raschke_8020 [15m→60м]": {
   "id": "raschke_8020",
@@ -732,10 +732,10 @@
   "id": "raschke_8020",
   "tf": "1h",
   "expiry": 60,
-  "status": "active",
+  "status": "excluded",
   "since": "2026-11-09",
-  "excluded_on": null,
-  "reason": null
+  "excluded_on": "2026-11-13 18:10",
+  "reason": "минус -24$ за первую неделю (09.11–13.11)"
  },
  "nr7_inside_breakout [15m→15м]": {
   "id": "nr7_inside_breakout",
@@ -804,10 +804,10 @@
   "id": "williams_vol_breakout",
   "tf": "15m",
   "expiry": 15,
-  "status": "active",
+  "status": "excluded",
   "since": "2026-11-09",
-  "excluded_on": null,
-  "reason": null
+  "excluded_on": "2026-11-13 18:10",
+  "reason": "минус -106$ за первую неделю (09.11–13.11)"
  },
  "williams_vol_breakout [15m→30м]": {
   "id": "williams_vol_breakout",
@@ -840,28 +840,28 @@
   "id": "lien_double_bb",
   "tf": "15m",
   "expiry": 15,
-  "status": "active",
+  "status": "excluded",
   "since": "2026-11-09",
-  "excluded_on": null,
-  "reason": null
+  "excluded_on": "2026-11-13 18:10",
+  "reason": "минус -338$ за первую неделю (09.11–13.11)"
  },
  "lien_double_bb [15m→30м]": {
   "id": "lien_double_bb",
   "tf": "15m",
   "expiry": 30,
-  "status": "active",
+  "status": "excluded",
   "since": "2026-11-09",
-  "excluded_on": null,
-  "reason": null
+  "excluded_on": "2026-11-13 18:10",
+  "reason": "минус -474$ за первую неделю (09.11–13.11)"
  },
  "lien_double_bb [15m→60м]": {
   "id": "lien_double_bb",
   "tf": "15m",
   "expiry": 60,
-  "status": "active",
+  "status": "excluded",
   "since": "2026-11-09",
-  "excluded_on": null,
-  "reason": null
+  "excluded_on": "2026-11-13 18:10",
+  "reason": "минус -224$ за первую неделю (09.11–13.11)"
  },
  "lien_double_bb [1h→60м]": {
   "id": "lien_double_bb",
@@ -903,19 +903,19 @@
   "id": "elder_triple_screen",
   "tf": "1h",
   "expiry": 60,
-  "status": "active",
+  "status": "excluded",
   "since": "2026-11-09",
-  "excluded_on": null,
-  "reason": null
+  "excluded_on": "2026-11-13 18:10",
+  "reason": "минус -5$ за первую неделю (09.11–13.11)"
  },
  "stoch_pullback_a [15m→15м]": {
   "id": "stoch_pullback_a",
   "tf": "15m",
   "expiry": 15,
-  "status": "active",
+  "status": "excluded",
   "since": "2026-11-09",
-  "excluded_on": null,
-  "reason": null
+  "excluded_on": "2026-11-13 18:10",
+  "reason": "минус -27$ за первую неделю (09.11–13.11)"
  },
  "stoch_pullback_a [15m→30м]": {
   "id": "stoch_pullback_a",
@@ -939,28 +939,28 @@
   "id": "stoch_pullback_a",
   "tf": "1h",
   "expiry": 60,
-  "status": "active",
+  "status": "excluded",
   "since": "2026-11-09",
-  "excluded_on": null,
-  "reason": null
+  "excluded_on": "2026-11-13 18:10",
+  "reason": "минус -161$ за первую неделю (09.11–13.11)"
  },
  "brooks_h2 [15m→15м]": {
   "id": "brooks_h2",
   "tf": "15m",
   "expiry": 15,
-  "status": "active",
+  "status": "excluded",
   "since": "2026-11-09",
-  "excluded_on": null,
-  "reason": null
+  "excluded_on": "2026-11-13 18:10",
+  "reason": "минус -44$ за первую неделю (09.11–13.11)"
  },
  "brooks_h2 [15m→30м]": {
   "id": "brooks_h2",
   "tf": "15m",
   "expiry": 30,
-  "status": "active",
+  "status": "excluded",
   "since": "2026-11-09",
-  "excluded_on": null,
-  "reason": null
+  "excluded_on": "2026-11-13 18:10",
+  "reason": "минус -65$ за первую неделю (09.11–13.11)"
  },
  "brooks_h2 [15m→60м]": {
   "id": "brooks_h2",
@@ -1020,10 +1020,10 @@
   "id": "turtle_soup_06",
   "tf": "15m",
   "expiry": 15,
-  "status": "active",
+  "status": "excluded",
   "since": "2026-11-09",
-  "excluded_on": null,
-  "reason": null
+  "excluded_on": "2026-11-13 18:10",
+  "reason": "минус -85$ за первую неделю (09.11–13.11)"
  },
  "turtle_soup_06 [15m→30м]": {
   "id": "turtle_soup_06",
@@ -1038,10 +1038,10 @@
   "id": "turtle_soup_06",
   "tf": "15m",
   "expiry": 60,
-  "status": "active",
+  "status": "excluded",
   "since": "2026-11-09",
-  "excluded_on": null,
-  "reason": null
+  "excluded_on": "2026-11-13 18:10",
+  "reason": "минус -23$ за первую неделю (09.11–13.11)"
  },
  "turtle_soup_06 [1h→60м]": {
   "id": "turtle_soup_06",
@@ -1056,19 +1056,19 @@
   "id": "london_breakout_stop",
   "tf": "15m",
   "expiry": 15,
-  "status": "active",
+  "status": "excluded",
   "since": "2026-11-09",
-  "excluded_on": null,
-  "reason": null
+  "excluded_on": "2026-11-13 18:10",
+  "reason": "минус -10$ за первую неделю (09.11–13.11)"
  },
  "london_breakout_stop [15m→30м]": {
   "id": "london_breakout_stop",
   "tf": "15m",
   "expiry": 30,
-  "status": "active",
+  "status": "excluded",
   "since": "2026-11-09",
-  "excluded_on": null,
-  "reason": null
+  "excluded_on": "2026-11-13 18:10",
+  "reason": "минус -10$ за первую неделю (09.11–13.11)"
  },
  "london_breakout_stop [15m→60м]": {
   "id": "london_breakout_stop",
@@ -1083,9 +1083,9 @@
   "id": "london_breakout_stop",
   "tf": "1h",
   "expiry": 60,
-  "status": "active",
+  "status": "excluded",
   "since": "2026-11-09",
-  "excluded_on": null,
-  "reason": null
+  "excluded_on": "2026-11-13 18:10",
+  "reason": "минус -88$ за первую неделю (09.11–13.11)"
  }
 }
