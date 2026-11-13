@@ -17,6 +17,16 @@ import pandas as pd
 ROOT = os.path.dirname(os.path.abspath(__file__))
 CFG = json.load(open(os.path.join(ROOT, "pocketoption.json")))
 NEWS_WIN = pd.Timedelta("30min")
+_TH = CFG.get("trading_hours_msk") or {}
+HOURS_FROM = pd.Timestamp(_TH["from"], tz="Europe/Moscow").value if _TH.get("from") else None
+HOURS_OK = set(_TH.get("allowed", range(24)))
+
+
+def hour_allowed(t_ns):
+    """С даты trading_hours_msk.from — входы только в разрешённые часы по Москве."""
+    if HOURS_FROM is None or t_ns < HOURS_FROM:
+        return True
+    return pd.Timestamp(t_ns, tz="UTC").tz_convert("Europe/Moscow").hour in HOURS_OK
 
 
 def payout(pair):
@@ -64,6 +74,8 @@ def simulate(pair, df, sig, tf, expiry_min, strategy="", events=None):
         if tns[x] + step.value != t_out:   # дыра в данных (выходные/пропуск) — пропускаем
             i += 1; continue
         if pd.Timestamp(t_in, tz="UTC").dayofweek >= 5:   # выходные = только OTC — не торгуем
+            i += 1; continue
+        if not hour_allowed(t_in):                         # нерабочий час (решение владельца)
             i += 1; continue
         if len(ev):  # срок опциона пересекает окно новости
             j = np.searchsorted(ev, t_in - NEWS_WIN.value)
