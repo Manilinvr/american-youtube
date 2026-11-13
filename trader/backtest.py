@@ -26,6 +26,8 @@ SUFFIX = ("" if MODE == "binary" else f"_{MODE}") + ("_allhours" if os.environ.g
 
 def combos(strat):
     """Варианты схемы: (таймфрейм, экспирация в минутах или None для cfd)."""
+    if MODE not in strat.get("models", ["binary", "cfd"]):
+        return []
     if MODE != "binary":
         return [(tf, None) for tf in strat["test_tfs"] if tf != "1d"]
     return [(tf, e) for tf in strat["test_tfs"] for e in binary.CFG["expiries_min"].get(tf, [])]

@@ -286,8 +286,8 @@ async def cycle(dry=False):
         bought = 0
         for label, sc in sorted(schemes.items()):
             strat = REGISTRY.get(sc["id"])
-            if strat is None:
-                continue
+            if strat is None or strat.get("control"):
+                continue  # контрольные схемы — только в расчётном журнале
             tf, exp = sc["tf"], int(sc["expiry"])
             gran = 900 if tf == "15m" else 3600
             for pair in PAIRS:

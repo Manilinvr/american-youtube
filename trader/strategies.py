@@ -588,12 +588,84 @@ def london_breakout_stop(df, pair):
     sig["entry"] = entry; sig["valid"] = bars_until(df, 10).astype(int)
     return sig, None
 
+
+# ---------------------------------------------------------------- выходное исследование 14.11 (research/weekend_ideas_2026-11-14.md)
+
+def _overshoot(df, pair, follow=False):
+    r = np.log(df.close / df.open)
+    sd = r.rolling(480 if _tf(df) == 15 else 120, min_periods=100).std().shift()
+    z = r / sd
+    a = I.atr(df).shift()
+    rng = df.high - df.low
+    pos = (df.close - df.low) / rng.replace(0, np.nan)
+    h = hour(df)
+    ok = (z.abs() >= 3.0) & (rng >= 2.0 * a) & (rng < 3.0 * a) & (h >= 7) & (h < 19.75)
+    bull = ok & (z > 0) & (pos <= 0.85)
+    bear = ok & (z < 0) & (pos >= 0.15)
+    lc, sc = (bull, bear) if follow else (bear, bull)
+    return make(df, lc, sc, a, a, 4), None
+
+
+def overshoot_fade(df, pair):
+    """Откат после «перелёта»: одиночная свеча |z| ≥ 3 и размах 2–3 ATR, без новости → ставка против неё."""
+    return _overshoot(df, pair)
+
+
+def overshoot_follow(df, pair):
+    """КОНТРОЛЬ к overshoot_fade: та же свеча, ставка ПО направлению. Если «работает» и он — это шум."""
+    return _overshoot(df, pair, follow=True)
+
+
+def monday_gap_fade(df, pair):
+    """Закрытие разрыва выходных: |открытие недели − закрытие пятницы| ≥ 0.35 дневного ATR (но < 1.5),
+    к 07:00 UTC понедельника не закрыт → ставка в сторону закрытия разрыва (вход 07:00 UTC)."""
+    t = df.index
+    week = (t - pd.to_timedelta((t.dayofweek + 1) % 7, unit="D")).normalize()  # неделя с воскресенья
+    first = ~week.duplicated()
+    o_week = pd.Series(np.where(first, df.open, np.nan), index=t).groupby(week).transform("first")
+    c_prev = df.close.shift().where(first).groupby(week).transform("first")
+    L = daily_levels(df)
+    gap = o_week - c_prev
+    lo_since = df.low.groupby(week).cummin()
+    hi_since = df.high.groupby(week).cummax()
+    m = _tf(df)
+    sig_bar = (t.dayofweek == 0) & (hour(df) == 7 - m / 60)
+    big = (gap.abs() >= 0.35 * L.atrd) & (gap.abs() < 1.5 * L.atrd)
+    lc = sig_bar & big & (gap < 0) & (hi_since < c_prev)
+    sc = sig_bar & big & (gap > 0) & (lo_since > c_prev)
+    a = I.atr(df)
+    return make(df, lc, sc, a, a, 4), None
+
+
+def stretch_session_fade(df, pair):
+    """Откат от «растянутого» дня в американскую сессию: размах дня ≥ 1.1 ADR, движение от открытия ≥ 0.8 ADR,
+    цена в крайних 25% диапазона, 1h RSI(14) > 70 / < 30 → против движения дня (сигналы 14:45–16:45 UTC)."""
+    day = df.index.normalize()
+    g = df.groupby(day)
+    dd = pd.DataFrame({"h": g.high.max(), "l": g.low.min()})
+    adr = (dd.h - dd.l).rolling(20).mean().shift().reindex(day).set_axis(df.index)
+    hi, lo = day_so_far(df)
+    o_day = df.open.groupby(day).transform("first")
+    mv = df.close - o_day
+    rngd = hi - lo
+    posd = (df.close - lo) / rngd.replace(0, np.nan)
+    rsi1h = I.htf(df, "1h", lambda b: I.rsi(b.close, 14))
+    h = hour(df)
+    win = (h >= 14.75) & (h <= 16.75)
+    base = win & (rngd >= 1.1 * adr) & (mv.abs() >= 0.8 * adr)
+    sc = base & (mv > 0) & (posd >= 0.75) & (rsi1h > 70)
+    lc = base & (mv < 0) & (posd <= 0.25) & (rsi1h < 30)
+    a = I.atr(df)
+    f = first_per_day(lc | sc, df)
+    return make(df, lc & f, sc & f, a, a, 4), None
+
 REGISTRY = {}
 
 
-def reg(fn, name, tf="15m", test_tfs=("15m", "1h"), source=""):
+def reg(fn, name, tf="15m", test_tfs=("15m", "1h"), source="", models=("binary", "cfd"), control=False):
     REGISTRY[fn.__name__] = {"id": fn.__name__, "fn": fn, "name": name, "tf": tf,
-                             "test_tfs": list(test_tfs), "source": source}
+                             "test_tfs": list(test_tfs), "source": source,
+                             "models": list(models), "control": control}
 
 
 reg(rsi2_meanrev, "RSI(2) откат в тренде", test_tfs=("15m", "1h", "1d"), source="L. Connors, Short Term Trading Strategies That Work")
@@ -628,3 +700,8 @@ reg(brooks_h2, "High 2 Ала Брукса", test_tfs=("15m", "1h"), source="Al 
 reg(fvg_retrace, "ICT: ретест fair value gap", test_tfs=("15m", "1h"), source="ICT / Smart Money Concepts")
 reg(turtle_soup_06, "Turtle Soup, цель 0.6R", test_tfs=("15m", "1h", "1d"), source="Raschke & Connors, Street Smarts")
 reg(london_breakout_stop, "Пробой Азии стоп-ордером (Лин)", test_tfs=("15m", "1h"), source="K. Lien")
+
+reg(overshoot_fade, "Откат после перелёта (без новости)", test_tfs=("15m", "1h"), source="Xiao et al. 2020; Krohn et al.; weekend_ideas N1", models=("binary",))
+reg(overshoot_follow, "КОНТРОЛЬ: по направлению перелёта", test_tfs=("15m", "1h"), source="контроль к overshoot_fade", models=("binary",), control=True)
+reg(monday_gap_fade, "Закрытие разрыва выходных", test_tfs=("15m", "1h"), source="Dao, McGroarty & Urquhart; weekend_ideas N5", models=("binary",))
+reg(stretch_session_fade, "Откат растянутого дня в сессию США", test_tfs=("15m",), source="Krohn et al. 2024; weekend_ideas N6", models=("binary",))
