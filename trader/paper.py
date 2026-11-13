@@ -15,11 +15,17 @@
 import json, os, sys
 import pandas as pd
 import engine, news
-from backtest import run, combos, label
+from backtest import run, combos, label, MODE, SUFFIX
 from strategies import REGISTRY
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-JOURNAL = os.path.join(ROOT, "journal")
+JOURNAL = os.path.join(ROOT, "journal") if MODE == "binary" else os.path.join(ROOT, "journal", MODE)
+MODEL_TEXT = ("Модель Pocket Option: ставка **$20**, выигрыш +$20 × выплата (95%) = **+$19**, проигрыш **−$20**; "
+              "безубыточность — 51.3% выигрышных сделок. Только пары с выплатой ≥ 85%, без OTC."
+              if MODE == "binary" else
+              "Модель «Форекс со стопами» (первая версия): обычная сделка с кредитным плечом, стоп-лосс и тейк-профит по правилам схемы; "
+              "риск каждой сделки **$20** (стоп = −$20, прибыль = $20 × тейк/стоп), спред брокера вычитается.")
+TITLE = "" if MODE == "binary" else " — Форекс со стопами"
 STATUS = os.path.join(JOURNAL, "status.json")
 FORWARD_START = "2026-11-09"
 LEARNING_END = "2027-01-08"
@@ -121,7 +127,7 @@ def report(now=None):
     trades, status = update(now)
     week0 = now - pd.Timedelta(days=7)
     bt = {}
-    p = os.path.join(ROOT, "reports", "backtest_summary.json")
+    p = os.path.join(ROOT, "reports", f"backtest_summary{SUFFIX}.json")
     if os.path.exists(p):
         bt = json.load(open(p))
     tr = trades.copy()
@@ -132,14 +138,13 @@ def report(now=None):
     exc = [k for k, v in status.items() if v["status"] == "excluded"]
     newly = [k for k in exc if status[k]["excluded_on"] and pd.Timestamp(status[k]["excluded_on"], tz="UTC") >= week0]
     day_n = (now - pd.Timestamp(FORWARD_START, tz="UTC")).days
-    L = [f"# Отчёт за неделю {week0:%d.%m} – {now:%d.%m.%Y}", "",
+    L = [f"# Отчёт за неделю {week0:%d.%m} – {now:%d.%m.%Y}{TITLE}", "",
          f"Демо-обучение: день {max(day_n, 0)} из ~60 (до {pd.Timestamp(LEARNING_END):%d.%m.%Y}). "
-         f"Реальные деньги не используются. Модель Pocket Option: ставка **$20**, выигрыш +$20 × выплата (95%) = **+$19**, проигрыш **−$20**; "
-         f"безубыточный винрейт 51.3%. Только пары с выплатой ≥ 85%, без OTC.", ""]
+         f"Реальные деньги не используются. {MODEL_TEXT}", ""]
     ws = engine.stats(wk)
     cs = engine.stats(tr)
     L += ["## Итог", "",
-          "| | Сделок | Плюс/минус | Винрейт | Заработано | Потеряно | Итог |", "|---|---|---|---|---|---|---|",
+          "| | Сделок | Плюс/минус | % выигрышных | Заработано | Потеряно | Итог |", "|---|---|---|---|---|---|---|",
           _row("За неделю", ws), _row("С начала обучения", cs), "",
           f"Схем в работе: **{len(act)}**, исключено всего: **{len(exc)}** (на этой неделе: {len(newly)}).", ""]
     L += pair_table(wk, "По валютным парам за неделю")
@@ -156,7 +161,7 @@ def report(now=None):
         rows.append((w["net_usd"], _row(f"`{label}` {REGISTRY[st['id']]['name']}{mark}", w, ctxt + btxt)))
     rows.sort(key=lambda r: -r[0])
     L += ["## Схемы за неделю", "",
-          "| Схема (приём) | Сделок | Плюс/минус | Винрейт | Заработано | Потеряно | Итог недели | С начала | История (бэктест) |",
+          "| Схема (приём) | Сделок | Плюс/минус | % выигрышных | Заработано | Потеряно | Итог недели | С начала | История (бэктест) |",
           "|---|---|---|---|---|---|---|---|---|", *[r for _, r in rows], ""]
     # кандидаты
     cands = []
@@ -166,7 +171,7 @@ def report(now=None):
         if c["trades"] >= MIN_TRADES and c["winrate"] >= GOOD_WINRATE and c["net_usd"] > 0:
             cands.append(_row(f"`{label}`", c))
     L += [f"## ✅ Рабочие схемы (винрейт ≥ {GOOD_WINRATE:.0f}%, итог в плюсе, от {MIN_TRADES} сделок)", ""]
-    L += (["| Схема | Сделок | Плюс/минус | Винрейт | Заработано | Потеряно | Итог |", "|---|---|---|---|---|---|---|", *cands]
+    L += (["| Схема | Сделок | Плюс/минус | % выигрышных | Заработано | Потеряно | Итог |", "|---|---|---|---|---|---|---|", *cands]
           if cands else ["Пока нет. Нужно больше сделок."])
     L += [""]
     ev = news.load()
@@ -182,7 +187,7 @@ def report(now=None):
         L += ["## ❌ Исключены на этой неделе", ""] + [f"- `{k}` — {status[k]['reason']}" for k in newly] + [""]
     out = os.path.join(ROOT, "reports", "weekly")
     os.makedirs(out, exist_ok=True)
-    path = os.path.join(out, f"{now:%Y-%m-%d}.md")
+    path = os.path.join(out, f"{now:%Y-%m-%d}{SUFFIX}.md")
     open(path, "w").write("\n".join(L))
     return path
 
@@ -201,17 +206,16 @@ def daily(now=None):
     dt = tr[tr.exit_time >= day0] if len(tr) else tr
     msk = now.tz_convert("Europe/Moscow")
     start = pd.Timestamp(FORWARD_START, tz="UTC")
-    L = [f"# Отчёт за день {msk:%d.%m.%Y} ({['пн','вт','ср','чт','пт','сб','вс'][msk.dayofweek]})", ""]
+    L = [f"# Отчёт за день {msk:%d.%m.%Y} ({['пн','вт','ср','чт','пт','сб','вс'][msk.dayofweek]}){TITLE}", ""]
     if now < start:
         L += [f"Демо-торговля стартует в понедельник {start:%d.%m.%Y} с открытия рынка. Сегодня — план на неделю.", ""]
     else:
-        L += [f"День {(now - start).days + 1} демо-обучения из ~60. Pocket Option: ставка $20, выигрыш +$19 (выплата 95%), проигрыш −$20, "
-              f"безубыточность при 51.3% выигрышей.", ""]
+        L += [f"День {(now - start).days + 1} демо-обучения из ~60. {MODEL_TEXT}", ""]
     ds, cs = engine.stats(dt), engine.stats(tr)
     if len(dt) and "usd" in dt and len(dt) > 1:
         dt = dt.sort_values("usd")
     act = sum(v["status"] == "active" for v in status.values())
-    L += ["| | Сделок | Плюс/минус | Винрейт | Заработано | Потеряно | Итог |", "|---|---|---|---|---|---|---|",
+    L += ["| | Сделок | Плюс/минус | % выигрышных | Заработано | Потеряно | Итог |", "|---|---|---|---|---|---|---|",
           _row("За день", ds), _row("С начала обучения", cs), "", f"Схем в работе: **{act}** из {len(status)}.", ""]
     L += pair_table(dt, "По валютным парам за день")
     L += pair_table(tr, "По валютным парам с начала обучения")
@@ -221,7 +225,7 @@ def daily(now=None):
             st = engine.stats(g)
             rows.append((st["net_usd"], _row(f"`{label}` {REGISTRY[status[label]['id']]['name']}", st)))
         rows.sort(key=lambda r: -r[0])
-        L += ["## Схемы за день", "", "| Схема | Сделок | Плюс/минус | Винрейт | Заработано | Потеряно | Итог |",
+        L += ["## Схемы за день", "", "| Схема | Сделок | Плюс/минус | % выигрышных | Заработано | Потеряно | Итог |",
               "|---|---|---|---|---|---|---|", *[r for _, r in rows], ""]
         top = dt.sort_values("usd")
         L += ["## Пример выигрыша и проигрыша дня", ""]
@@ -246,7 +250,7 @@ def daily(now=None):
     L += [""]
     out = os.path.join(ROOT, "reports", "daily")
     os.makedirs(out, exist_ok=True)
-    path = os.path.join(out, f"{msk:%Y-%m-%d}.md")
+    path = os.path.join(out, f"{msk:%Y-%m-%d}{SUFFIX}.md")
     open(path, "w").write("\n".join(L))
     return path
 

@@ -17,7 +17,11 @@ MIN_TRADES = 20  # меньше сделок — статистика ничег
 NEWS_FILTER = True  # новостной фильтр (news.py) для всех схем
 
 
-MODE = "binary"  # "binary" = Pocket Option (ставка $20, выплата из pocketoption.json); "cfd" = обычный форекс со стопом/тейком
+# Режим: "binary" = Pocket Option (ставка $20, выплата из pocketoption.json);
+#        "cfd"    = обычный форекс со стопом/тейком и кредитным плечом (риск $20 на сделку).
+# Выбирается переменной окружения TRADER_MODE (по умолчанию binary).
+MODE = os.environ.get("TRADER_MODE", "binary")
+SUFFIX = "" if MODE == "binary" else f"_{MODE}"
 
 
 def combos(strat):
@@ -99,12 +103,12 @@ def main(ids):
           f"## Пары, где винрейт ≥ 70% и итог в плюсе (от {MIN_TRADES} сделок)", "",
           HEAD, *([r for _, r in best] or ["| — | | | | | | | | | |"]), ""]
     os.makedirs(os.path.join(ROOT, "reports"), exist_ok=True)
-    name = "backtest.md" if not ids else "backtest_partial.md"
+    name = f"backtest{SUFFIX}.md" if not ids else f"backtest_partial{SUFFIX}.md"
     open(os.path.join(ROOT, "reports", name), "w").write("\n".join(md))
     if not ids:
-        json.dump(summary, open(os.path.join(ROOT, "reports", "backtest_summary.json"), "w"), ensure_ascii=False, indent=1)
+        json.dump(summary, open(os.path.join(ROOT, "reports", f"backtest_summary{SUFFIX}.json"), "w"), ensure_ascii=False, indent=1)
     if alltr:
-        pd.concat(alltr).to_csv(os.path.join(ROOT, "reports", "backtest_trades.csv.gz"), index=False)
+        pd.concat(alltr).to_csv(os.path.join(ROOT, "reports", f"backtest_trades{SUFFIX}.csv.gz"), index=False)
 
 
 if __name__ == "__main__":

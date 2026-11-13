@@ -12,6 +12,13 @@
 - Расчёт по указанию владельца: выплата 95% для всех пар. Безубыточный винрейт — **51.3%**; при 70% выигрышей в среднем +$7.3 на ставку.
 - Расчёт — `binary.py`; режим переключается в `backtest.py` (`MODE = "binary"` / `"cfd"`).
 
+## Две модели параллельно (решение владельца 13.11)
+Одни и те же схемы торгуются сразу в двух моделях, у каждой свой журнал и отчёты:
+| Модель | Журнал | Отчёты | Запуск |
+|---|---|---|---|
+| Pocket Option (бинарные опционы) | `journal/` | `reports/daily/ДАТА.md`, `reports/weekly/ДАТА.md` | `python3 paper.py daily` |
+| Форекс со стопами (первая версия: плечо, стоп-лосс/тейк-профит, риск $20) | `journal/cfd/` | `reports/daily/ДАТА_cfd.md`, `reports/weekly/ДАТА_cfd.md` | `TRADER_MODE=cfd python3 paper.py daily` |
+
 ## Правила владельца
 - Торгуем валютными парами, сделки от 15 минут (таймфреймы 15m и 1h).
 - 13.11 (по итогам первой недели) исключаются все схемы с минусом за неделю.
@@ -49,5 +56,6 @@
 cd trader
 python3 fetch.py && python3 cot.py && python3 paper.py report   # пятница
 python3 fetch.py && python3 paper.py daily                     # остальные дни
+TRADER_MODE=cfd python3 paper.py daily                         # то же для форекса со стопами (в пятницу — report)
 python3 account.py accounts/challenge_ДАТА.json                # счёт с балансом (задание владельца)
 ```

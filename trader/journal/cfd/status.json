@@ -1,0 +1,533 @@
+{
+ "rsi2_meanrev [15m]": {
+  "id": "rsi2_meanrev",
+  "tf": "15m",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "rsi2_meanrev [1h]": {
+  "id": "rsi2_meanrev",
+  "tf": "1h",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "bb_fade_range [15m]": {
+  "id": "bb_fade_range",
+  "tf": "15m",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "bb_fade_range [1h]": {
+  "id": "bb_fade_range",
+  "tf": "1h",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "london_breakout [15m]": {
+  "id": "london_breakout",
+  "tf": "15m",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "london_breakout [1h]": {
+  "id": "london_breakout",
+  "tf": "1h",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "asian_sweep_reversal [15m]": {
+  "id": "asian_sweep_reversal",
+  "tf": "15m",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "asian_sweep_reversal [1h]": {
+  "id": "asian_sweep_reversal",
+  "tf": "1h",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "ema_pullback [15m]": {
+  "id": "ema_pullback",
+  "tf": "15m",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "ema_pullback [1h]": {
+  "id": "ema_pullback",
+  "tf": "1h",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "stoch_pullback [15m]": {
+  "id": "stoch_pullback",
+  "tf": "15m",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "stoch_pullback [1h]": {
+  "id": "stoch_pullback",
+  "tf": "1h",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "turtle_soup [15m]": {
+  "id": "turtle_soup",
+  "tf": "15m",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "turtle_soup [1h]": {
+  "id": "turtle_soup",
+  "tf": "1h",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "donchian_trend [15m]": {
+  "id": "donchian_trend",
+  "tf": "15m",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "donchian_trend [1h]": {
+  "id": "donchian_trend",
+  "tf": "1h",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "macd_ema200 [15m]": {
+  "id": "macd_ema200",
+  "tf": "15m",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "macd_ema200 [1h]": {
+  "id": "macd_ema200",
+  "tf": "1h",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "holy_grail [15m]": {
+  "id": "holy_grail",
+  "tf": "15m",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "holy_grail [1h]": {
+  "id": "holy_grail",
+  "tf": "1h",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "inside_bar_breakout [15m]": {
+  "id": "inside_bar_breakout",
+  "tf": "15m",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "inside_bar_breakout [1h]": {
+  "id": "inside_bar_breakout",
+  "tf": "1h",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "keltner_squeeze [15m]": {
+  "id": "keltner_squeeze",
+  "tf": "15m",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "keltner_squeeze [1h]": {
+  "id": "keltner_squeeze",
+  "tf": "1h",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "rsi2_v06 [15m]": {
+  "id": "rsi2_v06",
+  "tf": "15m",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "rsi2_v06 [1h]": {
+  "id": "rsi2_v06",
+  "tf": "1h",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "double7_meanrev [15m]": {
+  "id": "double7_meanrev",
+  "tf": "15m",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "double7_meanrev [1h]": {
+  "id": "double7_meanrev",
+  "tf": "1h",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "bb_reentry_fade [15m]": {
+  "id": "bb_reentry_fade",
+  "tf": "15m",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "bb_reentry_fade [1h]": {
+  "id": "bb_reentry_fade",
+  "tf": "1h",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "asian_range_scalp [15m]": {
+  "id": "asian_range_scalp",
+  "tf": "15m",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "pivot_s1r1_fade [15m]": {
+  "id": "pivot_s1r1_fade",
+  "tf": "15m",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "pivot_s1r1_fade [1h]": {
+  "id": "pivot_s1r1_fade",
+  "tf": "1h",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "round_number_fade [15m]": {
+  "id": "round_number_fade",
+  "tf": "15m",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "round_number_fade [1h]": {
+  "id": "round_number_fade",
+  "tf": "1h",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "fix_reversal [15m]": {
+  "id": "fix_reversal",
+  "tf": "15m",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "lien_fader [15m]": {
+  "id": "lien_fader",
+  "tf": "15m",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "lien_fader [1h]": {
+  "id": "lien_fader",
+  "tf": "1h",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "raschke_8020 [15m]": {
+  "id": "raschke_8020",
+  "tf": "15m",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "raschke_8020 [1h]": {
+  "id": "raschke_8020",
+  "tf": "1h",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "nr7_inside_breakout [15m]": {
+  "id": "nr7_inside_breakout",
+  "tf": "15m",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "nr7_inside_breakout [1h]": {
+  "id": "nr7_inside_breakout",
+  "tf": "1h",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "ny_orb [15m]": {
+  "id": "ny_orb",
+  "tf": "15m",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "williams_vol_breakout [15m]": {
+  "id": "williams_vol_breakout",
+  "tf": "15m",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "williams_vol_breakout [1h]": {
+  "id": "williams_vol_breakout",
+  "tf": "1h",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "lien_double_bb [15m]": {
+  "id": "lien_double_bb",
+  "tf": "15m",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "lien_double_bb [1h]": {
+  "id": "lien_double_bb",
+  "tf": "1h",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "elder_triple_screen [15m]": {
+  "id": "elder_triple_screen",
+  "tf": "15m",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "elder_triple_screen [1h]": {
+  "id": "elder_triple_screen",
+  "tf": "1h",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "stoch_pullback_a [15m]": {
+  "id": "stoch_pullback_a",
+  "tf": "15m",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "stoch_pullback_a [1h]": {
+  "id": "stoch_pullback_a",
+  "tf": "1h",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "brooks_h2 [15m]": {
+  "id": "brooks_h2",
+  "tf": "15m",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "brooks_h2 [1h]": {
+  "id": "brooks_h2",
+  "tf": "1h",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "fvg_retrace [15m]": {
+  "id": "fvg_retrace",
+  "tf": "15m",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "fvg_retrace [1h]": {
+  "id": "fvg_retrace",
+  "tf": "1h",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "turtle_soup_06 [15m]": {
+  "id": "turtle_soup_06",
+  "tf": "15m",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "turtle_soup_06 [1h]": {
+  "id": "turtle_soup_06",
+  "tf": "1h",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "london_breakout_stop [15m]": {
+  "id": "london_breakout_stop",
+  "tf": "15m",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ },
+ "london_breakout_stop [1h]": {
+  "id": "london_breakout_stop",
+  "tf": "1h",
+  "expiry": null,
+  "status": "active",
+  "since": "2026-11-09",
+  "excluded_on": null,
+  "reason": null
+ }
+}
